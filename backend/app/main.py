@@ -1,5 +1,7 @@
 from fastapi import FastAPI
+
 from app.api.routes.health import router as health_router
+from app.api.routes.playback import router as playback_router
 
 app = FastAPI(
     title="Cinema Machina Core",
@@ -8,3 +10,4 @@ app = FastAPI(
 )
 
 app.include_router(health_router)
+app.include_router(playback_router)
