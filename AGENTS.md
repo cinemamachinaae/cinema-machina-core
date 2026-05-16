@@ -260,3 +260,36 @@ Git initialized
 SKILLS.md and AGENTS.md committed
 no feature code yet
 ```
+
+---
+
+## 13 — Agent Commit / Push Policy
+
+For normal non-protected feature work, agents are authorised to:
+
+1. Inspect the repo
+2. Plan changes
+3. Edit code
+4. Run tests
+5. Commit with a conventional commit message
+6. Push to origin/main
+7. Report the commit hash and test result
+
+Agents must stop and ask before committing/pushing when:
+
+- Tests fail
+- Push fails or a merge conflict occurs
+- Protected files need editing
+- Secrets or .env are involved
+- A destructive or broad refactor is required
+
+Protected files always require explicit confirmation before editing:
+
+```txt
+AGENTS.md
+SKILLS.md
+.env
+.env.example
+docker-compose.yml
+docs/ARCHITECTURE.md
+```
