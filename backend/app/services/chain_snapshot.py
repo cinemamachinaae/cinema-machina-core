@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 
+from app.devices.android_adb.shield import ShieldAdbMonitor
 from app.integrations.jellyfin.client import JellyfinClient
 from app.integrations.plex.client import PlexClient
 from app.models.chain import ChainSnapshotResponse, OutputState, SourceMediaState
@@ -14,6 +15,7 @@ from app.models.device import (
     MediaServerState,
     PlaybackClientKind,
     PlaybackClientState,
+    ShieldDeviceState,
 )
 from app.models.playback import Confidence, PlaybackSource, SessionState
 
@@ -21,6 +23,7 @@ logger = logging.getLogger(__name__)
 
 _plex = PlexClient()
 _jellyfin = JellyfinClient()
+_shield = ShieldAdbMonitor()
 
 _CLIENT_KIND_MAP: tuple[tuple[str, PlaybackClientKind], ...] = (
     ("shield", PlaybackClientKind.NVIDIA_SHIELD),
@@ -72,12 +75,14 @@ def get_current_chain_snapshot() -> ChainSnapshotResponse:
         ]
     )
 
+    shield_state = _get_shield_state_for_chain(active_session, warnings)
+
     return ChainSnapshotResponse(
         active=True,
         confidence=Confidence.UNKNOWN,
         source=_build_source_state(active_session),
         media_server=_build_media_server_state(active_session),
-        playback_client=_build_playback_client_state(active_session),
+        playback_client=_build_playback_client_state(active_session, shield_state),
         display_device=DisplayDeviceState(),
         audio_device=AudioDeviceState(),
         output_state=OutputState(),
@@ -142,10 +147,27 @@ def _build_media_server_state(session: SessionState) -> MediaServerState | None:
     )
 
 
-def _build_playback_client_state(session: SessionState) -> PlaybackClientState | None:
+def _build_playback_client_state(
+    session: SessionState,
+    shield_state: ShieldDeviceState | None,
+) -> PlaybackClientState | None:
     """Build playback client state from the active session."""
     if session.client_name is None:
-        return None
+        if shield_state is None:
+            return None
+
+        return PlaybackClientState(
+            name="Nvidia Shield",
+            name_confidence=Confidence.INFERRED,
+            kind=PlaybackClientKind.NVIDIA_SHIELD,
+            kind_confidence=Confidence.INFERRED,
+            reachable=shield_state.reachable,
+            reachable_confidence=shield_state.reachable_confidence,
+            foreground_app=shield_state.foreground_app,
+            foreground_app_confidence=shield_state.foreground_app_confidence,
+            foreground_package=shield_state.foreground_package,
+            foreground_package_confidence=shield_state.foreground_package_confidence,
+        )
 
     client_kind = _infer_playback_client_kind(session.client_name)
     return PlaybackClientState(
@@ -153,6 +175,24 @@ def _build_playback_client_state(session: SessionState) -> PlaybackClientState |
         name_confidence=Confidence.CONFIRMED,
         kind=client_kind,
         kind_confidence=Confidence.INFERRED if client_kind is not None else Confidence.UNKNOWN,
+        reachable=shield_state.reachable if shield_state is not None else None,
+        reachable_confidence=(
+            shield_state.reachable_confidence if shield_state is not None else Confidence.UNKNOWN
+        ),
+        foreground_app=shield_state.foreground_app if shield_state is not None else None,
+        foreground_app_confidence=(
+            shield_state.foreground_app_confidence
+            if shield_state is not None
+            else Confidence.UNKNOWN
+        ),
+        foreground_package=(
+            shield_state.foreground_package if shield_state is not None else None
+        ),
+        foreground_package_confidence=(
+            shield_state.foreground_package_confidence
+            if shield_state is not None
+            else Confidence.UNKNOWN
+        ),
     )
 
 
@@ -165,3 +205,22 @@ def _infer_playback_client_kind(client_name: str) -> PlaybackClientKind | None:
             return client_kind
 
     return None
+
+
+def _get_shield_state_for_chain(
+    session: SessionState,
+    warnings: list[str],
+) -> ShieldDeviceState | None:
+    """Return Shield state when the active session appears to be on Shield."""
+    if not _shield.is_configured:
+        return None
+
+    client_name = (session.client_name or "").lower()
+    client_kind = _infer_playback_client_kind(session.client_name or "")
+    is_shield_session = "shield" in client_name or client_kind == PlaybackClientKind.NVIDIA_SHIELD
+    if not is_shield_session:
+        return None
+
+    shield_state = _shield.get_state()
+    warnings.extend(shield_state.warnings)
+    return shield_state

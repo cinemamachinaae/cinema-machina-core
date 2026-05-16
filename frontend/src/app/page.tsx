@@ -43,6 +43,12 @@ type DeviceState = {
   name_confidence: Confidence;
   kind: string | null;
   kind_confidence: Confidence;
+  reachable: boolean | null;
+  reachable_confidence: Confidence;
+  foreground_app: string | null;
+  foreground_app_confidence: Confidence;
+  foreground_package: string | null;
+  foreground_package_confidence: Confidence;
 };
 
 type OutputState = {
@@ -66,10 +72,29 @@ type ChainSnapshot = {
   warnings: string[];
 };
 
+type ShieldState = {
+  configured: boolean;
+  reachable: boolean | null;
+  reachable_confidence: Confidence;
+  connection_state: string | null;
+  connection_state_confidence: Confidence;
+  foreground_app: string | null;
+  foreground_app_confidence: Confidence;
+  foreground_package: string | null;
+  foreground_package_confidence: Confidence;
+  media_session_summary: string | null;
+  media_session_summary_confidence: Confidence;
+  display_mode: string | null;
+  display_mode_confidence: Confidence;
+  confidence: Confidence;
+  warnings: string[];
+};
+
 type LoadState = {
   health: HealthStatus | null;
   playback: PlaybackState | null;
   chain: ChainSnapshot | null;
+  shield: ShieldState | null;
   errors: string[];
 };
 
@@ -77,6 +102,7 @@ const initialState: LoadState = {
   health: null,
   playback: null,
   chain: null,
+  shield: null,
   errors: [],
 };
 
@@ -224,6 +250,22 @@ function DeviceCard({
   );
 }
 
+function shieldStatusLabel(shield: ShieldState | null): string {
+  if (shield === null || shield.configured === false) {
+    return "Unknown";
+  }
+
+  if (shield.reachable === true) {
+    return "Reachable";
+  }
+
+  if (shield.reachable === false) {
+    return "Unreachable";
+  }
+
+  return "Unknown";
+}
+
 export default function Dashboard() {
   const [state, setState] = useState<LoadState>(initialState);
   const [isLoading, setIsLoading] = useState(true);
@@ -234,10 +276,11 @@ export default function Dashboard() {
     async function loadDashboard(): Promise<void> {
       setIsLoading(true);
 
-      const [healthResult, playbackResult, chainResult] = await Promise.allSettled([
+      const [healthResult, playbackResult, chainResult, shieldResult] = await Promise.allSettled([
         fetchApiJson<HealthStatus>("/health"),
         fetchApiJson<PlaybackState>("/playback/current"),
         fetchApiJson<ChainSnapshot>("/chain/current"),
+        fetchApiJson<ShieldState>("/devices/shield/state"),
       ]);
 
       if (cancelled) {
@@ -258,10 +301,15 @@ export default function Dashboard() {
         errors.push(`Chain API: ${chainResult.reason instanceof Error ? chainResult.reason.message : "Unknown error"}`);
       }
 
+      if (shieldResult.status === "rejected") {
+        errors.push(`Shield API: ${shieldResult.reason instanceof Error ? shieldResult.reason.message : "Unknown error"}`);
+      }
+
       setState({
         health: healthResult.status === "fulfilled" ? healthResult.value : null,
         playback: playbackResult.status === "fulfilled" ? playbackResult.value : null,
         chain: chainResult.status === "fulfilled" ? chainResult.value : null,
+        shield: shieldResult.status === "fulfilled" ? shieldResult.value : null,
         errors,
       });
       setIsLoading(false);
@@ -273,6 +321,7 @@ export default function Dashboard() {
           health: null,
           playback: null,
           chain: null,
+          shield: null,
           errors: ["Dashboard refresh failed."],
         });
         setIsLoading(false);
@@ -287,9 +336,11 @@ export default function Dashboard() {
   const health = state.health;
   const playback = state.playback;
   const chain = state.chain;
+  const shield = state.shield;
   const systemOnline = health?.status === "ok";
   const warnings = [
     ...(chain?.warnings ?? []),
+    ...(shield?.warnings ?? []),
     ...(playback?.error ? [playback.error] : []),
     ...state.errors,
   ];
@@ -460,8 +511,33 @@ export default function Dashboard() {
           <div className="mt-6 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
             <Panel title="Device Monitor" eyebrow="Display and Audio">
               <div className="grid gap-3">
+                <div className="rounded-xl border border-white/8 bg-black/20 p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs uppercase tracking-[0.18em] text-slate-500">Shield</p>
+                    <ConfidenceChip confidence={shield?.confidence ?? "unknown"} />
+                  </div>
+                  <p className="mt-4 text-sm font-medium text-slate-100">
+                    {shieldStatusLabel(shield)}
+                  </p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">
+                    {shield?.foreground_package ?? "Foreground app unavailable"}
+                  </p>
+                </div>
                 <DeviceCard label="Display" device={chain?.display_device ?? null} />
                 <DeviceCard label="Audio" device={chain?.audio_device ?? null} />
+              </div>
+
+              <div className="mt-4 space-y-1">
+                <DataLine
+                  label="Foreground App"
+                  value={shield?.foreground_app ?? "Unknown"}
+                  confidence={shield?.foreground_app_confidence ?? "unknown"}
+                />
+                <DataLine
+                  label="Display Mode"
+                  value={shield?.display_mode ?? "Unknown"}
+                  confidence={shield?.display_mode_confidence ?? "unknown"}
+                />
               </div>
             </Panel>
 

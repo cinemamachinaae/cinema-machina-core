@@ -7,6 +7,7 @@ from unittest.mock import PropertyMock, patch
 from fastapi.testclient import TestClient
 
 from app.main import app
+from app.models.device import ShieldDeviceState
 from app.services import chain_snapshot
 from app.models.playback import (
     AudioState,
@@ -96,3 +97,61 @@ class TestChainCurrentConfiguredSession:
         assert data["media_server"]["kind"] == "plex"
         assert data["playback_client"]["kind"] == "nvidia_shield"
         assert data["output_state"]["video_mode"] is None
+
+    def test_shield_state_enriches_playback_client_when_configured(self) -> None:
+        session = SessionState(
+            source=PlaybackSource.PLEX,
+            is_playing=True,
+            title="Dune: Part Two",
+            user="rahul",
+            client_name="SHIELD Android TV",
+            decision=PlaybackDecision.DIRECT_PLAY,
+            video=VideoState(codec="hevc", container="mkv", confidence=Confidence.CONFIRMED),
+            audio=AudioState(codec="truehd", confidence=Confidence.CONFIRMED),
+            confidence=Confidence.CONFIRMED,
+        )
+        shield_state = ShieldDeviceState(
+            configured=True,
+            reachable=True,
+            reachable_confidence=Confidence.INFERRED,
+            foreground_app="com.plexapp.android/com.plexapp.plex.activities.MainActivity",
+            foreground_app_confidence=Confidence.INFERRED,
+            foreground_package="com.plexapp.android",
+            foreground_package_confidence=Confidence.INFERRED,
+            confidence=Confidence.INFERRED,
+        )
+
+        with (
+            patch.object(
+                type(chain_snapshot._plex),
+                "is_configured",
+                new_callable=PropertyMock,
+                return_value=True,
+            ),
+            patch.object(
+                type(chain_snapshot._jellyfin),
+                "is_configured",
+                new_callable=PropertyMock,
+                return_value=False,
+            ),
+            patch.object(
+                type(chain_snapshot._shield),
+                "is_configured",
+                new_callable=PropertyMock,
+                return_value=True,
+            ),
+            patch("app.services.chain_snapshot._plex.get_active_sessions", return_value=[session]),
+            patch("app.services.chain_snapshot._shield.get_state", return_value=shield_state),
+        ):
+            response = client.get("/chain/current")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["playback_client"]["reachable"] is True
+        assert (
+            data["playback_client"]["foreground_package"] == "com.plexapp.android"
+        )
+        assert (
+            data["playback_client"]["foreground_app"]
+            == "com.plexapp.android/com.plexapp.plex.activities.MainActivity"
+        )

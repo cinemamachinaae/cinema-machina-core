@@ -25,6 +25,8 @@ class Settings(BaseSettings):
         jellyfin_url: Base URL of the local Jellyfin server,
             e.g. ``http://192.168.1.x:8096``.
         jellyfin_api_key: Jellyfin API key generated in the dashboard.
+        shield_ip: IPv4 address or hostname of the Nvidia Shield.
+        shield_adb_port: TCP port used for ADB-over-network access.
     """
 
     model_config = SettingsConfigDict(
@@ -41,6 +43,10 @@ class Settings(BaseSettings):
     # Jellyfin
     jellyfin_url: str | None = None
     jellyfin_api_key: str | None = None
+
+    # Nvidia Shield ADB
+    shield_ip: str | None = None
+    shield_adb_port: int = 5555
 
 
 # Module-level singleton — import this everywhere rather than
