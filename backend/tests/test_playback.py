@@ -197,6 +197,10 @@ class TestPlexParser:
         session = parse_sessions(PLEX_XML_ONE_SESSION)[0]
         assert session.video.resolution == "4k"
 
+    def test_video_container_parsed(self) -> None:
+        session = parse_sessions(PLEX_XML_ONE_SESSION)[0]
+        assert session.video.container == "mkv"
+
     def test_video_bitrate_parsed(self) -> None:
         session = parse_sessions(PLEX_XML_ONE_SESSION)[0]
         assert session.video.bitrate_kbps == 80000

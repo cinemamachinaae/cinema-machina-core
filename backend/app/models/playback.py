@@ -52,6 +52,7 @@ class VideoState(BaseModel):
     """
 
     codec: Optional[str] = None
+    container: Optional[str] = None
     resolution: Optional[str] = None
     hdr_format: Optional[str] = None
     bitrate_kbps: Optional[int] = None

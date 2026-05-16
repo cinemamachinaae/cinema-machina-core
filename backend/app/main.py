@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.routes.chain import router as chain_router
 from app.api.routes.health import router as health_router
 from app.api.routes.playback import router as playback_router
 
@@ -24,3 +25,4 @@ app.add_middleware(
 
 app.include_router(health_router)
 app.include_router(playback_router)
+app.include_router(chain_router)

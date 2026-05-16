@@ -204,6 +204,7 @@ def _parse_video_state(media_el: ET.Element | None) -> VideoState:
         return VideoState(confidence=Confidence.UNKNOWN)
 
     codec: str | None = None
+    container: str | None = None
     resolution: str | None = None
     bitrate_kbps: int | None = None
 
@@ -217,6 +218,8 @@ def _parse_video_state(media_el: ET.Element | None) -> VideoState:
     if codec is None:
         codec = media_el.get("videoCodec")
 
+    container = media_el.get("container")
+
     # Resolution: Plex reports "4k", "1080", "720" etc. on <Media>.
     resolution = media_el.get("videoResolution")
 
@@ -228,9 +231,10 @@ def _parse_video_state(media_el: ET.Element | None) -> VideoState:
         except ValueError:
             logger.warning("Could not parse Plex bitrate value: %r", raw_bitrate)
 
-    has_data = any(v is not None for v in (codec, resolution, bitrate_kbps))
+    has_data = any(v is not None for v in (codec, container, resolution, bitrate_kbps))
     return VideoState(
         codec=codec,
+        container=container,
         resolution=resolution,
         hdr_format=None,  # Never inferred from Plex session data
         bitrate_kbps=bitrate_kbps,
