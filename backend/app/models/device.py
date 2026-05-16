@@ -93,8 +93,12 @@ class ShieldDeviceState(BaseModel):
     configured: bool = False
     reachable: Optional[bool] = None
     reachable_confidence: Confidence = Confidence.UNKNOWN
+    adb_connected: Optional[bool] = None
+    adb_connected_confidence: Confidence = Confidence.UNKNOWN
     connection_state: Optional[str] = None
     connection_state_confidence: Confidence = Confidence.UNKNOWN
+    foreground_app_name: Optional[str] = None
+    foreground_app_name_confidence: Confidence = Confidence.UNKNOWN
     foreground_app: Optional[str] = None
     foreground_app_confidence: Confidence = Confidence.UNKNOWN
     foreground_package: Optional[str] = None

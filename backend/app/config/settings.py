@@ -7,7 +7,19 @@ than raising an exception.
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def get_repo_root() -> Path:
+    """Return the repository root from the location of this module."""
+    return Path(__file__).resolve().parents[3]
+
+
+def get_default_env_file() -> Path:
+    """Return the repo-root .env path regardless of current working directory."""
+    return get_repo_root() / ".env"
 
 
 class Settings(BaseSettings):
@@ -30,7 +42,7 @@ class Settings(BaseSettings):
     """
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=str(get_default_env_file()),
         env_file_encoding="utf-8",
         case_sensitive=False,
         extra="ignore",

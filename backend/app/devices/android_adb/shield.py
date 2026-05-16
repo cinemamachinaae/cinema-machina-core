@@ -27,6 +27,15 @@ _MEDIA_SESSION_PACKAGE_PATTERN = re.compile(r"package=(?P<package>[A-Za-z0-9._]+
 _MEDIA_SESSION_STATE_PATTERN = re.compile(r"state=PlaybackState \{state=(?P<state>\d+)")
 _DISPLAY_MODE_PATTERN = re.compile(r"(?P<width>\d{3,4}) x (?P<height>\d{3,4})(?:,|.*?)(?P<refresh>\d{2,3}(?:\.\d+)?) fps")
 
+_APP_NAME_MAP: dict[str, str] = {
+    "com.plexapp.android": "Plex",
+    "org.jellyfin.androidtv": "Jellyfin",
+    "com.netflix.ninja": "Netflix",
+    "com.google.android.youtube.tv": "YouTube",
+    "com.amazon.amazonvideo.livingroom": "Prime Video",
+    "tv.twitch.android.app": "Twitch",
+}
+
 
 @dataclass
 class ShieldMonitorResult:
@@ -78,8 +87,13 @@ class ShieldAdbMonitor:
         state_result = self._run_adb("-s", serial, "get-state")
         debug["adb_get_state"] = state_result.stdout or state_result.stderr
 
-        if isinstance(state_result, _AdbFailure) and state_result.error == "adb_not_found":
-            warnings.append("ADB executable is not available on the backend host.")
+        if isinstance(state_result, _AdbFailure) and state_result.error in {"adb_not_found", "adb_timeout"}:
+            warning_message = (
+                "ADB executable is not available on the backend host."
+                if state_result.error == "adb_not_found"
+                else "ADB connection timed out while reading Shield state."
+            )
+            warnings.append(warning_message)
             state = ShieldDeviceState(configured=True, warnings=warnings)
             self._last_debug_snapshot = debug
             return ShieldMonitorResult(public_state=state, debug=debug)
@@ -93,6 +107,8 @@ class ShieldAdbMonitor:
                 configured=True,
                 reachable=False,
                 reachable_confidence=Confidence.INFERRED,
+                adb_connected=False,
+                adb_connected_confidence=Confidence.INFERRED,
                 connection_state=connection_state,
                 connection_state_confidence=Confidence.INFERRED if connection_state else Confidence.UNKNOWN,
                 confidence=Confidence.INFERRED if connection_state else Confidence.UNKNOWN,
@@ -112,6 +128,7 @@ class ShieldAdbMonitor:
         debug["audio"] = audio_result.stdout or audio_result.stderr
 
         foreground_package, foreground_app = self._parse_foreground(foreground_result.stdout)
+        foreground_app_name = self._derive_app_name(foreground_package)
         media_session_summary = self._parse_media_session_summary(media_session_result.stdout)
         display_mode = self._parse_display_mode(display_result.stdout)
 
@@ -119,8 +136,14 @@ class ShieldAdbMonitor:
             configured=True,
             reachable=True,
             reachable_confidence=Confidence.INFERRED,
+            adb_connected=True,
+            adb_connected_confidence=Confidence.INFERRED,
             connection_state="device",
             connection_state_confidence=Confidence.INFERRED,
+            foreground_app_name=foreground_app_name,
+            foreground_app_name_confidence=(
+                Confidence.INFERRED if foreground_app_name else Confidence.UNKNOWN
+            ),
             foreground_app=foreground_app,
             foreground_app_confidence=Confidence.INFERRED if foreground_app else Confidence.UNKNOWN,
             foreground_package=foreground_package,
@@ -197,6 +220,18 @@ class ShieldAdbMonitor:
         height = match.group("height")
         refresh = match.group("refresh")
         return f"{width}x{height} @ {refresh}Hz"
+
+    def _derive_app_name(self, package: str | None) -> str | None:
+        """Derive a human-friendly app name from the package name."""
+        if package is None:
+            return None
+
+        if package in _APP_NAME_MAP:
+            return _APP_NAME_MAP[package]
+
+        token = package.rsplit(".", maxsplit=1)[-1]
+        token = token.replace("_", " ").replace("-", " ")
+        return " ".join(part.capitalize() for part in token.split())
 
 
 @dataclass

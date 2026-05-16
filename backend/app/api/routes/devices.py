@@ -9,10 +9,8 @@ from app.models.device import ShieldDeviceState
 
 router = APIRouter(prefix="/devices", tags=["devices"])
 
-_shield = ShieldAdbMonitor()
-
 
 @router.get("/shield/state", response_model=ShieldDeviceState)
 def get_shield_state() -> ShieldDeviceState:
     """Return the current read-only Nvidia Shield state."""
-    return _shield.get_state()
+    return ShieldAdbMonitor().get_state()

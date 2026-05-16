@@ -23,7 +23,6 @@ logger = logging.getLogger(__name__)
 
 _plex = PlexClient()
 _jellyfin = JellyfinClient()
-_shield = ShieldAdbMonitor()
 
 _CLIENT_KIND_MAP: tuple[tuple[str, PlaybackClientKind], ...] = (
     ("shield", PlaybackClientKind.NVIDIA_SHIELD),
@@ -163,8 +162,12 @@ def _build_playback_client_state(
             kind_confidence=Confidence.INFERRED,
             reachable=shield_state.reachable,
             reachable_confidence=shield_state.reachable_confidence,
-            foreground_app=shield_state.foreground_app,
-            foreground_app_confidence=shield_state.foreground_app_confidence,
+            foreground_app=shield_state.foreground_app_name or shield_state.foreground_app,
+            foreground_app_confidence=(
+                shield_state.foreground_app_name_confidence
+                if shield_state.foreground_app_name is not None
+                else shield_state.foreground_app_confidence
+            ),
             foreground_package=shield_state.foreground_package,
             foreground_package_confidence=shield_state.foreground_package_confidence,
         )
@@ -179,9 +182,15 @@ def _build_playback_client_state(
         reachable_confidence=(
             shield_state.reachable_confidence if shield_state is not None else Confidence.UNKNOWN
         ),
-        foreground_app=shield_state.foreground_app if shield_state is not None else None,
+        foreground_app=(
+            shield_state.foreground_app_name or shield_state.foreground_app
+            if shield_state is not None
+            else None
+        ),
         foreground_app_confidence=(
-            shield_state.foreground_app_confidence
+            shield_state.foreground_app_name_confidence
+            if shield_state is not None and shield_state.foreground_app_name is not None
+            else shield_state.foreground_app_confidence
             if shield_state is not None
             else Confidence.UNKNOWN
         ),
@@ -212,7 +221,8 @@ def _get_shield_state_for_chain(
     warnings: list[str],
 ) -> ShieldDeviceState | None:
     """Return Shield state when the active session appears to be on Shield."""
-    if not _shield.is_configured:
+    shield_monitor = ShieldAdbMonitor()
+    if not shield_monitor.is_configured:
         return None
 
     client_name = (session.client_name or "").lower()
@@ -221,6 +231,6 @@ def _get_shield_state_for_chain(
     if not is_shield_session:
         return None
 
-    shield_state = _shield.get_state()
+    shield_state = shield_monitor.get_state()
     warnings.extend(shield_state.warnings)
     return shield_state

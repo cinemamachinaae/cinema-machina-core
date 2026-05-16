@@ -78,6 +78,10 @@ type ShieldState = {
   reachable_confidence: Confidence;
   connection_state: string | null;
   connection_state_confidence: Confidence;
+  adb_connected: boolean | null;
+  adb_connected_confidence: Confidence;
+  foreground_app_name: string | null;
+  foreground_app_name_confidence: Confidence;
   foreground_app: string | null;
   foreground_app_confidence: Confidence;
   foreground_package: string | null;
@@ -157,11 +161,13 @@ function StatusChip({
   tone = "default",
 }: {
   label: string;
-  tone?: "default" | "online";
+  tone?: "default" | "online" | "warning";
 }) {
   const toneClass =
     tone === "online"
       ? "border-emerald-400/35 bg-emerald-400/12 text-emerald-100"
+      : tone === "warning"
+      ? "border-amber-300/35 bg-amber-300/12 text-amber-50"
       : "border-white/10 bg-white/5 text-slate-200";
 
   return (
@@ -266,6 +272,19 @@ function shieldStatusLabel(shield: ShieldState | null): string {
   return "Unknown";
 }
 
+function backendApiStateLabel(state: LoadState): string {
+  const failures = state.errors.filter((item) => item.includes("API:")).length;
+  if (failures === 0 && state.health !== null && state.playback !== null && state.chain !== null && state.shield !== null) {
+    return "Healthy";
+  }
+
+  if (failures > 0) {
+    return "Degraded";
+  }
+
+  return "Checking";
+}
+
 export default function Dashboard() {
   const [state, setState] = useState<LoadState>(initialState);
   const [isLoading, setIsLoading] = useState(true);
@@ -338,6 +357,7 @@ export default function Dashboard() {
   const chain = state.chain;
   const shield = state.shield;
   const systemOnline = health?.status === "ok";
+  const backendApiState = backendApiStateLabel(state);
   const warnings = [
     ...(chain?.warnings ?? []),
     ...(shield?.warnings ?? []),
@@ -346,11 +366,11 @@ export default function Dashboard() {
   ];
 
   return (
-    <main className="min-h-screen text-slate-100">
+    <main className="cinema-ambient min-h-screen text-slate-100">
       <div className="mx-auto flex min-h-screen max-w-[1600px] gap-6 px-5 py-5 lg:px-8">
         <aside className="hidden w-64 shrink-0 flex-col justify-between rounded-[28px] border border-white/8 bg-black/25 p-5 backdrop-blur-md lg:flex">
           <div>
-            <div className="rounded-2xl border border-white/8 bg-white/[0.04] p-4">
+            <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] p-4 ${systemOnline ? "dashboard-card-online" : ""}`}>
               <p className="text-[11px] uppercase tracking-[0.28em] text-slate-500">
                 Cinema Machina
               </p>
@@ -378,7 +398,7 @@ export default function Dashboard() {
             </nav>
           </div>
 
-          <div className="rounded-2xl border border-white/8 bg-white/[0.035] p-4">
+          <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.035] p-4 ${systemOnline ? "dashboard-card-online" : ""}`}>
             <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">
               Runtime
             </p>
@@ -390,7 +410,7 @@ export default function Dashboard() {
         </aside>
 
         <div className="flex-1">
-          <header className="rounded-[28px] border border-white/8 bg-black/20 px-5 py-5 backdrop-blur-md">
+          <header className={`dashboard-card rounded-[28px] border border-white/8 bg-black/20 px-5 py-5 backdrop-blur-md ${systemOnline ? "dashboard-card-online" : ""}`}>
             <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.28em] text-slate-500">
@@ -401,8 +421,8 @@ export default function Dashboard() {
                 </h1>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-3">
-                <div className="rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3">
+              <div className="grid gap-3 sm:grid-cols-4">
+                <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${systemOnline ? "dashboard-card-online" : ""}`}>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
                     System Online
                   </p>
@@ -413,7 +433,7 @@ export default function Dashboard() {
                     />
                   </div>
                 </div>
-                <div className="rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3">
+                <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${systemOnline ? "dashboard-card-online" : ""}`}>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
                     Signal Confidence
                   </p>
@@ -421,13 +441,24 @@ export default function Dashboard() {
                     <ConfidenceChip confidence={chain?.confidence ?? "unknown"} />
                   </div>
                 </div>
-                <div className="rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3">
+                <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${systemOnline ? "dashboard-card-online" : ""}`}>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
                     Active Playback
                   </p>
                   <p className="mt-3 text-lg font-medium text-slate-100">
                     {chain?.active ? "Detected" : "No active playback"}
                   </p>
+                </div>
+                <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${backendApiState === "Healthy" ? "dashboard-card-online" : ""}`}>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
+                    Backend API State
+                  </p>
+                  <div className="mt-3 flex items-center gap-2">
+                    <StatusChip
+                      label={backendApiState}
+                      tone={backendApiState === "Healthy" ? "online" : backendApiState === "Degraded" ? "warning" : "default"}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -460,12 +491,16 @@ export default function Dashboard() {
                   return (
                     <div
                       key={stage.label}
-                      className="relative rounded-xl border border-white/8 bg-black/20 p-4"
+                      className={`dashboard-card relative rounded-xl border border-white/8 bg-black/20 p-4 ${systemOnline ? "dashboard-card-online" : ""}`}
                     >
                       <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
                         {stage.label}
                       </p>
-                      <p className="mt-4 text-sm font-medium text-slate-100">{value}</p>
+                      {isLoading ? (
+                        <div className="loading-sheen mt-4 h-5 rounded-md" />
+                      ) : (
+                        <p className="mt-4 text-sm font-medium text-slate-100">{value}</p>
+                      )}
                       <p className="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">
                         {detail.replace(/_/g, " ")}
                       </p>
@@ -477,7 +512,7 @@ export default function Dashboard() {
                 })}
               </div>
 
-              <div className="mt-5 rounded-xl border border-dashed border-white/12 bg-black/15 p-4">
+              <div className="dashboard-card mt-5 rounded-xl border border-dashed border-white/12 bg-black/15 p-4">
                 <p className="text-sm text-slate-300">
                   {chain?.active
                     ? "Chain visibility is active. Upstream playback metadata is live, while downstream device and signal telemetry remain intentionally unknown until dedicated integrations are added."
@@ -499,9 +534,9 @@ export default function Dashboard() {
                   ))}
                 </div>
               ) : (
-                <div className="rounded-xl border border-white/8 bg-black/20 p-4">
+                <div className="dashboard-card rounded-xl border border-white/8 bg-black/20 p-4">
                   <p className="text-sm text-slate-300">
-                    No diagnostics are raised. Unknown fields are expected until downstream monitoring is connected.
+                    No diagnostics raised.
                   </p>
                 </div>
               )}
@@ -509,9 +544,9 @@ export default function Dashboard() {
           </div>
 
           <div className="mt-6 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
-            <Panel title="Device Monitor" eyebrow="Display and Audio">
+            <Panel title="Device Recognition" eyebrow="Shield, Display, Audio">
               <div className="grid gap-3">
-                <div className="rounded-xl border border-white/8 bg-black/20 p-4">
+                <div className={`dashboard-card rounded-xl border border-white/8 bg-black/20 p-4 ${shield?.reachable ? "dashboard-card-online" : ""}`}>
                   <div className="flex items-center justify-between gap-3">
                     <p className="text-xs uppercase tracking-[0.18em] text-slate-500">Shield</p>
                     <ConfidenceChip confidence={shield?.confidence ?? "unknown"} />
@@ -520,7 +555,7 @@ export default function Dashboard() {
                     {shieldStatusLabel(shield)}
                   </p>
                   <p className="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">
-                    {shield?.foreground_package ?? "Foreground app unavailable"}
+                    {shield?.foreground_app_name ?? shield?.foreground_package ?? "Foreground app unavailable"}
                   </p>
                 </div>
                 <DeviceCard label="Display" device={chain?.display_device ?? null} />
@@ -529,9 +564,39 @@ export default function Dashboard() {
 
               <div className="mt-4 space-y-1">
                 <DataLine
+                  label="Configured"
+                  value={shield?.configured ? "Configured" : "Unknown"}
+                  confidence={shield?.configured ? "inferred" : "unknown"}
+                />
+                <DataLine
+                  label="Reachable"
+                  value={shieldStatusLabel(shield)}
+                  confidence={shield?.reachable_confidence ?? "unknown"}
+                />
+                <DataLine
+                  label="ADB Connected"
+                  value={formatValue(shield?.adb_connected)}
+                  confidence={shield?.adb_connected_confidence ?? "unknown"}
+                />
+                <DataLine
+                  label="Foreground App Name"
+                  value={shield?.foreground_app_name ?? "Unknown"}
+                  confidence={shield?.foreground_app_name_confidence ?? "unknown"}
+                />
+                <DataLine
                   label="Foreground App"
                   value={shield?.foreground_app ?? "Unknown"}
                   confidence={shield?.foreground_app_confidence ?? "unknown"}
+                />
+                <DataLine
+                  label="Foreground Package"
+                  value={shield?.foreground_package ?? "Unknown"}
+                  confidence={shield?.foreground_package_confidence ?? "unknown"}
+                />
+                <DataLine
+                  label="Media Session"
+                  value={shield?.media_session_summary ?? "Unknown"}
+                  confidence={shield?.media_session_summary_confidence ?? "unknown"}
                 />
                 <DataLine
                   label="Display Mode"
@@ -580,6 +645,11 @@ export default function Dashboard() {
                   label="Passthrough"
                   value={formatValue(chain?.output_state?.passthrough)}
                   confidence={chain?.output_state?.passthrough_confidence ?? "unknown"}
+                />
+                <DataLine
+                  label="Display Mode"
+                  value={shield?.display_mode ?? "Unknown"}
+                  confidence={shield?.display_mode_confidence ?? "unknown"}
                 />
               </div>
             </Panel>

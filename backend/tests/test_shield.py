@@ -24,7 +24,7 @@ class TestShieldAdbMonitor:
     """Read-only Shield monitor behaviour."""
 
     def test_unconfigured_returns_safe_unknown_state(self) -> None:
-        monitor = ShieldAdbMonitor(shield_ip=None, adb_port=5555)
+        monitor = ShieldAdbMonitor(shield_ip="", adb_port=5555)
         state = monitor.get_state()
 
         assert state.configured is False
@@ -90,14 +90,20 @@ class TestShieldRoute:
             configured=True,
             reachable=True,
             reachable_confidence=Confidence.INFERRED,
+            adb_connected=True,
+            adb_connected_confidence=Confidence.INFERRED,
+            foreground_app_name="Plex",
+            foreground_app_name_confidence=Confidence.INFERRED,
             foreground_app="com.plexapp.android/com.plexapp.plex.activities.MainActivity",
             foreground_app_confidence=Confidence.INFERRED,
             confidence=Confidence.INFERRED,
         )
 
-        with patch("app.api.routes.devices._shield.get_state", return_value=fake_state):
+        with patch("app.api.routes.devices.ShieldAdbMonitor.get_state", return_value=fake_state):
             response = client.get("/devices/shield/state")
 
         assert response.status_code == 200
         assert response.json()["reachable"] is True
+        assert response.json()["adb_connected"] is True
+        assert response.json()["foreground_app_name"] == "Plex"
         assert response.json()["confidence"] == "inferred"

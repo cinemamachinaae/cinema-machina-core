@@ -114,6 +114,10 @@ class TestChainCurrentConfiguredSession:
             configured=True,
             reachable=True,
             reachable_confidence=Confidence.INFERRED,
+            adb_connected=True,
+            adb_connected_confidence=Confidence.INFERRED,
+            foreground_app_name="Plex",
+            foreground_app_name_confidence=Confidence.INFERRED,
             foreground_app="com.plexapp.android/com.plexapp.plex.activities.MainActivity",
             foreground_app_confidence=Confidence.INFERRED,
             foreground_package="com.plexapp.android",
@@ -134,14 +138,9 @@ class TestChainCurrentConfiguredSession:
                 new_callable=PropertyMock,
                 return_value=False,
             ),
-            patch.object(
-                type(chain_snapshot._shield),
-                "is_configured",
-                new_callable=PropertyMock,
-                return_value=True,
-            ),
             patch("app.services.chain_snapshot._plex.get_active_sessions", return_value=[session]),
-            patch("app.services.chain_snapshot._shield.get_state", return_value=shield_state),
+            patch("app.services.chain_snapshot.ShieldAdbMonitor.is_configured", new_callable=PropertyMock, return_value=True),
+            patch("app.services.chain_snapshot.ShieldAdbMonitor.get_state", return_value=shield_state),
         ):
             response = client.get("/chain/current")
 
@@ -152,6 +151,5 @@ class TestChainCurrentConfiguredSession:
             data["playback_client"]["foreground_package"] == "com.plexapp.android"
         )
         assert (
-            data["playback_client"]["foreground_app"]
-            == "com.plexapp.android/com.plexapp.plex.activities.MainActivity"
+            data["playback_client"]["foreground_app"] == "Plex"
         )
