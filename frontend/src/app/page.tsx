@@ -1,13 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-import { fetchApiJson } from "../lib/api";
+import { fetchApiJson, resolveApiBaseUrl } from "../lib/api";
+
+type Confidence = "confirmed" | "inferred" | "unknown";
 
 type HealthStatus = {
   status: string;
-  service?: string;
-  confidence: "confirmed" | "inferred" | "unknown";
+  service: string;
+  confidence: Confidence;
 };
 
 type PlaybackSession = {
@@ -15,6 +17,7 @@ type PlaybackSession = {
   user: string | null;
   client_name: string | null;
   decision: string;
+  confidence: Confidence;
 };
 
 type PlaybackState = {
@@ -22,8 +25,6 @@ type PlaybackState = {
   sources_checked: string[];
   error: string | null;
 };
-
-type Confidence = "confirmed" | "inferred" | "unknown";
 
 type SourceMediaState = {
   codec: string | null;
@@ -38,19 +39,6 @@ type SourceMediaState = {
   audio_codec_confidence: Confidence;
 };
 
-type DeviceState = {
-  name: string | null;
-  name_confidence: Confidence;
-  kind: string | null;
-  kind_confidence: Confidence;
-  reachable: boolean | null;
-  reachable_confidence: Confidence;
-  foreground_app: string | null;
-  foreground_app_confidence: Confidence;
-  foreground_package: string | null;
-  foreground_package_confidence: Confidence;
-};
-
 type OutputState = {
   video_mode: string | null;
   video_mode_confidence: Confidence;
@@ -58,6 +46,19 @@ type OutputState = {
   audio_mode_confidence: Confidence;
   passthrough: boolean | null;
   passthrough_confidence: Confidence;
+};
+
+type DeviceState = {
+  name: string | null;
+  name_confidence: Confidence;
+  kind: string | null;
+  kind_confidence: Confidence;
+  reachable?: boolean | null;
+  reachable_confidence?: Confidence;
+  foreground_app?: string | null;
+  foreground_app_confidence?: Confidence;
+  foreground_package?: string | null;
+  foreground_package_confidence?: Confidence;
 };
 
 type ChainSnapshot = {
@@ -76,10 +77,10 @@ type ShieldState = {
   configured: boolean;
   reachable: boolean | null;
   reachable_confidence: Confidence;
-  connection_state: string | null;
-  connection_state_confidence: Confidence;
   adb_connected: boolean | null;
   adb_connected_confidence: Confidence;
+  connection_state: string | null;
+  connection_state_confidence: Confidence;
   foreground_app_name: string | null;
   foreground_app_name_confidence: Confidence;
   foreground_app: string | null;
@@ -94,31 +95,114 @@ type ShieldState = {
   warnings: string[];
 };
 
-type LoadState = {
+type ConfiguredSourceState = {
+  configured: boolean;
+  confidence: Confidence;
+};
+
+type ConfiguredSources = {
+  plex: ConfiguredSourceState;
+  jellyfin: ConfiguredSourceState;
+  shield: ConfiguredSourceState;
+};
+
+type SystemOverview = {
+  timestamp: string;
+  health: HealthStatus;
+  playback: PlaybackState;
+  chain: ChainSnapshot;
+  shield: ShieldState;
+  configured_sources: ConfiguredSources;
+  warnings: string[];
+};
+
+type DashboardState = {
   health: HealthStatus | null;
-  playback: PlaybackState | null;
-  chain: ChainSnapshot | null;
-  shield: ShieldState | null;
-  errors: string[];
+  overview: SystemOverview | null;
+  diagnostics: string[];
+  lastUpdated: string | null;
 };
 
-const initialState: LoadState = {
+const REFRESH_INTERVAL_MS = 5000;
+
+const defaultHealth: HealthStatus = {
+  status: "unknown",
+  service: "cinema-machina-core",
+  confidence: "unknown",
+};
+
+const defaultPlayback: PlaybackState = {
+  sessions: [],
+  sources_checked: [],
+  error: null,
+};
+
+const defaultChain: ChainSnapshot = {
+  active: false,
+  confidence: "unknown",
+  source: null,
+  media_server: null,
+  playback_client: null,
+  display_device: null,
+  audio_device: null,
+  output_state: null,
+  warnings: [],
+};
+
+const defaultShield: ShieldState = {
+  configured: false,
+  reachable: null,
+  reachable_confidence: "unknown",
+  adb_connected: null,
+  adb_connected_confidence: "unknown",
+  connection_state: null,
+  connection_state_confidence: "unknown",
+  foreground_app_name: null,
+  foreground_app_name_confidence: "unknown",
+  foreground_app: null,
+  foreground_app_confidence: "unknown",
+  foreground_package: null,
+  foreground_package_confidence: "unknown",
+  media_session_summary: null,
+  media_session_summary_confidence: "unknown",
+  display_mode: null,
+  display_mode_confidence: "unknown",
+  confidence: "unknown",
+  warnings: [],
+};
+
+const defaultConfiguredSources: ConfiguredSources = {
+  plex: { configured: false, confidence: "confirmed" },
+  jellyfin: { configured: false, confidence: "confirmed" },
+  shield: { configured: false, confidence: "confirmed" },
+};
+
+const defaultOverview: SystemOverview = {
+  timestamp: "",
+  health: defaultHealth,
+  playback: defaultPlayback,
+  chain: defaultChain,
+  shield: defaultShield,
+  configured_sources: defaultConfiguredSources,
+  warnings: [],
+};
+
+const defaultState: DashboardState = {
   health: null,
-  playback: null,
-  chain: null,
-  shield: null,
-  errors: [],
+  overview: null,
+  diagnostics: [],
+  lastUpdated: null,
 };
 
-const navItems = [
+const navigation = [
   "Overview",
   "Playback Chain",
-  "Devices",
-  "Signals",
+  "Source Integrity",
+  "Device Recognition",
   "Diagnostics",
 ];
 
-const chainStages = [
+const chainNodes = [
   { key: "source", label: "Source" },
   { key: "media_server", label: "Server" },
   { key: "playback_client", label: "Client" },
@@ -126,17 +210,37 @@ const chainStages = [
   { key: "audio_device", label: "Audio" },
 ] as const;
 
+function confidenceTone(confidence: Confidence): string {
+  if (confidence === "confirmed") {
+    return "border-emerald-400/35 bg-emerald-400/10 text-emerald-100";
+  }
+
+  if (confidence === "inferred") {
+    return "border-amber-300/35 bg-amber-300/10 text-amber-50";
+  }
+
+  return "border-slate-500/30 bg-slate-500/10 text-slate-300";
+}
+
 function formatValue(value: string | number | boolean | null | undefined): string {
-  if (value === null || value === undefined) {
+  if (value === null || value === undefined || value === "") {
     return "Unknown";
   }
 
   if (typeof value === "boolean") {
-    return value ? "Enabled" : "Disabled";
+    return value ? "Yes" : "No";
   }
 
   if (typeof value === "number") {
     return `${value.toLocaleString()} kbps`;
+  }
+
+  return value.replace(/_/g, " ");
+}
+
+function formatDecision(value: string | null | undefined): string {
+  if (!value) {
+    return "Unknown";
   }
 
   return value
@@ -144,16 +248,135 @@ function formatValue(value: string | number | boolean | null | undefined): strin
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-function confidenceTone(confidence: Confidence): string {
-  if (confidence === "confirmed") {
-    return "border-emerald-400/40 bg-emerald-400/10 text-emerald-200";
+function statusLabel(value: boolean | null | undefined): string {
+  if (value === true) {
+    return "Online";
   }
 
-  if (confidence === "inferred") {
-    return "border-amber-300/30 bg-amber-300/10 text-amber-100";
+  if (value === false) {
+    return "Offline";
   }
 
-  return "border-slate-500/30 bg-slate-500/10 text-slate-300";
+  return "Unknown";
+}
+
+function shieldReachabilityLabel(shield: ShieldState): string {
+  if (!shield.configured) {
+    return "Unconfigured";
+  }
+
+  if (shield.reachable === true) {
+    return "Reachable";
+  }
+
+  if (shield.reachable === false) {
+    return "Unreachable";
+  }
+
+  return "Unknown";
+}
+
+function apiStateLabel(isLoading: boolean, health: HealthStatus | null, overview: SystemOverview | null, diagnostics: string[]): string {
+  if (isLoading && health === null && overview === null) {
+    return "Checking";
+  }
+
+  if (health?.status === "ok" && overview !== null && diagnostics.length === 0) {
+    return "Healthy";
+  }
+
+  if (health?.status === "ok" || overview !== null) {
+    return "Degraded";
+  }
+
+  return "Offline";
+}
+
+function apiStateTone(label: string): "default" | "online" | "warning" {
+  if (label === "Healthy") {
+    return "online";
+  }
+
+  if (label === "Degraded") {
+    return "warning";
+  }
+
+  return "default";
+}
+
+function formatLastUpdated(value: string | null): string {
+  if (!value) {
+    return "Awaiting first sample";
+  }
+
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    return "Awaiting first sample";
+  }
+
+  return parsed.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+}
+
+function normalizeOverview(overview: SystemOverview | null): SystemOverview {
+  if (overview === null) {
+    return defaultOverview;
+  }
+
+  return {
+    timestamp: overview.timestamp ?? "",
+    health: overview.health ?? defaultHealth,
+    playback: {
+      sessions: Array.isArray(overview.playback?.sessions) ? overview.playback.sessions : [],
+      sources_checked: Array.isArray(overview.playback?.sources_checked)
+        ? overview.playback.sources_checked
+        : [],
+      error: overview.playback?.error ?? null,
+    },
+    chain: {
+      ...defaultChain,
+      ...overview.chain,
+      warnings: Array.isArray(overview.chain?.warnings) ? overview.chain.warnings : [],
+    },
+    shield: {
+      ...defaultShield,
+      ...overview.shield,
+      warnings: Array.isArray(overview.shield?.warnings) ? overview.shield.warnings : [],
+    },
+    configured_sources: {
+      plex: overview.configured_sources?.plex ?? defaultConfiguredSources.plex,
+      jellyfin: overview.configured_sources?.jellyfin ?? defaultConfiguredSources.jellyfin,
+      shield: overview.configured_sources?.shield ?? defaultConfiguredSources.shield,
+    },
+    warnings: Array.isArray(overview.warnings) ? overview.warnings : [],
+  };
+}
+
+function getChainNodePresentation(
+  key: (typeof chainNodes)[number]["key"],
+  chain: ChainSnapshot,
+): {
+  value: string;
+  detail: string;
+  confidence: Confidence;
+} {
+  if (key === "source") {
+    return {
+      value: chain.source?.codec ?? "Unknown",
+      detail: chain.source?.container ?? "Telemetry pending",
+      confidence: chain.source?.codec_confidence ?? "unknown",
+    };
+  }
+
+  const node = chain[key];
+  return {
+    value: node?.name ?? "Unknown",
+    detail: node?.kind ?? "Telemetry pending",
+    confidence: node?.name_confidence ?? "unknown",
+  };
 }
 
 function StatusChip({
@@ -167,8 +390,8 @@ function StatusChip({
     tone === "online"
       ? "border-emerald-400/35 bg-emerald-400/12 text-emerald-100"
       : tone === "warning"
-      ? "border-amber-300/35 bg-amber-300/12 text-amber-50"
-      : "border-white/10 bg-white/5 text-slate-200";
+        ? "border-amber-300/35 bg-amber-300/12 text-amber-50"
+        : "border-white/10 bg-white/5 text-slate-200";
 
   return (
     <span
@@ -193,16 +416,20 @@ function Panel({
   title,
   eyebrow,
   children,
+  online = false,
 }: {
   title: string;
   eyebrow: string;
   children: React.ReactNode;
+  online?: boolean;
 }) {
   return (
-    <section className="rounded-2xl border border-white/8 bg-white/[0.035] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.22)] backdrop-blur-sm">
+    <section
+      className={`glass-panel dashboard-card rounded-[24px] border border-white/8 p-5 shadow-[0_20px_44px_rgba(0,0,0,0.24)] ${online ? "dashboard-card-online" : ""}`}
+    >
       <div className="mb-4 flex items-start justify-between gap-4">
         <div>
-          <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">{eyebrow}</p>
+          <p className="text-[11px] uppercase tracking-[0.26em] text-slate-500">{eyebrow}</p>
           <h2 className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-slate-100">
             {title}
           </h2>
@@ -225,7 +452,7 @@ function DataLine({
   return (
     <div className="flex items-center justify-between gap-3 border-t border-white/6 py-3 first:border-t-0 first:pt-0 last:pb-0">
       <span className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</span>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 text-right">
         <span className="text-sm text-slate-100">{value}</span>
         {confidence ? <ConfidenceChip confidence={confidence} /> : null}
       </div>
@@ -235,155 +462,167 @@ function DataLine({
 
 function DeviceCard({
   label,
-  device,
+  value,
+  detail,
+  confidence,
 }: {
   label: string;
-  device: DeviceState | null;
+  value: string;
+  detail: string;
+  confidence: Confidence;
 }) {
   return (
-    <div className="rounded-xl border border-white/8 bg-black/20 p-4">
+    <div className="dashboard-card rounded-2xl border border-white/8 bg-black/20 p-4">
       <div className="flex items-center justify-between gap-3">
         <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
-        <ConfidenceChip confidence={device?.kind_confidence ?? "unknown"} />
+        <ConfidenceChip confidence={confidence} />
       </div>
-      <p className="mt-4 text-sm font-medium text-slate-100">
-        {device?.name ?? "Unknown"}
-      </p>
-      <p className="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">
-        {device?.kind ? device.kind.replace(/_/g, " ") : "Awaiting telemetry"}
-      </p>
+      <p className="mt-4 text-sm font-medium text-slate-100">{value}</p>
+      <p className="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">{detail}</p>
     </div>
   );
 }
 
-function shieldStatusLabel(shield: ShieldState | null): string {
-  if (shield === null || shield.configured === false) {
-    return "Unknown";
-  }
-
-  if (shield.reachable === true) {
-    return "Reachable";
-  }
-
-  if (shield.reachable === false) {
-    return "Unreachable";
-  }
-
-  return "Unknown";
+function SourceBadge({
+  label,
+  configured,
+  confidence,
+}: {
+  label: string;
+  configured: boolean;
+  confidence: Confidence;
+}) {
+  return (
+    <div className="rounded-xl border border-white/8 bg-black/20 px-3 py-3">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
+        <ConfidenceChip confidence={confidence} />
+      </div>
+      <p className="mt-3 text-sm text-slate-100">{configured ? "Configured" : "Unconfigured"}</p>
+    </div>
+  );
 }
 
-function backendApiStateLabel(state: LoadState): string {
-  const failures = state.errors.filter((item) => item.includes("API:")).length;
-  if (failures === 0 && state.health !== null && state.playback !== null && state.chain !== null && state.shield !== null) {
-    return "Healthy";
-  }
-
-  if (failures > 0) {
-    return "Degraded";
-  }
-
-  return "Checking";
+function EmptyState({ text }: { text: string }) {
+  return (
+    <div className="rounded-2xl border border-dashed border-white/10 bg-black/15 px-4 py-6 text-sm text-slate-300">
+      {text}
+    </div>
+  );
 }
 
 export default function Dashboard() {
-  const [state, setState] = useState<LoadState>(initialState);
+  const [state, setState] = useState<DashboardState>(defaultState);
   const [isLoading, setIsLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [apiBaseUrl, setApiBaseUrl] = useState("http://127.0.0.1:8000");
 
   useEffect(() => {
     let cancelled = false;
 
-    async function loadDashboard(): Promise<void> {
-      setIsLoading(true);
+    async function refreshDashboard(initialLoad: boolean): Promise<void> {
+      if (initialLoad) {
+        setIsLoading(true);
+      } else {
+        setIsRefreshing(true);
+      }
 
-      const [healthResult, playbackResult, chainResult, shieldResult] = await Promise.allSettled([
+      const [healthResult, overviewResult] = await Promise.allSettled([
         fetchApiJson<HealthStatus>("/health"),
-        fetchApiJson<PlaybackState>("/playback/current"),
-        fetchApiJson<ChainSnapshot>("/chain/current"),
-        fetchApiJson<ShieldState>("/devices/shield/state"),
+        fetchApiJson<SystemOverview>("/system/overview"),
       ]);
 
       if (cancelled) {
         return;
       }
 
-      const errors: string[] = [];
-
+      const diagnostics: string[] = [];
       if (healthResult.status === "rejected") {
-        errors.push(`Health API: ${healthResult.reason instanceof Error ? healthResult.reason.message : "Unknown error"}`);
+        diagnostics.push("Health endpoint is unavailable.");
+      }
+      if (overviewResult.status === "rejected") {
+        diagnostics.push("System overview is unavailable.");
       }
 
-      if (playbackResult.status === "rejected") {
-        errors.push(`Playback API: ${playbackResult.reason instanceof Error ? playbackResult.reason.message : "Unknown error"}`);
-      }
-
-      if (chainResult.status === "rejected") {
-        errors.push(`Chain API: ${chainResult.reason instanceof Error ? chainResult.reason.message : "Unknown error"}`);
-      }
-
-      if (shieldResult.status === "rejected") {
-        errors.push(`Shield API: ${shieldResult.reason instanceof Error ? shieldResult.reason.message : "Unknown error"}`);
-      }
-
-      setState({
-        health: healthResult.status === "fulfilled" ? healthResult.value : null,
-        playback: playbackResult.status === "fulfilled" ? playbackResult.value : null,
-        chain: chainResult.status === "fulfilled" ? chainResult.value : null,
-        shield: shieldResult.status === "fulfilled" ? shieldResult.value : null,
-        errors,
-      });
+      const sampleTime = new Date().toISOString();
+      setState((previous) => ({
+        health: healthResult.status === "fulfilled" ? healthResult.value : previous.health,
+        overview:
+          overviewResult.status === "fulfilled"
+            ? normalizeOverview(overviewResult.value)
+            : previous.overview,
+        diagnostics,
+        lastUpdated:
+          healthResult.status === "fulfilled" || overviewResult.status === "fulfilled"
+            ? sampleTime
+            : previous.lastUpdated,
+      }));
       setIsLoading(false);
+      setIsRefreshing(false);
     }
 
-    loadDashboard().catch(() => {
+    refreshDashboard(true).catch(() => {
       if (!cancelled) {
         setState({
           health: null,
-          playback: null,
-          chain: null,
-          shield: null,
-          errors: ["Dashboard refresh failed."],
+          overview: null,
+          diagnostics: ["Dashboard refresh is unavailable."],
+          lastUpdated: null,
         });
         setIsLoading(false);
+        setIsRefreshing(false);
       }
     });
 
+    const interval = window.setInterval(() => {
+      refreshDashboard(false).catch(() => {
+        if (!cancelled) {
+          setState((previous) => ({
+            ...previous,
+            diagnostics: ["Dashboard refresh is unavailable."],
+          }));
+          setIsRefreshing(false);
+        }
+      });
+    }, REFRESH_INTERVAL_MS);
+
     return () => {
       cancelled = true;
+      window.clearInterval(interval);
     };
   }, []);
 
-  const health = state.health;
-  const playback = state.playback;
-  const chain = state.chain;
-  const shield = state.shield;
-  const systemOnline = health?.status === "ok";
-  const backendApiState = backendApiStateLabel(state);
-  const warnings = [
-    ...(chain?.warnings ?? []),
-    ...(shield?.warnings ?? []),
-    ...(playback?.error ? [playback.error] : []),
-    ...state.errors,
-  ];
+  useEffect(() => {
+    setApiBaseUrl(resolveApiBaseUrl());
+  }, []);
 
+  const health = state.health ?? defaultHealth;
+  const overview = useMemo(() => normalizeOverview(state.overview), [state.overview]);
+  const playback = overview.playback;
+  const chain = overview.chain;
+  const shield = overview.shield;
+  const configuredSources = overview.configured_sources;
+  const activeSession = playback.sessions[0] ?? null;
+  const systemOnline = health.status === "ok";
+  const apiState = apiStateLabel(isLoading, state.health, state.overview, state.diagnostics);
+  const diagnostics = [...overview.warnings, ...state.diagnostics];
+  const sourceSummary = chain.source;
+  const output = chain.output_state;
   return (
-    <main className="cinema-ambient min-h-screen text-slate-100">
-      <div className="mx-auto flex min-h-screen max-w-[1600px] gap-6 px-5 py-5 lg:px-8">
-        <aside className="hidden w-64 shrink-0 flex-col justify-between rounded-[28px] border border-white/8 bg-black/25 p-5 backdrop-blur-md lg:flex">
+    <main className="cinema-ambient signal-grid min-h-screen text-slate-100">
+      <div className="mx-auto flex min-h-screen max-w-[1600px] gap-6 px-4 py-5 md:px-6 xl:px-8">
+        <aside className="hidden w-72 shrink-0 flex-col justify-between rounded-[28px] border border-white/8 bg-black/25 p-5 backdrop-blur-md lg:flex">
           <div>
-            <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] p-4 ${systemOnline ? "dashboard-card-online" : ""}`}>
-              <p className="text-[11px] uppercase tracking-[0.28em] text-slate-500">
-                Cinema Machina
-              </p>
-              <h1 className="mt-3 text-xl font-semibold tracking-[0.08em] text-slate-50">
-                Core
-              </h1>
+            <div className={`glass-panel dashboard-card rounded-[24px] border border-white/8 p-5 ${systemOnline ? "dashboard-card-online" : ""}`}>
+              <p className="text-[11px] uppercase tracking-[0.28em] text-slate-500">Cinema Machina</p>
+              <h1 className="mt-3 text-2xl font-semibold tracking-[0.08em] text-slate-50">Core</h1>
               <p className="mt-3 text-sm leading-6 text-slate-400">
-                Monitoring and control-plane foundation for high-end playback chains.
+                Local-first monitoring for the source-to-screen playback chain.
               </p>
             </div>
 
             <nav className="mt-8 space-y-2">
-              {navItems.map((item, index) => (
+              {navigation.map((item, index) => (
                 <div
                   key={item}
                   className={`rounded-xl border px-4 py-3 text-sm tracking-[0.12em] ${
@@ -398,282 +637,262 @@ export default function Dashboard() {
             </nav>
           </div>
 
-          <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.035] p-4 ${systemOnline ? "dashboard-card-online" : ""}`}>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">
-              Runtime
-            </p>
+          <div className={`glass-panel dashboard-card rounded-[24px] border border-white/8 p-4 ${systemOnline ? "dashboard-card-online" : ""}`}>
+            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Refresh Loop</p>
             <div className="mt-3 flex flex-wrap gap-2">
-              <StatusChip label={systemOnline ? "System Online" : "Checking System"} tone={systemOnline ? "online" : "default"} />
-              <ConfidenceChip confidence={health?.confidence ?? "unknown"} />
+              <StatusChip
+                label={isRefreshing ? "Refreshing" : "Monitoring"}
+                tone={isRefreshing ? "warning" : "online"}
+              />
+              <StatusChip label={formatLastUpdated(state.lastUpdated)} />
             </div>
+            <p className="mt-4 text-xs leading-6 text-slate-400">
+              Polling every 5 seconds with a production-safe read-only overview.
+            </p>
           </div>
         </aside>
 
         <div className="flex-1">
-          <header className={`dashboard-card rounded-[28px] border border-white/8 bg-black/20 px-5 py-5 backdrop-blur-md ${systemOnline ? "dashboard-card-online" : ""}`}>
-            <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
+          <header className={`glass-panel dashboard-card rounded-[28px] border border-white/8 px-5 py-5 ${systemOnline ? "dashboard-card-online" : ""}`}>
+            <div className="flex flex-col gap-5 xl:flex-row xl:items-end xl:justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.28em] text-slate-500">
-                  Production Dashboard Foundation
+                  Production Monitoring UI
                 </p>
-                <h1 className="mt-3 text-2xl font-semibold tracking-[0.08em] text-slate-50 md:text-3xl">
-                  Playback Chain Control Plane
+                <h1 className="mt-3 text-2xl font-semibold tracking-[0.06em] text-slate-50 md:text-3xl">
+                  Playback Chain Control Room
                 </h1>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
+                  A truthful monitoring surface for source capability, server decisions, client state, and device recognition.
+                </p>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-4">
+              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
                 <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${systemOnline ? "dashboard-card-online" : ""}`}>
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
-                    System Online
-                  </p>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">System Online</p>
                   <div className="mt-3 flex items-center gap-2">
-                    <StatusChip
-                      label={systemOnline ? "Online" : isLoading ? "Loading" : "Offline"}
-                      tone={systemOnline ? "online" : "default"}
-                    />
+                    <StatusChip label={systemOnline ? "Online" : isLoading ? "Checking" : "Offline"} tone={systemOnline ? "online" : "default"} />
                   </div>
                 </div>
                 <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${systemOnline ? "dashboard-card-online" : ""}`}>
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
-                    Signal Confidence
-                  </p>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">Signal Confidence</p>
                   <div className="mt-3">
-                    <ConfidenceChip confidence={chain?.confidence ?? "unknown"} />
+                    <ConfidenceChip confidence={chain.confidence} />
                   </div>
                 </div>
-                <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${systemOnline ? "dashboard-card-online" : ""}`}>
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
-                    Active Playback
-                  </p>
-                  <p className="mt-3 text-lg font-medium text-slate-100">
-                    {chain?.active ? "Detected" : "No active playback"}
+                <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${chain.active ? "dashboard-card-online" : ""}`}>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">Active Playback</p>
+                  <p className="mt-3 text-base font-medium text-slate-100">
+                    {chain.active ? "Detected" : "No active playback"}
                   </p>
                 </div>
-                <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${backendApiState === "Healthy" ? "dashboard-card-online" : ""}`}>
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
-                    Backend API State
-                  </p>
-                  <div className="mt-3 flex items-center gap-2">
-                    <StatusChip
-                      label={backendApiState}
-                      tone={backendApiState === "Healthy" ? "online" : backendApiState === "Degraded" ? "warning" : "default"}
-                    />
+                <div className={`dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 ${apiState === "Healthy" ? "dashboard-card-online" : ""}`}>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">Backend API State</p>
+                  <div className="mt-3">
+                    <StatusChip label={apiState} tone={apiStateTone(apiState)} />
                   </div>
+                </div>
+                <div className="dashboard-card rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3">
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">Last Updated</p>
+                  <p className="mt-3 text-base font-medium text-slate-100">{formatLastUpdated(state.lastUpdated)}</p>
                 </div>
               </div>
             </div>
           </header>
 
-          <div className="mt-6 grid gap-6 xl:grid-cols-[1.8fr_1fr]">
-            <Panel title="Now Playing Chain" eyebrow="Playback Chain">
-              <div className="grid gap-3 md:grid-cols-5">
-                {chainStages.map((stage) => {
-                  const item =
-                    stage.key === "source"
-                      ? chain?.source
-                      : chain?.[stage.key];
-
-                  const value =
-                    stage.key === "source"
-                      ? chain?.source?.codec ?? "Unknown"
-                      : (item as DeviceState | null)?.name ?? "Unknown";
-
-                  const confidence =
-                    stage.key === "source"
-                      ? chain?.source?.codec_confidence ?? "unknown"
-                      : (item as DeviceState | null)?.name_confidence ?? "unknown";
-
-                  const detail =
-                    stage.key === "source"
-                      ? chain?.source?.container ?? "Media metadata unavailable"
-                      : (item as DeviceState | null)?.kind ?? "Telemetry pending";
+          <div className="mt-6 grid gap-6 xl:grid-cols-[1.7fr_1fr]">
+            <Panel title="Live Playback Chain Map" eyebrow="Playback Chain" online={systemOnline}>
+              <div className={`grid gap-3 md:grid-cols-5 ${isLoading ? "scanline-loading" : ""}`}>
+                {chainNodes.map((node) => {
+                  const presentation = getChainNodePresentation(node.key, chain);
 
                   return (
                     <div
-                      key={stage.label}
-                      className={`dashboard-card relative rounded-xl border border-white/8 bg-black/20 p-4 ${systemOnline ? "dashboard-card-online" : ""}`}
+                      key={node.label}
+                      className={`chain-link dashboard-card rounded-2xl border border-white/8 bg-black/20 p-4 ${systemOnline ? "dashboard-card-online" : ""}`}
                     >
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
-                        {stage.label}
-                      </p>
-                      {isLoading ? (
-                        <div className="loading-sheen mt-4 h-5 rounded-md" />
-                      ) : (
-                        <p className="mt-4 text-sm font-medium text-slate-100">{value}</p>
-                      )}
+                      <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500">{node.label}</p>
+                      <p className="mt-4 text-sm font-medium text-slate-100">{formatDecision(presentation.value)}</p>
                       <p className="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">
-                        {detail.replace(/_/g, " ")}
+                        {formatDecision(presentation.detail)}
                       </p>
                       <div className="mt-4">
-                        <ConfidenceChip confidence={confidence} />
+                        <ConfidenceChip confidence={presentation.confidence} />
                       </div>
                     </div>
                   );
                 })}
               </div>
 
-              <div className="dashboard-card mt-5 rounded-xl border border-dashed border-white/12 bg-black/15 p-4">
-                <p className="text-sm text-slate-300">
-                  {chain?.active
-                    ? "Chain visibility is active. Upstream playback metadata is live, while downstream device and signal telemetry remain intentionally unknown until dedicated integrations are added."
-                    : "No active playback. The dashboard is online and waiting for a real session before it renders a full source-to-output chain."}
-                </p>
+              <div className="mt-5">
+                {chain.active ? (
+                  <div className="rounded-2xl border border-dashed border-white/10 bg-black/15 px-4 py-4 text-sm leading-6 text-slate-300">
+                    Live chain data is anchored in real media-session metadata. Downstream display and audio fields remain intentionally unknown until those integrations are available.
+                  </div>
+                ) : (
+                  <EmptyState text="No active playback detected" />
+                )}
               </div>
             </Panel>
 
-            <Panel title="Warnings and Diagnostics" eyebrow="Diagnostics">
-              {warnings.length > 0 ? (
+            <Panel title="Configured Sources" eyebrow="System Inputs" online={systemOnline}>
+              <div className="grid gap-3">
+                <SourceBadge label="Plex" configured={configuredSources.plex.configured} confidence={configuredSources.plex.confidence} />
+                <SourceBadge label="Jellyfin" configured={configuredSources.jellyfin.configured} confidence={configuredSources.jellyfin.confidence} />
+                <SourceBadge label="Shield" configured={configuredSources.shield.configured} confidence={configuredSources.shield.confidence} />
+              </div>
+              <div className="mt-5 rounded-2xl border border-white/8 bg-black/20 px-4 py-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-slate-500">API Connection</p>
+                <p className="mt-3 text-sm text-slate-100">{apiBaseUrl}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <StatusChip label={apiState} tone={apiStateTone(apiState)} />
+                  <ConfidenceChip confidence={health.confidence} />
+                </div>
+              </div>
+            </Panel>
+          </div>
+
+          <div className="mt-6 grid gap-6 xl:grid-cols-2">
+            <Panel title="Source File Capability" eyebrow="Source Intelligence" online={systemOnline}>
+              {chain.active ? (
+                <div className="grid gap-2">
+                  <DataLine label="Video Codec" value={formatDecision(sourceSummary?.codec)} confidence={sourceSummary?.codec_confidence} />
+                  <DataLine label="Container" value={formatDecision(sourceSummary?.container)} confidence={sourceSummary?.container_confidence} />
+                  <DataLine label="Bitrate" value={formatValue(sourceSummary?.bitrate_kbps)} confidence={sourceSummary?.bitrate_confidence} />
+                  <DataLine label="HDR" value={formatDecision(sourceSummary?.hdr_format)} confidence={sourceSummary?.hdr_confidence} />
+                  <DataLine label="Audio Codec" value={formatDecision(sourceSummary?.audio_codec)} confidence={sourceSummary?.audio_codec_confidence} />
+                </div>
+              ) : (
+                <EmptyState text="No active playback detected" />
+              )}
+            </Panel>
+
+            <Panel title="Media Server Decision" eyebrow="Server State" online={systemOnline}>
+              <div className="grid gap-2">
+                <DataLine label="Server" value={formatDecision(chain.media_server?.name)} confidence={chain.media_server?.name_confidence} />
+                <DataLine label="Decision" value={formatDecision(activeSession?.decision)} confidence={activeSession?.confidence ?? "unknown"} />
+                <DataLine label="User" value={formatDecision(activeSession?.user)} />
+                <DataLine
+                  label="Checked Sources"
+                  value={playback.sources_checked.length > 0 ? playback.sources_checked.map(formatDecision).join(", ") : "None"}
+                />
+              </div>
+            </Panel>
+
+            <Panel title="Playback Client Device" eyebrow="Client State" online={systemOnline}>
+              <div className="grid gap-2">
+                <DataLine label="Client" value={formatDecision(chain.playback_client?.name)} confidence={chain.playback_client?.name_confidence} />
+                <DataLine label="Kind" value={formatDecision(chain.playback_client?.kind)} confidence={chain.playback_client?.kind_confidence} />
+                <DataLine label="Reachable" value={statusLabel(chain.playback_client?.reachable)} confidence={chain.playback_client?.reachable_confidence ?? "unknown"} />
+                <DataLine label="Foreground App" value={formatDecision(shield.foreground_app_name ?? chain.playback_client?.foreground_app)} confidence={shield.foreground_app_name ? shield.foreground_app_name_confidence : chain.playback_client?.foreground_app_confidence ?? "unknown"} />
+                <DataLine label="Foreground Package" value={formatDecision(shield.foreground_package ?? chain.playback_client?.foreground_package)} confidence={shield.foreground_package ? shield.foreground_package_confidence : chain.playback_client?.foreground_package_confidence ?? "unknown"} />
+              </div>
+            </Panel>
+
+            <Panel title="Display Device" eyebrow="Display State" online={systemOnline}>
+              <div className="grid gap-2">
+                <DataLine label="Display" value={formatDecision(chain.display_device?.name)} confidence={chain.display_device?.name_confidence} />
+                <DataLine label="Class" value={formatDecision(chain.display_device?.kind)} confidence={chain.display_device?.kind_confidence} />
+                <DataLine label="Display Mode" value={formatDecision(shield.display_mode ?? output?.video_mode)} confidence={shield.display_mode ? shield.display_mode_confidence : output?.video_mode_confidence ?? "unknown"} />
+                <DataLine label="Signal Confidence" value={chain.active ? "Monitoring" : "Idle"} confidence={chain.confidence} />
+              </div>
+            </Panel>
+
+            <Panel title="Audio Chain" eyebrow="Audio State" online={systemOnline}>
+              <div className="grid gap-2">
+                <DataLine label="Audio Device" value={formatDecision(chain.audio_device?.name)} confidence={chain.audio_device?.name_confidence} />
+                <DataLine label="Device Class" value={formatDecision(chain.audio_device?.kind)} confidence={chain.audio_device?.kind_confidence} />
+                <DataLine label="Audio Mode" value={formatDecision(output?.audio_mode)} confidence={output?.audio_mode_confidence ?? "unknown"} />
+                <DataLine
+                  label="Passthrough"
+                  value={
+                    output?.passthrough === true
+                      ? "Enabled"
+                      : output?.passthrough === false
+                        ? "Disabled"
+                        : "Unknown"
+                  }
+                  confidence={output?.passthrough_confidence ?? "unknown"}
+                />
+              </div>
+            </Panel>
+
+            <Panel title="Signal Integrity" eyebrow="Transport State" online={systemOnline}>
+              <div className="grid gap-2">
+                <DataLine label="Video Mode" value={formatDecision(output?.video_mode)} confidence={output?.video_mode_confidence ?? "unknown"} />
+                <DataLine label="Audio Mode" value={formatDecision(output?.audio_mode)} confidence={output?.audio_mode_confidence ?? "unknown"} />
+                <DataLine
+                  label="Passthrough"
+                  value={
+                    output?.passthrough === true
+                      ? "Enabled"
+                      : output?.passthrough === false
+                        ? "Disabled"
+                        : "Unknown"
+                  }
+                  confidence={output?.passthrough_confidence ?? "unknown"}
+                />
+                <DataLine label="Shield Display Mode" value={formatDecision(shield.display_mode)} confidence={shield.display_mode_confidence} />
+                <DataLine label="Overview Confidence" value={formatDecision(chain.confidence)} confidence={chain.confidence} />
+              </div>
+            </Panel>
+          </div>
+
+          <div className="mt-6 grid gap-6 xl:grid-cols-[1.25fr_0.95fr]">
+            <Panel title="Device Recognition" eyebrow="Read-Only Device Monitor" online={systemOnline}>
+              <div className="grid gap-3 md:grid-cols-3">
+                <DeviceCard
+                  label="Shield"
+                  value={shieldReachabilityLabel(shield)}
+                  detail={shield.foreground_app_name ?? "Foreground app unknown"}
+                  confidence={shield.confidence}
+                />
+                <DeviceCard
+                  label="Display"
+                  value={formatDecision(chain.display_device?.name)}
+                  detail={formatDecision(shield.display_mode)}
+                  confidence={shield.display_mode ? shield.display_mode_confidence : chain.display_device?.name_confidence ?? "unknown"}
+                />
+                <DeviceCard
+                  label="Audio"
+                  value={formatDecision(chain.audio_device?.name)}
+                  detail={
+                    output?.passthrough === true
+                      ? "Passthrough enabled"
+                      : output?.passthrough === false
+                        ? "Passthrough disabled"
+                        : "Passthrough unknown"
+                  }
+                  confidence={output?.passthrough_confidence ?? chain.audio_device?.name_confidence ?? "unknown"}
+                />
+              </div>
+
+              <div className="mt-5 grid gap-2">
+                <DataLine label="Configured" value={shield.configured ? "Yes" : "No"} confidence="confirmed" />
+                <DataLine label="Reachable" value={statusLabel(shield.reachable)} confidence={shield.reachable_confidence} />
+                <DataLine label="ADB Connected" value={statusLabel(shield.adb_connected)} confidence={shield.adb_connected_confidence} />
+                <DataLine label="Foreground App" value={formatDecision(shield.foreground_app_name)} confidence={shield.foreground_app_name_confidence} />
+                <DataLine label="Foreground Package" value={formatDecision(shield.foreground_package)} confidence={shield.foreground_package_confidence} />
+                <DataLine label="Media Session" value={formatDecision(shield.media_session_summary)} confidence={shield.media_session_summary_confidence} />
+                <DataLine label="Display Mode" value={formatDecision(shield.display_mode)} confidence={shield.display_mode_confidence} />
+              </div>
+            </Panel>
+
+            <Panel title="Diagnostics and Warnings" eyebrow="System Diagnostics" online={systemOnline}>
+              {diagnostics.length === 0 ? (
+                <EmptyState text="No diagnostics raised" />
+              ) : (
                 <div className="space-y-3">
-                  {warnings.map((warning) => (
+                  {diagnostics.map((warning) => (
                     <div
                       key={warning}
-                      className="rounded-xl border border-amber-300/20 bg-amber-300/8 px-4 py-3 text-sm text-amber-50"
+                      className="rounded-2xl border border-amber-300/20 bg-amber-300/6 px-4 py-4 text-sm leading-6 text-amber-50"
                     >
                       {warning}
                     </div>
                   ))}
                 </div>
-              ) : (
-                <div className="dashboard-card rounded-xl border border-white/8 bg-black/20 p-4">
-                  <p className="text-sm text-slate-300">
-                    No diagnostics raised.
-                  </p>
-                </div>
               )}
-            </Panel>
-          </div>
-
-          <div className="mt-6 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
-            <Panel title="Device Recognition" eyebrow="Shield, Display, Audio">
-              <div className="grid gap-3">
-                <div className={`dashboard-card rounded-xl border border-white/8 bg-black/20 p-4 ${shield?.reachable ? "dashboard-card-online" : ""}`}>
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-xs uppercase tracking-[0.18em] text-slate-500">Shield</p>
-                    <ConfidenceChip confidence={shield?.confidence ?? "unknown"} />
-                  </div>
-                  <p className="mt-4 text-sm font-medium text-slate-100">
-                    {shieldStatusLabel(shield)}
-                  </p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">
-                    {shield?.foreground_app_name ?? shield?.foreground_package ?? "Foreground app unavailable"}
-                  </p>
-                </div>
-                <DeviceCard label="Display" device={chain?.display_device ?? null} />
-                <DeviceCard label="Audio" device={chain?.audio_device ?? null} />
-              </div>
-
-              <div className="mt-4 space-y-1">
-                <DataLine
-                  label="Configured"
-                  value={shield?.configured ? "Configured" : "Unknown"}
-                  confidence={shield?.configured ? "inferred" : "unknown"}
-                />
-                <DataLine
-                  label="Reachable"
-                  value={shieldStatusLabel(shield)}
-                  confidence={shield?.reachable_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="ADB Connected"
-                  value={formatValue(shield?.adb_connected)}
-                  confidence={shield?.adb_connected_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Foreground App Name"
-                  value={shield?.foreground_app_name ?? "Unknown"}
-                  confidence={shield?.foreground_app_name_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Foreground App"
-                  value={shield?.foreground_app ?? "Unknown"}
-                  confidence={shield?.foreground_app_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Foreground Package"
-                  value={shield?.foreground_package ?? "Unknown"}
-                  confidence={shield?.foreground_package_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Media Session"
-                  value={shield?.media_session_summary ?? "Unknown"}
-                  confidence={shield?.media_session_summary_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Display Mode"
-                  value={shield?.display_mode ?? "Unknown"}
-                  confidence={shield?.display_mode_confidence ?? "unknown"}
-                />
-              </div>
-            </Panel>
-
-            <Panel title="Media Server" eyebrow="Upstream Session">
-              <div className="space-y-1">
-                <DataLine
-                  label="Server"
-                  value={chain?.media_server?.name ?? "Unknown"}
-                  confidence={chain?.media_server?.name_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Sessions"
-                  value={String(playback?.sessions.length ?? 0)}
-                />
-                <DataLine
-                  label="Decision"
-                  value={playback?.sessions[0]?.decision ?? "Unknown"}
-                />
-              </div>
-            </Panel>
-
-            <Panel title="Signal Integrity" eyebrow="Video and Audio">
-              <div className="space-y-1">
-                <DataLine
-                  label="Source Codec"
-                  value={formatValue(chain?.source?.codec)}
-                  confidence={chain?.source?.codec_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Container"
-                  value={formatValue(chain?.source?.container)}
-                  confidence={chain?.source?.container_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Audio Codec"
-                  value={formatValue(chain?.source?.audio_codec)}
-                  confidence={chain?.source?.audio_codec_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Passthrough"
-                  value={formatValue(chain?.output_state?.passthrough)}
-                  confidence={chain?.output_state?.passthrough_confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Display Mode"
-                  value={shield?.display_mode ?? "Unknown"}
-                  confidence={shield?.display_mode_confidence ?? "unknown"}
-                />
-              </div>
-            </Panel>
-
-            <Panel title="System Status" eyebrow="Health and Activity">
-              <div className="space-y-1">
-                <DataLine
-                  label="Health"
-                  value={systemOnline ? "System online" : isLoading ? "Loading" : "Unavailable"}
-                  confidence={health?.confidence ?? "unknown"}
-                />
-                <DataLine
-                  label="Source"
-                  value={playback?.sources_checked.length ? playback.sources_checked.join(", ") : "None"}
-                />
-                <DataLine
-                  label="Playback"
-                  value={chain?.active ? playback?.sessions[0]?.title ?? "Active session" : "No active playback"}
-                />
-                <DataLine
-                  label="Client"
-                  value={playback?.sessions[0]?.client_name ?? "Unknown"}
-                />
-              </div>
             </Panel>
           </div>
         </div>

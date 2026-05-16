@@ -29,11 +29,15 @@ _DISPLAY_MODE_PATTERN = re.compile(r"(?P<width>\d{3,4}) x (?P<height>\d{3,4})(?:
 
 _APP_NAME_MAP: dict[str, str] = {
     "com.plexapp.android": "Plex",
+    "org.xbmc.kodi": "Kodi",
     "org.jellyfin.androidtv": "Jellyfin",
     "com.netflix.ninja": "Netflix",
     "com.google.android.youtube.tv": "YouTube",
+    "com.google.android.youtube.tvunplugged": "YouTube",
+    "com.disney.disneyplus": "Disney+",
     "com.amazon.amazonvideo.livingroom": "Prime Video",
-    "tv.twitch.android.app": "Twitch",
+    "com.apple.atve.androidtv.appletv": "Apple TV",
+    "org.videolan.vlc": "VLC",
 }
 
 

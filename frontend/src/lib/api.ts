@@ -20,11 +20,28 @@ export function resolveApiBaseUrl(): string {
 }
 
 export async function fetchApiJson<T>(path: string): Promise<T> {
-  const response = await fetch(`${resolveApiBaseUrl()}${path}`);
+  const response = await fetch(`${resolveApiBaseUrl()}${path}`, {
+    headers: {
+      Accept: "application/json",
+    },
+    cache: "no-store",
+  });
+  const bodyText = await response.text();
 
-  if (!response.ok) {
-    throw new Error(`Request failed: ${response.status}`);
+  if (!bodyText.trim()) {
+    throw new Error(`Request failed (${response.status})`);
   }
 
-  return (await response.json()) as T;
+  let payload: unknown;
+  try {
+    payload = JSON.parse(bodyText);
+  } catch {
+    throw new Error("Invalid API response");
+  }
+
+  if (!response.ok) {
+    throw new Error(`Request failed (${response.status})`);
+  }
+
+  return payload as T;
 }

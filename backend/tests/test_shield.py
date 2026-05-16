@@ -81,6 +81,18 @@ class TestShieldAdbMonitor:
         assert state.reachable_confidence == Confidence.INFERRED
         assert "Shield is unreachable over ADB." in state.warnings
 
+    def test_known_package_maps_to_friendly_app_name(self) -> None:
+        monitor = ShieldAdbMonitor(shield_ip="192.168.1.143", adb_port=5555)
+
+        assert monitor._derive_app_name("org.xbmc.kodi") == "Kodi"
+        assert monitor._derive_app_name("com.disney.disneyplus") == "Disney+"
+        assert monitor._derive_app_name("org.videolan.vlc") == "VLC"
+
+    def test_unknown_package_falls_back_to_title_case_token(self) -> None:
+        monitor = ShieldAdbMonitor(shield_ip="192.168.1.143", adb_port=5555)
+
+        assert monitor._derive_app_name("com.example.customplayer") == "Customplayer"
+
 
 class TestShieldRoute:
     """API route for Shield state."""

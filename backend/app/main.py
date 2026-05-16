@@ -5,6 +5,7 @@ from app.api.routes.chain import router as chain_router
 from app.api.routes.devices import router as devices_router
 from app.api.routes.health import router as health_router
 from app.api.routes.playback import router as playback_router
+from app.api.routes.system import router as system_router
 
 LOCAL_DASHBOARD_ORIGINS = [
     "http://localhost:3000",
@@ -28,3 +29,4 @@ app.include_router(health_router)
 app.include_router(playback_router)
 app.include_router(chain_router)
 app.include_router(devices_router)
+app.include_router(system_router)
