@@ -8,1008 +8,1008 @@
       "file_type": "code",
       "source_file": "pyrightconfig.json",
       "source_location": "L1",
-      "id": "pyrightconfig_json",
       "community": 7,
-      "norm_label": "pyrightconfig.json"
+      "norm_label": "pyrightconfig.json",
+      "id": "pyrightconfig_json"
     },
     {
       "label": "pythonPath",
       "file_type": "code",
       "source_file": "pyrightconfig.json",
       "source_location": "L2",
-      "id": "cinema_machina_core_pyrightconfig_pythonpath",
       "community": 7,
-      "norm_label": "pythonpath"
+      "norm_label": "pythonpath",
+      "id": "cinema_machina_core_pyrightconfig_pythonpath"
     },
     {
       "label": "venvPath",
       "file_type": "code",
       "source_file": "pyrightconfig.json",
       "source_location": "L3",
-      "id": "cinema_machina_core_pyrightconfig_venvpath",
       "community": 7,
-      "norm_label": "venvpath"
+      "norm_label": "venvpath",
+      "id": "cinema_machina_core_pyrightconfig_venvpath"
     },
     {
       "label": "venv",
       "file_type": "code",
       "source_file": "pyrightconfig.json",
       "source_location": "L4",
-      "id": "cinema_machina_core_pyrightconfig_venv",
       "community": 7,
-      "norm_label": "venv"
+      "norm_label": "venv",
+      "id": "cinema_machina_core_pyrightconfig_venv"
     },
     {
       "label": "extraPaths",
       "file_type": "code",
       "source_file": "pyrightconfig.json",
       "source_location": "L5",
-      "id": "cinema_machina_core_pyrightconfig_extrapaths",
       "community": 7,
-      "norm_label": "extrapaths"
+      "norm_label": "extrapaths",
+      "id": "cinema_machina_core_pyrightconfig_extrapaths"
     },
     {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "backend/app/__init__.py",
       "source_location": "L1",
-      "id": "backend_app_init_py",
       "community": 11,
-      "norm_label": "__init__.py"
+      "norm_label": "__init__.py",
+      "id": "backend_app_init_py"
     },
     {
       "label": "main.py",
       "file_type": "code",
       "source_file": "backend/app/main.py",
       "source_location": "L1",
-      "id": "backend_app_main_py",
       "community": 12,
-      "norm_label": "main.py"
+      "norm_label": "main.py",
+      "id": "backend_app_main_py"
     },
     {
       "label": "settings.py",
       "file_type": "code",
       "source_file": "backend/app/config/settings.py",
       "source_location": "L1",
-      "id": "backend_app_config_settings_py",
       "community": 6,
-      "norm_label": "settings.py"
+      "norm_label": "settings.py",
+      "id": "backend_app_config_settings_py"
     },
     {
       "label": "Settings",
       "file_type": "code",
       "source_file": "backend/app/config/settings.py",
       "source_location": "L13",
-      "id": "config_settings_settings",
       "community": 6,
-      "norm_label": "settings"
+      "norm_label": "settings",
+      "id": "config_settings_settings"
     },
     {
       "label": "BaseSettings",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "basesettings",
       "community": 6,
-      "norm_label": "basesettings"
+      "norm_label": "basesettings",
+      "id": "basesettings"
     },
     {
       "label": "Application settings loaded from environment variables.  All credentials are opt",
       "file_type": "rationale",
       "source_file": "backend/app/config/settings.py",
       "source_location": "L1",
-      "id": "config_settings_rationale_1",
       "community": 6,
-      "norm_label": "application settings loaded from environment variables.  all credentials are opt"
+      "norm_label": "application settings loaded from environment variables.  all credentials are opt",
+      "id": "config_settings_rationale_1"
     },
     {
       "label": "Runtime configuration for Cinema Machina Core.      Values are read from the env",
       "file_type": "rationale",
       "source_file": "backend/app/config/settings.py",
       "source_location": "L14",
-      "id": "config_settings_rationale_14",
       "community": 6,
-      "norm_label": "runtime configuration for cinema machina core.      values are read from the env"
+      "norm_label": "runtime configuration for cinema machina core.      values are read from the env",
+      "id": "config_settings_rationale_14"
     },
     {
       "label": "playback.py",
       "file_type": "code",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L1",
-      "id": "backend_app_models_playback_py",
       "community": 3,
-      "norm_label": "playback.py"
+      "norm_label": "playback.py",
+      "id": "backend_app_models_playback_py"
     },
     {
       "label": "Confidence",
       "file_type": "code",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L18",
-      "id": "models_playback_confidence",
       "community": 3,
-      "norm_label": "confidence"
+      "norm_label": "confidence",
+      "id": "models_playback_confidence"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "str",
       "community": 3,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "str"
     },
     {
       "label": "Enum",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "enum",
       "community": 3,
-      "norm_label": "enum"
+      "norm_label": "enum",
+      "id": "enum"
     },
     {
       "label": "PlaybackSource",
       "file_type": "code",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L34",
-      "id": "models_playback_playbacksource",
       "community": 3,
-      "norm_label": "playbacksource"
+      "norm_label": "playbacksource",
+      "id": "models_playback_playbacksource"
     },
     {
       "label": "VideoState",
       "file_type": "code",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L42",
-      "id": "models_playback_videostate",
       "community": 1,
-      "norm_label": "videostate"
+      "norm_label": "videostate",
+      "id": "models_playback_videostate"
     },
     {
       "label": "BaseModel",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "basemodel",
       "community": 1,
-      "norm_label": "basemodel"
+      "norm_label": "basemodel",
+      "id": "basemodel"
     },
     {
       "label": "AudioState",
       "file_type": "code",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L61",
-      "id": "models_playback_audiostate",
       "community": 1,
-      "norm_label": "audiostate"
+      "norm_label": "audiostate",
+      "id": "models_playback_audiostate"
     },
     {
       "label": "PlaybackDecision",
       "file_type": "code",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L76",
-      "id": "models_playback_playbackdecision",
       "community": 3,
-      "norm_label": "playbackdecision"
+      "norm_label": "playbackdecision",
+      "id": "models_playback_playbackdecision"
     },
     {
       "label": "SessionState",
       "file_type": "code",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L85",
-      "id": "models_playback_sessionstate",
       "community": 1,
-      "norm_label": "sessionstate"
+      "norm_label": "sessionstate",
+      "id": "models_playback_sessionstate"
     },
     {
       "label": "PlaybackCurrentResponse",
       "file_type": "code",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L111",
-      "id": "models_playback_playbackcurrentresponse",
       "community": 1,
-      "norm_label": "playbackcurrentresponse"
+      "norm_label": "playbackcurrentresponse",
+      "id": "models_playback_playbackcurrentresponse"
     },
     {
       "label": "Playback state Pydantic models.  Every field that describes a playback attribute",
       "file_type": "rationale",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L1",
-      "id": "models_playback_rationale_1",
       "community": 3,
-      "norm_label": "playback state pydantic models.  every field that describes a playback attribute"
+      "norm_label": "playback state pydantic models.  every field that describes a playback attribute",
+      "id": "models_playback_rationale_1"
     },
     {
       "label": "Confidence level for a playback attribute.      confirmed: Value was reported di",
       "file_type": "rationale",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L19",
-      "id": "models_playback_rationale_19",
       "community": 3,
-      "norm_label": "confidence level for a playback attribute.      confirmed: value was reported di"
+      "norm_label": "confidence level for a playback attribute.      confirmed: value was reported di",
+      "id": "models_playback_rationale_19"
     },
     {
       "label": "Which media server reported this session.",
       "file_type": "rationale",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L35",
-      "id": "models_playback_rationale_35",
       "community": 3,
-      "norm_label": "which media server reported this session."
+      "norm_label": "which media server reported this session.",
+      "id": "models_playback_rationale_35"
     },
     {
       "label": "Video stream attributes for the current session.      Attributes:         codec:",
       "file_type": "rationale",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L43",
-      "id": "models_playback_rationale_43",
       "community": 1,
-      "norm_label": "video stream attributes for the current session.      attributes:         codec:"
+      "norm_label": "video stream attributes for the current session.      attributes:         codec:",
+      "id": "models_playback_rationale_43"
     },
     {
       "label": "How the media server is delivering the stream to the client.",
       "file_type": "rationale",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L77",
-      "id": "models_playback_rationale_77",
       "community": 3,
-      "norm_label": "how the media server is delivering the stream to the client."
+      "norm_label": "how the media server is delivering the stream to the client.",
+      "id": "models_playback_rationale_77"
     },
     {
       "label": "Full playback session state snapshot.      Attributes:         source: Which med",
       "file_type": "rationale",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L86",
-      "id": "models_playback_rationale_86",
       "community": 1,
-      "norm_label": "full playback session state snapshot.      attributes:         source: which med"
+      "norm_label": "full playback session state snapshot.      attributes:         source: which med",
+      "id": "models_playback_rationale_86"
     },
     {
       "label": "Response envelope for ``GET /playback/current``.      Attributes:         sessio",
       "file_type": "rationale",
       "source_file": "backend/app/models/playback.py",
       "source_location": "L112",
-      "id": "models_playback_rationale_112",
       "community": 1,
-      "norm_label": "response envelope for ``get /playback/current``.      attributes:         sessio"
+      "norm_label": "response envelope for ``get /playback/current``.      attributes:         sessio",
+      "id": "models_playback_rationale_112"
     },
     {
       "label": "JellyfinClient",
       "file_type": "code",
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L33",
-      "id": "jellyfin_client_jellyfinclient",
       "community": 5,
-      "norm_label": "jellyfinclient"
+      "norm_label": "jellyfinclient",
+      "id": "jellyfin_client_jellyfinclient"
     },
     {
       "label": "Jellyfin server integration client \u2014 Phase 2 scaffold.  This module provides a s",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L1",
-      "id": "jellyfin_client_rationale_1",
       "community": 5,
-      "norm_label": "jellyfin server integration client \u2014 phase 2 scaffold.  this module provides a s"
+      "norm_label": "jellyfin server integration client \u2014 phase 2 scaffold.  this module provides a s",
+      "id": "jellyfin_client_rationale_1"
     },
     {
       "label": "Interface to the Jellyfin server session API.      All public methods must:",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L34",
-      "id": "jellyfin_client_rationale_34",
       "community": 5,
-      "norm_label": "interface to the jellyfin server session api.      all public methods must:"
+      "norm_label": "interface to the jellyfin server session api.      all public methods must:",
+      "id": "jellyfin_client_rationale_34"
     },
     {
       "label": "Fetch active Jellyfin playback sessions.          Returns:             A list of",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L65",
-      "id": "jellyfin_client_rationale_65",
       "community": 5,
-      "norm_label": "fetch active jellyfin playback sessions.          returns:             a list of"
+      "norm_label": "fetch active jellyfin playback sessions.          returns:             a list of",
+      "id": "jellyfin_client_rationale_65"
     },
     {
       "label": "client.py",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L1",
-      "id": "backend_app_integrations_plex_client_py",
       "community": 5,
-      "norm_label": "client.py"
+      "norm_label": "client.py",
+      "id": "backend_app_integrations_plex_client_py"
     },
     {
       "label": "PlexClient",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L47",
-      "id": "plex_client_plexclient",
       "community": 2,
-      "norm_label": "plexclient"
+      "norm_label": "plexclient",
+      "id": "plex_client_plexclient"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L62",
-      "id": "plex_client_plexclient_init",
       "community": 5,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "plex_client_plexclient_init"
     },
     {
       "label": "is_configured()",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L75",
-      "id": "plex_client_is_configured",
       "community": 5,
-      "norm_label": "is_configured()"
+      "norm_label": "is_configured()",
+      "id": "plex_client_is_configured"
     },
     {
       "label": ".get_active_sessions()",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L79",
-      "id": "plex_client_plexclient_get_active_sessions",
       "community": 5,
-      "norm_label": ".get_active_sessions()"
+      "norm_label": ".get_active_sessions()",
+      "id": "plex_client_plexclient_get_active_sessions"
     },
     {
       "label": "._build_unknown_session()",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L138",
-      "id": "plex_client_plexclient_build_unknown_session",
       "community": 1,
-      "norm_label": "._build_unknown_session()"
+      "norm_label": "._build_unknown_session()",
+      "id": "plex_client_plexclient_build_unknown_session"
     },
     {
       "label": "Plex Media Server integration client \u2014 Phase 2.1.  Makes a real HTTP call to ``/",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L1",
-      "id": "plex_client_rationale_1",
       "community": 5,
-      "norm_label": "plex media server integration client \u2014 phase 2.1.  makes a real http call to ``/"
+      "norm_label": "plex media server integration client \u2014 phase 2.1.  makes a real http call to ``/",
+      "id": "plex_client_rationale_1"
     },
     {
       "label": "Interface to the Plex Media Server session API.      All public methods must:",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L48",
-      "id": "plex_client_rationale_48",
       "community": 2,
-      "norm_label": "interface to the plex media server session api.      all public methods must:"
+      "norm_label": "interface to the plex media server session api.      all public methods must:",
+      "id": "plex_client_rationale_48"
     },
     {
       "label": "Initialise the client using values from ``settings``.",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L63",
-      "id": "plex_client_rationale_63",
       "community": 5,
-      "norm_label": "initialise the client using values from ``settings``."
+      "norm_label": "initialise the client using values from ``settings``.",
+      "id": "plex_client_rationale_63"
     },
     {
       "label": "Return True if credentials are present in settings.",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L76",
-      "id": "plex_client_rationale_76",
       "community": 13,
-      "norm_label": "return true if credentials are present in settings."
+      "norm_label": "return true if credentials are present in settings.",
+      "id": "plex_client_rationale_76"
     },
     {
       "label": "Fetch active Plex playback sessions.          Makes a synchronous GET request to",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L80",
-      "id": "plex_client_rationale_80",
       "community": 5,
-      "norm_label": "fetch active plex playback sessions.          makes a synchronous get request to"
+      "norm_label": "fetch active plex playback sessions.          makes a synchronous get request to",
+      "id": "plex_client_rationale_80"
     },
     {
       "label": "Build a fully-unknown session state for safe fallback.          Returns:",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L139",
-      "id": "plex_client_rationale_139",
       "community": 1,
-      "norm_label": "build a fully-unknown session state for safe fallback.          returns:"
+      "norm_label": "build a fully-unknown session state for safe fallback.          returns:",
+      "id": "plex_client_rationale_139"
     },
     {
       "label": "parser.py",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L1",
-      "id": "backend_app_integrations_plex_parser_py",
       "community": 1,
-      "norm_label": "parser.py"
+      "norm_label": "parser.py",
+      "id": "backend_app_integrations_plex_parser_py"
     },
     {
       "label": "parse_sessions()",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L75",
-      "id": "plex_parser_parse_sessions",
       "community": 0,
-      "norm_label": "parse_sessions()"
+      "norm_label": "parse_sessions()",
+      "id": "plex_parser_parse_sessions"
     },
     {
       "label": "_parse_video_element()",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L109",
-      "id": "plex_parser_parse_video_element",
       "community": 1,
-      "norm_label": "_parse_video_element()"
+      "norm_label": "_parse_video_element()",
+      "id": "plex_parser_parse_video_element"
     },
     {
       "label": "_parse_decision()",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L163",
-      "id": "plex_parser_parse_decision",
       "community": 1,
-      "norm_label": "_parse_decision()"
+      "norm_label": "_parse_decision()",
+      "id": "plex_parser_parse_decision"
     },
     {
       "label": "_parse_video_state()",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L186",
-      "id": "plex_parser_parse_video_state",
       "community": 1,
-      "norm_label": "_parse_video_state()"
+      "norm_label": "_parse_video_state()",
+      "id": "plex_parser_parse_video_state"
     },
     {
       "label": "_parse_audio_state()",
       "file_type": "code",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L241",
-      "id": "plex_parser_parse_audio_state",
       "community": 1,
-      "norm_label": "_parse_audio_state()"
+      "norm_label": "_parse_audio_state()",
+      "id": "plex_parser_parse_audio_state"
     },
     {
       "label": "Plex session XML parser \u2014 Phase 2.1.  Parses the ``/status/sessions`` XML respon",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L1",
-      "id": "plex_parser_rationale_1",
       "community": 1,
-      "norm_label": "plex session xml parser \u2014 phase 2.1.  parses the ``/status/sessions`` xml respon"
+      "norm_label": "plex session xml parser \u2014 phase 2.1.  parses the ``/status/sessions`` xml respon",
+      "id": "plex_parser_rationale_1"
     },
     {
       "label": "Parse a Plex ``/status/sessions`` XML response into session objects.      Args:",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L76",
-      "id": "plex_parser_rationale_76",
       "community": 0,
-      "norm_label": "parse a plex ``/status/sessions`` xml response into session objects.      args:"
+      "norm_label": "parse a plex ``/status/sessions`` xml response into session objects.      args:",
+      "id": "plex_parser_rationale_76"
     },
     {
       "label": "Parse a single ``<Video>`` element into a ``SessionState``.      Args:         v",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L110",
-      "id": "plex_parser_rationale_110",
       "community": 1,
-      "norm_label": "parse a single ``<video>`` element into a ``sessionstate``.      args:         v"
+      "norm_label": "parse a single ``<video>`` element into a ``sessionstate``.      args:         v",
+      "id": "plex_parser_rationale_110"
     },
     {
       "label": "Derive the playback decision from a ``<Video>`` element.      Plex exposes the d",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L164",
-      "id": "plex_parser_rationale_164",
       "community": 1,
-      "norm_label": "derive the playback decision from a ``<video>`` element.      plex exposes the d"
+      "norm_label": "derive the playback decision from a ``<video>`` element.      plex exposes the d",
+      "id": "plex_parser_rationale_164"
     },
     {
       "label": "Extract video codec and resolution from a ``<Media>`` element.      Prefers ``<S",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L187",
-      "id": "plex_parser_rationale_187",
       "community": 1,
-      "norm_label": "extract video codec and resolution from a ``<media>`` element.      prefers ``<s"
+      "norm_label": "extract video codec and resolution from a ``<media>`` element.      prefers ``<s",
+      "id": "plex_parser_rationale_187"
     },
     {
       "label": "Extract audio codec and channel count from a ``<Media>`` element.      Prefers `",
       "file_type": "rationale",
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L242",
-      "id": "plex_parser_rationale_242",
       "community": 1,
-      "norm_label": "extract audio codec and channel count from a ``<media>`` element.      prefers `"
+      "norm_label": "extract audio codec and channel count from a ``<media>`` element.      prefers `",
+      "id": "plex_parser_rationale_242"
     },
     {
       "label": "get_current_playback()",
       "file_type": "code",
       "source_file": "backend/app/api/routes/playback.py",
       "source_location": "L33",
-      "id": "routes_playback_get_current_playback",
       "community": 3,
-      "norm_label": "get_current_playback()"
+      "norm_label": "get_current_playback()",
+      "id": "routes_playback_get_current_playback"
     },
     {
       "label": "Playback API route \u2014 GET /playback/current.  This route delegates to the Plex an",
       "file_type": "rationale",
       "source_file": "backend/app/api/routes/playback.py",
       "source_location": "L1",
-      "id": "routes_playback_rationale_1",
       "community": 3,
-      "norm_label": "playback api route \u2014 get /playback/current.  this route delegates to the plex an"
+      "norm_label": "playback api route \u2014 get /playback/current.  this route delegates to the plex an",
+      "id": "routes_playback_rationale_1"
     },
     {
       "label": "Return all active playback sessions across configured sources.      Queries Plex",
       "file_type": "rationale",
       "source_file": "backend/app/api/routes/playback.py",
       "source_location": "L34",
-      "id": "routes_playback_rationale_34",
       "community": 3,
-      "norm_label": "return all active playback sessions across configured sources.      queries plex"
+      "norm_label": "return all active playback sessions across configured sources.      queries plex",
+      "id": "routes_playback_rationale_34"
     },
     {
       "label": "health.py",
       "file_type": "code",
       "source_file": "backend/app/api/routes/health.py",
       "source_location": "L1",
-      "id": "backend_app_api_routes_health_py",
       "community": 9,
-      "norm_label": "health.py"
+      "norm_label": "health.py",
+      "id": "backend_app_api_routes_health_py"
     },
     {
       "label": "health_check()",
       "file_type": "code",
       "source_file": "backend/app/api/routes/health.py",
       "source_location": "L6",
-      "id": "routes_health_health_check",
       "community": 9,
-      "norm_label": "health_check()"
+      "norm_label": "health_check()",
+      "id": "routes_health_health_check"
     },
     {
       "label": "conftest.py",
       "file_type": "code",
       "source_file": "backend/tests/conftest.py",
       "source_location": "L1",
-      "id": "backend_tests_conftest_py",
       "community": 8,
-      "norm_label": "conftest.py"
+      "norm_label": "conftest.py",
+      "id": "backend_tests_conftest_py"
     },
     {
       "label": "pytest configuration for the backend test suite.  Adds ``backend/`` to ``sys.pat",
       "file_type": "rationale",
       "source_file": "backend/tests/conftest.py",
       "source_location": "L1",
-      "id": "tests_conftest_rationale_1",
       "community": 8,
-      "norm_label": "pytest configuration for the backend test suite.  adds ``backend/`` to ``sys.pat"
+      "norm_label": "pytest configuration for the backend test suite.  adds ``backend/`` to ``sys.pat",
+      "id": "tests_conftest_rationale_1"
     },
     {
       "label": "test_playback.py",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L1",
-      "id": "backend_tests_test_playback_py",
       "community": 4,
-      "norm_label": "test_playback.py"
+      "norm_label": "test_playback.py",
+      "id": "backend_tests_test_playback_py"
     },
     {
       "label": "_make_mock_response()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L88",
-      "id": "tests_test_playback_make_mock_response",
       "community": 2,
-      "norm_label": "_make_mock_response()"
+      "norm_label": "_make_mock_response()",
+      "id": "tests_test_playback_make_mock_response"
     },
     {
       "label": "TestHealthStillWorks",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L101",
-      "id": "tests_test_playback_testhealthstillworks",
       "community": 4,
-      "norm_label": "testhealthstillworks"
+      "norm_label": "testhealthstillworks",
+      "id": "tests_test_playback_testhealthstillworks"
     },
     {
       "label": ".test_health_returns_ok()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L104",
-      "id": "tests_test_playback_testhealthstillworks_test_health_returns_ok",
       "community": 4,
-      "norm_label": ".test_health_returns_ok()"
+      "norm_label": ".test_health_returns_ok()",
+      "id": "tests_test_playback_testhealthstillworks_test_health_returns_ok"
     },
     {
       "label": "TestPlaybackCurrentUnconfigured",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L117",
-      "id": "tests_test_playback_testplaybackcurrentunconfigured",
       "community": 4,
-      "norm_label": "testplaybackcurrentunconfigured"
+      "norm_label": "testplaybackcurrentunconfigured",
+      "id": "tests_test_playback_testplaybackcurrentunconfigured"
     },
     {
       "label": ".test_returns_200()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L120",
-      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_returns_200",
       "community": 4,
-      "norm_label": ".test_returns_200()"
+      "norm_label": ".test_returns_200()",
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_returns_200"
     },
     {
       "label": ".test_sessions_is_empty_list()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L124",
-      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_sessions_is_empty_list",
       "community": 4,
-      "norm_label": ".test_sessions_is_empty_list()"
+      "norm_label": ".test_sessions_is_empty_list()",
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_sessions_is_empty_list"
     },
     {
       "label": ".test_sources_checked_is_empty()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L128",
-      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_sources_checked_is_empty",
       "community": 4,
-      "norm_label": ".test_sources_checked_is_empty()"
+      "norm_label": ".test_sources_checked_is_empty()",
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_sources_checked_is_empty"
     },
     {
       "label": ".test_error_is_none()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L132",
-      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_error_is_none",
       "community": 4,
-      "norm_label": ".test_error_is_none()"
+      "norm_label": ".test_error_is_none()",
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_error_is_none"
     },
     {
       "label": ".test_response_shape()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L136",
-      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_response_shape",
       "community": 4,
-      "norm_label": ".test_response_shape()"
+      "norm_label": ".test_response_shape()",
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_response_shape"
     },
     {
       "label": "TestPlexParser",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L147",
-      "id": "tests_test_playback_testplexparser",
       "community": 0,
-      "norm_label": "testplexparser"
+      "norm_label": "testplexparser",
+      "id": "tests_test_playback_testplexparser"
     },
     {
       "label": ".test_no_sessions_returns_empty_list()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L150",
-      "id": "tests_test_playback_testplexparser_test_no_sessions_returns_empty_list",
       "community": 0,
-      "norm_label": ".test_no_sessions_returns_empty_list()"
+      "norm_label": ".test_no_sessions_returns_empty_list()",
+      "id": "tests_test_playback_testplexparser_test_no_sessions_returns_empty_list"
     },
     {
       "label": ".test_malformed_xml_returns_empty_list()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L154",
-      "id": "tests_test_playback_testplexparser_test_malformed_xml_returns_empty_list",
       "community": 0,
-      "norm_label": ".test_malformed_xml_returns_empty_list()"
+      "norm_label": ".test_malformed_xml_returns_empty_list()",
+      "id": "tests_test_playback_testplexparser_test_malformed_xml_returns_empty_list"
     },
     {
       "label": ".test_one_session_returns_one_item()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L158",
-      "id": "tests_test_playback_testplexparser_test_one_session_returns_one_item",
       "community": 0,
-      "norm_label": ".test_one_session_returns_one_item()"
+      "norm_label": ".test_one_session_returns_one_item()",
+      "id": "tests_test_playback_testplexparser_test_one_session_returns_one_item"
     },
     {
       "label": ".test_session_source_is_plex()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L162",
-      "id": "tests_test_playback_testplexparser_test_session_source_is_plex",
       "community": 0,
-      "norm_label": ".test_session_source_is_plex()"
+      "norm_label": ".test_session_source_is_plex()",
+      "id": "tests_test_playback_testplexparser_test_session_source_is_plex"
     },
     {
       "label": ".test_session_title_confirmed()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L166",
-      "id": "tests_test_playback_testplexparser_test_session_title_confirmed",
       "community": 0,
-      "norm_label": ".test_session_title_confirmed()"
+      "norm_label": ".test_session_title_confirmed()",
+      "id": "tests_test_playback_testplexparser_test_session_title_confirmed"
     },
     {
       "label": ".test_session_user_parsed()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L171",
-      "id": "tests_test_playback_testplexparser_test_session_user_parsed",
       "community": 0,
-      "norm_label": ".test_session_user_parsed()"
+      "norm_label": ".test_session_user_parsed()",
+      "id": "tests_test_playback_testplexparser_test_session_user_parsed"
     },
     {
       "label": ".test_session_client_name_parsed()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L175",
-      "id": "tests_test_playback_testplexparser_test_session_client_name_parsed",
       "community": 0,
-      "norm_label": ".test_session_client_name_parsed()"
+      "norm_label": ".test_session_client_name_parsed()",
+      "id": "tests_test_playback_testplexparser_test_session_client_name_parsed"
     },
     {
       "label": ".test_session_is_playing_true()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L179",
-      "id": "tests_test_playback_testplexparser_test_session_is_playing_true",
       "community": 0,
-      "norm_label": ".test_session_is_playing_true()"
+      "norm_label": ".test_session_is_playing_true()",
+      "id": "tests_test_playback_testplexparser_test_session_is_playing_true"
     },
     {
       "label": ".test_session_decision_direct_play_when_no_transcode()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L183",
-      "id": "tests_test_playback_testplexparser_test_session_decision_direct_play_when_no_transcode",
       "community": 0,
-      "norm_label": ".test_session_decision_direct_play_when_no_transcode()"
+      "norm_label": ".test_session_decision_direct_play_when_no_transcode()",
+      "id": "tests_test_playback_testplexparser_test_session_decision_direct_play_when_no_transcode"
     },
     {
       "label": ".test_session_decision_transcode()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L187",
-      "id": "tests_test_playback_testplexparser_test_session_decision_transcode",
       "community": 0,
-      "norm_label": ".test_session_decision_transcode()"
+      "norm_label": ".test_session_decision_transcode()",
+      "id": "tests_test_playback_testplexparser_test_session_decision_transcode"
     },
     {
       "label": ".test_video_codec_confirmed()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L191",
-      "id": "tests_test_playback_testplexparser_test_video_codec_confirmed",
       "community": 0,
-      "norm_label": ".test_video_codec_confirmed()"
+      "norm_label": ".test_video_codec_confirmed()",
+      "id": "tests_test_playback_testplexparser_test_video_codec_confirmed"
     },
     {
       "label": ".test_video_resolution_parsed()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L196",
-      "id": "tests_test_playback_testplexparser_test_video_resolution_parsed",
       "community": 0,
-      "norm_label": ".test_video_resolution_parsed()"
+      "norm_label": ".test_video_resolution_parsed()",
+      "id": "tests_test_playback_testplexparser_test_video_resolution_parsed"
     },
     {
       "label": ".test_video_bitrate_parsed()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L200",
-      "id": "tests_test_playback_testplexparser_test_video_bitrate_parsed",
       "community": 0,
-      "norm_label": ".test_video_bitrate_parsed()"
+      "norm_label": ".test_video_bitrate_parsed()",
+      "id": "tests_test_playback_testplexparser_test_video_bitrate_parsed"
     },
     {
       "label": ".test_hdr_format_is_none()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L204",
-      "id": "tests_test_playback_testplexparser_test_hdr_format_is_none",
       "community": 0,
-      "norm_label": ".test_hdr_format_is_none()"
+      "norm_label": ".test_hdr_format_is_none()",
+      "id": "tests_test_playback_testplexparser_test_hdr_format_is_none"
     },
     {
       "label": ".test_audio_codec_confirmed()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L209",
-      "id": "tests_test_playback_testplexparser_test_audio_codec_confirmed",
       "community": 0,
-      "norm_label": ".test_audio_codec_confirmed()"
+      "norm_label": ".test_audio_codec_confirmed()",
+      "id": "tests_test_playback_testplexparser_test_audio_codec_confirmed"
     },
     {
       "label": ".test_audio_channels_parsed()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L214",
-      "id": "tests_test_playback_testplexparser_test_audio_channels_parsed",
       "community": 0,
-      "norm_label": ".test_audio_channels_parsed()"
+      "norm_label": ".test_audio_channels_parsed()",
+      "id": "tests_test_playback_testplexparser_test_audio_channels_parsed"
     },
     {
       "label": "TestPlexClientConfigured",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L223",
-      "id": "tests_test_playback_testplexclientconfigured",
       "community": 2,
-      "norm_label": "testplexclientconfigured"
+      "norm_label": "testplexclientconfigured",
+      "id": "tests_test_playback_testplexclientconfigured"
     },
     {
       "label": ".test_no_sessions_returns_empty_and_sources_checked()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L226",
-      "id": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
       "community": 2,
-      "norm_label": ".test_no_sessions_returns_empty_and_sources_checked()"
+      "norm_label": ".test_no_sessions_returns_empty_and_sources_checked()",
+      "id": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked"
     },
     {
       "label": ".test_one_session_returned()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L248",
-      "id": "tests_test_playback_testplexclientconfigured_test_one_session_returned",
       "community": 2,
-      "norm_label": ".test_one_session_returned()"
+      "norm_label": ".test_one_session_returned()",
+      "id": "tests_test_playback_testplexclientconfigured_test_one_session_returned"
     },
     {
       "label": ".test_timeout_returns_empty_no_crash()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L275",
-      "id": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash",
       "community": 2,
-      "norm_label": ".test_timeout_returns_empty_no_crash()"
+      "norm_label": ".test_timeout_returns_empty_no_crash()",
+      "id": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash"
     },
     {
       "label": ".test_http_error_returns_empty_no_crash()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L295",
-      "id": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash",
       "community": 2,
-      "norm_label": ".test_http_error_returns_empty_no_crash()"
+      "norm_label": ".test_http_error_returns_empty_no_crash()",
+      "id": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash"
     },
     {
       "label": ".test_malformed_xml_returns_empty_no_crash()",
       "file_type": "code",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L322",
-      "id": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
       "community": 2,
-      "norm_label": ".test_malformed_xml_returns_empty_no_crash()"
+      "norm_label": ".test_malformed_xml_returns_empty_no_crash()",
+      "id": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash"
     },
     {
       "label": "Tests for /health and /playback/current \u2014 Phase 2.1.  Coverage: - Phase 1 regres",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L1",
-      "id": "tests_test_playback_rationale_1",
       "community": 4,
-      "norm_label": "tests for /health and /playback/current \u2014 phase 2.1.  coverage: - phase 1 regres"
+      "norm_label": "tests for /health and /playback/current \u2014 phase 2.1.  coverage: - phase 1 regres",
+      "id": "tests_test_playback_rationale_1"
     },
     {
       "label": "Build a mock httpx.Response with the given body text.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L89",
-      "id": "tests_test_playback_rationale_89",
       "community": 2,
-      "norm_label": "build a mock httpx.response with the given body text."
+      "norm_label": "build a mock httpx.response with the given body text.",
+      "id": "tests_test_playback_rationale_89"
     },
     {
       "label": "Regression: Phase 1 /health must remain intact after Phase 2.1 wiring.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L102",
-      "id": "tests_test_playback_rationale_102",
       "community": 4,
-      "norm_label": "regression: phase 1 /health must remain intact after phase 2.1 wiring."
+      "norm_label": "regression: phase 1 /health must remain intact after phase 2.1 wiring.",
+      "id": "tests_test_playback_rationale_102"
     },
     {
       "label": "Behaviour of /playback/current when no credentials are set.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L118",
-      "id": "tests_test_playback_rationale_118",
       "community": 4,
-      "norm_label": "behaviour of /playback/current when no credentials are set."
+      "norm_label": "behaviour of /playback/current when no credentials are set.",
+      "id": "tests_test_playback_rationale_118"
     },
     {
       "label": "Unit tests for parse_sessions() against fixture XML strings.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L148",
-      "id": "tests_test_playback_rationale_148",
       "community": 0,
-      "norm_label": "unit tests for parse_sessions() against fixture xml strings."
+      "norm_label": "unit tests for parse_sessions() against fixture xml strings.",
+      "id": "tests_test_playback_rationale_148"
     },
     {
       "label": "HDR must never be inferred from Plex session XML.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L205",
-      "id": "tests_test_playback_rationale_205",
       "community": 0,
-      "norm_label": "hdr must never be inferred from plex session xml."
+      "norm_label": "hdr must never be inferred from plex session xml.",
+      "id": "tests_test_playback_rationale_205"
     },
     {
       "label": "PlexClient behaviour with mocked settings and mocked httpx.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L224",
-      "id": "tests_test_playback_rationale_224",
       "community": 2,
-      "norm_label": "plexclient behaviour with mocked settings and mocked httpx."
+      "norm_label": "plexclient behaviour with mocked settings and mocked httpx.",
+      "id": "tests_test_playback_rationale_224"
     },
     {
       "label": "Configured Plex with no active sessions \u2192 sources_checked=['plex'],         sess",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L227",
-      "id": "tests_test_playback_rationale_227",
       "community": 2,
-      "norm_label": "configured plex with no active sessions \u2192 sources_checked=['plex'],         sess"
+      "norm_label": "configured plex with no active sessions \u2192 sources_checked=['plex'],         sess",
+      "id": "tests_test_playback_rationale_227"
     },
     {
       "label": "Configured Plex with one active session \u2192 one SessionState.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L249",
-      "id": "tests_test_playback_rationale_249",
       "community": 2,
-      "norm_label": "configured plex with one active session \u2192 one sessionstate."
+      "norm_label": "configured plex with one active session \u2192 one sessionstate.",
+      "id": "tests_test_playback_rationale_249"
     },
     {
       "label": "Plex timeout \u2192 empty sessions, no exception raised.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L276",
-      "id": "tests_test_playback_rationale_276",
       "community": 2,
-      "norm_label": "plex timeout \u2192 empty sessions, no exception raised."
+      "norm_label": "plex timeout \u2192 empty sessions, no exception raised.",
+      "id": "tests_test_playback_rationale_276"
     },
     {
       "label": "Plex HTTP 401 \u2192 empty sessions, no exception raised.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L296",
-      "id": "tests_test_playback_rationale_296",
       "community": 2,
-      "norm_label": "plex http 401 \u2192 empty sessions, no exception raised."
+      "norm_label": "plex http 401 \u2192 empty sessions, no exception raised.",
+      "id": "tests_test_playback_rationale_296"
     },
     {
       "label": "Plex returns malformed XML \u2192 empty sessions, no exception raised.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L323",
-      "id": "tests_test_playback_rationale_323",
       "community": 2,
-      "norm_label": "plex returns malformed xml \u2192 empty sessions, no exception raised."
+      "norm_label": "plex returns malformed xml \u2192 empty sessions, no exception raised.",
+      "id": "tests_test_playback_rationale_323"
     },
     {
       "label": "settings.json",
       "file_type": "code",
       "source_file": ".vscode/settings.json",
       "source_location": "L1",
-      "id": "vscode_settings_json",
       "community": 10,
-      "norm_label": "settings.json"
+      "norm_label": "settings.json",
+      "id": "vscode_settings_json"
     },
     {
       "label": "geminicodeassist.outlines.automaticOutlineGeneration",
       "file_type": "code",
       "source_file": ".vscode/settings.json",
       "source_location": "L2",
-      "id": "vscode_settings_geminicodeassist_outlines_automaticoutlinegeneration",
       "community": 10,
-      "norm_label": "geminicodeassist.outlines.automaticoutlinegeneration"
+      "norm_label": "geminicodeassist.outlines.automaticoutlinegeneration",
+      "id": "vscode_settings_geminicodeassist_outlines_automaticoutlinegeneration"
     }
   ],
   "links": [
@@ -1019,9 +1019,9 @@
       "source_file": "pyrightconfig.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pyrightconfig_json",
-      "target": "cinema_machina_core_pyrightconfig_pythonpath",
-      "confidence_score": 1.0
+      "target": "cinema_machina_core_pyrightconfig_pythonpath"
     },
     {
       "relation": "contains",
@@ -1029,9 +1029,9 @@
       "source_file": "pyrightconfig.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pyrightconfig_json",
-      "target": "cinema_machina_core_pyrightconfig_venvpath",
-      "confidence_score": 1.0
+      "target": "cinema_machina_core_pyrightconfig_venvpath"
     },
     {
       "relation": "contains",
@@ -1039,9 +1039,9 @@
       "source_file": "pyrightconfig.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pyrightconfig_json",
-      "target": "cinema_machina_core_pyrightconfig_venv",
-      "confidence_score": 1.0
+      "target": "cinema_machina_core_pyrightconfig_venv"
     },
     {
       "relation": "contains",
@@ -1049,9 +1049,9 @@
       "source_file": "pyrightconfig.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pyrightconfig_json",
-      "target": "cinema_machina_core_pyrightconfig_extrapaths",
-      "confidence_score": 1.0
+      "target": "cinema_machina_core_pyrightconfig_extrapaths"
     },
     {
       "relation": "contains",
@@ -1059,9 +1059,9 @@
       "source_file": "backend/app/config/settings.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_config_settings_py",
-      "target": "config_settings_settings",
-      "confidence_score": 1.0
+      "target": "config_settings_settings"
     },
     {
       "relation": "rationale_for",
@@ -1069,9 +1069,9 @@
       "source_file": "backend/app/config/settings.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "config_settings_rationale_1",
-      "target": "backend_app_config_settings_py",
-      "confidence_score": 1.0
+      "target": "backend_app_config_settings_py"
     },
     {
       "relation": "inherits",
@@ -1079,9 +1079,9 @@
       "source_file": "backend/app/config/settings.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "config_settings_settings",
-      "target": "basesettings",
-      "confidence_score": 1.0
+      "target": "basesettings"
     },
     {
       "relation": "rationale_for",
@@ -1089,9 +1089,9 @@
       "source_file": "backend/app/config/settings.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "config_settings_rationale_14",
-      "target": "config_settings_settings",
-      "confidence_score": 1.0
+      "target": "config_settings_settings"
     },
     {
       "relation": "imports_from",
@@ -1100,9 +1100,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_models_playback_py",
-      "target": "enum",
-      "confidence_score": 1.0
+      "target": "enum"
     },
     {
       "relation": "contains",
@@ -1110,9 +1110,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_models_playback_py",
-      "target": "models_playback_confidence",
-      "confidence_score": 1.0
+      "target": "models_playback_confidence"
     },
     {
       "relation": "contains",
@@ -1120,9 +1120,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_models_playback_py",
-      "target": "models_playback_playbacksource",
-      "confidence_score": 1.0
+      "target": "models_playback_playbacksource"
     },
     {
       "relation": "contains",
@@ -1130,9 +1130,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_models_playback_py",
-      "target": "models_playback_videostate",
-      "confidence_score": 1.0
+      "target": "models_playback_videostate"
     },
     {
       "relation": "contains",
@@ -1140,9 +1140,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_models_playback_py",
-      "target": "models_playback_audiostate",
-      "confidence_score": 1.0
+      "target": "models_playback_audiostate"
     },
     {
       "relation": "contains",
@@ -1150,9 +1150,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_models_playback_py",
-      "target": "models_playback_playbackdecision",
-      "confidence_score": 1.0
+      "target": "models_playback_playbackdecision"
     },
     {
       "relation": "contains",
@@ -1160,9 +1160,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_models_playback_py",
-      "target": "models_playback_sessionstate",
-      "confidence_score": 1.0
+      "target": "models_playback_sessionstate"
     },
     {
       "relation": "contains",
@@ -1170,9 +1170,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_models_playback_py",
-      "target": "models_playback_playbackcurrentresponse",
-      "confidence_score": 1.0
+      "target": "models_playback_playbackcurrentresponse"
     },
     {
       "relation": "rationale_for",
@@ -1180,9 +1180,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_rationale_1",
-      "target": "backend_app_models_playback_py",
-      "confidence_score": 1.0
+      "target": "backend_app_models_playback_py"
     },
     {
       "relation": "contains",
@@ -1190,9 +1190,9 @@
       "source_file": "backend/app/api/routes/playback.py",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_models_playback_py",
-      "target": "routes_playback_get_current_playback",
-      "confidence_score": 1.0
+      "target": "routes_playback_get_current_playback"
     },
     {
       "relation": "rationale_for",
@@ -1200,9 +1200,9 @@
       "source_file": "backend/app/api/routes/playback.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_playback_rationale_1",
-      "target": "backend_app_models_playback_py",
-      "confidence_score": 1.0
+      "target": "backend_app_models_playback_py"
     },
     {
       "relation": "inherits",
@@ -1210,9 +1210,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_confidence",
-      "target": "str",
-      "confidence_score": 1.0
+      "target": "str"
     },
     {
       "relation": "inherits",
@@ -1220,9 +1220,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_confidence",
-      "target": "enum",
-      "confidence_score": 1.0
+      "target": "enum"
     },
     {
       "relation": "rationale_for",
@@ -1230,9 +1230,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_rationale_19",
-      "target": "models_playback_confidence",
-      "confidence_score": 1.0
+      "target": "models_playback_confidence"
     },
     {
       "relation": "uses",
@@ -1240,9 +1240,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "jellyfin_client_jellyfinclient",
-      "target": "models_playback_confidence",
-      "confidence_score": 0.5
+      "target": "models_playback_confidence"
     },
     {
       "relation": "uses",
@@ -1250,9 +1250,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L26",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "plex_client_plexclient",
-      "target": "models_playback_confidence",
-      "confidence_score": 0.5
+      "target": "models_playback_confidence"
     },
     {
       "relation": "inherits",
@@ -1260,9 +1260,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_playbacksource",
-      "target": "str",
-      "confidence_score": 1.0
+      "target": "str"
     },
     {
       "relation": "inherits",
@@ -1270,9 +1270,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_playbackdecision",
-      "target": "str",
-      "confidence_score": 1.0
+      "target": "str"
     },
     {
       "relation": "inherits",
@@ -1280,9 +1280,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_playbacksource",
-      "target": "enum",
-      "confidence_score": 1.0
+      "target": "enum"
     },
     {
       "relation": "inherits",
@@ -1290,9 +1290,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_playbackdecision",
-      "target": "enum",
-      "confidence_score": 1.0
+      "target": "enum"
     },
     {
       "relation": "rationale_for",
@@ -1300,9 +1300,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_rationale_35",
-      "target": "models_playback_playbacksource",
-      "confidence_score": 1.0
+      "target": "models_playback_playbacksource"
     },
     {
       "relation": "uses",
@@ -1310,9 +1310,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "jellyfin_client_jellyfinclient",
-      "target": "models_playback_playbacksource",
-      "confidence_score": 0.5
+      "target": "models_playback_playbacksource"
     },
     {
       "relation": "uses",
@@ -1320,9 +1320,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L26",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "plex_client_plexclient",
-      "target": "models_playback_playbacksource",
-      "confidence_score": 0.5
+      "target": "models_playback_playbacksource"
     },
     {
       "relation": "inherits",
@@ -1330,9 +1330,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_videostate",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "rationale_for",
@@ -1340,9 +1340,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_rationale_43",
-      "target": "models_playback_videostate",
-      "confidence_score": 1.0
+      "target": "models_playback_videostate"
     },
     {
       "relation": "uses",
@@ -1350,9 +1350,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "jellyfin_client_jellyfinclient",
-      "target": "models_playback_videostate",
-      "confidence_score": 0.5
+      "target": "models_playback_videostate"
     },
     {
       "relation": "uses",
@@ -1360,9 +1360,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L26",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "plex_client_plexclient",
-      "target": "models_playback_videostate",
-      "confidence_score": 0.5
+      "target": "models_playback_videostate"
     },
     {
       "relation": "calls",
@@ -1392,9 +1392,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_audiostate",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -1402,9 +1402,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_sessionstate",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -1412,9 +1412,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_playbackcurrentresponse",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "rationale_for",
@@ -1422,9 +1422,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_rationale_43",
-      "target": "models_playback_audiostate",
-      "confidence_score": 1.0
+      "target": "models_playback_audiostate"
     },
     {
       "relation": "uses",
@@ -1432,9 +1432,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "jellyfin_client_jellyfinclient",
-      "target": "models_playback_audiostate",
-      "confidence_score": 0.5
+      "target": "models_playback_audiostate"
     },
     {
       "relation": "uses",
@@ -1442,9 +1442,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L26",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "plex_client_plexclient",
-      "target": "models_playback_audiostate",
-      "confidence_score": 0.5
+      "target": "models_playback_audiostate"
     },
     {
       "relation": "calls",
@@ -1474,9 +1474,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_rationale_77",
-      "target": "models_playback_playbackdecision",
-      "confidence_score": 1.0
+      "target": "models_playback_playbackdecision"
     },
     {
       "relation": "uses",
@@ -1484,9 +1484,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "jellyfin_client_jellyfinclient",
-      "target": "models_playback_playbackdecision",
-      "confidence_score": 0.5
+      "target": "models_playback_playbackdecision"
     },
     {
       "relation": "uses",
@@ -1494,9 +1494,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L26",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "plex_client_plexclient",
-      "target": "models_playback_playbackdecision",
-      "confidence_score": 0.5
+      "target": "models_playback_playbackdecision"
     },
     {
       "relation": "rationale_for",
@@ -1504,9 +1504,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L86",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_rationale_86",
-      "target": "models_playback_sessionstate",
-      "confidence_score": 1.0
+      "target": "models_playback_sessionstate"
     },
     {
       "relation": "uses",
@@ -1514,9 +1514,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "jellyfin_client_jellyfinclient",
-      "target": "models_playback_sessionstate",
-      "confidence_score": 0.5
+      "target": "models_playback_sessionstate"
     },
     {
       "relation": "uses",
@@ -1524,9 +1524,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L26",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "plex_client_plexclient",
-      "target": "models_playback_sessionstate",
-      "confidence_score": 0.5
+      "target": "models_playback_sessionstate"
     },
     {
       "relation": "calls",
@@ -1556,9 +1556,9 @@
       "source_file": "backend/app/models/playback.py",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_playback_rationale_112",
-      "target": "models_playback_playbackcurrentresponse",
-      "confidence_score": 1.0
+      "target": "models_playback_playbackcurrentresponse"
     },
     {
       "relation": "calls",
@@ -1577,9 +1577,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_integrations_plex_client_py",
-      "target": "jellyfin_client_jellyfinclient",
-      "confidence_score": 1.0
+      "target": "jellyfin_client_jellyfinclient"
     },
     {
       "relation": "method",
@@ -1587,9 +1587,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jellyfin_client_jellyfinclient",
-      "target": "plex_client_plexclient_init",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_init"
     },
     {
       "relation": "method",
@@ -1597,9 +1597,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jellyfin_client_jellyfinclient",
-      "target": "plex_client_plexclient_get_active_sessions",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_get_active_sessions"
     },
     {
       "relation": "method",
@@ -1607,9 +1607,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jellyfin_client_jellyfinclient",
-      "target": "plex_client_plexclient_build_unknown_session",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_build_unknown_session"
     },
     {
       "relation": "rationale_for",
@@ -1617,9 +1617,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jellyfin_client_rationale_34",
-      "target": "jellyfin_client_jellyfinclient",
-      "confidence_score": 1.0
+      "target": "jellyfin_client_jellyfinclient"
     },
     {
       "relation": "rationale_for",
@@ -1627,9 +1627,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jellyfin_client_rationale_1",
-      "target": "backend_app_integrations_plex_client_py",
-      "confidence_score": 1.0
+      "target": "backend_app_integrations_plex_client_py"
     },
     {
       "relation": "rationale_for",
@@ -1637,9 +1637,9 @@
       "source_file": "backend/app/integrations/jellyfin/client.py",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jellyfin_client_rationale_65",
-      "target": "plex_client_plexclient_get_active_sessions",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_get_active_sessions"
     },
     {
       "relation": "contains",
@@ -1647,9 +1647,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_integrations_plex_client_py",
-      "target": "plex_client_is_configured",
-      "confidence_score": 1.0
+      "target": "plex_client_is_configured"
     },
     {
       "relation": "contains",
@@ -1657,9 +1657,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_integrations_plex_client_py",
-      "target": "plex_client_plexclient",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient"
     },
     {
       "relation": "rationale_for",
@@ -1667,9 +1667,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_client_rationale_1",
-      "target": "backend_app_integrations_plex_client_py",
-      "confidence_score": 1.0
+      "target": "backend_app_integrations_plex_client_py"
     },
     {
       "relation": "method",
@@ -1677,9 +1677,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_client_plexclient",
-      "target": "plex_client_plexclient_init",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_init"
     },
     {
       "relation": "method",
@@ -1687,9 +1687,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_client_plexclient",
-      "target": "plex_client_plexclient_get_active_sessions",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_get_active_sessions"
     },
     {
       "relation": "method",
@@ -1697,9 +1697,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L138",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_client_plexclient",
-      "target": "plex_client_plexclient_build_unknown_session",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_build_unknown_session"
     },
     {
       "relation": "rationale_for",
@@ -1707,9 +1707,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_client_rationale_48",
-      "target": "plex_client_plexclient",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient"
     },
     {
       "relation": "uses",
@@ -1717,9 +1717,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L336",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_playback_testhealthstillworks",
-      "target": "plex_client_plexclient",
-      "confidence_score": 0.5
+      "target": "plex_client_plexclient"
     },
     {
       "relation": "uses",
@@ -1727,9 +1727,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L336",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_playback_testplaybackcurrentunconfigured",
-      "target": "plex_client_plexclient",
-      "confidence_score": 0.5
+      "target": "plex_client_plexclient"
     },
     {
       "relation": "uses",
@@ -1737,9 +1737,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L336",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_playback_testplexparser",
-      "target": "plex_client_plexclient",
-      "confidence_score": 0.5
+      "target": "plex_client_plexclient"
     },
     {
       "relation": "uses",
@@ -1747,9 +1747,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L336",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_playback_testplexclientconfigured",
-      "target": "plex_client_plexclient",
-      "confidence_score": 0.5
+      "target": "plex_client_plexclient"
     },
     {
       "relation": "calls",
@@ -1812,9 +1812,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_client_rationale_63",
-      "target": "plex_client_plexclient_init",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_init"
     },
     {
       "relation": "rationale_for",
@@ -1822,9 +1822,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_client_rationale_80",
-      "target": "plex_client_plexclient_get_active_sessions",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_get_active_sessions"
     },
     {
       "relation": "calls",
@@ -1843,9 +1843,9 @@
       "source_file": "backend/app/integrations/plex/client.py",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_client_rationale_139",
-      "target": "plex_client_plexclient_build_unknown_session",
-      "confidence_score": 1.0
+      "target": "plex_client_plexclient_build_unknown_session"
     },
     {
       "relation": "contains",
@@ -1853,9 +1853,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_integrations_plex_parser_py",
-      "target": "plex_parser_parse_sessions",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_sessions"
     },
     {
       "relation": "contains",
@@ -1863,9 +1863,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L109",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_integrations_plex_parser_py",
-      "target": "plex_parser_parse_video_element",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_video_element"
     },
     {
       "relation": "contains",
@@ -1873,9 +1873,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L163",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_integrations_plex_parser_py",
-      "target": "plex_parser_parse_decision",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_decision"
     },
     {
       "relation": "contains",
@@ -1883,9 +1883,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L186",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_integrations_plex_parser_py",
-      "target": "plex_parser_parse_video_state",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_video_state"
     },
     {
       "relation": "contains",
@@ -1893,9 +1893,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L241",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_integrations_plex_parser_py",
-      "target": "plex_parser_parse_audio_state",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_audio_state"
     },
     {
       "relation": "rationale_for",
@@ -1903,9 +1903,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_rationale_1",
-      "target": "backend_app_integrations_plex_parser_py",
-      "confidence_score": 1.0
+      "target": "backend_app_integrations_plex_parser_py"
     },
     {
       "relation": "calls",
@@ -1914,9 +1914,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_parse_sessions",
-      "target": "plex_parser_parse_video_element",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_video_element"
     },
     {
       "relation": "rationale_for",
@@ -1924,9 +1924,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_rationale_76",
-      "target": "plex_parser_parse_sessions",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_sessions"
     },
     {
       "relation": "calls",
@@ -2111,9 +2111,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_parse_video_element",
-      "target": "plex_parser_parse_decision",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_decision"
     },
     {
       "relation": "calls",
@@ -2122,9 +2122,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L146",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_parse_video_element",
-      "target": "plex_parser_parse_video_state",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_video_state"
     },
     {
       "relation": "calls",
@@ -2133,9 +2133,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_parse_video_element",
-      "target": "plex_parser_parse_audio_state",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_audio_state"
     },
     {
       "relation": "rationale_for",
@@ -2143,9 +2143,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_rationale_110",
-      "target": "plex_parser_parse_video_element",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_video_element"
     },
     {
       "relation": "rationale_for",
@@ -2153,9 +2153,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_rationale_164",
-      "target": "plex_parser_parse_decision",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_decision"
     },
     {
       "relation": "rationale_for",
@@ -2163,9 +2163,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L187",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_rationale_187",
-      "target": "plex_parser_parse_video_state",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_video_state"
     },
     {
       "relation": "rationale_for",
@@ -2173,9 +2173,9 @@
       "source_file": "backend/app/integrations/plex/parser.py",
       "source_location": "L242",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plex_parser_rationale_242",
-      "target": "plex_parser_parse_audio_state",
-      "confidence_score": 1.0
+      "target": "plex_parser_parse_audio_state"
     },
     {
       "relation": "rationale_for",
@@ -2183,9 +2183,9 @@
       "source_file": "backend/app/api/routes/playback.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_playback_rationale_34",
-      "target": "routes_playback_get_current_playback",
-      "confidence_score": 1.0
+      "target": "routes_playback_get_current_playback"
     },
     {
       "relation": "contains",
@@ -2193,9 +2193,9 @@
       "source_file": "backend/app/api/routes/health.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_api_routes_health_py",
-      "target": "routes_health_health_check",
-      "confidence_score": 1.0
+      "target": "routes_health_health_check"
     },
     {
       "relation": "rationale_for",
@@ -2203,9 +2203,9 @@
       "source_file": "backend/tests/conftest.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_conftest_rationale_1",
-      "target": "backend_tests_conftest_py",
-      "confidence_score": 1.0
+      "target": "backend_tests_conftest_py"
     },
     {
       "relation": "contains",
@@ -2213,9 +2213,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_playback_py",
-      "target": "tests_test_playback_make_mock_response",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_make_mock_response"
     },
     {
       "relation": "contains",
@@ -2223,9 +2223,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L101",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_playback_py",
-      "target": "tests_test_playback_testhealthstillworks",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testhealthstillworks"
     },
     {
       "relation": "contains",
@@ -2233,9 +2233,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_playback_py",
-      "target": "tests_test_playback_testplaybackcurrentunconfigured",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplaybackcurrentunconfigured"
     },
     {
       "relation": "contains",
@@ -2243,9 +2243,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_playback_py",
-      "target": "tests_test_playback_testplexparser",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser"
     },
     {
       "relation": "contains",
@@ -2253,9 +2253,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_playback_py",
-      "target": "tests_test_playback_testplexclientconfigured",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured"
     },
     {
       "relation": "rationale_for",
@@ -2263,9 +2263,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_1",
-      "target": "backend_tests_test_playback_py",
-      "confidence_score": 1.0
+      "target": "backend_tests_test_playback_py"
     },
     {
       "relation": "calls",
@@ -2274,9 +2274,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L239",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
-      "target": "tests_test_playback_make_mock_response",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_make_mock_response"
     },
     {
       "relation": "calls",
@@ -2285,9 +2285,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L260",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexclientconfigured_test_one_session_returned",
-      "target": "tests_test_playback_make_mock_response",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_make_mock_response"
     },
     {
       "relation": "calls",
@@ -2296,9 +2296,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L334",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
-      "target": "tests_test_playback_make_mock_response",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_make_mock_response"
     },
     {
       "relation": "rationale_for",
@@ -2306,9 +2306,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_89",
-      "target": "tests_test_playback_make_mock_response",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_make_mock_response"
     },
     {
       "relation": "method",
@@ -2316,9 +2316,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testhealthstillworks",
-      "target": "tests_test_playback_testhealthstillworks_test_health_returns_ok",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testhealthstillworks_test_health_returns_ok"
     },
     {
       "relation": "rationale_for",
@@ -2326,9 +2326,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_102",
-      "target": "tests_test_playback_testhealthstillworks",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testhealthstillworks"
     },
     {
       "relation": "method",
@@ -2336,9 +2336,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplaybackcurrentunconfigured",
-      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_returns_200",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_returns_200"
     },
     {
       "relation": "method",
@@ -2346,9 +2346,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplaybackcurrentunconfigured",
-      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_sessions_is_empty_list",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_sessions_is_empty_list"
     },
     {
       "relation": "method",
@@ -2356,9 +2356,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L128",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplaybackcurrentunconfigured",
-      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_sources_checked_is_empty",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_sources_checked_is_empty"
     },
     {
       "relation": "method",
@@ -2366,9 +2366,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplaybackcurrentunconfigured",
-      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_error_is_none",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_error_is_none"
     },
     {
       "relation": "method",
@@ -2376,9 +2376,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplaybackcurrentunconfigured",
-      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_response_shape",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_response_shape"
     },
     {
       "relation": "rationale_for",
@@ -2386,9 +2386,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_118",
-      "target": "tests_test_playback_testplaybackcurrentunconfigured",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplaybackcurrentunconfigured"
     },
     {
       "relation": "method",
@@ -2396,9 +2396,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_no_sessions_returns_empty_list",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_no_sessions_returns_empty_list"
     },
     {
       "relation": "method",
@@ -2406,9 +2406,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_malformed_xml_returns_empty_list",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_malformed_xml_returns_empty_list"
     },
     {
       "relation": "method",
@@ -2416,9 +2416,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L158",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_one_session_returns_one_item",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_one_session_returns_one_item"
     },
     {
       "relation": "method",
@@ -2426,9 +2426,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L162",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_session_source_is_plex",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_session_source_is_plex"
     },
     {
       "relation": "method",
@@ -2436,9 +2436,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L166",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_session_title_confirmed",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_session_title_confirmed"
     },
     {
       "relation": "method",
@@ -2446,9 +2446,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_session_user_parsed",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_session_user_parsed"
     },
     {
       "relation": "method",
@@ -2456,9 +2456,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_session_client_name_parsed",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_session_client_name_parsed"
     },
     {
       "relation": "method",
@@ -2466,9 +2466,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L179",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_session_is_playing_true",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_session_is_playing_true"
     },
     {
       "relation": "method",
@@ -2476,9 +2476,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L183",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_session_decision_direct_play_when_no_transcode",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_session_decision_direct_play_when_no_transcode"
     },
     {
       "relation": "method",
@@ -2486,9 +2486,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L187",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_session_decision_transcode",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_session_decision_transcode"
     },
     {
       "relation": "method",
@@ -2496,9 +2496,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L191",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_video_codec_confirmed",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_video_codec_confirmed"
     },
     {
       "relation": "method",
@@ -2506,9 +2506,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L196",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_video_resolution_parsed",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_video_resolution_parsed"
     },
     {
       "relation": "method",
@@ -2516,9 +2516,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L200",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_video_bitrate_parsed",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_video_bitrate_parsed"
     },
     {
       "relation": "method",
@@ -2526,9 +2526,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L204",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_hdr_format_is_none",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_hdr_format_is_none"
     },
     {
       "relation": "method",
@@ -2536,9 +2536,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L209",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_audio_codec_confirmed",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_audio_codec_confirmed"
     },
     {
       "relation": "method",
@@ -2546,9 +2546,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L214",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexparser",
-      "target": "tests_test_playback_testplexparser_test_audio_channels_parsed",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_audio_channels_parsed"
     },
     {
       "relation": "rationale_for",
@@ -2556,9 +2556,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L148",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_148",
-      "target": "tests_test_playback_testplexparser",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser"
     },
     {
       "relation": "rationale_for",
@@ -2566,9 +2566,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L205",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_205",
-      "target": "tests_test_playback_testplexparser_test_hdr_format_is_none",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexparser_test_hdr_format_is_none"
     },
     {
       "relation": "method",
@@ -2576,9 +2576,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L226",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexclientconfigured",
-      "target": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked"
     },
     {
       "relation": "method",
@@ -2586,9 +2586,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L248",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexclientconfigured",
-      "target": "tests_test_playback_testplexclientconfigured_test_one_session_returned",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_one_session_returned"
     },
     {
       "relation": "method",
@@ -2596,9 +2596,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L275",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexclientconfigured",
-      "target": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash"
     },
     {
       "relation": "method",
@@ -2606,9 +2606,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L295",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexclientconfigured",
-      "target": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash"
     },
     {
       "relation": "method",
@@ -2616,9 +2616,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L322",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_testplexclientconfigured",
-      "target": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash"
     },
     {
       "relation": "rationale_for",
@@ -2626,9 +2626,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L224",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_224",
-      "target": "tests_test_playback_testplexclientconfigured",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured"
     },
     {
       "relation": "rationale_for",
@@ -2636,9 +2636,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L227",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_227",
-      "target": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked"
     },
     {
       "relation": "rationale_for",
@@ -2646,9 +2646,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L249",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_249",
-      "target": "tests_test_playback_testplexclientconfigured_test_one_session_returned",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_one_session_returned"
     },
     {
       "relation": "rationale_for",
@@ -2656,9 +2656,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L276",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_276",
-      "target": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash"
     },
     {
       "relation": "rationale_for",
@@ -2666,9 +2666,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L296",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_296",
-      "target": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash"
     },
     {
       "relation": "rationale_for",
@@ -2676,9 +2676,9 @@
       "source_file": "backend/tests/test_playback.py",
       "source_location": "L323",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_playback_rationale_323",
-      "target": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
-      "confidence_score": 1.0
+      "target": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash"
     },
     {
       "relation": "contains",
@@ -2686,11 +2686,11 @@
       "source_file": ".vscode/settings.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vscode_settings_json",
-      "target": "vscode_settings_geminicodeassist_outlines_automaticoutlinegeneration",
-      "confidence_score": 1.0
+      "target": "vscode_settings_geminicodeassist_outlines_automaticoutlinegeneration"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1dcac6a83ecc18bd88e966590ce6836a32b2ebba"
+  "built_at_commit": "cf711b91cfedc399854a5052a2c23d3e45a0b7f5"
 }
