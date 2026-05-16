@@ -1,6 +1,64 @@
 {
   "communities": {
     "0": [
+      "backend_app_models_playback_py",
+      "basemodel",
+      "enum",
+      "jellyfin_client_jellyfinclient",
+      "jellyfin_client_rationale_34",
+      "jellyfin_client_rationale_65",
+      "models_playback_audiostate",
+      "models_playback_confidence",
+      "models_playback_playbackcurrentresponse",
+      "models_playback_playbackdecision",
+      "models_playback_playbacksource",
+      "models_playback_rationale_1",
+      "models_playback_rationale_112",
+      "models_playback_rationale_19",
+      "models_playback_rationale_35",
+      "models_playback_rationale_43",
+      "models_playback_rationale_77",
+      "models_playback_rationale_86",
+      "models_playback_sessionstate",
+      "models_playback_videostate",
+      "plex_client_plexclient",
+      "plex_client_plexclient_build_unknown_session",
+      "plex_client_plexclient_get_active_sessions",
+      "plex_client_plexclient_init",
+      "plex_client_rationale_139",
+      "plex_client_rationale_48",
+      "plex_client_rationale_63",
+      "plex_client_rationale_80",
+      "routes_playback_get_current_playback",
+      "routes_playback_rationale_1",
+      "routes_playback_rationale_34",
+      "str"
+    ],
+    "1": [
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_next",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_autoprefixer",
+      "frontend_package_devdependencies_eslint",
+      "frontend_package_devdependencies_eslint_config_next",
+      "frontend_package_devdependencies_postcss",
+      "frontend_package_devdependencies_tailwindcss",
+      "frontend_package_devdependencies_types_node",
+      "frontend_package_devdependencies_types_react",
+      "frontend_package_devdependencies_typescript",
+      "frontend_package_json",
+      "frontend_package_name",
+      "frontend_package_private",
+      "frontend_package_scripts",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_lint",
+      "frontend_package_scripts_start",
+      "frontend_package_version"
+    ],
+    "2": [
       "plex_parser_parse_sessions",
       "plex_parser_rationale_76",
       "tests_test_playback_rationale_148",
@@ -23,31 +81,28 @@
       "tests_test_playback_testplexparser_test_video_codec_confirmed",
       "tests_test_playback_testplexparser_test_video_resolution_parsed"
     ],
-    "1": [
-      "backend_app_integrations_plex_parser_py",
-      "basemodel",
-      "models_playback_audiostate",
-      "models_playback_playbackcurrentresponse",
-      "models_playback_rationale_112",
-      "models_playback_rationale_43",
-      "models_playback_rationale_86",
-      "models_playback_sessionstate",
-      "models_playback_videostate",
-      "plex_client_plexclient_build_unknown_session",
-      "plex_client_rationale_139",
-      "plex_parser_parse_audio_state",
-      "plex_parser_parse_decision",
-      "plex_parser_parse_video_element",
-      "plex_parser_parse_video_state",
-      "plex_parser_rationale_1",
-      "plex_parser_rationale_110",
-      "plex_parser_rationale_164",
-      "plex_parser_rationale_187",
-      "plex_parser_rationale_242"
+    "3": [
+      "frontend_tsconfig_compileroptions",
+      "frontend_tsconfig_compileroptions_allowjs",
+      "frontend_tsconfig_compileroptions_esmoduleinterop",
+      "frontend_tsconfig_compileroptions_incremental",
+      "frontend_tsconfig_compileroptions_isolatedmodules",
+      "frontend_tsconfig_compileroptions_jsx",
+      "frontend_tsconfig_compileroptions_lib",
+      "frontend_tsconfig_compileroptions_module",
+      "frontend_tsconfig_compileroptions_moduleresolution",
+      "frontend_tsconfig_compileroptions_noemit",
+      "frontend_tsconfig_compileroptions_paths",
+      "frontend_tsconfig_compileroptions_plugins",
+      "frontend_tsconfig_compileroptions_resolvejsonmodule",
+      "frontend_tsconfig_compileroptions_skiplibcheck",
+      "frontend_tsconfig_compileroptions_strict",
+      "frontend_tsconfig_exclude",
+      "frontend_tsconfig_include",
+      "frontend_tsconfig_json",
+      "frontend_tsconfig_paths"
     ],
-    "2": [
-      "plex_client_plexclient",
-      "plex_client_rationale_48",
+    "4": [
       "tests_test_playback_make_mock_response",
       "tests_test_playback_rationale_224",
       "tests_test_playback_rationale_227",
@@ -63,22 +118,21 @@
       "tests_test_playback_testplexclientconfigured_test_one_session_returned",
       "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash"
     ],
-    "3": [
-      "backend_app_models_playback_py",
-      "enum",
-      "models_playback_confidence",
-      "models_playback_playbackdecision",
-      "models_playback_playbacksource",
-      "models_playback_rationale_1",
-      "models_playback_rationale_19",
-      "models_playback_rationale_35",
-      "models_playback_rationale_77",
-      "routes_playback_get_current_playback",
-      "routes_playback_rationale_1",
-      "routes_playback_rationale_34",
-      "str"
+    "5": [
+      "agents_cinema_machina_core",
+      "backend_requirements_txt",
+      "docs_ai_api_and_integrations_md",
+      "docs_ai_decisions_md",
+      "docs_ai_environment_map_md",
+      "docs_ai_known_issues_md",
+      "docs_ai_project_state_md",
+      "docs_ai_server_and_device_context_md",
+      "docs_ai_task_log_md",
+      "docs_architecture_md",
+      "readme_cinema_machina_core",
+      "skills_cinema_machina_core"
     ],
-    "4": [
+    "6": [
       "backend_tests_test_playback_py",
       "tests_test_playback_rationale_1",
       "tests_test_playback_rationale_102",
@@ -92,84 +146,109 @@
       "tests_test_playback_testplaybackcurrentunconfigured_test_sessions_is_empty_list",
       "tests_test_playback_testplaybackcurrentunconfigured_test_sources_checked_is_empty"
     ],
-    "5": [
-      "frontend_package_author",
-      "frontend_package_description",
-      "frontend_package_json",
-      "frontend_package_keywords",
-      "frontend_package_license",
-      "frontend_package_main",
-      "frontend_package_name",
-      "frontend_package_scripts",
-      "frontend_package_scripts_test",
-      "frontend_package_type",
-      "frontend_package_version"
-    ],
-    "6": [
-      "backend_app_integrations_plex_client_py",
-      "jellyfin_client_jellyfinclient",
-      "jellyfin_client_rationale_1",
-      "jellyfin_client_rationale_34",
-      "jellyfin_client_rationale_65",
-      "plex_client_is_configured",
-      "plex_client_plexclient_get_active_sessions",
-      "plex_client_plexclient_init",
-      "plex_client_rationale_1",
-      "plex_client_rationale_63",
-      "plex_client_rationale_80"
-    ],
     "7": [
+      "backend_app_integrations_plex_parser_py",
+      "plex_parser_parse_audio_state",
+      "plex_parser_parse_decision",
+      "plex_parser_parse_video_element",
+      "plex_parser_parse_video_state",
+      "plex_parser_rationale_1",
+      "plex_parser_rationale_110",
+      "plex_parser_rationale_164",
+      "plex_parser_rationale_187",
+      "plex_parser_rationale_242"
+    ],
+    "8": [
       "backend_app_config_settings_py",
       "basesettings",
       "config_settings_rationale_1",
       "config_settings_rationale_14",
       "config_settings_settings"
     ],
-    "8": [
+    "9": [
       "cinema_machina_core_pyrightconfig_extrapaths",
       "cinema_machina_core_pyrightconfig_pythonpath",
       "cinema_machina_core_pyrightconfig_venv",
       "cinema_machina_core_pyrightconfig_venvpath",
       "pyrightconfig_json"
     ],
-    "9": [
+    "10": [
+      "app_layout_inter",
+      "app_layout_metadata",
+      "app_layout_rootlayout",
+      "frontend_src_app_layout_tsx"
+    ],
+    "11": [
+      "app_page_dashboard",
+      "app_page_healthstatus",
+      "app_page_playbackstate",
+      "frontend_src_app_page_tsx"
+    ],
+    "12": [
+      "backend_app_integrations_plex_client_py",
+      "jellyfin_client_rationale_1",
+      "plex_client_is_configured",
+      "plex_client_rationale_1"
+    ],
+    "13": [
       "backend_app_api_routes_health_py",
       "routes_health_health_check"
     ],
-    "10": [
+    "14": [
+      "frontend_tailwind_config_config",
+      "frontend_tailwind_config_ts"
+    ],
+    "15": [
       "backend_tests_conftest_py",
       "tests_conftest_rationale_1"
     ],
-    "11": [
+    "16": [
       "vscode_settings_geminicodeassist_outlines_automaticoutlinegeneration",
       "vscode_settings_json"
     ],
-    "12": [
+    "17": [
+      "frontend_next_config_mjs"
+    ],
+    "18": [
+      "frontend_next_env_d_ts"
+    ],
+    "19": [
+      "frontend_postcss_config_js"
+    ],
+    "20": [
       "backend_app_init_py"
     ],
-    "13": [
+    "21": [
       "backend_app_main_py"
     ],
-    "14": [
+    "22": [
       "plex_client_rationale_76"
     ]
   },
   "cohesion": {
-    "0": 0.17,
-    "1": 0.14,
-    "2": 0.18,
-    "3": 0.22,
-    "4": 0.17,
-    "5": 0.18,
-    "6": 0.18,
-    "7": 0.4,
+    "0": 0.11,
+    "1": 0.09,
+    "2": 0.17,
+    "3": 0.11,
+    "4": 0.16,
+    "5": 0.17,
+    "6": 0.17,
+    "7": 0.27,
     "8": 0.4,
-    "9": 1.0,
-    "10": 1.0,
-    "11": 1.0,
-    "12": 1.0,
+    "9": 0.4,
+    "10": 0.5,
+    "11": 0.5,
+    "12": 0.5,
     "13": 1.0,
-    "14": 1.0
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0
   },
   "gods": [
     {
@@ -188,9 +267,24 @@
       "degree": 19
     },
     {
+      "id": "frontend_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 15
+    },
+    {
       "id": "jellyfin_client_jellyfinclient",
       "label": "JellyfinClient",
       "degree": 11
+    },
+    {
+      "id": "skills_cinema_machina_core",
+      "label": "Cinema Machina Core SKILLS.md",
+      "degree": 10
+    },
+    {
+      "id": "frontend_package_devdependencies",
+      "label": "devDependencies",
+      "degree": 9
     },
     {
       "id": "tests_test_playback_testplaybackcurrentunconfigured",
@@ -206,82 +300,67 @@
       "id": "models_playback_videostate",
       "label": "VideoState",
       "degree": 7
-    },
-    {
-      "id": "models_playback_audiostate",
-      "label": "AudioState",
-      "degree": 7
-    },
-    {
-      "id": "models_playback_sessionstate",
-      "label": "SessionState",
-      "degree": 7
-    },
-    {
-      "id": "plex_parser_parse_video_element",
-      "label": "_parse_video_element()",
-      "degree": 7
     }
   ],
   "surprises": [
     {
-      "source": "JellyfinClient",
-      "target": "Confidence",
+      "source": "Cinema Machina Core README",
+      "target": "Cinema Machina Core SKILLS.md",
       "source_files": [
-        "backend/app/integrations/jellyfin/client.py",
-        "backend/app/models/playback.py"
+        "README.md",
+        "SKILLS.md"
       ],
-      "confidence": "INFERRED",
-      "relation": "uses",
-      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `Cinema Machina Core README` unexpectedly reaches hub `Cinema Machina Core SKILLS.md`"
     },
     {
-      "source": "PlexClient",
-      "target": "Confidence",
+      "source": "Backend Requirements.txt",
+      "target": "Cinema Machina Core SKILLS.md",
       "source_files": [
-        "backend/app/integrations/plex/client.py",
-        "backend/app/models/playback.py"
+        "backend/requirements.txt",
+        "SKILLS.md"
       ],
-      "confidence": "INFERRED",
-      "relation": "uses",
-      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `Backend Requirements.txt` unexpectedly reaches hub `Cinema Machina Core SKILLS.md`"
     },
     {
-      "source": "JellyfinClient",
-      "target": "PlaybackSource",
+      "source": "Architecture.md",
+      "target": "Cinema Machina Core SKILLS.md",
       "source_files": [
-        "backend/app/integrations/jellyfin/client.py",
-        "backend/app/models/playback.py"
+        "docs/ARCHITECTURE.md",
+        "SKILLS.md"
       ],
-      "confidence": "INFERRED",
-      "relation": "uses",
-      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `Architecture.md` unexpectedly reaches hub `Cinema Machina Core SKILLS.md`"
     },
     {
-      "source": "PlexClient",
-      "target": "PlaybackSource",
+      "source": "Server and Device Context.md",
+      "target": "Cinema Machina Core SKILLS.md",
       "source_files": [
-        "backend/app/integrations/plex/client.py",
-        "backend/app/models/playback.py"
+        "docs/ai/SERVER_AND_DEVICE_CONTEXT.md",
+        "SKILLS.md"
       ],
-      "confidence": "INFERRED",
-      "relation": "uses",
-      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `Server and Device Context.md` unexpectedly reaches hub `Cinema Machina Core SKILLS.md`"
     },
     {
-      "source": "JellyfinClient",
-      "target": "VideoState",
+      "source": "API and Integrations.md",
+      "target": "Cinema Machina Core SKILLS.md",
       "source_files": [
-        "backend/app/integrations/jellyfin/client.py",
-        "backend/app/models/playback.py"
+        "docs/ai/API_AND_INTEGRATIONS.md",
+        "SKILLS.md"
       ],
-      "confidence": "INFERRED",
-      "relation": "uses",
-      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `API and Integrations.md` unexpectedly reaches hub `Cinema Machina Core SKILLS.md`"
     }
   ],
   "tokens": {
-    "input": 0,
-    "output": 0
+    "input": 6186,
+    "output": 1968
   }
 }
