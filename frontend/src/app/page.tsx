@@ -2,13 +2,20 @@
 
 import { useEffect, useState } from "react";
 
+import { fetchApiJson } from "../lib/api";
+
 type HealthStatus = {
   status: string;
   version: string;
 };
 
+type PlaybackSession = {
+  title: string;
+  state?: string;
+};
+
 type PlaybackState = {
-  sessions: any[];
+  sessions: PlaybackSession[];
   sources_checked: string[];
   error: string | null;
 };
@@ -20,15 +27,11 @@ export default function Dashboard() {
   const [playbackError, setPlaybackError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Fetch Health
-    fetch("http://127.0.0.1:8000/health")
-      .then((res) => res.json())
+    fetchApiJson<HealthStatus>("/health")
       .then((data) => setHealth(data))
       .catch((err) => setHealthError(err.message));
 
-    // Fetch Playback
-    fetch("http://127.0.0.1:8000/playback/current")
-      .then((res) => res.json())
+    fetchApiJson<PlaybackState>("/playback/current")
       .then((data) => setPlayback(data))
       .catch((err) => setPlaybackError(err.message));
   }, []);
@@ -89,7 +92,7 @@ export default function Dashboard() {
                     {playback.sessions.map((session, i) => (
                       <li key={i} className="bg-background border border-border p-3 rounded">
                         <div className="font-medium text-white">{session.title}</div>
-                        <div className="text-xs text-gray-500 mt-1">State: {session.state}</div>
+                        <div className="text-xs text-gray-500 mt-1">State: {session.state ?? "unknown"}</div>
                       </li>
                     ))}
                   </ul>
