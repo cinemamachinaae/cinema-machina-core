@@ -93,6 +93,19 @@
       "tests_test_playback_testplaybackcurrentunconfigured_test_sources_checked_is_empty"
     ],
     "5": [
+      "frontend_package_author",
+      "frontend_package_description",
+      "frontend_package_json",
+      "frontend_package_keywords",
+      "frontend_package_license",
+      "frontend_package_main",
+      "frontend_package_name",
+      "frontend_package_scripts",
+      "frontend_package_scripts_test",
+      "frontend_package_type",
+      "frontend_package_version"
+    ],
+    "6": [
       "backend_app_integrations_plex_client_py",
       "jellyfin_client_jellyfinclient",
       "jellyfin_client_rationale_1",
@@ -105,39 +118,39 @@
       "plex_client_rationale_63",
       "plex_client_rationale_80"
     ],
-    "6": [
+    "7": [
       "backend_app_config_settings_py",
       "basesettings",
       "config_settings_rationale_1",
       "config_settings_rationale_14",
       "config_settings_settings"
     ],
-    "7": [
+    "8": [
       "cinema_machina_core_pyrightconfig_extrapaths",
       "cinema_machina_core_pyrightconfig_pythonpath",
       "cinema_machina_core_pyrightconfig_venv",
       "cinema_machina_core_pyrightconfig_venvpath",
       "pyrightconfig_json"
     ],
-    "8": [
-      "backend_tests_conftest_py",
-      "tests_conftest_rationale_1"
-    ],
     "9": [
       "backend_app_api_routes_health_py",
       "routes_health_health_check"
     ],
     "10": [
+      "backend_tests_conftest_py",
+      "tests_conftest_rationale_1"
+    ],
+    "11": [
       "vscode_settings_geminicodeassist_outlines_automaticoutlinegeneration",
       "vscode_settings_json"
     ],
-    "11": [
+    "12": [
       "backend_app_init_py"
     ],
-    "12": [
+    "13": [
       "backend_app_main_py"
     ],
-    "13": [
+    "14": [
       "plex_client_rationale_76"
     ]
   },
@@ -148,14 +161,15 @@
     "3": 0.22,
     "4": 0.17,
     "5": 0.18,
-    "6": 0.4,
+    "6": 0.18,
     "7": 0.4,
-    "8": 1.0,
+    "8": 0.4,
     "9": 1.0,
     "10": 1.0,
     "11": 1.0,
     "12": 1.0,
-    "13": 1.0
+    "13": 1.0,
+    "14": 1.0
   },
   "gods": [
     {

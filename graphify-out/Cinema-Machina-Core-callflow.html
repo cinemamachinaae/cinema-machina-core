@@ -60,7 +60,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 <div class="container">
 
 <h1>Cinema Machina Core — Complete Call Flow &amp; Architecture Documentation</h1>
-<p class="subtitle">Generated from graphify knowledge graph: 112 nodes, 164 edges, 14 communities. Commit: cf711b9</p>
+<p class="subtitle">Generated from graphify knowledge graph: 123 nodes, 174 edges, 15 communities. Commit: a6782df</p>
 
 <div class="nav">
     <a href="#overview">Architecture Overview</a>
@@ -70,7 +70,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
     <a href="#ingest-cache-update">Ingestion &amp; Updates</a>
     <a href="#serve-api">Serving API</a>
     <a href="#tests-fixtures">Tests &amp; Fixtures</a>
-    <a href="#community-6">Community 6</a>
+    <a href="#community-7">Community 7</a>
     <a href="#backend-app">Backend App</a>
     <a href="#return-true-credentials">Return True Credentials</a>
 </div>
@@ -84,7 +84,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 flowchart LR
     EXTRACT_PIPELINE_5F350230("Extraction Pipeline<br/><small>20 nodes</small>")
     class EXTRACT_PIPELINE_5F350230 module;
-    BUILD_GRAPH_321CBB04("Graph Build<br/><small>7 nodes</small>")
+    BUILD_GRAPH_321CBB04("Graph Build<br/><small>18 nodes</small>")
     class BUILD_GRAPH_321CBB04 module;
     CLI_SKILLS_9964CBB8("CLI &amp; Skill Installers<br/><small>1 nodes</small>")
     class CLI_SKILLS_9964CBB8 module;
@@ -94,8 +94,8 @@ flowchart LR
     class SERVE_API_35EC8E86 module;
     TESTS_FIXTURES_B84B1DCC("Tests &amp; Fixtures<br/><small>51 nodes</small>")
     class TESTS_FIXTURES_B84B1DCC module;
-    COMMUNITY_6_7D637A07("Community 6<br/><small>5 nodes</small>")
-    class COMMUNITY_6_7D637A07 module;
+    COMMUNITY_7_989501FC("Community 7<br/><small>5 nodes</small>")
+    class COMMUNITY_7_989501FC module;
     BACKEND_APP_3A477E0A("Backend App<br/><small>1 nodes</small>")
     class BACKEND_APP_3A477E0A module;
     RETURN_TRUE_CREDENTIALS_94234571("Return True Credentials<br/><small>1 nodes</small>")
@@ -122,12 +122,12 @@ flowchart LR
     <h4>Architecture Layers</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>Layer</th><th>Nodes</th><th>Communities</th></tr>
-      <tr><td>Extraction Pipeline</td><td>20</td><td><code>1</code></td></tr><tr><td>Graph Build</td><td>7</td><td><code>7, 10</code></td></tr><tr><td>CLI &amp; Skill Installers</td><td>1</td><td><code>12</code></td></tr><tr><td>Ingestion &amp; Updates</td><td>11</td><td><code>5</code></td></tr><tr><td>Serving API</td><td>15</td><td><code>3, 9</code></td></tr><tr><td>Tests &amp; Fixtures</td><td>51</td><td><code>0, 2, 4, 8</code></td></tr><tr><td>Community 6</td><td>5</td><td><code>6</code></td></tr><tr><td>Backend App</td><td>1</td><td><code>11</code></td></tr><tr><td>Return True Credentials</td><td>1</td><td><code>13</code></td></tr>
+      <tr><td>Extraction Pipeline</td><td>20</td><td><code>1</code></td></tr><tr><td>Graph Build</td><td>18</td><td><code>5, 8, 11</code></td></tr><tr><td>CLI &amp; Skill Installers</td><td>1</td><td><code>13</code></td></tr><tr><td>Ingestion &amp; Updates</td><td>11</td><td><code>6</code></td></tr><tr><td>Serving API</td><td>15</td><td><code>3, 9</code></td></tr><tr><td>Tests &amp; Fixtures</td><td>51</td><td><code>0, 2, 4, 10</code></td></tr><tr><td>Community 7</td><td>5</td><td><code>7</code></td></tr><tr><td>Backend App</td><td>1</td><td><code>12</code></td></tr><tr><td>Return True Credentials</td><td>1</td><td><code>14</code></td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Core Flow</h4>
-    <div class="arrow-chain">Graph Build -&gt; Extraction Pipeline -&gt; Tests &amp; Fixtures -&gt; Ingestion &amp; Updates -&gt; CLI &amp; Skill Installers -&gt; Serving API -&gt; Community 6</div>
+    <div class="arrow-chain">Graph Build -&gt; Extraction Pipeline -&gt; Tests &amp; Fixtures -&gt; Ingestion &amp; Updates -&gt; CLI &amp; Skill Installers -&gt; Serving API -&gt; Community 7</div>
   </div>
 </div>
 <div class="grid">
@@ -400,12 +400,25 @@ flowchart LR
 
 <!-- ====== 3. Graph Build ====== -->
 <h2 id="build-graph">3. Graph Build</h2>
-<p>Graph Build groups implementation around pyrightconfigjson, settingsjson, vscode, pythonpath, mostly in pyrightconfig.json, .vscode/settings.json. This section covers 7 nodes and 5 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<p>Graph Build groups implementation around packagejson, frontend, pyrightconfigjson, settingsjson, mostly in frontend/package.json, pyrightconfig.json, .vscode/settings.json. This section covers 18 nodes and 15 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Graph Build (7 nodes, 5 edges)
+    %% Section: Graph Build (18 nodes, 15 edges)
+    subgraph build_graph_frontend_package_json_640d842e["frontend/package.json"]
+        frontend_package_json_cb6b69be("package.json")
+        frontend_package_scripts_143f8403("scripts<br/><small>frontend/package.json</small>")
+        frontend_package_name_de7e5472("name<br/><small>frontend/package.json</small>")
+        frontend_package_version_dc2c736e("version<br/><small>frontend/package.json</small>")
+        frontend_package_description_39ab34bf("description<br/><small>frontend/package.json</small>")
+        frontend_package_main_5a0d169a("main<br/><small>frontend/package.json</small>")
+        frontend_package_keywords_6d07b788("keywords<br/><small>frontend/package.json</small>")
+        frontend_package_author_005bcee6("author<br/><small>frontend/package.json</small>")
+        frontend_package_license_8b47fe0a("license<br/><small>frontend/package.json</small>")
+        frontend_package_type_f288be81("type<br/><small>frontend/package.json</small>")
+        frontend_package_scripts_test_3f7fedd9("test<br/><small>frontend/package.json</small>")
+    end
     subgraph build_graph_pyrightconfig_json_9f9a7d3b["pyrightconfig.json"]
         pyrightconfig_json_9ce8d44c("pyrightconfig.json")
         cinema_machina_core_pyrightconfig_pythonpath_75e44877("pythonPath<br/><small>pyrightconfig.json</small>")
@@ -421,7 +434,28 @@ flowchart LR
     pyrightconfig_json_9ce8d44c -->|contains| cinema_machina_core_pyrightconfig_venvpath_1062b557
     pyrightconfig_json_9ce8d44c -->|contains| cinema_machina_core_pyrightconfig_venv_a976528f
     pyrightconfig_json_9ce8d44c -->|contains| cinema_machina_core_pyrightconfig_extrapaths_d37d7543
+    frontend_package_json_cb6b69be -->|contains| frontend_package_name_de7e5472
+    frontend_package_json_cb6b69be -->|contains| frontend_package_version_dc2c736e
+    frontend_package_json_cb6b69be -->|contains| frontend_package_description_39ab34bf
+    frontend_package_json_cb6b69be -->|contains| frontend_package_main_5a0d169a
+    frontend_package_json_cb6b69be -->|contains| frontend_package_scripts_143f8403
+    frontend_package_json_cb6b69be -->|contains| frontend_package_keywords_6d07b788
+    frontend_package_json_cb6b69be -->|contains| frontend_package_author_005bcee6
+    frontend_package_json_cb6b69be -->|contains| frontend_package_license_8b47fe0a
+    frontend_package_json_cb6b69be -->|contains| frontend_package_type_f288be81
+    frontend_package_scripts_143f8403 -->|contains| frontend_package_scripts_test_3f7fedd9
     vscode_settings_json_eb4f06c7 -->|contains| vscode_settings_geminicodeassist_outlines_automa_e72993bd
+    class frontend_package_json_cb6b69be function;
+    class frontend_package_scripts_143f8403 function;
+    class frontend_package_name_de7e5472 function;
+    class frontend_package_version_dc2c736e function;
+    class frontend_package_description_39ab34bf function;
+    class frontend_package_main_5a0d169a function;
+    class frontend_package_keywords_6d07b788 function;
+    class frontend_package_author_005bcee6 function;
+    class frontend_package_license_8b47fe0a function;
+    class frontend_package_type_f288be81 function;
+    class frontend_package_scripts_test_3f7fedd9 function;
     class pyrightconfig_json_9ce8d44c function;
     class cinema_machina_core_pyrightconfig_pythonpath_75e44877 function;
     class cinema_machina_core_pyrightconfig_venvpath_1062b557 function;
@@ -452,6 +486,94 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
+  <td><code>package.json</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>package.json node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>name</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>name node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>version</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>version node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>description</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>description node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>main</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>main node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>scripts</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>scripts node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>test</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Verifies imports, entry points, or version behavior.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>keywords</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>keywords node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>author</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>author node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>license</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>license node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>type</code><br><small style="color:var(--muted)">frontend/package.json</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>type node in frontend/package.json.</td>
+</tr>
+<tr>
+  <td>12</td>
   <td><code>pyrightconfig.json</code><br><small style="color:var(--muted)">pyrightconfig.json</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -459,7 +581,7 @@ flowchart LR
   <td>Reads, resolves, or persists project configuration.</td>
 </tr>
 <tr>
-  <td>2</td>
+  <td>13</td>
   <td><code>pythonPath</code><br><small style="color:var(--muted)">pyrightconfig.json</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -467,7 +589,7 @@ flowchart LR
   <td>pythonPath node in pyrightconfig.json.</td>
 </tr>
 <tr>
-  <td>3</td>
+  <td>14</td>
   <td><code>venvPath</code><br><small style="color:var(--muted)">pyrightconfig.json</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -475,7 +597,7 @@ flowchart LR
   <td>venvPath node in pyrightconfig.json.</td>
 </tr>
 <tr>
-  <td>4</td>
+  <td>15</td>
   <td><code>venv</code><br><small style="color:var(--muted)">pyrightconfig.json</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -483,7 +605,7 @@ flowchart LR
   <td>venv node in pyrightconfig.json.</td>
 </tr>
 <tr>
-  <td>5</td>
+  <td>16</td>
   <td><code>extraPaths</code><br><small style="color:var(--muted)">pyrightconfig.json</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -491,7 +613,7 @@ flowchart LR
   <td>extraPaths node in pyrightconfig.json.</td>
 </tr>
 <tr>
-  <td>6</td>
+  <td>17</td>
   <td><code>settings.json</code><br><small style="color:var(--muted)">.vscode/settings.json</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -499,7 +621,7 @@ flowchart LR
   <td>settings.json node in .vscode/settings.json.</td>
 </tr>
 <tr>
-  <td>7</td>
+  <td>18</td>
   <td><code>geminicodeassist.outlines.automaticOutlineGeneration</code><br><small style="color:var(--muted)">.vscode/settings.json</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -513,13 +635,14 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>pyrightconfig.json</code></td><td>5 nodes</td></tr>
+      <tr><td><code>frontend/package.json</code></td><td>11 nodes</td></tr>
+<tr><td><code>pyrightconfig.json</code></td><td>5 nodes</td></tr>
 <tr><td><code>.vscode/settings.json</code></td><td>2 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x5. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x15. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -1292,15 +1415,15 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 8. Community 6 ====== -->
-<h2 id="community-6">8. Community 6</h2>
-<p>Community 6 groups implementation around settingspy, backend, app, config, mostly in app/config/settings.py. This section covers 5 nodes and 4 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 8. Community 7 ====== -->
+<h2 id="community-7">8. Community 7</h2>
+<p>Community 7 groups implementation around settingspy, backend, app, config, mostly in app/config/settings.py. This section covers 5 nodes and 4 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Community 6 (5 nodes, 4 edges)
-    subgraph community_6_app_config_settings_py_bbba403f["app/config/settings.py"]
+    %% Section: Community 7 (5 nodes, 4 edges)
+    subgraph community_7_app_config_settings_py_13edc210["app/config/settings.py"]
         backend_app_config_settings_py_f0f25d3c("settings.py")
         config_settings_settings_3511e911("Settings<br/><small>app/config/settings.py</small>")
         config_settings_rationale_1_8c2103ae("Application settings loaded from enviro...<br/><small>app/config/settings.py</small>")
@@ -1512,17 +1635,17 @@ flowchart LR
   <div class="card">
     <h4>Graph</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>Nodes</td><td>112</td></tr>
-      <tr><td>Edges</td><td>164</td></tr>
+      <tr><td>Nodes</td><td>123</td></tr>
+      <tr><td>Edges</td><td>174</td></tr>
       <tr><td>Hyperedges</td><td>0</td></tr>
-      <tr><td>Communities</td><td>14</td></tr>
+      <tr><td>Communities</td><td>15</td></tr>
       <tr><td>Documented Sections</td><td>9</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Edge Confidence</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>EXTRACTED</td><td>119</td></tr>
+      <tr><td>EXTRACTED</td><td>129</td></tr>
       <tr><td>INFERRED</td><td>45</td></tr>
       <tr><td>AMBIGUOUS</td><td>0</td></tr>
     </table>
@@ -1531,7 +1654,7 @@ flowchart LR
 
 <div style="text-align:center; padding:40px 0; color: var(--muted); font-size:0.9rem;">
   <p>Cinema Machina Core — Architecture Documentation</p>
-  <p>Generated: 2026-05-16 09:35 UTC · graphify callflow-html</p>
+  <p>Generated: 2026-05-16 09:37 UTC · graphify callflow-html</p>
 </div>
 
 </div><!-- .container -->
