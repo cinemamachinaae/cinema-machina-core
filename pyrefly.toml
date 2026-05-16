@@ -1,0 +1,5 @@
+python-version = "3.11"
+python-interpreter-path = ".venv/bin/python"
+search-path = ["backend"]
+project-includes = ["backend/app/**/*.py", "backend/tests/**/*.py"]
+project-excludes = [".venv/**", "venv/**", "**/__pycache__/**"]
