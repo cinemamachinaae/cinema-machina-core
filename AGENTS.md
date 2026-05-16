@@ -183,6 +183,7 @@ Do not upgrade major versions unless explicitly requested.
 ## 8 — Coding Rules
 
 Python:
+
 - typed everywhere
 - Pydantic models
 - Google-style docstrings
@@ -190,12 +191,14 @@ Python:
 - graceful failure for all devices
 
 Frontend:
+
 - Next.js
 - TypeScript
 - modular components
 - no hardcoded API URLs
 
 General:
+
 - no hardcoded secrets
 - use .env
 - preserve API compatibility
