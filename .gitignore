@@ -6,26 +6,39 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
+*.egg-info/
+dist/
+build/
+
+# uv
+uv.lock
 
 # Logs
 *.log
-backend.log
 
 # Env
 .env
 .env.local
 
-# macOS / iCloud
+# macOS / iCloud Drive
 .DS_Store
 Icon?
+Icon\r
 *.icloud
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
 
-# Node
+# Node / Frontend
 node_modules/
 .next/
 out/
-dist/
+.turbo/
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
