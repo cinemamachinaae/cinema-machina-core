@@ -42,3 +42,5 @@ out/
 .idea/
 *.swp
 *.swo
+graphify-out/manifest.json
+graphify-out/cost.json
