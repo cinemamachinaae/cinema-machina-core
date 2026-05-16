@@ -1,0 +1,273 @@
+{
+  "communities": {
+    "0": [
+      "plex_parser_parse_sessions",
+      "plex_parser_rationale_76",
+      "tests_test_playback_rationale_148",
+      "tests_test_playback_rationale_205",
+      "tests_test_playback_testplexparser",
+      "tests_test_playback_testplexparser_test_audio_channels_parsed",
+      "tests_test_playback_testplexparser_test_audio_codec_confirmed",
+      "tests_test_playback_testplexparser_test_hdr_format_is_none",
+      "tests_test_playback_testplexparser_test_malformed_xml_returns_empty_list",
+      "tests_test_playback_testplexparser_test_no_sessions_returns_empty_list",
+      "tests_test_playback_testplexparser_test_one_session_returns_one_item",
+      "tests_test_playback_testplexparser_test_session_client_name_parsed",
+      "tests_test_playback_testplexparser_test_session_decision_direct_play_when_no_transcode",
+      "tests_test_playback_testplexparser_test_session_decision_transcode",
+      "tests_test_playback_testplexparser_test_session_is_playing_true",
+      "tests_test_playback_testplexparser_test_session_source_is_plex",
+      "tests_test_playback_testplexparser_test_session_title_confirmed",
+      "tests_test_playback_testplexparser_test_session_user_parsed",
+      "tests_test_playback_testplexparser_test_video_bitrate_parsed",
+      "tests_test_playback_testplexparser_test_video_codec_confirmed",
+      "tests_test_playback_testplexparser_test_video_resolution_parsed"
+    ],
+    "1": [
+      "backend_app_integrations_plex_parser_py",
+      "basemodel",
+      "models_playback_audiostate",
+      "models_playback_playbackcurrentresponse",
+      "models_playback_rationale_112",
+      "models_playback_rationale_43",
+      "models_playback_rationale_86",
+      "models_playback_sessionstate",
+      "models_playback_videostate",
+      "plex_client_plexclient_build_unknown_session",
+      "plex_client_rationale_139",
+      "plex_parser_parse_audio_state",
+      "plex_parser_parse_decision",
+      "plex_parser_parse_video_element",
+      "plex_parser_parse_video_state",
+      "plex_parser_rationale_1",
+      "plex_parser_rationale_110",
+      "plex_parser_rationale_164",
+      "plex_parser_rationale_187",
+      "plex_parser_rationale_242"
+    ],
+    "2": [
+      "plex_client_plexclient",
+      "plex_client_rationale_48",
+      "tests_test_playback_make_mock_response",
+      "tests_test_playback_rationale_224",
+      "tests_test_playback_rationale_227",
+      "tests_test_playback_rationale_249",
+      "tests_test_playback_rationale_276",
+      "tests_test_playback_rationale_296",
+      "tests_test_playback_rationale_323",
+      "tests_test_playback_rationale_89",
+      "tests_test_playback_testplexclientconfigured",
+      "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash",
+      "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
+      "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
+      "tests_test_playback_testplexclientconfigured_test_one_session_returned",
+      "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash"
+    ],
+    "3": [
+      "backend_app_models_playback_py",
+      "enum",
+      "models_playback_confidence",
+      "models_playback_playbackdecision",
+      "models_playback_playbacksource",
+      "models_playback_rationale_1",
+      "models_playback_rationale_19",
+      "models_playback_rationale_35",
+      "models_playback_rationale_77",
+      "routes_playback_get_current_playback",
+      "routes_playback_rationale_1",
+      "routes_playback_rationale_34",
+      "str"
+    ],
+    "4": [
+      "backend_tests_test_playback_py",
+      "tests_test_playback_rationale_1",
+      "tests_test_playback_rationale_102",
+      "tests_test_playback_rationale_118",
+      "tests_test_playback_testhealthstillworks",
+      "tests_test_playback_testhealthstillworks_test_health_returns_ok",
+      "tests_test_playback_testplaybackcurrentunconfigured",
+      "tests_test_playback_testplaybackcurrentunconfigured_test_error_is_none",
+      "tests_test_playback_testplaybackcurrentunconfigured_test_response_shape",
+      "tests_test_playback_testplaybackcurrentunconfigured_test_returns_200",
+      "tests_test_playback_testplaybackcurrentunconfigured_test_sessions_is_empty_list",
+      "tests_test_playback_testplaybackcurrentunconfigured_test_sources_checked_is_empty"
+    ],
+    "5": [
+      "backend_app_integrations_plex_client_py",
+      "jellyfin_client_jellyfinclient",
+      "jellyfin_client_rationale_1",
+      "jellyfin_client_rationale_34",
+      "jellyfin_client_rationale_65",
+      "plex_client_is_configured",
+      "plex_client_plexclient_get_active_sessions",
+      "plex_client_plexclient_init",
+      "plex_client_rationale_1",
+      "plex_client_rationale_63",
+      "plex_client_rationale_80"
+    ],
+    "6": [
+      "backend_app_config_settings_py",
+      "basesettings",
+      "config_settings_rationale_1",
+      "config_settings_rationale_14",
+      "config_settings_settings"
+    ],
+    "7": [
+      "cinema_machina_core_pyrightconfig_extrapaths",
+      "cinema_machina_core_pyrightconfig_pythonpath",
+      "cinema_machina_core_pyrightconfig_venv",
+      "cinema_machina_core_pyrightconfig_venvpath",
+      "pyrightconfig_json"
+    ],
+    "8": [
+      "backend_tests_conftest_py",
+      "tests_conftest_rationale_1"
+    ],
+    "9": [
+      "backend_app_api_routes_health_py",
+      "routes_health_health_check"
+    ],
+    "10": [
+      "vscode_settings_geminicodeassist_outlines_automaticoutlinegeneration",
+      "vscode_settings_json"
+    ],
+    "11": [
+      "backend_app_init_py"
+    ],
+    "12": [
+      "backend_app_main_py"
+    ],
+    "13": [
+      "plex_client_rationale_76"
+    ]
+  },
+  "cohesion": {
+    "0": 0.17,
+    "1": 0.14,
+    "2": 0.18,
+    "3": 0.22,
+    "4": 0.17,
+    "5": 0.18,
+    "6": 0.4,
+    "7": 0.4,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0
+  },
+  "gods": [
+    {
+      "id": "plex_client_plexclient",
+      "label": "PlexClient",
+      "degree": 20
+    },
+    {
+      "id": "plex_parser_parse_sessions",
+      "label": "parse_sessions()",
+      "degree": 20
+    },
+    {
+      "id": "tests_test_playback_testplexparser",
+      "label": "TestPlexParser",
+      "degree": 19
+    },
+    {
+      "id": "jellyfin_client_jellyfinclient",
+      "label": "JellyfinClient",
+      "degree": 11
+    },
+    {
+      "id": "tests_test_playback_testplaybackcurrentunconfigured",
+      "label": "TestPlaybackCurrentUnconfigured",
+      "degree": 8
+    },
+    {
+      "id": "tests_test_playback_testplexclientconfigured",
+      "label": "TestPlexClientConfigured",
+      "degree": 8
+    },
+    {
+      "id": "models_playback_videostate",
+      "label": "VideoState",
+      "degree": 7
+    },
+    {
+      "id": "models_playback_audiostate",
+      "label": "AudioState",
+      "degree": 7
+    },
+    {
+      "id": "models_playback_sessionstate",
+      "label": "SessionState",
+      "degree": 7
+    },
+    {
+      "id": "plex_parser_parse_video_element",
+      "label": "_parse_video_element()",
+      "degree": 7
+    }
+  ],
+  "surprises": [
+    {
+      "source": "JellyfinClient",
+      "target": "Confidence",
+      "source_files": [
+        "backend/app/integrations/jellyfin/client.py",
+        "backend/app/models/playback.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "PlexClient",
+      "target": "Confidence",
+      "source_files": [
+        "backend/app/integrations/plex/client.py",
+        "backend/app/models/playback.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "JellyfinClient",
+      "target": "PlaybackSource",
+      "source_files": [
+        "backend/app/integrations/jellyfin/client.py",
+        "backend/app/models/playback.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "PlexClient",
+      "target": "PlaybackSource",
+      "source_files": [
+        "backend/app/integrations/plex/client.py",
+        "backend/app/models/playback.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "JellyfinClient",
+      "target": "VideoState",
+      "source_files": [
+        "backend/app/integrations/jellyfin/client.py",
+        "backend/app/models/playback.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
