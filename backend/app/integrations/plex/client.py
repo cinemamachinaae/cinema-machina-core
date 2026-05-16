@@ -1,14 +1,15 @@
-"""Plex Media Server integration client — Phase 2 scaffold.
+"""Plex Media Server integration client — Phase 2.1.
 
-This module provides a safe, non-crashing interface to the Plex
-session API. At this stage it returns ``unknown`` state when:
+Makes a real HTTP call to ``/status/sessions`` when credentials are
+configured. Returns ``unknown`` / empty state safely when:
 
 - ``PLEX_URL`` or ``PLEX_TOKEN`` are not configured.
-- The Plex server is unreachable.
+- The Plex server is unreachable or times out.
 - No active session is found.
+- The response XML is malformed.
 
-No real HTTP calls to Plex are made yet. Full session parsing
-will be added in a later Phase 2 iteration.
+Token is passed as a query parameter (Plex standard). It is never
+written to logs — only the sanitised base URL is logged.
 
 See SKILLS.md §12 for Plex-specific rules.
 See AGENTS.md §3 for the confidence model.
@@ -18,7 +19,10 @@ from __future__ import annotations
 
 import logging
 
+import httpx
+
 from app.config.settings import settings
+from app.integrations.plex.parser import parse_sessions
 from app.models.playback import (
     AudioState,
     Confidence,
@@ -30,6 +34,15 @@ from app.models.playback import (
 
 logger = logging.getLogger(__name__)
 
+# Hard timeout for all Plex API calls.  Plex is local, so 5 s is generous.
+_PLEX_TIMEOUT_S: float = 5.0
+
+# Plex requires this Accept header to guarantee XML (not JSON) responses.
+_PLEX_HEADERS: dict[str, str] = {
+    "Accept": "application/xml",
+    "X-Plex-Client-Identifier": "cinema-machina-core",
+}
+
 
 class PlexClient:
     """Interface to the Plex Media Server session API.
@@ -38,6 +51,7 @@ class PlexClient:
     - Never raise an unhandled exception.
     - Return a well-typed response with appropriate ``confidence``.
     - Log errors at WARNING or ERROR level, never silently swallow them.
+    - Never write the Plex token to any log line.
 
     Attributes:
         _url: Plex server base URL from settings.
@@ -65,24 +79,61 @@ class PlexClient:
     def get_active_sessions(self) -> list[SessionState]:
         """Fetch active Plex playback sessions.
 
-        Returns:
-            A list of ``SessionState`` objects. Returns an empty list
-            with ``confidence=unknown`` when credentials are absent or
-            an error occurs. Never raises.
+        Makes a synchronous GET request to ``{plex_url}/status/sessions``
+        with the token as a query parameter. Parses the XML response and
+        returns typed ``SessionState`` objects.
 
-        Note:
-            Real HTTP calls to the Plex ``/status/sessions`` endpoint
-            will be added in a future iteration. This scaffold returns
-            an empty list to keep the API contract stable.
+        Returns:
+            A list of ``SessionState`` objects — one per active session.
+            Returns an empty list on no active sessions, unconfigured
+            credentials, network errors, or parse failures. Never raises.
+
+        Raises:
+            Nothing — all errors are caught, logged, and result in an
+            empty return value. The caller (route handler) catches any
+            residual exceptions as an extra safety net.
         """
         if not self._configured:
             return []
 
-        # TODO (Phase 2 iteration 2): implement real Plex session fetch
-        # via GET {plex_url}/status/sessions?X-Plex-Token={token}
-        # Parse MediaContainer → Video elements into SessionState objects.
-        logger.info("PlexClient.get_active_sessions: placeholder — no real call yet.")
-        return []
+        # Safety assertion — mypy: both are str at this point.
+        assert self._url is not None
+        assert self._token is not None
+
+        endpoint = f"{self._url.rstrip('/')}/status/sessions"
+        # Log base URL only — never log the token.
+        logger.info("PlexClient: fetching sessions from %s", endpoint)
+
+        try:
+            with httpx.Client(timeout=_PLEX_TIMEOUT_S) as http:
+                response = http.get(
+                    endpoint,
+                    params={"X-Plex-Token": self._token},
+                    headers=_PLEX_HEADERS,
+                )
+            response.raise_for_status()
+        except httpx.TimeoutException:
+            logger.error(
+                "PlexClient: request timed out after %.1f s — %s",
+                _PLEX_TIMEOUT_S,
+                endpoint,
+            )
+            return []
+        except httpx.HTTPStatusError as exc:
+            logger.error(
+                "PlexClient: HTTP %s from Plex — %s",
+                exc.response.status_code,
+                endpoint,
+            )
+            return []
+        except httpx.HTTPError as exc:
+            logger.error("PlexClient: network error — %s", exc)
+            return []
+        except Exception as exc:  # noqa: BLE001
+            logger.error("PlexClient: unexpected error — %s", exc)
+            return []
+
+        return parse_sessions(response.text)
 
     def _build_unknown_session(self) -> SessionState:
         """Build a fully-unknown session state for safe fallback.
