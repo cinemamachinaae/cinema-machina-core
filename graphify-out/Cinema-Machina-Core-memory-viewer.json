@@ -1,0 +1,3333 @@
+{
+  "nodes": [
+    {
+      "id": "pyrightconfig_json",
+      "name": "pyrightconfig.json",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#FB7185",
+      "observations": [
+        "Community: 9"
+      ]
+    },
+    {
+      "id": "cinema_machina_core_pyrightconfig_pythonpath",
+      "name": "pythonPath",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#FB7185",
+      "observations": [
+        "Community: 9"
+      ]
+    },
+    {
+      "id": "cinema_machina_core_pyrightconfig_venvpath",
+      "name": "venvPath",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#FB7185",
+      "observations": [
+        "Community: 9"
+      ]
+    },
+    {
+      "id": "cinema_machina_core_pyrightconfig_venv",
+      "name": "venv",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#FB7185",
+      "observations": [
+        "Community: 9"
+      ]
+    },
+    {
+      "id": "cinema_machina_core_pyrightconfig_extrapaths",
+      "name": "extraPaths",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#FB7185",
+      "observations": [
+        "Community: 9"
+      ]
+    },
+    {
+      "id": "frontend_next_config_mjs",
+      "name": "next.config.mjs",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 17"
+      ]
+    },
+    {
+      "id": "frontend_next_env_d_ts",
+      "name": "next-env.d.ts",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#4ADE80",
+      "observations": [
+        "Community: 18"
+      ]
+    },
+    {
+      "id": "frontend_tailwind_config_ts",
+      "name": "tailwind.config.ts",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 14"
+      ]
+    },
+    {
+      "id": "frontend_tailwind_config_config",
+      "name": "config",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 14"
+      ]
+    },
+    {
+      "id": "frontend_package_json",
+      "name": "package.json",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_name",
+      "name": "name",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_version",
+      "name": "version",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_private",
+      "name": "private",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_scripts",
+      "name": "scripts",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_scripts_dev",
+      "name": "dev",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_scripts_build",
+      "name": "build",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_scripts_start",
+      "name": "start",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_scripts_lint",
+      "name": "lint",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_dependencies",
+      "name": "dependencies",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_dependencies_next",
+      "name": "next",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_dependencies_react",
+      "name": "react",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_dependencies_react_dom",
+      "name": "react-dom",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_devdependencies",
+      "name": "devDependencies",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_devdependencies_types_node",
+      "name": "@types/node",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_devdependencies_types_react",
+      "name": "@types/react",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_devdependencies_autoprefixer",
+      "name": "autoprefixer",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_devdependencies_eslint",
+      "name": "eslint",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_devdependencies_eslint_config_next",
+      "name": "eslint-config-next",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_devdependencies_postcss",
+      "name": "postcss",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_devdependencies_tailwindcss",
+      "name": "tailwindcss",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_package_devdependencies_typescript",
+      "name": "typescript",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 1"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_json",
+      "name": "tsconfig.json",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions",
+      "name": "compilerOptions",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_lib",
+      "name": "lib",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_allowjs",
+      "name": "allowJs",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_skiplibcheck",
+      "name": "skipLibCheck",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_strict",
+      "name": "strict",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_noemit",
+      "name": "noEmit",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_esmoduleinterop",
+      "name": "esModuleInterop",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_module",
+      "name": "module",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_moduleresolution",
+      "name": "moduleResolution",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_resolvejsonmodule",
+      "name": "resolveJsonModule",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_isolatedmodules",
+      "name": "isolatedModules",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_jsx",
+      "name": "jsx",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_incremental",
+      "name": "incremental",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_plugins",
+      "name": "plugins",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions_paths",
+      "name": "paths",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_paths",
+      "name": "@/*",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_include",
+      "name": "include",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_tsconfig_exclude",
+      "name": "exclude",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 3"
+      ]
+    },
+    {
+      "id": "frontend_postcss_config_js",
+      "name": "postcss.config.js",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#FB7185",
+      "observations": [
+        "Community: 19"
+      ]
+    },
+    {
+      "id": "frontend_src_app_layout_tsx",
+      "name": "layout.tsx",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 10"
+      ]
+    },
+    {
+      "id": "app_layout_inter",
+      "name": "inter",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 10"
+      ]
+    },
+    {
+      "id": "app_layout_metadata",
+      "name": "metadata",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 10"
+      ]
+    },
+    {
+      "id": "app_layout_rootlayout",
+      "name": "RootLayout()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 10"
+      ]
+    },
+    {
+      "id": "frontend_src_app_page_tsx",
+      "name": "page.tsx",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 11"
+      ]
+    },
+    {
+      "id": "app_page_healthstatus",
+      "name": "HealthStatus",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 11"
+      ]
+    },
+    {
+      "id": "app_page_playbackstate",
+      "name": "PlaybackState",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 11"
+      ]
+    },
+    {
+      "id": "app_page_dashboard",
+      "name": "Dashboard()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 11"
+      ]
+    },
+    {
+      "id": "backend_app_init_py",
+      "name": "__init__.py",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 20"
+      ]
+    },
+    {
+      "id": "backend_app_main_py",
+      "name": "main.py",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#A78BFA",
+      "observations": [
+        "Community: 21"
+      ]
+    },
+    {
+      "id": "backend_app_config_settings_py",
+      "name": "settings.py",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#4ADE80",
+      "observations": [
+        "Community: 8"
+      ]
+    },
+    {
+      "id": "config_settings_settings",
+      "name": "Settings",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#4ADE80",
+      "observations": [
+        "Community: 8"
+      ]
+    },
+    {
+      "id": "basesettings",
+      "name": "BaseSettings",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#4ADE80",
+      "observations": [
+        "Community: 8"
+      ]
+    },
+    {
+      "id": "config_settings_rationale_1",
+      "name": "Application settings loaded from environment variables.  All credentials are opt",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#4ADE80",
+      "observations": [
+        "Community: 8"
+      ]
+    },
+    {
+      "id": "config_settings_rationale_14",
+      "name": "Runtime configuration for Cinema Machina Core.      Values are read from the env",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#4ADE80",
+      "observations": [
+        "Community: 8"
+      ]
+    },
+    {
+      "id": "backend_app_models_playback_py",
+      "name": "playback.py",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_confidence",
+      "name": "Confidence",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "str",
+      "name": "str",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "enum",
+      "name": "Enum",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_playbacksource",
+      "name": "PlaybackSource",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_videostate",
+      "name": "VideoState",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "basemodel",
+      "name": "BaseModel",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_audiostate",
+      "name": "AudioState",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_playbackdecision",
+      "name": "PlaybackDecision",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_sessionstate",
+      "name": "SessionState",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_playbackcurrentresponse",
+      "name": "PlaybackCurrentResponse",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_rationale_1",
+      "name": "Playback state Pydantic models.  Every field that describes a playback attribute",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_rationale_19",
+      "name": "Confidence level for a playback attribute.      confirmed: Value was reported di",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_rationale_35",
+      "name": "Which media server reported this session.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_rationale_43",
+      "name": "Video stream attributes for the current session.      Attributes:         codec:",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_rationale_77",
+      "name": "How the media server is delivering the stream to the client.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_rationale_86",
+      "name": "Full playback session state snapshot.      Attributes:         source: Which med",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "models_playback_rationale_112",
+      "name": "Response envelope for ``GET /playback/current``.      Attributes:         sessio",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "jellyfin_client_jellyfinclient",
+      "name": "JellyfinClient",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "jellyfin_client_rationale_1",
+      "name": "Jellyfin server integration client — Phase 2 scaffold.  This module provides a s",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 12"
+      ]
+    },
+    {
+      "id": "jellyfin_client_rationale_34",
+      "name": "Interface to the Jellyfin server session API.      All public methods must:",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "jellyfin_client_rationale_65",
+      "name": "Fetch active Jellyfin playback sessions.          Returns:             A list of",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "backend_app_integrations_plex_client_py",
+      "name": "client.py",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 12"
+      ]
+    },
+    {
+      "id": "plex_client_plexclient",
+      "name": "PlexClient",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "plex_client_plexclient_init",
+      "name": ".__init__()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "plex_client_is_configured",
+      "name": "is_configured()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 12"
+      ]
+    },
+    {
+      "id": "plex_client_plexclient_get_active_sessions",
+      "name": ".get_active_sessions()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "plex_client_plexclient_build_unknown_session",
+      "name": "._build_unknown_session()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "plex_client_rationale_1",
+      "name": "Plex Media Server integration client — Phase 2.1.  Makes a real HTTP call to ``/",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 12"
+      ]
+    },
+    {
+      "id": "plex_client_rationale_48",
+      "name": "Interface to the Plex Media Server session API.      All public methods must:",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "plex_client_rationale_63",
+      "name": "Initialise the client using values from ``settings``.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "plex_client_rationale_76",
+      "name": "Return True if credentials are present in settings.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 22"
+      ]
+    },
+    {
+      "id": "plex_client_rationale_80",
+      "name": "Fetch active Plex playback sessions.          Makes a synchronous GET request to",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "plex_client_rationale_139",
+      "name": "Build a fully-unknown session state for safe fallback.          Returns:",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "backend_app_integrations_plex_parser_py",
+      "name": "parser.py",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "plex_parser_parse_sessions",
+      "name": "parse_sessions()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "plex_parser_parse_video_element",
+      "name": "_parse_video_element()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "plex_parser_parse_decision",
+      "name": "_parse_decision()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "plex_parser_parse_video_state",
+      "name": "_parse_video_state()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "plex_parser_parse_audio_state",
+      "name": "_parse_audio_state()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "plex_parser_rationale_1",
+      "name": "Plex session XML parser — Phase 2.1.  Parses the ``/status/sessions`` XML respon",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "plex_parser_rationale_76",
+      "name": "Parse a Plex ``/status/sessions`` XML response into session objects.      Args:",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "plex_parser_rationale_110",
+      "name": "Parse a single ``<Video>`` element into a ``SessionState``.      Args:         v",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "plex_parser_rationale_164",
+      "name": "Derive the playback decision from a ``<Video>`` element.      Plex exposes the d",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "plex_parser_rationale_187",
+      "name": "Extract video codec and resolution from a ``<Media>`` element.      Prefers ``<S",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "plex_parser_rationale_242",
+      "name": "Extract audio codec and channel count from a ``<Media>`` element.      Prefers `",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#C084FC",
+      "observations": [
+        "Community: 7"
+      ]
+    },
+    {
+      "id": "routes_playback_get_current_playback",
+      "name": "get_current_playback()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "routes_playback_rationale_1",
+      "name": "Playback API route — GET /playback/current.  This route delegates to the Plex an",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "routes_playback_rationale_34",
+      "name": "Return all active playback sessions across configured sources.      Queries Plex",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#60A5FA",
+      "observations": [
+        "Community: 0"
+      ]
+    },
+    {
+      "id": "backend_app_api_routes_health_py",
+      "name": "health.py",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 13"
+      ]
+    },
+    {
+      "id": "routes_health_health_check",
+      "name": "health_check()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F59E0B",
+      "observations": [
+        "Community: 13"
+      ]
+    },
+    {
+      "id": "backend_tests_conftest_py",
+      "name": "conftest.py",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 15"
+      ]
+    },
+    {
+      "id": "tests_conftest_rationale_1",
+      "name": "pytest configuration for the backend test suite.  Adds ``backend/`` to ``sys.pat",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 15"
+      ]
+    },
+    {
+      "id": "backend_tests_test_playback_py",
+      "name": "test_playback.py",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_make_mock_response",
+      "name": "_make_mock_response()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testhealthstillworks",
+      "name": "TestHealthStillWorks",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testhealthstillworks_test_health_returns_ok",
+      "name": ".test_health_returns_ok()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplaybackcurrentunconfigured",
+      "name": "TestPlaybackCurrentUnconfigured",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_returns_200",
+      "name": ".test_returns_200()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_sessions_is_empty_list",
+      "name": ".test_sessions_is_empty_list()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_sources_checked_is_empty",
+      "name": ".test_sources_checked_is_empty()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_error_is_none",
+      "name": ".test_error_is_none()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplaybackcurrentunconfigured_test_response_shape",
+      "name": ".test_response_shape()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser",
+      "name": "TestPlexParser",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_no_sessions_returns_empty_list",
+      "name": ".test_no_sessions_returns_empty_list()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_malformed_xml_returns_empty_list",
+      "name": ".test_malformed_xml_returns_empty_list()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_one_session_returns_one_item",
+      "name": ".test_one_session_returns_one_item()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_session_source_is_plex",
+      "name": ".test_session_source_is_plex()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_session_title_confirmed",
+      "name": ".test_session_title_confirmed()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_session_user_parsed",
+      "name": ".test_session_user_parsed()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_session_client_name_parsed",
+      "name": ".test_session_client_name_parsed()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_session_is_playing_true",
+      "name": ".test_session_is_playing_true()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_session_decision_direct_play_when_no_transcode",
+      "name": ".test_session_decision_direct_play_when_no_transcode()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_session_decision_transcode",
+      "name": ".test_session_decision_transcode()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_video_codec_confirmed",
+      "name": ".test_video_codec_confirmed()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_video_resolution_parsed",
+      "name": ".test_video_resolution_parsed()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_video_bitrate_parsed",
+      "name": ".test_video_bitrate_parsed()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_hdr_format_is_none",
+      "name": ".test_hdr_format_is_none()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_audio_codec_confirmed",
+      "name": ".test_audio_codec_confirmed()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexparser_test_audio_channels_parsed",
+      "name": ".test_audio_channels_parsed()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexclientconfigured",
+      "name": "TestPlexClientConfigured",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
+      "name": ".test_no_sessions_returns_empty_and_sources_checked()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexclientconfigured_test_one_session_returned",
+      "name": ".test_one_session_returned()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash",
+      "name": ".test_timeout_returns_empty_no_crash()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash",
+      "name": ".test_http_error_returns_empty_no_crash()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
+      "name": ".test_malformed_xml_returns_empty_no_crash()",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_1",
+      "name": "Tests for /health and /playback/current — Phase 2.1.  Coverage: - Phase 1 regres",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_89",
+      "name": "Build a mock httpx.Response with the given body text.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_102",
+      "name": "Regression: Phase 1 /health must remain intact after Phase 2.1 wiring.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_118",
+      "name": "Behaviour of /playback/current when no credentials are set.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 6"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_148",
+      "name": "Unit tests for parse_sessions() against fixture XML strings.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_205",
+      "name": "HDR must never be inferred from Plex session XML.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#34D399",
+      "observations": [
+        "Community: 2"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_224",
+      "name": "PlexClient behaviour with mocked settings and mocked httpx.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_227",
+      "name": "Configured Plex with no active sessions → sources_checked=['plex'],         sess",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_249",
+      "name": "Configured Plex with one active session → one SessionState.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_276",
+      "name": "Plex timeout → empty sessions, no exception raised.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_296",
+      "name": "Plex HTTP 401 → empty sessions, no exception raised.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "tests_test_playback_rationale_323",
+      "name": "Plex returns malformed XML → empty sessions, no exception raised.",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F87171",
+      "observations": [
+        "Community: 4"
+      ]
+    },
+    {
+      "id": "vscode_settings_json",
+      "name": "settings.json",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 16"
+      ]
+    },
+    {
+      "id": "vscode_settings_geminicodeassist_outlines_automaticoutlinegeneration",
+      "name": "geminicodeassist.outlines.automaticOutlineGeneration",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#F472B6",
+      "observations": [
+        "Community: 16"
+      ]
+    },
+    {
+      "id": "readme_cinema_machina_core",
+      "name": "Cinema Machina Core README",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "skills_cinema_machina_core",
+      "name": "Cinema Machina Core SKILLS.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "agents_cinema_machina_core",
+      "name": "Cinema Machina Core AGENTS.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "backend_requirements_txt",
+      "name": "Backend Requirements.txt",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "docs_architecture_md",
+      "name": "Architecture.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "docs_ai_server_and_device_context_md",
+      "name": "Server and Device Context.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "docs_ai_api_and_integrations_md",
+      "name": "API and Integrations.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "docs_ai_project_state_md",
+      "name": "Project State.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "docs_ai_known_issues_md",
+      "name": "Known Issues.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "docs_ai_environment_map_md",
+      "name": "Environment Map.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "docs_ai_task_log_md",
+      "name": "Task Log.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    },
+    {
+      "id": "docs_ai_decisions_md",
+      "name": "Decisions.md",
+      "type": "GraphifyNode",
+      "val": 4,
+      "color": "#22D3EE",
+      "observations": [
+        "Community: 5"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "pyrightconfig_json",
+      "target": "cinema_machina_core_pyrightconfig_pythonpath",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "pyrightconfig_json",
+      "target": "cinema_machina_core_pyrightconfig_venvpath",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "pyrightconfig_json",
+      "target": "cinema_machina_core_pyrightconfig_venv",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "pyrightconfig_json",
+      "target": "cinema_machina_core_pyrightconfig_extrapaths",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tailwind_config_ts",
+      "target": "frontend_tailwind_config_config",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_json",
+      "target": "frontend_package_name",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_json",
+      "target": "frontend_package_version",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_json",
+      "target": "frontend_package_private",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_json",
+      "target": "frontend_package_scripts",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_json",
+      "target": "frontend_package_dependencies",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_json",
+      "target": "frontend_package_devdependencies",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_dev",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_build",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_start",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_lint",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_next",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_react",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_react_dom",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_types_node",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_types_react",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_autoprefixer",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_eslint",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_eslint_config_next",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_postcss",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_tailwindcss",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_typescript",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_json",
+      "target": "frontend_tsconfig_compileroptions",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_json",
+      "target": "frontend_tsconfig_include",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_json",
+      "target": "frontend_tsconfig_exclude",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_lib",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_allowjs",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_skiplibcheck",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_strict",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_noemit",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_esmoduleinterop",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_module",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_moduleresolution",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_resolvejsonmodule",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_isolatedmodules",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_jsx",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_incremental",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_plugins",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions",
+      "target": "frontend_tsconfig_compileroptions_paths",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_tsconfig_compileroptions_paths",
+      "target": "frontend_tsconfig_paths",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_src_app_layout_tsx",
+      "target": "app_layout_inter",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_src_app_layout_tsx",
+      "target": "app_layout_metadata",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_src_app_layout_tsx",
+      "target": "app_layout_rootlayout",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_src_app_page_tsx",
+      "target": "app_page_healthstatus",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_src_app_page_tsx",
+      "target": "app_page_playbackstate",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "frontend_src_app_page_tsx",
+      "target": "app_page_dashboard",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_config_settings_py",
+      "target": "config_settings_settings",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "config_settings_rationale_1",
+      "target": "backend_app_config_settings_py",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "config_settings_settings",
+      "target": "basesettings",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "config_settings_rationale_14",
+      "target": "config_settings_settings",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "backend_app_models_playback_py",
+      "target": "enum",
+      "type": "imports_from",
+      "value": 1,
+      "description": "import"
+    },
+    {
+      "source": "backend_app_models_playback_py",
+      "target": "models_playback_confidence",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_models_playback_py",
+      "target": "models_playback_playbacksource",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_models_playback_py",
+      "target": "models_playback_videostate",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_models_playback_py",
+      "target": "models_playback_audiostate",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_models_playback_py",
+      "target": "models_playback_playbackdecision",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_models_playback_py",
+      "target": "models_playback_sessionstate",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_models_playback_py",
+      "target": "models_playback_playbackcurrentresponse",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "models_playback_rationale_1",
+      "target": "backend_app_models_playback_py",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "backend_app_models_playback_py",
+      "target": "routes_playback_get_current_playback",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "routes_playback_rationale_1",
+      "target": "backend_app_models_playback_py",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "models_playback_confidence",
+      "target": "str",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_confidence",
+      "target": "enum",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_rationale_19",
+      "target": "models_playback_confidence",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "jellyfin_client_jellyfinclient",
+      "target": "models_playback_confidence",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "plex_client_plexclient",
+      "target": "models_playback_confidence",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "models_playback_playbacksource",
+      "target": "str",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_playbackdecision",
+      "target": "str",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_playbacksource",
+      "target": "enum",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_playbackdecision",
+      "target": "enum",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_rationale_35",
+      "target": "models_playback_playbacksource",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "jellyfin_client_jellyfinclient",
+      "target": "models_playback_playbacksource",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "plex_client_plexclient",
+      "target": "models_playback_playbacksource",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "models_playback_videostate",
+      "target": "basemodel",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_rationale_43",
+      "target": "models_playback_videostate",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "jellyfin_client_jellyfinclient",
+      "target": "models_playback_videostate",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "plex_client_plexclient",
+      "target": "models_playback_videostate",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "plex_client_plexclient_build_unknown_session",
+      "target": "models_playback_videostate",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_parser_parse_video_state",
+      "target": "models_playback_videostate",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "models_playback_audiostate",
+      "target": "basemodel",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_sessionstate",
+      "target": "basemodel",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_playbackcurrentresponse",
+      "target": "basemodel",
+      "type": "inherits",
+      "value": 1,
+      "description": "inherits"
+    },
+    {
+      "source": "models_playback_rationale_43",
+      "target": "models_playback_audiostate",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "jellyfin_client_jellyfinclient",
+      "target": "models_playback_audiostate",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "plex_client_plexclient",
+      "target": "models_playback_audiostate",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "plex_client_plexclient_build_unknown_session",
+      "target": "models_playback_audiostate",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_parser_parse_audio_state",
+      "target": "models_playback_audiostate",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "models_playback_rationale_77",
+      "target": "models_playback_playbackdecision",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "jellyfin_client_jellyfinclient",
+      "target": "models_playback_playbackdecision",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "plex_client_plexclient",
+      "target": "models_playback_playbackdecision",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "models_playback_rationale_86",
+      "target": "models_playback_sessionstate",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "jellyfin_client_jellyfinclient",
+      "target": "models_playback_sessionstate",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "plex_client_plexclient",
+      "target": "models_playback_sessionstate",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "plex_client_plexclient_build_unknown_session",
+      "target": "models_playback_sessionstate",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_parser_parse_video_element",
+      "target": "models_playback_sessionstate",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "models_playback_rationale_112",
+      "target": "models_playback_playbackcurrentresponse",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "routes_playback_get_current_playback",
+      "target": "models_playback_playbackcurrentresponse",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "backend_app_integrations_plex_client_py",
+      "target": "jellyfin_client_jellyfinclient",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "jellyfin_client_jellyfinclient",
+      "target": "plex_client_plexclient_init",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "jellyfin_client_jellyfinclient",
+      "target": "plex_client_plexclient_get_active_sessions",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "jellyfin_client_jellyfinclient",
+      "target": "plex_client_plexclient_build_unknown_session",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "jellyfin_client_rationale_34",
+      "target": "jellyfin_client_jellyfinclient",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "jellyfin_client_rationale_1",
+      "target": "backend_app_integrations_plex_client_py",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "jellyfin_client_rationale_65",
+      "target": "plex_client_plexclient_get_active_sessions",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "backend_app_integrations_plex_client_py",
+      "target": "plex_client_is_configured",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_integrations_plex_client_py",
+      "target": "plex_client_plexclient",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "plex_client_rationale_1",
+      "target": "backend_app_integrations_plex_client_py",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "plex_client_plexclient",
+      "target": "plex_client_plexclient_init",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "plex_client_plexclient",
+      "target": "plex_client_plexclient_get_active_sessions",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "plex_client_plexclient",
+      "target": "plex_client_plexclient_build_unknown_session",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "plex_client_rationale_48",
+      "target": "plex_client_plexclient",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_testhealthstillworks",
+      "target": "plex_client_plexclient",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "tests_test_playback_testplaybackcurrentunconfigured",
+      "target": "plex_client_plexclient",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "plex_client_plexclient",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured",
+      "target": "plex_client_plexclient",
+      "type": "uses",
+      "value": 1,
+      "description": "uses"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
+      "target": "plex_client_plexclient",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured_test_one_session_returned",
+      "target": "plex_client_plexclient",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash",
+      "target": "plex_client_plexclient",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash",
+      "target": "plex_client_plexclient",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
+      "target": "plex_client_plexclient",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_client_rationale_63",
+      "target": "plex_client_plexclient_init",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "plex_client_rationale_80",
+      "target": "plex_client_plexclient_get_active_sessions",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "plex_client_plexclient_get_active_sessions",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_client_rationale_139",
+      "target": "plex_client_plexclient_build_unknown_session",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "backend_app_integrations_plex_parser_py",
+      "target": "plex_parser_parse_sessions",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_integrations_plex_parser_py",
+      "target": "plex_parser_parse_video_element",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_integrations_plex_parser_py",
+      "target": "plex_parser_parse_decision",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_integrations_plex_parser_py",
+      "target": "plex_parser_parse_video_state",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_app_integrations_plex_parser_py",
+      "target": "plex_parser_parse_audio_state",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "plex_parser_rationale_1",
+      "target": "backend_app_integrations_plex_parser_py",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "plex_parser_parse_sessions",
+      "target": "plex_parser_parse_video_element",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_parser_rationale_76",
+      "target": "plex_parser_parse_sessions",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_no_sessions_returns_empty_list",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_malformed_xml_returns_empty_list",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_one_session_returns_one_item",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_session_source_is_plex",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_session_title_confirmed",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_session_user_parsed",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_session_client_name_parsed",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_session_is_playing_true",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_session_decision_direct_play_when_no_transcode",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_session_decision_transcode",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_video_codec_confirmed",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_video_resolution_parsed",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_video_bitrate_parsed",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_hdr_format_is_none",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_audio_codec_confirmed",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexparser_test_audio_channels_parsed",
+      "target": "plex_parser_parse_sessions",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_parser_parse_video_element",
+      "target": "plex_parser_parse_decision",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_parser_parse_video_element",
+      "target": "plex_parser_parse_video_state",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_parser_parse_video_element",
+      "target": "plex_parser_parse_audio_state",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "plex_parser_rationale_110",
+      "target": "plex_parser_parse_video_element",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "plex_parser_rationale_164",
+      "target": "plex_parser_parse_decision",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "plex_parser_rationale_187",
+      "target": "plex_parser_parse_video_state",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "plex_parser_rationale_242",
+      "target": "plex_parser_parse_audio_state",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "routes_playback_rationale_34",
+      "target": "routes_playback_get_current_playback",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "backend_app_api_routes_health_py",
+      "target": "routes_health_health_check",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "tests_conftest_rationale_1",
+      "target": "backend_tests_conftest_py",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "backend_tests_test_playback_py",
+      "target": "tests_test_playback_make_mock_response",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_tests_test_playback_py",
+      "target": "tests_test_playback_testhealthstillworks",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_tests_test_playback_py",
+      "target": "tests_test_playback_testplaybackcurrentunconfigured",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_tests_test_playback_py",
+      "target": "tests_test_playback_testplexparser",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "backend_tests_test_playback_py",
+      "target": "tests_test_playback_testplexclientconfigured",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "tests_test_playback_rationale_1",
+      "target": "backend_tests_test_playback_py",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
+      "target": "tests_test_playback_make_mock_response",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured_test_one_session_returned",
+      "target": "tests_test_playback_make_mock_response",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
+      "target": "tests_test_playback_make_mock_response",
+      "type": "calls",
+      "value": 1,
+      "description": "call"
+    },
+    {
+      "source": "tests_test_playback_rationale_89",
+      "target": "tests_test_playback_make_mock_response",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_testhealthstillworks",
+      "target": "tests_test_playback_testhealthstillworks_test_health_returns_ok",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_rationale_102",
+      "target": "tests_test_playback_testhealthstillworks",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_testplaybackcurrentunconfigured",
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_returns_200",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplaybackcurrentunconfigured",
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_sessions_is_empty_list",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplaybackcurrentunconfigured",
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_sources_checked_is_empty",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplaybackcurrentunconfigured",
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_error_is_none",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplaybackcurrentunconfigured",
+      "target": "tests_test_playback_testplaybackcurrentunconfigured_test_response_shape",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_rationale_118",
+      "target": "tests_test_playback_testplaybackcurrentunconfigured",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_no_sessions_returns_empty_list",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_malformed_xml_returns_empty_list",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_one_session_returns_one_item",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_session_source_is_plex",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_session_title_confirmed",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_session_user_parsed",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_session_client_name_parsed",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_session_is_playing_true",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_session_decision_direct_play_when_no_transcode",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_session_decision_transcode",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_video_codec_confirmed",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_video_resolution_parsed",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_video_bitrate_parsed",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_hdr_format_is_none",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_audio_codec_confirmed",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexparser",
+      "target": "tests_test_playback_testplexparser_test_audio_channels_parsed",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_rationale_148",
+      "target": "tests_test_playback_testplexparser",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_rationale_205",
+      "target": "tests_test_playback_testplexparser_test_hdr_format_is_none",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured",
+      "target": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured",
+      "target": "tests_test_playback_testplexclientconfigured_test_one_session_returned",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured",
+      "target": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured",
+      "target": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_testplexclientconfigured",
+      "target": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
+      "type": "method",
+      "value": 1,
+      "description": "method"
+    },
+    {
+      "source": "tests_test_playback_rationale_224",
+      "target": "tests_test_playback_testplexclientconfigured",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_rationale_227",
+      "target": "tests_test_playback_testplexclientconfigured_test_no_sessions_returns_empty_and_sources_checked",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_rationale_249",
+      "target": "tests_test_playback_testplexclientconfigured_test_one_session_returned",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_rationale_276",
+      "target": "tests_test_playback_testplexclientconfigured_test_timeout_returns_empty_no_crash",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_rationale_296",
+      "target": "tests_test_playback_testplexclientconfigured_test_http_error_returns_empty_no_crash",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "tests_test_playback_rationale_323",
+      "target": "tests_test_playback_testplexclientconfigured_test_malformed_xml_returns_empty_no_crash",
+      "type": "rationale_for",
+      "value": 1,
+      "description": "rationale_for"
+    },
+    {
+      "source": "vscode_settings_json",
+      "target": "vscode_settings_geminicodeassist_outlines_automaticoutlinegeneration",
+      "type": "contains",
+      "value": 1,
+      "description": "contains"
+    },
+    {
+      "source": "readme_cinema_machina_core",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "readme_cinema_machina_core",
+      "target": "agents_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "backend_requirements_txt",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "docs_architecture_md",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "docs_ai_server_and_device_context_md",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "docs_ai_api_and_integrations_md",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "docs_ai_project_state_md",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "docs_ai_known_issues_md",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "docs_ai_environment_map_md",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "docs_ai_task_log_md",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    },
+    {
+      "source": "docs_ai_decisions_md",
+      "target": "skills_cinema_machina_core",
+      "type": "references",
+      "value": 1,
+      "description": "references"
+    }
+  ]
+}
