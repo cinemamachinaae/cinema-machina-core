@@ -164,11 +164,26 @@
       }
     }
   </style>
-  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/3d-force-graph"></script>
+  <script src="./orb-assets/three.min.js"></script>
+<script src="./orb-assets/3d-force-graph.min.js"></script>
 </head>
 <body>
   <div id="graph"></div>
+  <div id="orb-runtime-error" style="
+    display:none;
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:9999;
+    width:min(680px,calc(100vw - 32px));
+    padding:18px 20px;
+    border-radius:18px;
+    background:rgba(120,20,20,.92);
+    color:white;
+    font:14px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;
+    box-shadow:0 24px 80px rgba(0,0,0,.5);
+  "></div>
 
   <div class="panel">
     <h1>Cinema Machina Orb Brain</h1>
@@ -225,6 +240,13 @@
 
     function matches(node) {
       return searchTerm && String(node.label || '').toLowerCase().includes(searchTerm.toLowerCase());
+    }
+
+    if (!window.THREE || !window.ForceGraph3D) {
+      const box = document.getElementById('orb-runtime-error');
+      box.style.display = 'block';
+      box.textContent = 'Orb libraries failed to load. Local Three.js or 3d-force-graph asset is missing.';
+      throw new Error('Orb libraries failed to load');
     }
 
     const Graph = ForceGraph3D()(document.getElementById('graph'))
@@ -317,6 +339,9 @@
     });
 
     Graph.cameraPosition({ x: 0, y: 0, z: 420 });
+    setTimeout(() => {
+      try { Graph.zoomToFit(1400, 80); } catch (e) {}
+    }, 1800);
   </script>
 </body>
 </html>
