@@ -1,16 +1,16 @@
 # Graph Report - Cinema Machina Core  (2026-05-19)
 
 ## Corpus Check
-- 179 files · ~52,992 words
+- 184 files · ~52,592 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2475 nodes · 2741 edges · 250 communities (229 shown, 21 thin omitted)
+- 2520 nodes · 2782 edges · 258 communities (238 shown, 20 thin omitted)
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 185 edges (avg confidence: 0.64)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3930583f`
+- Built from commit: `9ee82af1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -251,6 +251,14 @@
 - [[_COMMUNITY_Community 247|Community 247]]
 - [[_COMMUNITY_Community 248|Community 248]]
 - [[_COMMUNITY_Community 249|Community 249]]
+- [[_COMMUNITY_Community 250|Community 250]]
+- [[_COMMUNITY_Community 251|Community 251]]
+- [[_COMMUNITY_Community 252|Community 252]]
+- [[_COMMUNITY_Community 253|Community 253]]
+- [[_COMMUNITY_Community 254|Community 254]]
+- [[_COMMUNITY_Community 255|Community 255]]
+- [[_COMMUNITY_Community 256|Community 256]]
+- [[_COMMUNITY_Community 257|Community 257]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Cinema Machina Core — SKILLS.md` - 34 edges
@@ -262,7 +270,7 @@
 7. `TestPlexParser` - 20 edges
 8. `PostizAPI` - 19 edges
 9. `getConfig()` - 18 edges
-10. `Cinema Machina Core — AGENTS.md` - 18 edges
+10. `sessions` - 18 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `get_current_chain_snapshot()` --calls--> `next`  [INFERRED]
@@ -276,11 +284,11 @@
 - `ConfiguredSourceState` --uses--> `Confidence`  [INFERRED]
   backend/app/models/system.py → backend/app/models/playback.py
 
-## Communities (250 total, 21 thin omitted)
+## Communities (258 total, 20 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.2
-Nodes (17): Enum, AudioDeviceKind, DisplayDeviceKind, DisplayDeviceState, MediaServerKind, PlaybackClientKind, Typed device models for the playback chain snapshot., Supported media server platforms. (+9 more)
+Cohesion: 0.18
+Nodes (19): Enum, AudioDeviceKind, DisplayDeviceKind, MediaServerKind, PlaybackClientKind, Typed device models for the playback chain snapshot., Supported media server platforms., Supported playback client platforms. (+11 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.09
@@ -295,8 +303,8 @@ Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.07
-Nodes (20): _make_mock_response(), Tests for /health and /playback/current — Phase 2.1.  Coverage: - Phase 1 regres, Regression: Phase 1 /health must remain intact after Phase 2.1 wiring., Behaviour of /playback/current when no credentials are set., PlexClient behaviour with mocked settings and mocked httpx., Configured Plex with no active sessions → sources_checked=['plex'],         sess, PlexClient behaviour with mocked settings and mocked httpx., Configured Plex with no active sessions → sources_checked=['plex'],         sess (+12 more)
+Cohesion: 0.09
+Nodes (18): _make_mock_response(), Tests for /health and /playback/current — Phase 2.1.  Coverage: - Phase 1 regres, Regression: Phase 1 /health must remain intact after Phase 2.1 wiring., PlexClient behaviour with mocked settings and mocked httpx., Configured Plex with no active sessions → sources_checked=['plex'],         sess, PlexClient behaviour with mocked settings and mocked httpx., Configured Plex with no active sessions → sources_checked=['plex'],         sess, Configured Plex with one active session → one SessionState. (+10 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.06
@@ -307,8 +315,8 @@ Cohesion: 0.05
 Nodes (43): 10 — Playback Chain Model, 11 — FFprobe Rules, 12 — Plex Rules, 13 — ADB Rules, 14 — Docker Rules, 15 — API Rules, 16 — Testing Rules, 17 — Logging Rules (+35 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.1
-Nodes (23): JellyfinClient, Interface to the Jellyfin server session API.      All public methods must:, Initialise the client using values from ``settings``., Fetch active Jellyfin playback sessions.          Returns:             A list of, Build a fully-unknown session state for safe fallback.          Returns:, AudioState, PlaybackDecision, Playback state Pydantic models.  Every field that describes a playback attribute (+15 more)
+Cohesion: 0.22
+Nodes (12): Build a fully-unknown session state for safe fallback.          Returns:, AudioState, Video stream attributes for the current session.      Attributes:         codec:, Audio stream attributes for the current session.      Attributes:         codec:, Full playback session state snapshot.      Attributes:         source: Which med, Full playback session state snapshot.      Attributes:         source: Which med, SessionState, VideoState (+4 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.15
@@ -323,8 +331,8 @@ Cohesion: 0.05
 Nodes (46): apiStateLabel(), apiStateTone(), chainNodes, ChainSnapshot, Confidence, ConfidenceChip(), confidenceTone(), ConfiguredSources (+38 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.11
-Nodes (17): Fetch active Jellyfin playback sessions.          Returns:             A list of, PlexClient, Interface to the Plex Media Server session API.      All public methods must:, Initialise the client using values from ``settings``., Fetch active Plex playback sessions.          Makes a synchronous GET request to, Fetch active Plex playback sessions.          Makes a synchronous GET request to, get_jellyfin_status(), get_plex_status() (+9 more)
+Cohesion: 0.31
+Nodes (6): PlexClient, Interface to the Plex Media Server session API.      All public methods must:, get_plex_status(), Return a safe Plex integration status snapshot., Tests for read-only Plex/Jellyfin integration status checks., TestIntegrationStatus
 
 ### Community 13 - "Community 13"
 Cohesion: 0.15
@@ -363,8 +371,8 @@ Cohesion: 0.07
 Nodes (29): 1. Simple Mode (Command Line), 2. Advanced Mode (JSON Files), ✅ Advanced Features, AI Agent Tips, API Structure Reference, code:bash (# Single post), code:bash (postiz posts:create --json complex-post.json), code:json ({) (+21 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.07
-Nodes (28): Analytics, code:bash (# Get Reddit flairs), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -m "img1.jpg,img2.jpg" -s "), code:bash (postiz posts:create \), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create \) (+20 more)
+Cohesion: 0.13
+Nodes (15): Analytics, code:bash (postiz posts:list), code:bash (postiz posts:delete <post-id>), code:bash (postiz posts:status <post-id> --status draft), code:bash (postiz analytics:platform <integration-id>), code:bash (postiz analytics:post <post-id>), code:bash (# 1. List available content from the provider), code:bash (postiz posts:missing <post-id>) (+7 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.1
@@ -447,8 +455,8 @@ Cohesion: 0.18
 Nodes (11): Basic Commands, code:bash (postiz integrations:list), code:bash (postiz upload ./path/to/image.png), code:bash (# Simple post), code:bash (# List all posts), code:bash (postiz posts:delete abc123xyz), Create a Post, Delete a Post (+3 more)
 
 ### Community 52 - "Community 52"
-Cohesion: 0.18
-Nodes (11): API Endpoints, code:bash (# Authentication), Contributing, Documentation, Environment Variables, Error Handling, License, Links (+3 more)
+Cohesion: 0.12
+Nodes (16): API Endpoints, code:bash (npx skills add gitroomhq/postiz-agent), code:bash (npm install -g postiz), code:bash (# Authentication), Contributing, Documentation, Environment Variables, Error Handling (+8 more)
 
 ### Community 53 - "Community 53"
 Cohesion: 0.18
@@ -667,8 +675,8 @@ Cohesion: 0.4
 Nodes (4): [1.0.0] - 2026-02-13, Added, Changelog, Features
 
 ### Community 107 - "Community 107"
-Cohesion: 0.1
-Nodes (35): BaseModel, ChainSnapshotResponse, OutputState, Playback chain snapshot models for the production dashboard foundation., Source media properties reported by upstream playback metadata., Downstream output state of the active chain., Unified playback chain snapshot for the dashboard., SourceMediaState (+27 more)
+Cohesion: 0.15
+Nodes (24): BaseModel, ChainSnapshotResponse, Unified playback chain snapshot for the dashboard., Read-only Nvidia Shield device state derived from ADB., ShieldDeviceState, PlaybackCurrentResponse, Response envelope for ``GET /playback/current``.      Attributes:         sessio, Response envelope for ``GET /playback/current``.      Attributes:         sessio (+16 more)
 
 ### Community 108 - "Community 108"
 Cohesion: 0.4
@@ -738,6 +746,10 @@ Nodes (4): code:bash (cd apps/cli), code:bash (npm install -g postiz), code:bash
 Cohesion: 0.5
 Nodes (4): code:json ("name": "postiz",), code:json ("name": "agent-postiz",), code:json ("name": "agent-postiz",), Package Name vs Command Name
 
+### Community 125 - "Community 125"
+Cohesion: 0.19
+Nodes (13): OutputState, Playback chain snapshot models for the production dashboard foundation., Source media properties reported by upstream playback metadata., Downstream output state of the active chain., SourceMediaState, AudioDeviceState, DisplayDeviceState, MediaServerState (+5 more)
+
 ### Community 127 - "Community 127"
 Cohesion: 0.67
 Nodes (3): Use Command Line (`-c` and `-m`) When:, Use JSON (`--json`) When:, When to Use JSON vs Command Line
@@ -763,12 +775,12 @@ Cohesion: 0.67
 Nodes (3): code:bash (postiz posts:create \), code:bash (postiz posts:create \), X / Twitter (`x`)
 
 ### Community 133 - "Community 133"
-Cohesion: 0.67
-Nodes (3): code:bash (npm install -g postiz), From npm (Recommended), Installation
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
 ### Community 137 - "Community 137"
-Cohesion: 0.07
-Nodes (22): _AdbFailure, Read-only Nvidia Shield monitoring via ADB-over-network., Return the last captured raw debug outputs., Run one adb command safely and return its result., Parse the foreground package and activity from dumpsys output., Parse a compact media session summary., Parse the basic display mode from dumpsys output., Derive a human-friendly app name from the package name. (+14 more)
+Cohesion: 0.09
+Nodes (17): Return the last captured raw debug outputs., Run one adb command safely and return its result., Parse the foreground package and activity from dumpsys output., Parse a compact media session summary., Parse the basic display mode from dumpsys output., Derive a human-friendly app name from the package name., Read-only ADB monitor for Nvidia Shield devices., Return the public Shield state. (+9 more)
 
 ### Community 138 - "Community 138"
 Cohesion: 0.05
@@ -787,8 +799,8 @@ Cohesion: 0.14
 Nodes (18): get_current_chain(), Playback chain snapshot API route., Return the current unified playback chain snapshot., _build_media_server_state(), _build_playback_client_state(), _build_source_state(), get_current_chain_snapshot(), _get_sessions_from_client() (+10 more)
 
 ### Community 142 - "Community 142"
-Cohesion: 0.11
-Nodes (19): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, first_seen_at, kind (+11 more)
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
 
 ### Community 143 - "Community 143"
 Cohesion: 0.14
@@ -799,8 +811,8 @@ Cohesion: 0.15
 Nodes (12): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3b63-5ae4-7341-824a-3aa92f8f89de|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b67-f05b-71b0-975b-0f8e91c35bab|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-4008-7022-80eb-1abce4ba76d3|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-741e-7df0-af2d-661599fcc739|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-e951-7ea3-97d4-aa2f7d511b91|agent-turn-complete, 019e3b47-ee24-7891-a647-dfa1b46ef78d|019e3b47-ee55-7532-87dc-62e85e831fb5|agent-turn-complete (+4 more)
 
 ### Community 145 - "Community 145"
-Cohesion: 0.15
-Nodes (12): leader_thread_id, session_id, threads, updated_at, leader_thread_id, session_id, threads, updated_at (+4 more)
+Cohesion: 0.4
+Nodes (5): leader_thread_id, session_id, threads, updated_at, 019e3057-7fab-76f1-9aa5-db17f0f88d53
 
 ### Community 146 - "Community 146"
 Cohesion: 0.17
@@ -811,8 +823,8 @@ Cohesion: 0.17
 Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, leader_thread_id, session_id (+4 more)
 
 ### Community 148 - "Community 148"
-Cohesion: 0.17
-Nodes (12): leader_thread_id, session_id, threads, updated_at, first_seen_at, kind, last_seen_at, last_turn_id (+4 more)
+Cohesion: 0.04
+Nodes (47): leader_thread_id, session_id, threads, updated_at, first_seen_at, kind, last_seen_at, last_turn_id (+39 more)
 
 ### Community 149 - "Community 149"
 Cohesion: 0.17
@@ -962,6 +974,10 @@ Nodes (8): Cinema Machina Brain Stack, Codex Memories, Graphify, Layers, Obsidia
 Cohesion: 0.22
 Nodes (7): get_current_playback(), Playback API route — GET /playback/current.  This route delegates to the Plex an, Return all active playback sessions across configured sources.      Queries Plex, Return all active playback sessions across configured sources.      Queries Plex, get_current_playback_snapshot(), Business logic for current playback aggregation., Return all active playback sessions across configured sources.
 
+### Community 186 - "Community 186"
+Cohesion: 0.13
+Nodes (7): JellyfinClient, Jellyfin server integration client — Phase 2 scaffold.  This module provides a s, Interface to the Jellyfin server session API.      All public methods must:, Initialise the client using values from ``settings``., Fetch active Jellyfin playback sessions.          Returns:             A list of, Plex Media Server integration client — Phase 2.1.  Makes a real HTTP call to ``/, Initialise the client using values from ``settings``.
+
 ### Community 187 - "Community 187"
 Cohesion: 0.25
 Nodes (7): last_event_at, last_injection_ts, last_reason, pane_counts, recent_keys, session_counts, total_injections
@@ -975,24 +991,24 @@ Cohesion: 0.29
 Nodes (6): cwd, native_session_id, pid, platform, session_id, started_at
 
 ### Community 190 - "Community 190"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e303f-e931-7871-afe7-f65d6f5392c8
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
 ### Community 191 - "Community 191"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e89b-7732-9684-2b7e6f090e97
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
 ### Community 192 - "Community 192"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e92e-75b2-ac1f-c68f9ff3a8cf
+Cohesion: 0.28
+Nodes (7): get_jellyfin_status(), _probe_http_endpoint(), Read-only integration status checks for Plex and Jellyfin., Return True if the endpoint responds within the timeout., Sanitize errors to avoid leaking tokens, API keys, or .env-derived URLs., Return a safe Jellyfin integration status snapshot., _sanitize_error()
 
 ### Community 193 - "Community 193"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e939-7d83-b914-9d2df91b2b7a
+Cohesion: 0.25
+Nodes (5): _AdbFailure, Read-only Nvidia Shield monitoring via ADB-over-network., Synthetic adb failure result., Internal Shield monitor result with debug payload., ShieldMonitorResult
 
 ### Community 194 - "Community 194"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e939-7d83-b914-9d3e020c429e
+Cohesion: 0.25
+Nodes (3): Tests for the unified playback chain snapshot endpoint., Behaviour of /chain/current when no integrations are configured., TestChainCurrentUnconfigured
 
 ### Community 195 - "Community 195"
 Cohesion: 0.33
@@ -1079,16 +1095,16 @@ Cohesion: 0.4
 Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
 
 ### Community 216 - "Community 216"
-Cohesion: 0.4
-Nodes (4): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3ca6-690c-7ff0-a3b9-380d6e888a89|agent-turn-complete, 019e3ca6-69c6-7810-98d3-a1ed05acd73b|019e3ca6-69f9-7050-9e86-46ff609404e9|agent-turn-complete
+Cohesion: 0.33
+Nodes (5): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3ca6-690c-7ff0-a3b9-380d6e888a89|agent-turn-complete, 019e3ca6-6477-7e33-a423-cf583f609166|019e3cad-9215-72f0-bf01-ec24b27a199b|agent-turn-complete, 019e3ca6-69c6-7810-98d3-a1ed05acd73b|019e3ca6-69f9-7050-9e86-46ff609404e9|agent-turn-complete
 
 ### Community 217 - "Community 217"
-Cohesion: 0.4
-Nodes (5): leader_thread_id, session_id, threads, updated_at, 019e306f-b4a9-72a1-9f4b-a28a73f8b2b3
+Cohesion: 0.25
+Nodes (8): code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -m "img1.jpg,img2.jpg" -s "), code:bash (postiz posts:create \), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create \), code:bash (postiz posts:create --json post.json), Creating Posts
 
 ### Community 218 - "Community 218"
-Cohesion: 0.4
-Nodes (5): leader_thread_id, session_id, threads, updated_at, 019e3c5d-31e3-73b0-97db-60507588a851
+Cohesion: 0.15
+Nodes (12): leader_thread_id, session_id, threads, updated_at, leader_thread_id, session_id, threads, updated_at (+4 more)
 
 ### Community 219 - "Community 219"
 Cohesion: 0.5
@@ -1138,20 +1154,48 @@ Nodes (3): get_shield_state(), Device monitoring API routes., Return the current
 Cohesion: 0.5
 Nodes (3): last_idle_nudged_by_team, last_nudged_by_team, progress_by_team
 
+### Community 250 - "Community 250"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3ca6-6477-7e33-a423-cf583f609166
+
+### Community 252 - "Community 252"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 253 - "Community 253"
+Cohesion: 0.4
+Nodes (5): code:bash (# Get Reddit flairs), code:bash (postiz integrations:list), code:bash (postiz integrations:settings <integration-id>), code:bash (postiz integrations:trigger <integration-id> <method-name>), Discovery & Settings
+
+### Community 254 - "Community 254"
+Cohesion: 0.4
+Nodes (5): leader_thread_id, session_id, threads, updated_at, 019e3083-0ce0-7b12-ae54-270501537b7e
+
+### Community 255 - "Community 255"
+Cohesion: 0.4
+Nodes (5): leader_thread_id, session_id, threads, updated_at, 019e3cb2-381e-7871-88d4-68d1872ca70b
+
+### Community 256 - "Community 256"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3cba-a75c-7923-b387-fe8f4a89ea3a|agent-turn-complete
+
+### Community 257 - "Community 257"
+Cohesion: 0.5
+Nodes (3): Fetch active Jellyfin playback sessions.          Returns:             A list of, Fetch active Plex playback sessions.          Makes a synchronous GET request to, Fetch active Plex playback sessions.          Makes a synchronous GET request to
+
 ## Knowledge Gaps
-- **1469 isolated node(s):** `version`, `source`, `sourceType`, `skillPath`, `computedHash` (+1464 more)
+- **1503 isolated node(s):** `version`, `source`, `sourceType`, `skillPath`, `computedHash` (+1498 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **21 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **20 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Confidence` connect `Community 0` to `Community 137`, `Community 107`, `Community 12`, `Community 7`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **Why does `sessions` connect `Community 145` to `Community 153`, `Community 218`, `Community 138`, `Community 142`, `Community 147`, `Community 148`, `Community 149`, `Community 150`, `Community 151`, `Community 152`, `Community 217`, `Community 154`, `Community 155`, `Community 156`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
-- **Why does `PlexClient` connect `Community 12` to `Community 0`, `Community 2`, `Community 4`, `Community 7`, `Community 186`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **Why does `sessions` connect `Community 218` to `Community 138`, `Community 142`, `Community 145`, `Community 147`, `Community 148`, `Community 149`, `Community 150`, `Community 151`, `Community 152`, `Community 153`, `Community 154`, `Community 155`, `Community 156`, `Community 254`, `Community 255`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **Why does `Confidence` connect `Community 0` to `Community 193`, `Community 194`, `Community 7`, `Community 137`, `Community 107`, `Community 12`, `Community 186`, `Community 125`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **Why does `PlexClient` connect `Community 12` to `Community 0`, `Community 257`, `Community 2`, `Community 4`, `Community 7`, `Community 186`, `Community 251`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **Are the 29 inferred relationships involving `Confidence` (e.g. with `HealthStatusResponse` and `ConfiguredSourceState`) actually correct?**
   _`Confidence` has 29 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 19 inferred relationships involving `PlexClient` (e.g. with `AudioState` and `Confidence`) actually correct?**

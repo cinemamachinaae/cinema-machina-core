@@ -163,12 +163,256 @@
         top: 360px;
       }
     }
-  </style>
-  <script src="./orb-assets/three.min.js"></script>
-<script src="./orb-assets/3d-force-graph.min.js"></script>
+
+
+  /* Cinema Machina Orb V3 Premium Atlas */
+  html, body {
+    background:
+      radial-gradient(circle at 50% 48%,
+        rgba(40, 72, 140, 0.055) 0%,
+        rgba(10, 16, 34, 0.06) 22%,
+        rgba(4, 7, 16, 0.97) 52%,
+        #01030a 100%) !important;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 50% 50%,
+        rgba(110, 160, 255, 0.012) 0%,
+        rgba(110, 160, 255, 0.006) 20%,
+        transparent 34%),
+      radial-gradient(circle at 50% 50%,
+        transparent 0%,
+        rgba(0, 0, 0, 0.28) 50%,
+        rgba(0, 0, 0, 0.86) 100%);
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.028;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 160px 160px;
+    mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
+  }
+
+  #graph {
+    position: relative;
+    z-index: 1;
+    filter:
+      contrast(1.20)
+      saturate(1.32)
+      brightness(1.08);
+  }
+
+  /* Cinematic vignette + very subtle grain (kept intentionally faint) */
+  #cm-vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 48%,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.15) 58%,
+        rgba(0,0,0,0.58) 100%);
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+  }
+
+  #cm-grain {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0 1px, transparent 1px 4px);
+    filter: blur(0.2px);
+    mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+  }
+
+  #hud,
+  .hud,
+  .panel,
+  #detail-panel {
+    background: rgba(4, 8, 18, 0.94) !important;
+    border: 1px solid rgba(170, 198, 255, 0.14) !important;
+    box-shadow:
+      0 28px 96px rgba(0, 0, 0, 0.62),
+      inset 0 1px 0 rgba(255,255,255,0.05) !important;
+    backdrop-filter: blur(26px) saturate(130%);
+  }
+
+  input {
+    background: rgba(255, 255, 255, 0.045) !important;
+    border: 1px solid rgba(180, 210, 255, 0.12) !important;
+  }
+
+  input:focus {
+    outline: none !important;
+    border-color: rgba(190, 220, 255, 0.54) !important;
+    box-shadow: 0 0 0 3px rgba(125, 160, 255, 0.14) !important;
+  }
+
+  button {
+    background: rgba(255, 255, 255, 0.055) !important;
+    border: 1px solid rgba(190, 220, 255, 0.10) !important;
+    transition:
+      transform 160ms ease,
+      opacity 160ms ease,
+      border-color 160ms ease,
+      background 160ms ease;
+  }
+
+  button:hover {
+    transform: translateY(-1px);
+    opacity: 0.99;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(190, 220, 255, 0.26) !important;
+  }
+
+  #cm-hover-card {
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    width: min(360px, calc(100vw - 44px));
+    z-index: 30;
+    display: none;
+    padding: 16px 16px 15px;
+    border-radius: 18px;
+    background: rgba(4, 8, 18, 0.94);
+    border: 1px solid rgba(170, 198, 255, 0.16);
+    box-shadow:
+      0 30px 100px rgba(0, 0, 0, 0.68),
+      inset 0 1px 0 rgba(255,255,255,0.05);
+    backdrop-filter: blur(28px) saturate(135%);
+    color: rgba(239, 245, 255, 0.98);
+  }
+
+  /* De-emphasize the legacy click detail panel; hover/pin card is primary. */
+  .detail {
+    display: none !important;
+  }
+
+  #cm-hover-card .cm-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: flex-end;
+  }
+
+  #cm-hover-card .cm-action {
+    border-radius: 12px;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 1;
+    border: 1px solid rgba(190, 220, 255, 0.10);
+    background: rgba(255,255,255,0.05);
+    color: rgba(245, 250, 255, 0.95);
+  }
+
+  #cm-hover-card .cm-action:hover {
+    border-color: rgba(190, 220, 255, 0.24);
+    background: rgba(255,255,255,0.075);
+  }
+
+  #cm-hover-card.is-pinned .cm-kicker::after {
+    content: " · pinned";
+    color: rgba(165, 194, 255, 0.62);
+  }
+
+  #cm-hover-card.is-visible {
+    display: block;
+    animation: cmFadeUp 180ms ease both;
+  }
+
+  #cm-hover-card .cm-kicker {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(165, 194, 255, 0.72);
+    margin-bottom: 8px;
+  }
+
+  #cm-hover-card .cm-title {
+    font-size: 17px;
+    line-height: 1.22;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #f6f9ff;
+  }
+
+  #cm-hover-card .cm-summary {
+    font-size: 12px;
+    line-height: 1.55;
+    color: rgba(219, 229, 246, 0.88);
+    margin-bottom: 12px;
+  }
+
+  #cm-hover-card .cm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  #cm-hover-card .cm-stat {
+    padding: 9px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(180, 210, 255, 0.08);
+  }
+
+  #cm-hover-card .cm-label {
+    display: block;
+    font-size: 10px;
+    color: rgba(165, 194, 255, 0.70);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  #cm-hover-card .cm-value {
+    display: block;
+    font-size: 12px;
+    line-height: 1.35;
+    color: rgba(239, 245, 255, 0.96);
+    word-break: break-word;
+  }
+
+  @keyframes cmFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #orb-runtime-error {
+    z-index: 50;
+  }
+
+</style>
+  <script src="./orb-assets/orb-runtime.bundle.js?v=cm-orb-v3"></script>
 </head>
 <body>
   <div id="graph"></div>
+  <div id="cm-vignette"></div>
+  <div id="cm-grain"></div>
   <div id="orb-runtime-error" style="
     display:none;
     position:fixed;
@@ -187,7 +431,7 @@
 
   <div class="panel">
     <h1>Cinema Machina Orb Brain</h1>
-    <div class="sub">Live 3D Graphify visualization · drag to orbit · scroll to zoom · click nodes for detail</div>
+    <div class="sub">Live 3D Graphify visualization · drag to orbit · scroll to zoom · click to pin node details</div>
 
     <div class="stats">
       <div class="stat"><div class="num" id="ncount"></div><div class="lbl">Nodes</div></div>
@@ -225,21 +469,90 @@
     let labelsOn = false;
     let spinning = true;
     let searchTerm = '';
+    let hoveredNode = null;
+    let pinnedNode = null;
+    let updateHoverCard = () => {};
 
+    // Premium, slightly de-saturated palette (communities remain distinct).
     const colorPalette = [
-      '#8ec5ff', '#b38cff', '#60f0d0', '#ff8ec5', '#ffd166',
-      '#7dd3fc', '#c4b5fd', '#a7f3d0', '#f9a8d4', '#fde68a'
+      '#7CA9FF', '#9A7BFF', '#46D7C8', '#E07AA6', '#E6C26E',
+      '#5DB6E6', '#B5A0FF', '#7ED6B5', '#D98DBA', '#C9D2E3'
     ];
+
+    function clamp01(n) { return Math.max(0, Math.min(1, n)); }
+
+    function hexToRgb(hex) {
+      const clean = String(hex).replace('#', '').trim();
+      const full = clean.length === 3 ? clean.split('').map(c => c + c).join('') : clean;
+      const num = parseInt(full, 16);
+      return {
+        r: (num >> 16) & 255,
+        g: (num >> 8) & 255,
+        b: num & 255
+      };
+    }
+
+    function rgbToHsl(r, g, b) {
+      r /= 255; g /= 255; b /= 255;
+      const max = Math.max(r, g, b), min = Math.min(r, g, b);
+      let h = 0, s = 0;
+      const l = (max + min) / 2;
+      if (max !== min) {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+      }
+      return { h, s, l };
+    }
+
+    function hslToRgb(h, s, l) {
+      let r, g, b;
+      if (s === 0) {
+        r = g = b = l;
+      } else {
+        const hue2rgb = (p, q, t) => {
+          if (t < 0) t += 1;
+          if (t > 1) t -= 1;
+          if (t < 1/6) return p + (q - p) * 6 * t;
+          if (t < 1/2) return q;
+          if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+          return p;
+        };
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+      }
+      return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255) };
+    }
+
+    function premiumize(hex) {
+      const { r, g, b } = hexToRgb(hex);
+      const { h, s, l } = rgbToHsl(r, g, b);
+      // Reduce candy saturation and slightly darken for dark UI.
+      const rgb = hslToRgb(h, clamp01(s * 0.72), clamp01(l * 0.92));
+      return `rgb(${rgb.r},${rgb.g},${rgb.b})`;
+    }
 
     function colorFor(node) {
       const key = String(node.community || node.type || '0');
       let hash = 0;
       for (let i = 0; i < key.length; i++) hash = ((hash << 5) - hash) + key.charCodeAt(i);
-      return colorPalette[Math.abs(hash) % colorPalette.length];
+      return premiumize(colorPalette[Math.abs(hash) % colorPalette.length]);
     }
 
     function matches(node) {
       return searchTerm && String(node.label || '').toLowerCase().includes(searchTerm.toLowerCase());
+    }
+
+    function isEmphasized(node) {
+      return Boolean(node && (matches(node) || hoveredNode === node || pinnedNode === node));
     }
 
     if (!window.THREE || !window.ForceGraph3D) {
@@ -253,23 +566,31 @@
       .graphData(data)
       .backgroundColor('rgba(0,0,0,0)')
       .nodeLabel(node => `${node.label}\nType: ${node.type}\nCommunity: ${node.community}`)
-      .nodeVal(node => matches(node) ? (node.val || 4) * 2.2 : (node.val || 4))
-      .nodeColor(node => matches(node) ? '#ffffff' : colorFor(node))
-      .nodeOpacity(0.96)
-      .linkOpacity(0.20)
-      .linkWidth(link => link.label ? 0.7 : 0.35)
-      .linkColor(() => 'rgba(150, 190, 255, 0.28)')
+      .nodeVal(node => {
+        const base = (node.val || 4);
+        // Keep nodes sleek; emphasize without cartoon scaling.
+        return matches(node) ? base * 1.35 : base * 1.05;
+      })
+      .nodeColor(node => {
+        if (matches(node)) return 'rgb(242,248,255)';
+        return colorFor(node);
+      })
+      .nodeOpacity(1.0)
+      .linkOpacity(0.18)
+      .linkWidth(link => link.label ? 0.65 : 0.28)
+      .linkColor(link => {
+        // Slightly bias link tint toward the source community color.
+        const src = typeof link.source === 'object' ? link.source : data.nodes.find(n => n.id === link.source);
+        const tint = src ? colorFor(src) : 'rgb(164,202,255)';
+        return tint.replace('rgb(', 'rgba(').replace(')', ',0.22)');
+      })
       .enableNodeDrag(true)
       .cooldownTicks(180)
       .onNodeClick(node => {
-        const detail = document.getElementById('detail');
-        detail.style.display = 'block';
-        detail.innerHTML = `
-          <h2>${node.label}</h2>
-          <p><span class="badge">${node.type}</span><span class="badge">Community ${node.community}</span></p>
-          <p><b>Source:</b> ${node.source || '—'}</p>
-          <p><b>Importance:</b> ${node.val || 4}</p>
-        `;
+        // Click pins the hover card (premium inspector) instead of using the legacy detail panel.
+        pinnedNode = node;
+        hoveredNode = node;
+        updateHoverCard();
         const distance = 120;
         const distRatio = 1 + distance / Math.hypot(node.x || 1, node.y || 1, node.z || 1);
         Graph.cameraPosition(
@@ -282,33 +603,156 @@
     Graph.d3Force('charge').strength(-55);
     Graph.d3Force('link').distance(24);
 
-    Graph.nodeThreeObject(node => {
-      if (!labelsOn) return undefined;
-      const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
-        map: makeTextTexture(node.label),
-        transparent: true,
-        depthWrite: false
-      }));
-      sprite.scale.set(55, 14, 1);
-      return sprite;
-    });
+    // Node halos: add an emissive-feeling aura without replacing the base node meshes.
+    Graph.nodeThreeObjectExtend(true);
 
-    function makeTextTexture(text) {
+    const haloTexture = (() => {
       const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 128;
+      canvas.width = 256;
+      canvas.height = 256;
       const ctx = canvas.getContext('2d');
+      const g = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+      g.addColorStop(0, 'rgba(255,255,255,0.9)');
+      g.addColorStop(0.18, 'rgba(255,255,255,0.35)');
+      g.addColorStop(0.45, 'rgba(255,255,255,0.10)');
+      g.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, 256, 256);
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.minFilter = THREE.LinearFilter;
+      tex.magFilter = THREE.LinearFilter;
+      return tex;
+    })();
+
+    const labelTextureCache = new Map();
+
+    function makeLabelTexture(text) {
+      const key = String(text || '');
+      if (labelTextureCache.has(key)) return labelTextureCache.get(key);
+      const canvas = document.createElement('canvas');
+      canvas.width = 640;
+      canvas.height = 160;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        const texture = new THREE.CanvasTexture(canvas);
+        labelTextureCache.set(key, texture);
+        return texture;
+      }
       ctx.clearRect(0,0,canvas.width,canvas.height);
-      ctx.fillStyle = 'rgba(8,13,27,.74)';
-      ctx.fillRect(0, 18, canvas.width, 92);
-      ctx.fillStyle = '#eef4ff';
-      ctx.font = 'bold 26px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
+
+      // Soft pill background for legibility without a loud HUD feel.
+      ctx.fillStyle = 'rgba(3, 6, 14, 0.55)';
+      roundRect(ctx, 36, 40, canvas.width - 72, 80, 28);
+      ctx.fill();
+
+      ctx.strokeStyle = 'rgba(180, 210, 255, 0.10)';
+      ctx.lineWidth = 2;
+      roundRect(ctx, 36.5, 40.5, canvas.width - 73, 79, 28);
+      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(243, 248, 255, 0.96)';
+      ctx.font = '700 30px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      const clipped = String(text).length > 34 ? String(text).slice(0,34) + '…' : String(text);
+      const clipped = key.length > 44 ? key.slice(0, 44) + '…' : key;
       ctx.fillText(clipped, canvas.width/2, canvas.height/2);
       const texture = new THREE.CanvasTexture(canvas);
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      labelTextureCache.set(key, texture);
       return texture;
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      const radius = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.arcTo(x + w, y, x + w, y + h, radius);
+      ctx.arcTo(x + w, y + h, x, y + h, radius);
+      ctx.arcTo(x, y + h, x, y, radius);
+      ctx.arcTo(x, y, x + w, y, radius);
+      ctx.closePath();
+    }
+
+    function buildNodeAura(node) {
+      const group = new THREE.Group();
+
+      const haloMat = new THREE.SpriteMaterial({
+        map: haloTexture,
+        color: new THREE.Color(colorFor(node)),
+        transparent: true,
+        opacity: 0.18,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      });
+      const halo = new THREE.Sprite(haloMat);
+
+      const baseVal = (node.val || 4);
+      const haloScale = 10 + Math.min(28, baseVal * 2.2);
+      halo.scale.set(haloScale, haloScale, 1);
+      halo.renderOrder = 3;
+      group.add(halo);
+
+      if (labelsOn) {
+        const labelMat = new THREE.SpriteMaterial({
+          map: makeLabelTexture(node.label || node.id || ''),
+          transparent: true,
+          opacity: 0.95,
+          depthWrite: false
+        });
+        const label = new THREE.Sprite(labelMat);
+        label.scale.set(82, 20, 1);
+        label.position.set(0, 10, 0);
+        label.renderOrder = 4;
+        group.add(label);
+        group.userData.cmLabel = label;
+      }
+
+      group.userData.cmHalo = halo;
+      group.userData.cmBaseScale = haloScale;
+      return group;
+    }
+
+    Graph.nodeThreeObject(node => buildNodeAura(node));
+
+    function refreshNodeAuras() {
+      (data.nodes || []).forEach(node => {
+        // ForceGraph caches the created object; update via the scene object reference.
+        const threeObj = node.__threeObj || null;
+        if (!threeObj) return;
+        const halo = threeObj.userData?.cmHalo;
+        if (!halo) return;
+
+        const emphasized = isEmphasized(node);
+        halo.material.opacity = emphasized ? 0.38 : 0.16;
+        halo.material.color = new THREE.Color(matches(node) ? 'rgb(220,240,255)' : colorFor(node));
+        const targetScale = (threeObj.userData.cmBaseScale || 18) * (emphasized ? 1.08 : 1.0);
+        halo.scale.set(targetScale, targetScale, 1);
+
+        // Update label presence if toggled.
+        if (labelsOn && !threeObj.userData.cmLabel) {
+          const labelMat = new THREE.SpriteMaterial({
+            map: makeLabelTexture(node.label || node.id || ''),
+            transparent: true,
+            opacity: 0.95,
+            depthWrite: false
+          });
+          const label = new THREE.Sprite(labelMat);
+          label.scale.set(82, 20, 1);
+          label.position.set(0, 10, 0);
+          label.renderOrder = 4;
+          threeObj.add(label);
+          threeObj.userData.cmLabel = label;
+        } else if (!labelsOn && threeObj.userData.cmLabel) {
+          threeObj.remove(threeObj.userData.cmLabel);
+          threeObj.userData.cmLabel = null;
+        }
+      });
+    }
+
+    // Backwards-compatible: older label helper kept for safety (unused by new label system).
+    function makeTextTexture(text) {
+      return makeLabelTexture(text);
     }
 
     const controls = Graph.controls();
@@ -327,7 +771,7 @@
 
     document.getElementById('labels').onclick = () => {
       labelsOn = !labelsOn;
-      Graph.nodeThreeObject(Graph.nodeThreeObject());
+      refreshNodeAuras();
       Graph.refresh();
     };
 
@@ -335,6 +779,7 @@
       searchTerm = e.target.value.trim();
       Graph.nodeColor(Graph.nodeColor());
       Graph.nodeVal(Graph.nodeVal());
+      refreshNodeAuras();
       Graph.refresh();
     });
 
@@ -342,6 +787,153 @@
     setTimeout(() => {
       try { Graph.zoomToFit(1400, 80); } catch (e) {}
     }, 1800);
-  </script>
+  
+    // ---------------------------------------------------------
+    // Cinema Machina Orb V3 interaction + subtle neon wave layer
+    // ---------------------------------------------------------
+    (() => {
+      const hoverCard = document.createElement('aside');
+      hoverCard.id = 'cm-hover-card';
+      document.body.appendChild(hoverCard);
+
+      const connectionCount = new Map();
+      (data.links || []).forEach(link => {
+        const source = typeof link.source === 'object' ? link.source.id : link.source;
+        const target = typeof link.target === 'object' ? link.target.id : link.target;
+        if (source != null) connectionCount.set(source, (connectionCount.get(source) || 0) + 1);
+        if (target != null) connectionCount.set(target, (connectionCount.get(target) || 0) + 1);
+      });
+
+      function esc(value) {
+        return String(value ?? '—')
+          .replaceAll('&', '&amp;')
+          .replaceAll('<', '&lt;')
+          .replaceAll('>', '&gt;')
+          .replaceAll('"', '&quot;')
+          .replaceAll("'", '&#039;');
+      }
+
+      function getPath(node) {
+        return node.source || node.path || node.file || node.file_path || '—';
+      }
+
+      function getImportance(node) {
+        return node.importance ?? node.val ?? node.score ?? '—';
+      }
+
+      function getConnections(node) {
+        return connectionCount.get(node.id) || 0;
+      }
+
+      function summaryFor(node) {
+        const type = node.type || 'node';
+        const community = node.community ?? '—';
+        const connections = getConnections(node);
+        return `A ${type} in community ${community}, connected to ${connections} related graph items. Use this as a navigation waypoint before opening the underlying source or doc.`;
+      }
+
+      updateHoverCard = function updateHoverCard() {
+        const node = pinnedNode || hoveredNode;
+        if (!node) {
+          hoverCard.classList.remove('is-visible');
+          hoverCard.classList.remove('is-pinned');
+          return;
+        }
+
+        hoverCard.innerHTML = `
+          <div class="cm-kicker">Cinema Machina Graph Node</div>
+          <div class="cm-title">${esc(node.label || node.id || 'Untitled node')}</div>
+          <div class="cm-summary">${esc(summaryFor(node))}</div>
+          <div class="cm-grid">
+            <div class="cm-stat">
+              <span class="cm-label">Type</span>
+              <span class="cm-value">${esc(node.type || '—')}</span>
+            </div>
+            <div class="cm-stat">
+              <span class="cm-label">Community</span>
+              <span class="cm-value">${esc(node.community ?? '—')}</span>
+            </div>
+            <div class="cm-stat">
+              <span class="cm-label">Importance</span>
+              <span class="cm-value">${esc(getImportance(node))}</span>
+            </div>
+            <div class="cm-stat">
+              <span class="cm-label">Connections</span>
+              <span class="cm-value">${esc(getConnections(node))}</span>
+            </div>
+            <div class="cm-stat" style="grid-column: 1 / -1;">
+              <span class="cm-label">Source / Path</span>
+              <span class="cm-value">${esc(getPath(node))}</span>
+            </div>
+          </div>
+          <div class="cm-actions">
+            <button class="cm-action" id="cm-reset-view" type="button">Reset view</button>
+            <button class="cm-action" id="cm-unpin" type="button">${pinnedNode ? 'Unpin' : 'Pin'}</button>
+          </div>
+        `;
+        hoverCard.classList.add('is-visible');
+        hoverCard.classList.toggle('is-pinned', Boolean(pinnedNode));
+
+        // Wire actions (safe, idempotent).
+        const resetBtn = document.getElementById('cm-reset-view');
+        if (resetBtn) resetBtn.onclick = () => {
+          Graph.cameraPosition({ x: 0, y: 0, z: 420 }, { x: 0, y: 0, z: 0 }, 900);
+        };
+        const unpinBtn = document.getElementById('cm-unpin');
+        if (unpinBtn) unpinBtn.onclick = () => {
+          if (pinnedNode) {
+            pinnedNode = null;
+          } else {
+            pinnedNode = node;
+          }
+          refreshNodeAuras();
+          updateHoverCard();
+        };
+      };
+
+      Graph
+        .linkDirectionalParticles(link => {
+          const source = typeof link.source === 'object' ? link.source.id : link.source;
+          const target = typeof link.target === 'object' ? link.target.id : link.target;
+          const key = `${source}|${target}`;
+          let hash = 0;
+          for (let i = 0; i < key.length; i++) hash = ((hash << 5) - hash) + key.charCodeAt(i);
+          return Math.abs(hash) % 13 === 0 ? 1 : 0;
+        })
+        .linkDirectionalParticleWidth(1.0)
+        .linkDirectionalParticleSpeed(link => {
+          const source = typeof link.source === 'object' ? link.source.id : link.source;
+          const target = typeof link.target === 'object' ? link.target.id : link.target;
+          const key = `${source}|${target}`;
+          let hash = 0;
+          for (let i = 0; i < key.length; i++) hash = ((hash << 5) - hash) + key.charCodeAt(i);
+          return Math.abs(hash) % 13 === 0 ? 0.0020 : 0.0;
+        })
+        .linkDirectionalParticleColor(link => {
+          const source = typeof link.source === 'object' ? link.source : data.nodes.find(n => n.id === link.source);
+          const tint = source ? colorFor(source) : 'rgb(128,210,255)';
+          return tint.replace('rgb(', 'rgba(').replace(')', ',0.88)');
+        })
+        .onNodeHover(node => {
+          hoveredNode = node || null;
+          if (!pinnedNode) updateHoverCard();
+          refreshNodeAuras();
+          document.body.style.cursor = node ? 'pointer' : 'default';
+        });
+
+      // Keyboard escape clears pin for quick exploration.
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && pinnedNode) {
+          pinnedNode = null;
+          updateHoverCard();
+          refreshNodeAuras();
+        }
+      });
+
+      // Initial aura state.
+      setTimeout(() => refreshNodeAuras(), 250);
+    })();
+
+</script>
 </body>
 </html>
