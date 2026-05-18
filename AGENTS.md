@@ -21,6 +21,19 @@ Do not begin implementation until the plan is clear.
 
 ---
 
+## Graphify Usage Rule
+
+Use Graphify to reduce repo-scanning and context bloat.
+
+Before large architecture, refactor, or debugging tasks:
+1. Read graphify-out/GRAPH_REPORT.md
+2. Run targeted graphify query "<question>"
+3. Open only the specific files identified by Graphify
+4. Do not read full graphify-out/graph.json unless explicitly required
+5. Run graphify update . after meaningful code or docs changes
+
+Never paste large Graphify JSON into chat or prompts.
+
 ## 2 — Product Definition
 
 Cinema Machina Core is a local-first playback-chain monitoring, diagnostic, and control platform for high-end home cinema systems.
