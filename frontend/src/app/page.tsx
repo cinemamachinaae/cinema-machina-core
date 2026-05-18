@@ -136,7 +136,6 @@ type SystemOverview = {
 };
 
 type DashboardState = {
-  health: HealthStatus | null;
   overview: SystemOverview | null;
   diagnostics: string[];
   lastUpdated: string | null;
@@ -233,7 +232,6 @@ const defaultOverview: SystemOverview = {
 };
 
 const defaultState: DashboardState = {
-  health: null,
   overview: null,
   diagnostics: [],
   lastUpdated: null,
@@ -321,16 +319,16 @@ function shieldReachabilityLabel(shield: ShieldState): string {
   return "Unknown";
 }
 
-function apiStateLabel(isLoading: boolean, health: HealthStatus | null, overview: SystemOverview | null, diagnostics: string[]): string {
-  if (isLoading && health === null && overview === null) {
+function apiStateLabel(isLoading: boolean, overview: SystemOverview | null, diagnostics: string[]): string {
+  if (isLoading && overview === null) {
     return "Checking";
   }
 
-  if (health?.status === "ok" && overview !== null && diagnostics.length === 0) {
+  if (overview?.health?.status === "ok" && diagnostics.length === 0) {
     return "Healthy";
   }
 
-  if (health?.status === "ok" || overview !== null) {
+  if (overview !== null) {
     return "Degraded";
   }
 
@@ -744,35 +742,29 @@ export default function Dashboard() {
           setIsRefreshing(true);
         }
 
-        const [healthResult, overviewResult] = await Promise.all([
-          fetchApiJsonResult<HealthStatus>("/health", {
-            signal: controller.signal,
-            timeoutMs: 5000,
-          }),
-          fetchApiJsonResult<SystemOverview>("/system/overview", {
-            signal: controller.signal,
-            timeoutMs: 6000,
-          }),
-        ]);
+        const overviewResult = await fetchApiJsonResult<SystemOverview>("/system/overview", {
+          signal: controller.signal,
+          timeoutMs: 6000,
+        });
 
         if (cancelled) {
           return;
         }
 
         const diagnostics: string[] = [];
-        if (!healthResult.ok) {
-          diagnostics.push("Health endpoint is unavailable.");
-        }
         if (!overviewResult.ok) {
           diagnostics.push("System overview is unavailable.");
         }
 
-        const sampleTime = new Date().toISOString();
+        const sampleTime = overviewResult.ok
+          ? (typeof overviewResult.data.timestamp === "string" && overviewResult.data.timestamp.trim()
+              ? overviewResult.data.timestamp
+              : new Date().toISOString())
+          : new Date().toISOString();
         setState((previous) => ({
-          health: healthResult.ok ? healthResult.data : previous.health,
           overview: overviewResult.ok ? normalizeOverview(overviewResult.data) : previous.overview,
           diagnostics,
-          lastUpdated: healthResult.ok || overviewResult.ok ? sampleTime : previous.lastUpdated,
+          lastUpdated: overviewResult.ok ? sampleTime : previous.lastUpdated,
         }));
         setIsLoading(false);
         setIsRefreshing(false);
@@ -784,7 +776,6 @@ export default function Dashboard() {
     refreshDashboard(true).catch(() => {
       if (!cancelled) {
         setState({
-          health: null,
           overview: null,
           diagnostics: ["Dashboard refresh is unavailable."],
           lastUpdated: null,
@@ -819,8 +810,8 @@ export default function Dashboard() {
     setApiBaseUrl(resolveApiBaseUrl());
   }, []);
 
-  const health = state.health ?? defaultHealth;
   const overview = useMemo(() => normalizeOverview(state.overview), [state.overview]);
+  const health = overview.health ?? defaultHealth;
   const playback = overview.playback;
   const chain = overview.chain;
   const shield = overview.shield;
@@ -828,7 +819,7 @@ export default function Dashboard() {
   const integrations = overview.integrations;
   const activeSession = playback.sessions[0] ?? null;
   const systemOnline = health.status === "ok";
-  const apiState = apiStateLabel(isLoading, state.health, state.overview, state.diagnostics);
+  const apiState = apiStateLabel(isLoading, state.overview, state.diagnostics);
   const diagnostics = [...overview.warnings.map(summarizeWarning), ...state.diagnostics];
   const sourceSummary = chain.source;
   const output = chain.output_state;
