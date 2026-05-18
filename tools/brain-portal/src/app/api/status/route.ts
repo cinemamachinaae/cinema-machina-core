@@ -74,6 +74,33 @@ async function getGraphifyFreshness(headSha: string): Promise<GraphifyFreshness>
   let matchesHead: boolean | null = null;
   if (normalizedHead && normalizedBuilt) {
     matchesHead = normalizedHead.startsWith(normalizedBuilt) || normalizedBuilt.startsWith(normalizedHead);
+
+    // If HEAD only changes graphify-out artifacts, allow the report to match the
+    // immediately-previous commit. This avoids a misleading "stale" state when
+    // the latest commit exists only to commit regenerated graph outputs.
+    if (matchesHead === false) {
+      const root = repoPath();
+      const changed = await safeExecFile(
+        "git",
+        ["diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"],
+        { cwd: root, timeoutMs: 1500 },
+      );
+      const files = (changed.stdout || "")
+        .split("\n")
+        .map((l) => l.trim())
+        .filter(Boolean);
+
+      const headOnlyGraphifyOut =
+        files.length > 0 && files.every((file) => file.startsWith("graphify-out/"));
+
+      if (headOnlyGraphifyOut) {
+        const parent = await safeExecFile("git", ["rev-parse", "HEAD^"], { cwd: root, timeoutMs: 1500 });
+        const parentSha = (parent.stdout || "").trim();
+        if (parentSha && (parentSha.startsWith(normalizedBuilt) || normalizedBuilt.startsWith(parentSha))) {
+          matchesHead = true;
+        }
+      }
+    }
   }
 
   return {
