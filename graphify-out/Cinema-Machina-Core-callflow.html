@@ -60,11 +60,10 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 <div class="container">
 
 <h1>Cinema Machina Core — Complete Call Flow &amp; Architecture Documentation</h1>
-<p class="subtitle">Generated from graphify knowledge graph: 1331 nodes, 1420 edges, 137 communities. Commit: 7cb67af</p>
+<p class="subtitle">Generated from graphify knowledge graph: 2475 nodes, 2741 edges, 250 communities. Commit: 3930583</p>
 
 <div class="nav">
     <a href="#overview">Architecture Overview</a>
-    <a href="#extract-pipeline">Extraction Pipeline</a>
     <a href="#build-graph">Graph Build</a>
     <a href="#cli-skills">CLI &amp; Skill Installers</a>
     <a href="#ingest-cache-update">Ingestion &amp; Updates</a>
@@ -75,6 +74,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
     <a href="#community-39">Community 39</a>
     <a href="#community-40">Community 40</a>
     <a href="#community-45">Community 45</a>
+    <a href="#community-146">Community 146</a>
     <a href="#community-48">Community 48</a>
     <a href="#community-49">Community 49</a>
     <a href="#community-52">Community 52</a>
@@ -88,17 +88,15 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    EXTRACT_PIPELINE_5F350230("Extraction Pipeline<br/><small>17 nodes</small>")
-    class EXTRACT_PIPELINE_5F350230 module;
-    BUILD_GRAPH_321CBB04("Graph Build<br/><small>498 nodes</small>")
+    BUILD_GRAPH_321CBB04("Graph Build<br/><small>1211 nodes</small>")
     class BUILD_GRAPH_321CBB04 module;
-    CLI_SKILLS_9964CBB8("CLI &amp; Skill Installers<br/><small>200 nodes</small>")
+    CLI_SKILLS_9964CBB8("CLI &amp; Skill Installers<br/><small>290 nodes</small>")
     class CLI_SKILLS_9964CBB8 module;
-    INGEST_CACHE_UPDATE_FF457338("Ingestion &amp; Updates<br/><small>16 nodes</small>")
+    INGEST_CACHE_UPDATE_FF457338("Ingestion &amp; Updates<br/><small>13 nodes</small>")
     class INGEST_CACHE_UPDATE_FF457338 module;
-    SERVE_API_35EC8E86("Serving API<br/><small>216 nodes</small>")
+    SERVE_API_35EC8E86("Serving API<br/><small>344 nodes</small>")
     class SERVE_API_35EC8E86 module;
-    TESTS_FIXTURES_B84B1DCC("Tests &amp; Fixtures<br/><small>65 nodes</small>")
+    TESTS_FIXTURES_B84B1DCC("Tests &amp; Fixtures<br/><small>247 nodes</small>")
     class TESTS_FIXTURES_B84B1DCC module;
     COMMUNITY_35_B2C5BAA1("Community 35<br/><small>18 nodes</small>")
     class COMMUNITY_35_B2C5BAA1 module;
@@ -110,26 +108,28 @@ flowchart LR
     class COMMUNITY_40_94BC4235 module;
     COMMUNITY_45_E4978FE7("Community 45<br/><small>13 nodes</small>")
     class COMMUNITY_45_E4978FE7 module;
+    COMMUNITY_146_CECF0C11("Community 146<br/><small>12 nodes</small>")
+    class COMMUNITY_146_CECF0C11 module;
     COMMUNITY_48_CA50C6CA("Community 48<br/><small>11 nodes</small>")
     class COMMUNITY_48_CA50C6CA module;
     COMMUNITY_49_2104F0AE("Community 49<br/><small>11 nodes</small>")
     class COMMUNITY_49_2104F0AE module;
     COMMUNITY_52_19459BA9("Community 52<br/><small>11 nodes</small>")
     class COMMUNITY_52_19459BA9 module;
-    OTHER_D0941E68("Other<br/><small>207 nodes</small>")
+    OTHER_D0941E68("Other<br/><small>246 nodes</small>")
     class OTHER_D0941E68 module;
     OTHER_D0941E68 -->|contains x8| BUILD_GRAPH_321CBB04
+    BUILD_GRAPH_321CBB04 -->|contains x6| TESTS_FIXTURES_B84B1DCC
+    TESTS_FIXTURES_B84B1DCC -->|contains x4| BUILD_GRAPH_321CBB04
     COMMUNITY_49_2104F0AE -->|contains x4| OTHER_D0941E68
     OTHER_D0941E68 -->|contains x4| SERVE_API_35EC8E86
     COMMUNITY_48_CA50C6CA -->|contains x3| OTHER_D0941E68
-    BUILD_GRAPH_321CBB04 -->|contains x3| SERVE_API_35EC8E86
     COMMUNITY_52_19459BA9 -->|contains x3| OTHER_D0941E68
     COMMUNITY_52_19459BA9 -->|contains x3| SERVE_API_35EC8E86
-    BUILD_GRAPH_321CBB04 -->|contains x3| EXTRACT_PIPELINE_5F350230
-    COMMUNITY_40_94BC4235 -->|contains x2| SERVE_API_35EC8E86
-    COMMUNITY_40_94BC4235 -->|contains x2| OTHER_D0941E68
+    TESTS_FIXTURES_B84B1DCC -->|contains x2| SERVE_API_35EC8E86
+    INGEST_CACHE_UPDATE_FF457338 -->|contains x2| TESTS_FIXTURES_B84B1DCC
     COMMUNITY_48_CA50C6CA -->|contains x2| BUILD_GRAPH_321CBB04
-    COMMUNITY_49_2104F0AE -->|contains x2| BUILD_GRAPH_321CBB04
+    OTHER_D0941E68 -->|contains x2| CLI_SKILLS_9964CBB8
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -146,311 +146,89 @@ flowchart LR
     <h4>Architecture Layers</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>Layer</th><th>Nodes</th><th>Communities</th></tr>
-      <tr><td>Extraction Pipeline</td><td>17</td><td><code>7</code></td></tr><tr><td>Graph Build</td><td>498</td><td><code>24, 25, 26, 28, 29, 30, 1, 32, 3, 34, 44, 0, 54, 57, 60, 61, 62, 63, 64, 65, 69, 74, 82, 84, 100, 101, 103, 90, 91, 92, 93, 94, 95, 96, 9, 124, 126, 16</code></td></tr><tr><td>CLI &amp; Skill Installers</td><td>200</td><td><code>27, 33, 36, 38, 41, 42, 43, 47, 50, 66, 80, 108, 109, 111, 116, 125, 127, 135, 21</code></td></tr><tr><td>Ingestion &amp; Updates</td><td>16</td><td><code>12, 117</code></td></tr><tr><td>Serving API</td><td>216</td><td><code>23, 31, 46, 5, 51, 53, 55, 56, 59, 68, 71, 76, 78, 79, 83, 88, 107, 128, 13</code></td></tr><tr><td>Tests &amp; Fixtures</td><td>65</td><td><code>2, 4, 6, 67, 110, 15</code></td></tr><tr><td>Community 35</td><td>18</td><td><code>35</code></td></tr><tr><td>Community 37</td><td>17</td><td><code>37</code></td></tr><tr><td>Community 39</td><td>16</td><td><code>39</code></td></tr><tr><td>Community 40</td><td>15</td><td><code>40</code></td></tr><tr><td>Community 45</td><td>13</td><td><code>45</code></td></tr><tr><td>Community 48</td><td>11</td><td><code>48</code></td></tr><tr><td>Community 49</td><td>11</td><td><code>49</code></td></tr><tr><td>Community 52</td><td>11</td><td><code>52</code></td></tr><tr><td>Other</td><td>207</td><td><code>58, 70, 72, 73, 75, 77, 81, 85, 86, 87, 89, 102, 104, 105, 97, 98, 99, 106, 112, 113, 114, 115, 8, 10, 11, 118, 119, 120, 121, 122, 123, 129, 130, 131, 132, 133, 14, 134, 136, 17, 18, 19, 20, 22</code></td></tr>
+      <tr><td>Graph Build</td><td>1211</td><td><code>24, 6, 25, 138, 26, 28, 139, 29, 30, 1, 141, 32, 142, 3, 0, 34, 145, 44, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 54, 57, 60, 61, 62, 63, 64, 65, 69, 187, 74, 188, 189, 190, 191, 192, 193, 194, 82, 84, 100, 101, 103, 90, 91, 92, 93, 94, 95, 96, 198, 199, 200, 201, 203, 204, 205, 206, 207, 209, 210, 211, 212, 213, 214, 215, 217, 218, 9, 124, 230, 126, 231, 232, 16</code></td></tr><tr><td>CLI &amp; Skill Installers</td><td>290</td><td><code>27, 33, 36, 38, 41, 42, 143, 43, 144, 47, 50, 66, 80, 195, 108, 109, 111, 116, 202, 208, 216, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 125, 127, 135, 21</code></td></tr><tr><td>Ingestion &amp; Updates</td><td>13</td><td><code>186, 117</code></td></tr><tr><td>Serving API</td><td>344</td><td><code>11, 23, 5, 31, 140, 13, 46, 51, 53, 55, 56, 185, 59, 68, 71, 76, 78, 79, 83, 88, 229, 128</code></td></tr><tr><td>Tests &amp; Fixtures</td><td>247</td><td><code>107, 137, 7, 2, 4, 12, 8, 67, 197, 110, 15</code></td></tr><tr><td>Community 35</td><td>18</td><td><code>35</code></td></tr><tr><td>Community 37</td><td>17</td><td><code>37</code></td></tr><tr><td>Community 39</td><td>16</td><td><code>39</code></td></tr><tr><td>Community 40</td><td>15</td><td><code>40</code></td></tr><tr><td>Community 45</td><td>13</td><td><code>45</code></td></tr><tr><td>Community 146</td><td>12</td><td><code>146</code></td></tr><tr><td>Community 48</td><td>11</td><td><code>48</code></td></tr><tr><td>Community 49</td><td>11</td><td><code>49</code></td></tr><tr><td>Community 52</td><td>11</td><td><code>52</code></td></tr><tr><td>Other</td><td>246</td><td><code>183, 184, 58, 70, 72, 73, 75, 77, 81, 85, 86, 87, 89, 102, 104, 105, 196, 97, 98, 99, 106, 112, 113, 114, 115, 10, 118, 119, 120, 121, 122, 123, 129, 130, 131, 132, 133, 14, 17, 233, 234, 235, 236, 237, 134, 136, 18, 19, 20, 22, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249</code></td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Core Flow</h4>
-    <div class="arrow-chain">Community 35 -&gt; Extraction Pipeline -&gt; Tests &amp; Fixtures -&gt; Ingestion &amp; Updates -&gt; Graph Build -&gt; Serving API -&gt; Other</div>
+    <div class="arrow-chain">Community 35 -&gt; Graph Build -&gt; Tests &amp; Fixtures -&gt; Serving API -&gt; Other -&gt; CLI &amp; Skill Installers -&gt; Community 52</div>
   </div>
 </div>
 <div class="grid">
   <div class="card">
     <h4>Graph Report Highlights</h4>
     <ul>
-      <li>1331 nodes · 1420 edges · 137 communities (129 shown, 8 thin omitted)</li>
-      <li>Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 45 edges (avg confidence: 0.69)</li>
+      <li>2475 nodes · 2741 edges · 250 communities (229 shown, 21 thin omitted)</li>
+      <li>Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 185 edges (avg confidence: 0.64)</li>
       <li>Token cost: 0 input · 0 output</li>
-      <li>1. `PlexClient` - 20 edges</li>
-      <li>2. `parse_sessions()` - 20 edges</li>
-      <li>3. `PostizAPI` - 19 edges</li>
+      <li>1. `Cinema Machina Core — SKILLS.md` - 34 edges</li>
+      <li>2. `Confidence` - 33 edges</li>
+      <li>3. `PlexClient` - 24 edges</li>
     </ul>
   </div>
 </div>
 <hr>
-<!-- ====== 2. Extraction Pipeline ====== -->
-<h2 id="extract-pipeline">2. Extraction Pipeline</h2>
-<p>Extraction Pipeline groups implementation around backend, app, plex, integrations, mostly in integrations/plex/parser.py, app/models/playback.py, integrations/plex/client.py. This section covers 17 nodes and 22 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 2. Graph Build ====== -->
+<h2 id="build-graph">2. Graph Build</h2>
+<p>Graph Build groups implementation around state, omx, postiz, skills, mostly in .omx/state/subagent-tracking.json, skills/postiz/SYNTAX_UPGRADE.md, SKILLS.md. This section covers 1211 nodes and 1221 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Extraction Pipeline (17 nodes, 22 edges)
-    subgraph extract_pipeline_integrations_plex_parser_py_1be2846c["integrations/plex/parser.py"]
-        plex_parser_parse_video_element_acfb680c("_parse_video_element()<br/><small>integrations/plex/parser.py</small>")
-        plex_parser_parse_decision_dd48767d("_parse_decision()<br/><small>integrations/plex/parser.py</small>")
-        plex_parser_parse_video_state_924f17fa("_parse_video_state()<br/><small>integrations/plex/parser.py</small>")
-        plex_parser_parse_audio_state_476b592f("_parse_audio_state()<br/><small>integrations/plex/parser.py</small>")
-        backend_app_integrations_plex_parser_py_c63b8626("parser.py")
-        plex_parser_rationale_164_c6a65d3c("Derive the playback decision from a &lt;...<br/><small>integrations/plex/parser.py</small>")
-        plex_parser_rationale_242_1d6f1782("Extract audio codec and channel count f...<br/><small>integrations/plex/parser.py</small>")
-        plex_parser_rationale_187_b50c9ace("Extract video codec and resolution from...<br/><small>integrations/plex/parser.py</small>")
-        plex_parser_rationale_110_66837a42("Parse a single &lt;Video&gt; element into...<br/><small>integrations/plex/parser.py</small>")
-        plex_parser_rationale_1_8723cb08("Plex session XML parser — Phase 2.1. Pa...<br/><small>integrations/plex/parser.py</small>")
+    %% Section: Graph Build (1211 nodes, 1221 edges)
+    subgraph build_graph_app_services_chain_snapshot_py_193b0f8e["app/services/chain_snapshot.py"]
+        services_chain_snapshot_get_current_chain_snapsh_c421ebb7("get_current_chain_snapshot()<br/><small>app/services/chain_snapshot.py</small>")
+        services_chain_snapshot_build_playback_client_st_792ddf3b("playback client state()<br/><small>app/services/chain_snapshot.py</small>")
+        services_chain_snapshot_infer_playback_client_ki_9325ddca("playback client kind()<br/><small>app/services/chain_snapshot.py</small>")
+        services_chain_snapshot_get_sessions_from_client_39dfd9c6("_get_sessions_from_client()<br/><small>app/services/chain_snapshot.py</small>")
+        services_chain_snapshot_get_shield_state_for_cha_81cccf2e("state for chain()<br/><small>app/services/chain_snapshot.py</small>")
+        services_chain_snapshot_build_source_state_b6698698("_build_source_state()<br/><small>app/services/chain_snapshot.py</small>")
+        services_chain_snapshot_build_media_server_state_2684dc84("_build_media_server_state()<br/><small>app/services/chain_snapshot.py</small>")
     end
-    subgraph extract_pipeline_app_models_playback_py_93bd5e28["app/models/playback.py"]
-        models_playback_audiostate_c66460c4("AudioState<br/><small>app/models/playback.py</small>")
-        models_playback_sessionstate_3c69539b("SessionState<br/><small>app/models/playback.py</small>")
-        models_playback_videostate_15fb4d12("VideoState<br/><small>app/models/playback.py</small>")
-        models_playback_rationale_86_0176cbb7("Full playback session state snapshot. A...<br/><small>app/models/playback.py</small>")
-        models_playback_rationale_43_aac782bd("Video stream attributes for the current...<br/><small>app/models/playback.py</small>")
-    end
-    subgraph extract_pipeline_integrations_plex_client_py_b343b39f["integrations/plex/client.py"]
-        plex_client_plexclient_build_unknown_session_f5c13f3f("_build_unknown_session()<br/><small>integrations/plex/client.py</small>")
-        plex_client_rationale_139_7304845b("Build a fully-unknown session state for...<br/><small>integrations/plex/client.py</small>")
-    end
-    plex_parser_parse_video_element_acfb680c -->|calls| plex_parser_parse_decision_dd48767d
-    plex_parser_parse_video_element_acfb680c -->|calls| plex_parser_parse_video_state_924f17fa
-    plex_parser_parse_video_element_acfb680c -->|calls| plex_parser_parse_audio_state_476b592f
-    class plex_parser_parse_video_element_acfb680c function;
-    class plex_parser_parse_decision_dd48767d function;
-    class plex_parser_parse_video_state_924f17fa function;
-    class plex_parser_parse_audio_state_476b592f function;
-    class backend_app_integrations_plex_parser_py_c63b8626 module;
-    class plex_parser_rationale_164_c6a65d3c concept;
-    class plex_parser_rationale_242_1d6f1782 concept;
-    class plex_parser_rationale_187_b50c9ace concept;
-    class plex_parser_rationale_110_66837a42 concept;
-    class plex_parser_rationale_1_8723cb08 concept;
-    class models_playback_audiostate_c66460c4 klass;
-    class models_playback_sessionstate_3c69539b klass;
-    class models_playback_videostate_15fb4d12 klass;
-    class models_playback_rationale_86_0176cbb7 concept;
-    class models_playback_rationale_43_aac782bd concept;
-    class plex_client_plexclient_build_unknown_session_f5c13f3f function;
-    class plex_client_rationale_139_7304845b concept;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>VideoState</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>_build_unknown_session()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small><br><code>_parse_video_state()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td>VideoState node in app/models/playback.py.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>AudioState</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>_build_unknown_session()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small><br><code>_parse_audio_state()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td>AudioState node in app/models/playback.py.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>SessionState</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>_build_unknown_session()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small><br><code>_parse_video_element()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td>SessionState node in app/models/playback.py.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>Video stream attributes for the current session.      Attributes:         codec:</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Video stream attributes for the current session.      Attributes:         codec:.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>Full playback session state snapshot.      Attributes:         source: Which med</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Full playback session state snapshot.      Attributes:         source: Which med.</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>._build_unknown_session()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>AudioState</code><br><small style="color:var(--muted)">app/models/playback.py</small><br><code>SessionState</code><br><small style="color:var(--muted)">app/models/playback.py</small><br><code>VideoState</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>._build_unknown_session() node in integrations/plex/client.py.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>Build a fully-unknown session state for safe fallback.          Returns:</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Build a fully-unknown session state for safe fallback.          Returns:.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>parser.py</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-class">Module</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Module file in integrations/plex/parser.py.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>_parse_video_element()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>SessionState</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
-  <td><code>_parse_audio_state()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>_parse_decision()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>_parse_video_state()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td>_parse_video_element() node in integrations/plex/parser.py.</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>_parse_decision()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>_parse_video_element()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>_parse_decision() node in integrations/plex/parser.py.</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td><code>_parse_video_state()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>_parse_video_element()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>VideoState</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>_parse_video_state() node in integrations/plex/parser.py.</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td><code>_parse_audio_state()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>_parse_video_element()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>AudioState</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>_parse_audio_state() node in integrations/plex/parser.py.</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td><code>Plex session XML parser — Phase 2.1.  Parses the ``/status/sessions`` XML respon</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Plex session XML parser — Phase 2.1.  Parses the ``/status/sessions`` XML respon.</td>
-</tr>
-<tr>
-  <td>14</td>
-  <td><code>Parse a single ``&lt;Video&gt;`` element into a ``SessionState``.      Args:         v</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Parse a single ``&lt;Video&gt;`` element into a ``SessionState``.      Args:         v.</td>
-</tr>
-<tr>
-  <td>15</td>
-  <td><code>Derive the playback decision from a ``&lt;Video&gt;`` element.      Plex exposes the d</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Derive the playback decision from a ``&lt;Video&gt;`` element.      Plex exposes the d.</td>
-</tr>
-<tr>
-  <td>16</td>
-  <td><code>Extract video codec and resolution from a ``&lt;Media&gt;`` element.      Prefers ``&lt;S</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Extract video codec and resolution from a ``&lt;Media&gt;`` element.      Prefers ``&lt;S.</td>
-</tr>
-<tr>
-  <td>17</td>
-  <td><code>Extract audio codec and channel count from a ``&lt;Media&gt;`` element.      Prefers `</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Extract audio codec and channel count from a ``&lt;Media&gt;`` element.      Prefers `.</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>integrations/plex/parser.py</code></td><td>10 nodes</td></tr>
-<tr><td><code>app/models/playback.py</code></td><td>5 nodes</td></tr>
-<tr><td><code>integrations/plex/client.py</code></td><td>2 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: explains x9, contains x4, calls x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 3. Graph Build ====== -->
-<h2 id="build-graph">3. Graph Build</h2>
-<p>Graph Build groups implementation around postiz, skills, agents, examples, mostly in skills/postiz/SYNTAX_UPGRADE.md, postiz/examples/EXAMPLES.md, skills/postiz/SUMMARY.md. This section covers 498 nodes and 465 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Graph Build (498 nodes, 465 edges)
-    subgraph build_graph_frontend_package_json_640d842e["frontend/package.json"]
-        frontend_package_devdependencies_types_node_cb2d41d4("@types/node<br/><small>frontend/package.json</small>")
-        frontend_package_devdependencies_types_react_3125cf76("@types/react<br/><small>frontend/package.json</small>")
-        frontend_package_devdependencies_autoprefixer_371cee21("autoprefixer<br/><small>frontend/package.json</small>")
-        frontend_package_scripts_build_12dfffc4("build<br/><small>frontend/package.json</small>")
-        frontend_package_dependencies_ed599f55("dependencies<br/><small>frontend/package.json</small>")
-        frontend_package_scripts_dev_1686ab34("dev<br/><small>frontend/package.json</small>")
-        frontend_package_devdependencies_ea29f362("devDependencies<br/><small>frontend/package.json</small>")
-    end
-    subgraph build_graph_app_models_playback_py_ef90f4d4["app/models/playback.py"]
-        backend_app_models_playback_py_00c7825e("playback.py")
-        models_playback_confidence_54308f4a("Confidence<br/><small>app/models/playback.py</small>")
-        models_playback_playbackdecision_46911ee2("PlaybackDecision<br/><small>app/models/playback.py</small>")
-        models_playback_playbacksource_05f67158("PlaybackSource<br/><small>app/models/playback.py</small>")
+    subgraph build_graph_omx_metrics_json_d739ec70[".omx/metrics.json"]
+        omx_metrics_last_activity_c62d9153("last_activity<br/><small>.omx/metrics.json</small>")
+        omx_metrics_json_d726a489("metrics.json")
+        omx_metrics_session_input_tokens_bd53b18c("session_input_tokens<br/><small>.omx/metrics.json</small>")
+        omx_metrics_session_output_tokens_fb3b8a07("session_output_tokens<br/><small>.omx/metrics.json</small>")
+        omx_metrics_session_total_tokens_e349d70c("session_total_tokens<br/><small>.omx/metrics.json</small>")
     end
     subgraph build_graph_codex_hooks_json_b1af5fad[".codex/hooks.json"]
         codex_hooks_hooks_pretooluse_27d57a05("PreToolUse<br/><small>.codex/hooks.json</small>")
         codex_hooks_hooks_33f35617("hooks<br/><small>.codex/hooks.json</small>")
         codex_hooks_json_96b7918d("hooks.json")
     end
-    subgraph build_graph_vscode_settings_json_9b3d5d01[".vscode/settings.json"]
-        vscode_settings_geminicodeassist_outlines_automa_e72993bd("geminicodeassist.outlines.automaticOutl...<br/><small>.vscode/settings.json</small>")
-        vscode_settings_json_eb4f06c7("settings.json")
-    end
     subgraph build_graph_External_generated_653891f5["External / generated"]
         enum_e338e8e3("Enum")
         str_3442496b("str")
     end
-    backend_app_models_playback_py_00c7825e -->|imports| enum_e338e8e3
-    %% Omitted for readability: 480 nodes, 0 edges
-    class frontend_package_devdependencies_types_node_cb2d41d4 function;
-    class frontend_package_devdependencies_types_react_3125cf76 function;
-    class frontend_package_devdependencies_autoprefixer_371cee21 function;
-    class frontend_package_scripts_build_12dfffc4 function;
-    class frontend_package_dependencies_ed599f55 function;
-    class frontend_package_scripts_dev_1686ab34 function;
-    class frontend_package_devdependencies_ea29f362 function;
-    class backend_app_models_playback_py_00c7825e module;
-    class models_playback_confidence_54308f4a klass;
-    class models_playback_playbackdecision_46911ee2 klass;
-    class models_playback_playbacksource_05f67158 klass;
+    backend_app_models_device_py_6b952481("device.py")
+    services_chain_snapshot_get_current_chain_snapsh_c421ebb7 -->|calls| services_chain_snapshot_get_sessions_from_client_39dfd9c6
+    services_chain_snapshot_get_current_chain_snapsh_c421ebb7 -->|calls| services_chain_snapshot_get_shield_state_for_cha_81cccf2e
+    services_chain_snapshot_get_current_chain_snapsh_c421ebb7 -->|calls| services_chain_snapshot_build_source_state_b6698698
+    services_chain_snapshot_get_current_chain_snapsh_c421ebb7 -->|calls| services_chain_snapshot_build_media_server_state_2684dc84
+    services_chain_snapshot_get_current_chain_snapsh_c421ebb7 -->|calls| services_chain_snapshot_build_playback_client_st_792ddf3b
+    services_chain_snapshot_build_playback_client_st_792ddf3b -->|calls| services_chain_snapshot_infer_playback_client_ki_9325ddca
+    services_chain_snapshot_infer_playback_client_ki_9325ddca -->|calls| services_chain_snapshot_get_shield_state_for_cha_81cccf2e
+    enum_e338e8e3 -->|imports| backend_app_models_device_py_6b952481
+    %% Omitted for readability: 1193 nodes, 0 edges
+    class services_chain_snapshot_get_current_chain_snapsh_c421ebb7 function;
+    class services_chain_snapshot_build_playback_client_st_792ddf3b entry;
+    class services_chain_snapshot_infer_playback_client_ki_9325ddca entry;
+    class services_chain_snapshot_get_sessions_from_client_39dfd9c6 entry;
+    class services_chain_snapshot_get_shield_state_for_cha_81cccf2e function;
+    class services_chain_snapshot_build_source_state_b6698698 function;
+    class services_chain_snapshot_build_media_server_state_2684dc84 function;
+    class omx_metrics_last_activity_c62d9153 function;
+    class omx_metrics_json_d726a489 function;
+    class omx_metrics_session_input_tokens_bd53b18c function;
+    class omx_metrics_session_output_tokens_fb3b8a07 function;
+    class omx_metrics_session_total_tokens_e349d70c function;
     class codex_hooks_hooks_pretooluse_27d57a05 klass;
     class codex_hooks_hooks_33f35617 ui;
     class codex_hooks_json_96b7918d ui;
-    class vscode_settings_geminicodeassist_outlines_automa_e72993bd function;
-    class vscode_settings_json_eb4f06c7 function;
     class enum_e338e8e3 klass;
     class str_3442496b function;
+    class backend_app_models_device_py_6b952481 module;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -719,91 +497,87 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>skills/postiz/SYNTAX_UPGRADE.md</code></td><td>44 nodes</td></tr>
+      <tr><td><code>.omx/state/subagent-tracking.json</code></td><td>237 nodes</td></tr>
+<tr><td><code>skills/postiz/SYNTAX_UPGRADE.md</code></td><td>44 nodes</td></tr>
+<tr><td><code>SKILLS.md</code></td><td>44 nodes</td></tr>
 <tr><td><code>postiz/examples/EXAMPLES.md</code></td><td>43 nodes</td></tr>
 <tr><td><code>skills/postiz/SUMMARY.md</code></td><td>35 nodes</td></tr>
 <tr><td><code>skills/postiz/package.json</code></td><td>34 nodes</td></tr>
+<tr><td><code>.omx/state/native-stop-state.json</code></td><td>32 nodes</td></tr>
 <tr><td><code>skills/postiz/PROVIDER_SETTINGS_SUMMARY.md</code></td><td>31 nodes</td></tr>
-<tr><td><code>skills/postiz/FEATURES.md</code></td><td>30 nodes</td></tr>
-<tr><td><code>skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</code></td><td>27 nodes</td></tr>
-<tr><td><code>skills/postiz/PROVIDER_SETTINGS.md</code></td><td>22 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x453, inherits x6, explains x5, imports x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x1175, explains x18, inherits x12, calls x7. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 4. CLI & Skill Installers ====== -->
-<h2 id="cli-skills">4. CLI &amp; Skill Installers</h2>
-<p>CLI &amp; Skill Installers groups implementation around postiz, skills, agents, skillmd, mostly in skills/postiz/SKILL.md, postiz/examples/COMMAND_LINE_GUIDE.md, AGENTS.md. This section covers 200 nodes and 201 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 3. CLI & Skill Installers ====== -->
+<h2 id="cli-skills">3. CLI &amp; Skill Installers</h2>
+<p>CLI &amp; Skill Installers groups implementation around postiz, skills, agents, notify, mostly in skills/postiz/SKILL.md, postiz/examples/COMMAND_LINE_GUIDE.md, AGENTS.md. This section covers 290 nodes and 275 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: CLI &amp; Skill Installers (200 nodes, 201 edges)
-    subgraph cli_skills_skills_postiz_SKILL_md_f383fdf8["skills/postiz/SKILL.md"]
-        agents_skills_postiz_skill_md_bb6f1c4c("SKILL.md")
-        postiz_skill_common_patterns_60073b9b("Common Patterns<br/><small>skills/postiz/SKILL.md</small>")
-        postiz_skill_essential_commands_e7257c0f("Essential Commands<br/><small>skills/postiz/SKILL.md</small>")
-        agents_skills_postiz_skills_postiz_skill_md_40e4ba99("SKILL.md")
-        postiz_skill_platform_specific_examples_bf1b0d00("Platform-Specific Examples<br/><small>skills/postiz/SKILL.md</small>")
-        postiz_skill_technical_concepts_8276f540("Technical Concepts<br/><small>skills/postiz/SKILL.md</small>")
-        postiz_skill_authentication_ea4df30f("Authentication<br/><small>skills/postiz/SKILL.md</small>")
+    %% Section: CLI &amp; Skill Installers (290 nodes, 275 edges)
+    subgraph cli_skills_sessions_019e3053_8978_7a31_b9e4_4f1b_3bf1c72d["sessions/019e3053-8978-7a31-b9e4-4f1be3eb9d2d/notify-hook-state.json"]
+        omx_state_sessions_019e3053_8978_7a31_b9e4_4f1be_368e0933("notify-hook-state.json")
+        node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_44d7a96d("recent_turns<br/><small>sessions/019e3053-8978-7a31-b9e4-4f1be3eb9d2d/notify-hook-state.json</small>")
+        node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_4eab8ed8("last_event_at<br/><small>sessions/019e3053-8978-7a31-b9e4-4f1be3eb9d2d/notify-hook-state.json</small>")
+        node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_30b05047("019e303f-e44f-7eb1-b180-8ec8800c3a61 01...<br/><small>sessions/019e3053-8978-7a31-b9e4-4f1be3eb9d2d/notify-hook-state.json</small>")
+        node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_542affbc("019e3053-8978-7a31-b9e4-4f1be3eb9d2d 01...<br/><small>sessions/019e3053-8978-7a31-b9e4-4f1be3eb9d2d/notify-hook-state.json</small>")
+    end
+    subgraph cli_skills_sessions_019e303f_e44f_7eb1_b180_8ec8_7dd53cc0["sessions/019e303f-e44f-7eb1-b180-8ec8800c3a61/notify-hook-state.json"]
+        node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_364a670c("recent_turns<br/><small>sessions/019e303f-e44f-7eb1-b180-8ec8800c3a61/notify-hook-state.json</small>")
+        omx_state_sessions_019e303f_e44f_7eb1_b180_8ec88_3a253d01("notify-hook-state.json")
+        node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_0c43299e("last_event_at<br/><small>sessions/019e303f-e44f-7eb1-b180-8ec8800c3a61/notify-hook-state.json</small>")
+        node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_f0b35ca6("019e303f-e44f-7eb1-b180-8ec8800c3a61 01...<br/><small>sessions/019e303f-e44f-7eb1-b180-8ec8800c3a61/notify-hook-state.json</small>")
+    end
+    subgraph cli_skills_sessions_019e3213_1fc6_7be3_940e_4fbe_8c8aeaf2["sessions/019e3213-1fc6-7be3-940e-4fbe88ead336/notify-hook-state.json"]
+        omx_state_sessions_019e3213_1fc6_7be3_940e_4fbe8_9a3e6cdb("notify-hook-state.json")
+        node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_e3cd8c7d("recent_turns<br/><small>sessions/019e3213-1fc6-7be3-940e-4fbe88ead336/notify-hook-state.json</small>")
+        node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_29288f32("last_event_at<br/><small>sessions/019e3213-1fc6-7be3-940e-4fbe88ead336/notify-hook-state.json</small>")
+        node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_36510dfc("019e3213-1fc6-7be3-940e-4fbe88ead336 01...<br/><small>sessions/019e3213-1fc6-7be3-940e-4fbe88ead336/notify-hook-state.json</small>")
     end
     subgraph cli_skills_postiz_examples_COMMAND_LINE_GUIDE_md_61f9d6b8["postiz/examples/COMMAND_LINE_GUIDE.md"]
         examples_command_line_guide_postiz_cli_command_l_993373c5("Postiz CLI - Command Line Guide<br/><small>postiz/examples/COMMAND_LINE_GUIDE.md</small>")
         examples_command_line_guide_examples_5a399179("Examples<br/><small>postiz/examples/COMMAND_LINE_GUIDE.md</small>")
-        examples_command_line_guide_error_handling_c5872018("Error Handling<br/><small>postiz/examples/COMMAND_LINE_GUIDE.md</small>")
     end
-    subgraph cli_skills_AGENTS_md_c2f84881["AGENTS.md"]
-        cinema_machina_core_agents_cinema_machina_core_a_c29863a0("Cinema Machina Core — AGENTS.md")
-        cinema_machina_core_agents_6_build_priority_fa68f7d7("6 — Build Priority<br/><small>AGENTS.md</small>")
-    end
-    subgraph cli_skills_docs_ai_CODEX_TOOL_ROUTING_md_a4422a52["docs/ai/CODEX_TOOL_ROUTING.md"]
-        ai_codex_tool_routing_priority_order_5a289dea("Priority order<br/><small>docs/ai/CODEX_TOOL_ROUTING.md</small>")
-        ai_codex_tool_routing_codex_tool_routing_policy_3341f4b8("Codex Tool Routing Policy — Cinema Mach...<br/><small>docs/ai/CODEX_TOOL_ROUTING.md</small>")
-    end
-    subgraph cli_skills_skills_postiz_PUBLISHING_md_c622b1c1["skills/postiz/PUBLISHING.md"]
-        postiz_publishing_common_issues_64bd9edf("Common Issues<br/><small>skills/postiz/PUBLISHING.md</small>")
-        postiz_publishing_publishing_with_a_different_pa_6952f8bc("Publishing with a Different Package Name<br/><small>skills/postiz/PUBLISHING.md</small>")
-    end
-    backend_app_main_py_f032032e("main.py")
-    agents_skills_postiz_examples_command_line_examp_85c6c96a("command-line-examples.sh")
-    agents_skills_postiz_skill_md_bb6f1c4c -->|contains| postiz_skill_essential_commands_e7257c0f
-    agents_skills_postiz_skill_md_bb6f1c4c -->|contains| postiz_skill_common_patterns_60073b9b
-    agents_skills_postiz_skill_md_bb6f1c4c -->|contains| postiz_skill_technical_concepts_8276f540
-    agents_skills_postiz_skill_md_bb6f1c4c -->|contains| postiz_skill_platform_specific_examples_bf1b0d00
-    postiz_skill_essential_commands_e7257c0f -->|contains| postiz_skill_authentication_ea4df30f
-    postiz_skill_essential_commands_e7257c0f -->|contains| agents_skills_postiz_skills_postiz_skill_md_40e4ba99
-    postiz_skill_common_patterns_60073b9b -->|contains| agents_skills_postiz_skills_postiz_skill_md_40e4ba99
-    postiz_skill_technical_concepts_8276f540 -->|contains| agents_skills_postiz_skills_postiz_skill_md_40e4ba99
-    postiz_skill_platform_specific_examples_bf1b0d00 -->|contains| agents_skills_postiz_skills_postiz_skill_md_40e4ba99
+    cinema_machina_core_agents_cinema_machina_core_a_c29863a0("Cinema Machina Core — AGENTS.md")
+    node_019e3b47_ee24_7891_a647_dfa1b46ef78d_notify_c17049d3("recent_turns<br/><small>sessions/019e3b47-ee24-7891-a647-dfa1b46ef78d/notify-hook-state.json</small>")
+    agents_skills_postiz_skill_md_bb6f1c4c("SKILL.md")
+    omx_state_sessions_019e3053_8978_7a31_b9e4_4f1be_368e0933 -->|contains| node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_44d7a96d
+    omx_state_sessions_019e3053_8978_7a31_b9e4_4f1be_368e0933 -->|contains| node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_4eab8ed8
+    node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_44d7a96d -->|contains| node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_30b05047
+    node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_44d7a96d -->|contains| node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_542affbc
+    omx_state_sessions_019e3213_1fc6_7be3_940e_4fbe8_9a3e6cdb -->|contains| node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_e3cd8c7d
+    omx_state_sessions_019e3213_1fc6_7be3_940e_4fbe8_9a3e6cdb -->|contains| node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_29288f32
+    node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_e3cd8c7d -->|contains| node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_36510dfc
+    omx_state_sessions_019e303f_e44f_7eb1_b180_8ec88_3a253d01 -->|contains| node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_364a670c
+    omx_state_sessions_019e303f_e44f_7eb1_b180_8ec88_3a253d01 -->|contains| node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_0c43299e
+    node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_364a670c -->|contains| node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_f0b35ca6
     examples_command_line_guide_postiz_cli_command_l_993373c5 -->|contains| examples_command_line_guide_examples_5a399179
-    examples_command_line_guide_postiz_cli_command_l_993373c5 -->|contains| examples_command_line_guide_error_handling_c5872018
-    cinema_machina_core_agents_cinema_machina_core_a_c29863a0 -->|contains| cinema_machina_core_agents_6_build_priority_fa68f7d7
-    ai_codex_tool_routing_codex_tool_routing_policy_3341f4b8 -->|contains| ai_codex_tool_routing_priority_order_5a289dea
-    %% Omitted for readability: 182 nodes, 0 edges
-    class agents_skills_postiz_skill_md_bb6f1c4c concept;
-    class postiz_skill_common_patterns_60073b9b concept;
-    class postiz_skill_essential_commands_e7257c0f concept;
-    class agents_skills_postiz_skills_postiz_skill_md_40e4ba99 concept;
-    class postiz_skill_platform_specific_examples_bf1b0d00 concept;
-    class postiz_skill_technical_concepts_8276f540 concept;
-    class postiz_skill_authentication_ea4df30f concept;
+    %% Omitted for readability: 272 nodes, 0 edges
+    class omx_state_sessions_019e3053_8978_7a31_b9e4_4f1be_368e0933 ui;
+    class node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_44d7a96d function;
+    class node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_4eab8ed8 function;
+    class node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_30b05047 function;
+    class node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_542affbc function;
+    class node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_364a670c function;
+    class omx_state_sessions_019e303f_e44f_7eb1_b180_8ec88_3a253d01 ui;
+    class node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_0c43299e function;
+    class node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_f0b35ca6 function;
+    class omx_state_sessions_019e3213_1fc6_7be3_940e_4fbe8_9a3e6cdb ui;
+    class node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_e3cd8c7d function;
+    class node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_29288f32 function;
+    class node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_36510dfc function;
     class examples_command_line_guide_postiz_cli_command_l_993373c5 concept;
     class examples_command_line_guide_examples_5a399179 concept;
-    class examples_command_line_guide_error_handling_c5872018 concept;
     class cinema_machina_core_agents_cinema_machina_core_a_c29863a0 concept;
-    class cinema_machina_core_agents_6_build_priority_fa68f7d7 concept;
-    class ai_codex_tool_routing_priority_order_5a289dea concept;
-    class ai_codex_tool_routing_codex_tool_routing_policy_3341f4b8 concept;
-    class postiz_publishing_common_issues_64bd9edf concept;
-    class postiz_publishing_publishing_with_a_different_pa_6952f8bc concept;
-    class backend_app_main_py_f032032e module;
-    class agents_skills_postiz_examples_command_line_examp_85c6c96a entry;
+    class node_019e3b47_ee24_7891_a647_dfa1b46ef78d_notify_c17049d3 function;
+    class agents_skills_postiz_skill_md_bb6f1c4c concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -851,6 +625,14 @@ flowchart LR
 </tr>
 <tr>
   <td>4</td>
+  <td><code>Graphify Usage Rule</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Graphify Usage Rule.</td>
+</tr>
+<tr>
+  <td>5</td>
   <td><code>2 — Product Definition</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -858,7 +640,7 @@ flowchart LR
   <td>Documentation node describing 2 — Product Definition.</td>
 </tr>
 <tr>
-  <td>5</td>
+  <td>6</td>
   <td><code>code:txt (Source File)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -866,7 +648,7 @@ flowchart LR
   <td>Documentation node describing code:txt (Source File).</td>
 </tr>
 <tr>
-  <td>6</td>
+  <td>7</td>
   <td><code>code:txt (Is this media playing in the best possible quality?)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -874,7 +656,7 @@ flowchart LR
   <td>Documentation node describing code:txt (Is this media playing in the best possible quality?).</td>
 </tr>
 <tr>
-  <td>7</td>
+  <td>8</td>
   <td><code>3 — Core Rule</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -882,7 +664,7 @@ flowchart LR
   <td>Documentation node describing 3 — Core Rule.</td>
 </tr>
 <tr>
-  <td>8</td>
+  <td>9</td>
   <td><code>code:txt (confirmed | inferred | unknown)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -890,7 +672,7 @@ flowchart LR
   <td>Documentation node describing code:txt (confirmed | inferred | unknown).</td>
 </tr>
 <tr>
-  <td>9</td>
+  <td>10</td>
   <td><code>4 — Protected Files</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -898,7 +680,7 @@ flowchart LR
   <td>Documentation node describing 4 — Protected Files.</td>
 </tr>
 <tr>
-  <td>10</td>
+  <td>11</td>
   <td><code>code:txt (AGENTS.md)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -906,7 +688,7 @@ flowchart LR
   <td>Documentation node describing code:txt (AGENTS.md).</td>
 </tr>
 <tr>
-  <td>11</td>
+  <td>12</td>
   <td><code>5 — Current Known Environment</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -914,7 +696,7 @@ flowchart LR
   <td>Documentation node describing 5 — Current Known Environment.</td>
 </tr>
 <tr>
-  <td>12</td>
+  <td>13</td>
   <td><code>code:txt (iMac 27-inch Intel 2020)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -922,7 +704,7 @@ flowchart LR
   <td>Documentation node describing code:txt (iMac 27-inch Intel 2020).</td>
 </tr>
 <tr>
-  <td>13</td>
+  <td>14</td>
   <td><code>code:txt (/Volumes/FLIX may be near capacity.)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -930,7 +712,7 @@ flowchart LR
   <td>Documentation node describing code:txt (/Volumes/FLIX may be near capacity.).</td>
 </tr>
 <tr>
-  <td>14</td>
+  <td>15</td>
   <td><code>6 — Build Priority</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -938,7 +720,7 @@ flowchart LR
   <td>Documentation node describing 6 — Build Priority.</td>
 </tr>
 <tr>
-  <td>15</td>
+  <td>16</td>
   <td><code>code:txt (FastAPI backend scaffold)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -946,7 +728,7 @@ flowchart LR
   <td>Documentation node describing code:txt (FastAPI backend scaffold).</td>
 </tr>
 <tr>
-  <td>16</td>
+  <td>17</td>
   <td><code>code:txt (Plex/Jellyfin session monitor)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -954,7 +736,7 @@ flowchart LR
   <td>Documentation node describing code:txt (Plex/Jellyfin session monitor).</td>
 </tr>
 <tr>
-  <td>17</td>
+  <td>18</td>
   <td><code>code:txt (Nvidia Shield ADB monitor)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -962,7 +744,7 @@ flowchart LR
   <td>Documentation node describing code:txt (Nvidia Shield ADB monitor).</td>
 </tr>
 <tr>
-  <td>18</td>
+  <td>19</td>
   <td><code>code:txt (Radarr/Sonarr integration)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -970,7 +752,7 @@ flowchart LR
   <td>Documentation node describing code:txt (Radarr/Sonarr integration).</td>
 </tr>
 <tr>
-  <td>19</td>
+  <td>20</td>
   <td><code>code:txt (Docker deployment)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -978,7 +760,7 @@ flowchart LR
   <td>Documentation node describing code:txt (Docker deployment).</td>
 </tr>
 <tr>
-  <td>20</td>
+  <td>21</td>
   <td><code>code:txt (Cinema Machina client health report)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -986,7 +768,7 @@ flowchart LR
   <td>Documentation node describing code:txt (Cinema Machina client health report).</td>
 </tr>
 <tr>
-  <td>21</td>
+  <td>22</td>
   <td><code>7 — Stack</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -994,7 +776,7 @@ flowchart LR
   <td>Documentation node describing 7 — Stack.</td>
 </tr>
 <tr>
-  <td>22</td>
+  <td>23</td>
   <td><code>code:txt (Python 3.11.x)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1002,7 +784,7 @@ flowchart LR
   <td>Documentation node describing code:txt (Python 3.11.x).</td>
 </tr>
 <tr>
-  <td>23</td>
+  <td>24</td>
   <td><code>8 — Coding Rules</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1010,7 +792,7 @@ flowchart LR
   <td>Documentation node describing 8 — Coding Rules.</td>
 </tr>
 <tr>
-  <td>24</td>
+  <td>25</td>
   <td><code>9 — ADB Rule</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1018,7 +800,7 @@ flowchart LR
   <td>Documentation node describing 9 — ADB Rule.</td>
 </tr>
 <tr>
-  <td>25</td>
+  <td>26</td>
   <td><code>10 — Agent Workflow</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1026,7 +808,7 @@ flowchart LR
   <td>Documentation node describing 10 — Agent Workflow.</td>
 </tr>
 <tr>
-  <td>26</td>
+  <td>27</td>
   <td><code>code:txt (1. Read SKILLS.md)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1034,7 +816,7 @@ flowchart LR
   <td>Documentation node describing code:txt (1. Read SKILLS.md).</td>
 </tr>
 <tr>
-  <td>27</td>
+  <td>28</td>
   <td><code>11 — Done Definition</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1042,7 +824,7 @@ flowchart LR
   <td>Documentation node describing 11 — Done Definition.</td>
 </tr>
 <tr>
-  <td>28</td>
+  <td>29</td>
   <td><code>code:txt (typed)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1050,20 +832,12 @@ flowchart LR
   <td>Documentation node describing code:txt (typed).</td>
 </tr>
 <tr>
-  <td>29</td>
+  <td>30</td>
   <td><code>12 — First Milestone</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>Documentation node describing 12 — First Milestone.</td>
-</tr>
-<tr>
-  <td>30</td>
-  <td><code>code:txt (backend boots locally)</code><br><small style="color:var(--muted)">AGENTS.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:txt (backend boots locally).</td>
 </tr>
 </table>
 
@@ -1074,69 +848,72 @@ flowchart LR
       <tr><th>File</th><th>Coverage</th></tr>
       <tr><td><code>skills/postiz/SKILL.md</code></td><td>77 nodes</td></tr>
 <tr><td><code>postiz/examples/COMMAND_LINE_GUIDE.md</code></td><td>53 nodes</td></tr>
-<tr><td><code>AGENTS.md</code></td><td>34 nodes</td></tr>
+<tr><td><code>AGENTS.md</code></td><td>36 nodes</td></tr>
 <tr><td><code>skills/postiz/PUBLISHING.md</code></td><td>14 nodes</td></tr>
+<tr><td><code>sessions/019e303f-e44f-7eb1-b180-8ec8800c3a61/notify-hook-state.json</code></td><td>14 nodes</td></tr>
+<tr><td><code>sessions/019e3b47-ee24-7891-a647-dfa1b46ef78d/notify-hook-state.json</code></td><td>13 nodes</td></tr>
 <tr><td><code>docs/ai/CODEX_TOOL_ROUTING.md</code></td><td>11 nodes</td></tr>
-<tr><td><code>skills/postiz/HOW_TO_RUN.md</code></td><td>5 nodes</td></tr>
-<tr><td><code>skills/postiz/README.md</code></td><td>3 nodes</td></tr>
-<tr><td><code>skills/postiz/SKILL.md</code></td><td>1 nodes</td></tr>
+<tr><td><code>sessions/019e3b3b-ad0a-70b0-acb3-7cab9030d7a5/notify-hook-state.json</code></td><td>6 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x201. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x275. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 5. Ingestion & Updates ====== -->
-<h2 id="ingest-cache-update">5. Ingestion &amp; Updates</h2>
-<p>Ingestion &amp; Updates groups implementation around clientpy, backend, app, integrations, mostly in integrations/plex/client.py, skills/postiz/SUPPORTED_FILE_TYPES.md, integrations/jellyfin/client.py. This section covers 16 nodes and 14 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 4. Ingestion & Updates ====== -->
+<h2 id="ingest-cache-update">4. Ingestion &amp; Updates</h2>
+<p>Ingestion &amp; Updates groups implementation around clientpy, backend, app, integrations, mostly in skills/postiz/SUPPORTED_FILE_TYPES.md, integrations/jellyfin/client.py, integrations/plex/client.py. This section covers 13 nodes and 11 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Ingestion &amp; Updates (16 nodes, 14 edges)
-    subgraph ingest_cache_update_integrations_plex_client_py_06eb30ad["integrations/plex/client.py"]
-        plex_client_plexclient_init_590c0f44("__init__()<br/><small>integrations/plex/client.py</small>")
-        plex_client_plexclient_get_active_sessions_15b29adc("get_active_sessions()<br/><small>integrations/plex/client.py</small>")
-        backend_app_integrations_plex_client_py_7cf1207a("client.py")
-        plex_client_is_configured_c62ee5fa("is_configured()<br/><small>integrations/plex/client.py</small>")
-        plex_client_rationale_80_84e86c08("Fetch active Plex playback sessions. Ma...<br/><small>integrations/plex/client.py</small>")
-        plex_client_rationale_63_8883062e("Initialise the client using values from...<br/><small>integrations/plex/client.py</small>")
-        plex_client_rationale_1_165bab85("Plex Media Server integration client —...<br/><small>integrations/plex/client.py</small>")
-    end
+    %% Section: Ingestion &amp; Updates (13 nodes, 11 edges)
     subgraph ingest_cache_update_skills_postiz_SUPPORTED_FILE_e7de8a7c["skills/postiz/SUPPORTED_FILE_TYPES.md"]
+        postiz_supported_file_types_what_changed_fix_998b4baf("What Changed (Fix)<br/><small>skills/postiz/SUPPORTED_FILE_TYPES.md</small>")
         postiz_supported_file_types_after_fixed_5863e943("After (✅ Fixed)<br/><small>skills/postiz/SUPPORTED_FILE_TYPES.md</small>")
         postiz_supported_file_types_before_bug_be7371dd("Before (❌ Bug)<br/><small>skills/postiz/SUPPORTED_FILE_TYPES.md</small>")
-        postiz_supported_file_types_what_changed_fix_998b4baf("What Changed (Fix)<br/><small>skills/postiz/SUPPORTED_FILE_TYPES.md</small>")
         postiz_supported_file_types_codeblock_12_e9b4dfe3("code:bash (postiz upload video.mp4)<br/><small>skills/postiz/SUPPORTED_FILE_TYPES.md</small>")
         postiz_supported_file_types_codeblock_13_cbe00572("code:bash (postiz upload video.mp4)<br/><small>skills/postiz/SUPPORTED_FILE_TYPES.md</small>")
     end
     subgraph ingest_cache_update_integrations_jellyfin_client_931d7f17["integrations/jellyfin/client.py"]
-        jellyfin_client_jellyfinclient_bb23471a("JellyfinClient<br/><small>integrations/jellyfin/client.py</small>")
-        jellyfin_client_rationale_65_15c08764("Fetch active Jellyfin playback sessions...<br/><small>integrations/jellyfin/client.py</small>")
-        jellyfin_client_rationale_34_363b8edf("Interface to the Jellyfin server sessio...<br/><small>integrations/jellyfin/client.py</small>")
+        backend_app_integrations_jellyfin_client_py_360f0168("client.py")
         jellyfin_client_rationale_1_ca05a683("Jellyfin server integration client — Ph...<br/><small>integrations/jellyfin/client.py</small>")
+        jellyfin_client_is_configured_e3601882("is_configured()<br/><small>integrations/jellyfin/client.py</small>")
+        jellyfin_client_base_url_d3c0f466("base_url()<br/><small>integrations/jellyfin/client.py</small>")
     end
-    jellyfin_client_jellyfinclient_bb23471a -->|method| plex_client_plexclient_init_590c0f44
-    jellyfin_client_jellyfinclient_bb23471a -->|method| plex_client_plexclient_get_active_sessions_15b29adc
-    class plex_client_plexclient_init_590c0f44 function;
-    class plex_client_plexclient_get_active_sessions_15b29adc function;
-    class backend_app_integrations_plex_client_py_7cf1207a entry;
-    class plex_client_is_configured_c62ee5fa function;
-    class plex_client_rationale_80_84e86c08 concept;
-    class plex_client_rationale_63_8883062e concept;
-    class plex_client_rationale_1_165bab85 concept;
+    subgraph ingest_cache_update_integrations_plex_client_py_06eb30ad["integrations/plex/client.py"]
+        backend_app_integrations_plex_client_py_7cf1207a("client.py")
+        plex_client_is_configured_c62ee5fa("is_configured()<br/><small>integrations/plex/client.py</small>")
+        plex_client_base_url_1cea5727("base_url()<br/><small>integrations/plex/client.py</small>")
+        plex_client_rationale_1_165bab85("Plex Media Server integration client —...<br/><small>integrations/plex/client.py</small>")
+    end
+    backend_app_integrations_jellyfin_client_py_360f0168 -->|contains| jellyfin_client_is_configured_e3601882
+    backend_app_integrations_jellyfin_client_py_360f0168 -->|contains| jellyfin_client_base_url_d3c0f466
+    backend_app_integrations_plex_client_py_7cf1207a -->|contains| plex_client_is_configured_c62ee5fa
+    backend_app_integrations_plex_client_py_7cf1207a -->|contains| plex_client_base_url_1cea5727
+    postiz_supported_file_types_what_changed_fix_998b4baf -->|contains| postiz_supported_file_types_before_bug_be7371dd
+    postiz_supported_file_types_what_changed_fix_998b4baf -->|contains| postiz_supported_file_types_after_fixed_5863e943
+    postiz_supported_file_types_before_bug_be7371dd -->|contains| postiz_supported_file_types_codeblock_12_e9b4dfe3
+    postiz_supported_file_types_after_fixed_5863e943 -->|contains| postiz_supported_file_types_codeblock_13_cbe00572
+    backend_app_integrations_jellyfin_client_py_360f0168 -->|explains| jellyfin_client_rationale_1_ca05a683
+    jellyfin_client_rationale_1_ca05a683 -->|explains| backend_app_integrations_plex_client_py_7cf1207a
+    backend_app_integrations_plex_client_py_7cf1207a -->|explains| plex_client_rationale_1_165bab85
+    class postiz_supported_file_types_what_changed_fix_998b4baf concept;
     class postiz_supported_file_types_after_fixed_5863e943 concept;
     class postiz_supported_file_types_before_bug_be7371dd concept;
-    class postiz_supported_file_types_what_changed_fix_998b4baf concept;
     class postiz_supported_file_types_codeblock_12_e9b4dfe3 concept;
     class postiz_supported_file_types_codeblock_13_cbe00572 concept;
-    class jellyfin_client_jellyfinclient_bb23471a entry;
-    class jellyfin_client_rationale_65_15c08764 concept;
-    class jellyfin_client_rationale_34_363b8edf concept;
+    class backend_app_integrations_jellyfin_client_py_360f0168 entry;
     class jellyfin_client_rationale_1_ca05a683 concept;
+    class jellyfin_client_is_configured_e3601882 function;
+    class jellyfin_client_base_url_d3c0f466 function;
+    class backend_app_integrations_plex_client_py_7cf1207a entry;
+    class plex_client_is_configured_c62ee5fa function;
+    class plex_client_base_url_1cea5727 function;
+    class plex_client_rationale_1_165bab85 concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -1160,35 +937,35 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
-  <td><code>JellyfinClient</code><br><small style="color:var(--muted)">integrations/jellyfin/client.py</small></td>
+  <td><code>client.py</code><br><small style="color:var(--muted)">integrations/jellyfin/client.py</small></td>
   <td><span class="tag tag-cmd">Entry</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>__init__()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small><br><code>get_active_sessions()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td>JellyfinClient node in integrations/jellyfin/client.py.</td>
+  <td>No direct outbound edge</td>
+  <td>Module file in integrations/jellyfin/client.py.</td>
 </tr>
 <tr>
   <td>2</td>
+  <td><code>is_configured()</code><br><small style="color:var(--muted)">integrations/jellyfin/client.py</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Reads, resolves, or persists project configuration.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>base_url()</code><br><small style="color:var(--muted)">integrations/jellyfin/client.py</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>base_url() node in integrations/jellyfin/client.py.</td>
+</tr>
+<tr>
+  <td>4</td>
   <td><code>Jellyfin server integration client — Phase 2 scaffold.  This module provides a s</code><br><small style="color:var(--muted)">integrations/jellyfin/client.py</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>Design note for Jellyfin server integration client — Phase 2 scaffold.  This module provides a s.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>Interface to the Jellyfin server session API.      All public methods must:</code><br><small style="color:var(--muted)">integrations/jellyfin/client.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Interface to the Jellyfin server session API.      All public methods must:.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>Fetch active Jellyfin playback sessions.          Returns:             A list of</code><br><small style="color:var(--muted)">integrations/jellyfin/client.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Fetch active Jellyfin playback sessions.          Returns:             A list of.</td>
 </tr>
 <tr>
   <td>5</td>
@@ -1200,14 +977,6 @@ flowchart LR
 </tr>
 <tr>
   <td>6</td>
-  <td><code>.__init__()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>JellyfinClient</code><br><small style="color:var(--muted)">integrations/jellyfin/client.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>.__init__() node in integrations/plex/client.py.</td>
-</tr>
-<tr>
-  <td>7</td>
   <td><code>is_configured()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -1215,15 +984,15 @@ flowchart LR
   <td>Reads, resolves, or persists project configuration.</td>
 </tr>
 <tr>
-  <td>8</td>
-  <td><code>.get_active_sessions()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
+  <td>7</td>
+  <td><code>base_url()</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
   <td><span class="tag tag-func">Function</span></td>
-  <td><code>JellyfinClient</code><br><small style="color:var(--muted)">integrations/jellyfin/client.py</small></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>.get_active_sessions() node in integrations/plex/client.py.</td>
+  <td>base_url() node in integrations/plex/client.py.</td>
 </tr>
 <tr>
-  <td>9</td>
+  <td>8</td>
   <td><code>Plex Media Server integration client — Phase 2.1.  Makes a real HTTP call to ``/</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1231,23 +1000,7 @@ flowchart LR
   <td>Design note for Plex Media Server integration client — Phase 2.1.  Makes a real HTTP call to ``/.</td>
 </tr>
 <tr>
-  <td>10</td>
-  <td><code>Initialise the client using values from ``settings``.</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Initialise the client using values from ``settings``..</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td><code>Fetch active Plex playback sessions.          Makes a synchronous GET request to</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Fetch active Plex playback sessions.          Makes a synchronous GET request to.</td>
-</tr>
-<tr>
-  <td>12</td>
+  <td>9</td>
   <td><code>What Changed (Fix)</code><br><small style="color:var(--muted)">skills/postiz/SUPPORTED_FILE_TYPES.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1255,7 +1008,7 @@ flowchart LR
   <td>Documentation node describing What Changed (Fix).</td>
 </tr>
 <tr>
-  <td>13</td>
+  <td>10</td>
   <td><code>Before (❌ Bug)</code><br><small style="color:var(--muted)">skills/postiz/SUPPORTED_FILE_TYPES.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1263,7 +1016,7 @@ flowchart LR
   <td>Documentation node describing Before (❌ Bug).</td>
 </tr>
 <tr>
-  <td>14</td>
+  <td>11</td>
   <td><code>code:bash (postiz upload video.mp4)</code><br><small style="color:var(--muted)">skills/postiz/SUPPORTED_FILE_TYPES.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1271,7 +1024,7 @@ flowchart LR
   <td>Documentation node describing code:bash (postiz upload video.mp4).</td>
 </tr>
 <tr>
-  <td>15</td>
+  <td>12</td>
   <td><code>After (✅ Fixed)</code><br><small style="color:var(--muted)">skills/postiz/SUPPORTED_FILE_TYPES.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1279,7 +1032,7 @@ flowchart LR
   <td>Documentation node describing After (✅ Fixed).</td>
 </tr>
 <tr>
-  <td>16</td>
+  <td>13</td>
   <td><code>code:bash (postiz upload video.mp4)</code><br><small style="color:var(--muted)">skills/postiz/SUPPORTED_FILE_TYPES.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1293,90 +1046,80 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>integrations/plex/client.py</code></td><td>7 nodes</td></tr>
-<tr><td><code>skills/postiz/SUPPORTED_FILE_TYPES.md</code></td><td>5 nodes</td></tr>
+      <tr><td><code>skills/postiz/SUPPORTED_FILE_TYPES.md</code></td><td>5 nodes</td></tr>
 <tr><td><code>integrations/jellyfin/client.py</code></td><td>4 nodes</td></tr>
+<tr><td><code>integrations/plex/client.py</code></td><td>4 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x6, explains x6, method x2. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x8, explains x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 6. Serving API ====== -->
-<h2 id="serve-api">6. Serving API</h2>
-<p>Serving API groups implementation around postiz, agents, skills, codebash, mostly in skills/postiz/README.md, skills/postiz/QUICK_START.md, skills/postiz/SUPPORTED_FILE_TYPES.md. This section covers 216 nodes and 263 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 5. Serving API ====== -->
+<h2 id="serve-api">5. Serving API</h2>
+<p>Serving API groups implementation around postiz, agents, skills, readmemd, mostly in skills/postiz/README.md, src/app/page.tsx, skills/postiz/QUICK_START.md. This section covers 344 nodes and 408 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Serving API (216 nodes, 263 edges)
+    %% Section: Serving API (344 nodes, 408 edges)
+    subgraph serve_api_src_app_page_tsx_9599101b["src/app/page.tsx"]
+        app_page_confidencetone_22fbab26("confidenceTone()<br/><small>src/app/page.tsx</small>")
+        app_page_confidencechip_d391d729("ConfidenceChip()<br/><small>src/app/page.tsx</small>")
+        app_page_formatvalue_91f47c3b("formatValue()<br/><small>src/app/page.tsx</small>")
+        app_page_dashboard_c64941d4("Dashboard()<br/><small>src/app/page.tsx</small>")
+        app_page_formatdecision_20f8407c("formatDecision()<br/><small>src/app/page.tsx</small>")
+        app_page_statuslabel_a61b4719("statusLabel()<br/><small>src/app/page.tsx</small>")
+        app_page_shieldreachabilitylabel_4dfc7695("shieldReachabilityLabel()<br/><small>src/app/page.tsx</small>")
+        app_page_apistatelabel_147adf8e("apiStateLabel()<br/><small>src/app/page.tsx</small>")
+        app_page_apistatetone_c669aa3b("apiStateTone()<br/><small>src/app/page.tsx</small>")
+        app_page_formatlastupdated_a8df525d("formatLastUpdated()<br/><small>src/app/page.tsx</small>")
+        app_page_formatfreshness_06e83cd3("formatFreshness()<br/><small>src/app/page.tsx</small>")
+        app_page_integrationcard_96ab016d("IntegrationCard()<br/><small>src/app/page.tsx</small>")
+    end
     subgraph serve_api_postiz_src_api_ts_9066537d["postiz/src/api.ts"]
         src_api_postizapi_289782fc("PostizAPI<br/><small>postiz/src/api.ts</small>")
         src_api_postizapi_request_1a778d53("request()<br/><small>postiz/src/api.ts</small>")
         agents_skills_postiz_src_api_ts_d7f575de("api.ts")
-        src_api_postizapi_constructor_4e174eaf("constructor()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_createpost_cc3f4dbe("createPost()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_listposts_08c4d6d9("listPosts()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_deletepost_44f9548d("deletePost()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_upload_266aac2f("upload()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_getmissingcontent_ec8b46d1("getMissingContent()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_updatereleaseid_6973ab08("updateReleaseId()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_changepoststatus_24570026("changePostStatus()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_getanalytics_35df9db8("getAnalytics()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_getpostanalytics_0e792a11("getPostAnalytics()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_listintegrations_86e3fb8f("listIntegrations()<br/><small>postiz/src/api.ts</small>")
-        src_api_postizapi_getintegrationsettings_ad0d6288("getIntegrationSettings()<br/><small>postiz/src/api.ts</small>")
     end
-    subgraph serve_api_src_commands_auth_ts_768c91d2["src/commands/auth.ts"]
-        commands_auth_loadcredentials_4f238540("loadCredentials()<br/><small>src/commands/auth.ts</small>")
-        agents_skills_postiz_src_commands_auth_ts_49cf2fba("auth.ts")
+    subgraph serve_api_postiz_src_config_ts_7b904af4["postiz/src/config.ts"]
+        src_config_getconfig_40f411e5("getConfig()<br/><small>postiz/src/config.ts</small>")
+        agents_skills_postiz_src_config_ts_61c9014b("config.ts")
     end
-    commands_analytics_getanalytics_cb578ce2("getAnalytics()<br/><small>src/commands/analytics.ts</small>")
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_constructor_4e174eaf
+    agents_skills_postiz_src_index_ts_39a10e2b("index.ts")
+    app_page_confidencetone_22fbab26 -->|calls| app_page_confidencechip_d391d729
+    app_page_formatvalue_91f47c3b -->|calls| app_page_dashboard_c64941d4
+    app_page_formatdecision_20f8407c -->|calls| app_page_dashboard_c64941d4
+    app_page_statuslabel_a61b4719 -->|calls| app_page_dashboard_c64941d4
+    app_page_shieldreachabilitylabel_4dfc7695 -->|calls| app_page_dashboard_c64941d4
+    app_page_apistatelabel_147adf8e -->|calls| app_page_dashboard_c64941d4
+    app_page_apistatetone_c669aa3b -->|calls| app_page_dashboard_c64941d4
+    app_page_formatlastupdated_a8df525d -->|calls| app_page_dashboard_c64941d4
+    app_page_formatfreshness_06e83cd3 -->|calls| app_page_integrationcard_96ab016d
     src_api_postizapi_289782fc -->|method| src_api_postizapi_request_1a778d53
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_createpost_cc3f4dbe
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_listposts_08c4d6d9
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_deletepost_44f9548d
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_upload_266aac2f
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_getmissingcontent_ec8b46d1
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_updatereleaseid_6973ab08
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_changepoststatus_24570026
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_getanalytics_35df9db8
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_getpostanalytics_0e792a11
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_listintegrations_86e3fb8f
-    src_api_postizapi_289782fc -->|method| src_api_postizapi_getintegrationsettings_ad0d6288
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_createpost_cc3f4dbe
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_listposts_08c4d6d9
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_deletepost_44f9548d
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_getmissingcontent_ec8b46d1
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_updatereleaseid_6973ab08
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_changepoststatus_24570026
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_getanalytics_35df9db8
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_getpostanalytics_0e792a11
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_listintegrations_86e3fb8f
-    src_api_postizapi_request_1a778d53 -->|calls| src_api_postizapi_getintegrationsettings_ad0d6288
-    %% Omitted for readability: 198 nodes, 0 edges
+    agents_skills_postiz_src_api_ts_d7f575de -->|imports| agents_skills_postiz_src_config_ts_61c9014b
+    %% Omitted for readability: 326 nodes, 0 edges
+    class app_page_confidencetone_22fbab26 ui;
+    class app_page_confidencechip_d391d729 ui;
+    class app_page_formatvalue_91f47c3b ui;
+    class app_page_dashboard_c64941d4 ui;
+    class app_page_formatdecision_20f8407c ui;
+    class app_page_statuslabel_a61b4719 ui;
+    class app_page_shieldreachabilitylabel_4dfc7695 ui;
+    class app_page_apistatelabel_147adf8e api;
+    class app_page_apistatetone_c669aa3b api;
+    class app_page_formatlastupdated_a8df525d ui;
+    class app_page_formatfreshness_06e83cd3 ui;
+    class app_page_integrationcard_96ab016d ui;
     class src_api_postizapi_289782fc api;
     class src_api_postizapi_request_1a778d53 function;
     class agents_skills_postiz_src_api_ts_d7f575de api;
-    class src_api_postizapi_constructor_4e174eaf function;
-    class src_api_postizapi_createpost_cc3f4dbe function;
-    class src_api_postizapi_listposts_08c4d6d9 function;
-    class src_api_postizapi_deletepost_44f9548d function;
-    class src_api_postizapi_upload_266aac2f function;
-    class src_api_postizapi_getmissingcontent_ec8b46d1 function;
-    class src_api_postizapi_updatereleaseid_6973ab08 function;
-    class src_api_postizapi_changepoststatus_24570026 function;
-    class src_api_postizapi_getanalytics_35df9db8 function;
-    class src_api_postizapi_getpostanalytics_0e792a11 function;
-    class src_api_postizapi_listintegrations_86e3fb8f function;
-    class src_api_postizapi_getintegrationsettings_ad0d6288 function;
-    class commands_auth_loadcredentials_4f238540 function;
-    class agents_skills_postiz_src_commands_auth_ts_49cf2fba module;
-    class commands_analytics_getanalytics_cb578ce2 function;
+    class src_config_getconfig_40f411e5 function;
+    class agents_skills_postiz_src_config_ts_61c9014b module;
+    class agents_skills_postiz_src_index_ts_39a10e2b module;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -1400,243 +1143,243 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
-  <td><code>api.ts</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-endpoint">API</span></td>
+  <td><code>page.tsx</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>analytics.ts</code><br><small style="color:var(--muted)">src/commands/analytics.ts</small><br><code>config.ts</code><br><small style="color:var(--muted)">postiz/src/config.ts</small><br><code>integrations.ts</code><br><small style="color:var(--muted)">src/commands/integrations.ts</small><br>+2 more</td>
-  <td>Module file in postiz/src/api.ts.</td>
+  <td><code>api.ts</code><br><small style="color:var(--muted)">src/lib/api.ts</small><br><code>fetchApiJsonResult()</code><br><small style="color:var(--muted)">src/lib/api.ts</small><br><code>resolveApiBaseUrl()</code><br><small style="color:var(--muted)">src/lib/api.ts</small></td>
+  <td>Module file in src/app/page.tsx.</td>
 </tr>
 <tr>
   <td>2</td>
-  <td><code>PostizConfig</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>config.ts</code><br><small style="color:var(--muted)">postiz/src/config.ts</small></td>
-  <td>Reads, resolves, or persists project configuration.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-endpoint">API</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>analytics.ts</code><br><small style="color:var(--muted)">src/commands/analytics.ts</small><br><code>changePostStatus()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>constructor()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br>+15 more</td>
-  <td>PostizAPI node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>.constructor()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.constructor() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>.request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><code>changePostStatus()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>createPost()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>deletePost()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br>+8 more</td>
-  <td>.request() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>.createPost()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.createPost() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>.listPosts()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.listPosts() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>.deletePost()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.deletePost() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>.upload()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.upload() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>.getMissingContent()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.getMissingContent() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td><code>.updateReleaseId()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.updateReleaseId() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td><code>.changePostStatus()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.changePostStatus() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td><code>.getAnalytics()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>Orchestrates analysis and returns structured documentation data.</td>
-</tr>
-<tr>
-  <td>14</td>
-  <td><code>.getPostAnalytics()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>Orchestrates analysis and returns structured documentation data.</td>
-</tr>
-<tr>
-  <td>15</td>
-  <td><code>.listIntegrations()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.listIntegrations() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>16</td>
-  <td><code>.getIntegrationSettings()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.getIntegrationSettings() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>17</td>
-  <td><code>.triggerIntegrationTool()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>request()</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>.triggerIntegrationTool() node in postiz/src/api.ts.</td>
-</tr>
-<tr>
-  <td>18</td>
-  <td><code>analytics.ts</code><br><small style="color:var(--muted)">src/commands/analytics.ts</small></td>
-  <td><span class="tag tag-class">Module</span></td>
-  <td><code>api.ts</code><br><small style="color:var(--muted)">postiz/src/api.ts</small><br><code>PostizAPI</code><br><small style="color:var(--muted)">postiz/src/api.ts</small></td>
-  <td><code>config.ts</code><br><small style="color:var(--muted)">postiz/src/config.ts</small><br><code>getConfig()</code><br><small style="color:var(--muted)">postiz/src/config.ts</small><br><code>index.ts</code><br><small style="color:var(--muted)">postiz/src/index.ts</small></td>
-  <td>Module file in src/commands/analytics.ts.</td>
-</tr>
-<tr>
-  <td>19</td>
-  <td><code>getAnalytics()</code><br><small style="color:var(--muted)">src/commands/analytics.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>getConfig()</code><br><small style="color:var(--muted)">postiz/src/config.ts</small><br><code>index.ts</code><br><small style="color:var(--muted)">postiz/src/index.ts</small></td>
-  <td>Orchestrates analysis and returns structured documentation data.</td>
-</tr>
-<tr>
-  <td>20</td>
-  <td><code>getPostAnalytics()</code><br><small style="color:var(--muted)">src/commands/analytics.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>getConfig()</code><br><small style="color:var(--muted)">postiz/src/config.ts</small><br><code>index.ts</code><br><small style="color:var(--muted)">postiz/src/index.ts</small></td>
-  <td>Orchestrates analysis and returns structured documentation data.</td>
-</tr>
-<tr>
-  <td>21</td>
-  <td><code>auth.ts</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><span class="tag tag-class">Module</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>config.ts</code><br><small style="color:var(--muted)">postiz/src/config.ts</small><br><code>index.ts</code><br><small style="color:var(--muted)">postiz/src/index.ts</small></td>
-  <td>Module file in src/commands/auth.ts.</td>
-</tr>
-<tr>
-  <td>22</td>
-  <td><code>CREDENTIALS_DIR</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>CREDENTIALS_DIR node in src/commands/auth.ts.</td>
-</tr>
-<tr>
-  <td>23</td>
-  <td><code>CREDENTIALS_FILE</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>CREDENTIALS_FILE node in src/commands/auth.ts.</td>
-</tr>
-<tr>
-  <td>24</td>
-  <td><code>StoredCredentials</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
+  <td><code>Confidence</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
   <td><span class="tag tag-hook">UI</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>StoredCredentials node in src/commands/auth.ts.</td>
+  <td>Confidence node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>HealthStatus</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>HealthStatus node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>PlaybackSession</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>PlaybackSession node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>PlaybackState</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>PlaybackState node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>SourceMediaState</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>SourceMediaState node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>OutputState</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>OutputState node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>DeviceState</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>DeviceState node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>ChainSnapshot</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>ChainSnapshot node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>ShieldState</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>ShieldState node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>ConfiguredSourceState</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Reads, resolves, or persists project configuration.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>ConfiguredSources</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Reads, resolves, or persists project configuration.</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>IntegrationStatusState</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>IntegrationStatusState node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>IntegrationStatusResponse</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>IntegrationStatusResponse node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>SystemOverview</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>SystemOverview node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>DashboardState</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>DashboardState node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>defaultHealth</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>defaultHealth node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>defaultPlayback</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>defaultPlayback node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>defaultChain</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>defaultChain node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><code>defaultShield</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>defaultShield node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>21</td>
+  <td><code>defaultConfiguredSources</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Reads, resolves, or persists project configuration.</td>
+</tr>
+<tr>
+  <td>22</td>
+  <td><code>defaultOverview</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>defaultOverview node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>23</td>
+  <td><code>defaultState</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>defaultState node in src/app/page.tsx.</td>
+</tr>
+<tr>
+  <td>24</td>
+  <td><code>navigation</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>navigation node in src/app/page.tsx.</td>
 </tr>
 <tr>
   <td>25</td>
-  <td><code>loadCredentials()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td><code>chainNodes</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>authLogout()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small><br><code>authStatus()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small><br><code>config.ts</code><br><small style="color:var(--muted)">postiz/src/config.ts</small><br>+1 more</td>
-  <td>loadCredentials() node in src/commands/auth.ts.</td>
+  <td>No direct outbound edge</td>
+  <td>chainNodes node in src/app/page.tsx.</td>
 </tr>
 <tr>
   <td>26</td>
-  <td><code>saveCredentials()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td><code>confidenceTone()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>authLogin()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td>saveCredentials() node in src/commands/auth.ts.</td>
+  <td><code>ConfidenceChip()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td>confidenceTone() node in src/app/page.tsx.</td>
 </tr>
 <tr>
   <td>27</td>
-  <td><code>deleteCredentials()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td><code>formatValue()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>authLogout()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td>deleteCredentials() node in src/commands/auth.ts.</td>
+  <td><code>Dashboard()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td>formatValue() node in src/app/page.tsx.</td>
 </tr>
 <tr>
   <td>28</td>
-  <td><code>openBrowser()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td><code>formatDecision()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>authLogin()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td>openBrowser() node in src/commands/auth.ts.</td>
+  <td><code>Dashboard()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td>formatDecision() node in src/app/page.tsx.</td>
 </tr>
 <tr>
   <td>29</td>
-  <td><code>sleep()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td><code>statusLabel()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>authLogin()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td>sleep() node in src/commands/auth.ts.</td>
+  <td><code>Dashboard()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td>statusLabel() node in src/app/page.tsx.</td>
 </tr>
 <tr>
   <td>30</td>
-  <td><code>authLogin()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>openBrowser()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small><br><code>saveCredentials()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small><br><code>sleep()</code><br><small style="color:var(--muted)">src/commands/auth.ts</small></td>
-  <td><code>index.ts</code><br><small style="color:var(--muted)">postiz/src/index.ts</small></td>
-  <td>authLogin() node in src/commands/auth.ts.</td>
+  <td><code>shieldReachabilityLabel()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td><span class="tag tag-hook">UI</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>Dashboard()</code><br><small style="color:var(--muted)">src/app/page.tsx</small></td>
+  <td>shieldReachabilityLabel() node in src/app/page.tsx.</td>
 </tr>
 </table>
 
@@ -1646,83 +1389,89 @@ flowchart LR
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
       <tr><td><code>skills/postiz/README.md</code></td><td>49 nodes</td></tr>
+<tr><td><code>src/app/page.tsx</code></td><td>48 nodes</td></tr>
 <tr><td><code>skills/postiz/QUICK_START.md</code></td><td>37 nodes</td></tr>
 <tr><td><code>skills/postiz/SUPPORTED_FILE_TYPES.md</code></td><td>37 nodes</td></tr>
+<tr><td><code>README.md</code></td><td>28 nodes</td></tr>
 <tr><td><code>skills/postiz/HOW_TO_RUN.md</code></td><td>17 nodes</td></tr>
 <tr><td><code>postiz/src/api.ts</code></td><td>17 nodes</td></tr>
 <tr><td><code>src/commands/auth.ts</code></td><td>12 nodes</td></tr>
-<tr><td><code>skills/postiz/PROJECT_STRUCTURE.md</code></td><td>7 nodes</td></tr>
-<tr><td><code>src/commands/posts.ts</code></td><td>7 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x165, calls x30, imports x25, imports x15. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x276, calls x47, imports x27, imports x16. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 7. Tests & Fixtures ====== -->
-<h2 id="tests-fixtures">7. Tests &amp; Fixtures</h2>
-<p>Tests &amp; Fixtures groups implementation around test, backend, tests, playbackpy, mostly in backend/tests/test_playback.py, skills/postiz/PUBLISHING.md, skills/postiz/HOW_TO_RUN.md. This section covers 65 nodes and 87 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 6. Tests & Fixtures ====== -->
+<h2 id="tests-fixtures">6. Tests &amp; Fixtures</h2>
+<p>Tests &amp; Fixtures groups implementation around backend, test, app, tests, mostly in backend/tests/test_playback.py, devices/android_adb/shield.py, app/models/playback.py. This section covers 247 nodes and 393 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Tests &amp; Fixtures (65 nodes, 87 edges)
-    tests_test_playback_testplexparser_7a56380b("TestPlexParser<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplaybackcurrentunconfigu_fc8ecdc9("TestPlaybackCurrentUnconfigured<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplexclientconfigured_916c64f1("TestPlexClientConfigured<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_make_mock_response_3edbd639("_make_mock_response()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testhealthstillworks_4dc1e861("TestHealthStillWorks<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplexclientconfigured_tes_b931eb98("test_no_sessions_returns_empty_and_sources_checked()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplexclientconfigured_tes_1370e07f("test_one_session_returned()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplexclientconfigured_tes_369d0982("test_malformed_xml_returns_empty_no_crash()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testhealthstillworks_test_he_11152e4e("test_health_returns_ok()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplaybackcurrentunconfigu_57f01bbb("test_returns_200()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplaybackcurrentunconfigu_8b701ba6("test_sessions_is_empty_list()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplaybackcurrentunconfigu_141f9144("test_sources_checked_is_empty()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplaybackcurrentunconfigu_4cd9bf38("test_error_is_none()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplaybackcurrentunconfigu_b80009af("test_response_shape()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplexparser_test_no_sessi_af7f3fb7("test_no_sessions_returns_empty_list()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplexparser_test_malforme_3ba40403("test_malformed_xml_returns_empty_list()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplexparser_test_one_sess_e1eca714("test_one_session_returns_one_item()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_testplexparser_test_session_8dff84a6("test_session_source_is_plex()<br/><small>backend/tests/test_playback.py</small>")
-    tests_test_playback_make_mock_response_3edbd639 -->|calls| tests_test_playback_testplexclientconfigured_tes_b931eb98
-    tests_test_playback_make_mock_response_3edbd639 -->|calls| tests_test_playback_testplexclientconfigured_tes_1370e07f
-    tests_test_playback_make_mock_response_3edbd639 -->|calls| tests_test_playback_testplexclientconfigured_tes_369d0982
-    tests_test_playback_testhealthstillworks_4dc1e861 -->|method| tests_test_playback_testhealthstillworks_test_he_11152e4e
-    tests_test_playback_testplaybackcurrentunconfigu_fc8ecdc9 -->|method| tests_test_playback_testplaybackcurrentunconfigu_57f01bbb
-    tests_test_playback_testplaybackcurrentunconfigu_fc8ecdc9 -->|method| tests_test_playback_testplaybackcurrentunconfigu_8b701ba6
-    tests_test_playback_testplaybackcurrentunconfigu_fc8ecdc9 -->|method| tests_test_playback_testplaybackcurrentunconfigu_141f9144
-    tests_test_playback_testplaybackcurrentunconfigu_fc8ecdc9 -->|method| tests_test_playback_testplaybackcurrentunconfigu_4cd9bf38
-    tests_test_playback_testplaybackcurrentunconfigu_fc8ecdc9 -->|method| tests_test_playback_testplaybackcurrentunconfigu_b80009af
-    tests_test_playback_testplexparser_7a56380b -->|method| tests_test_playback_testplexparser_test_no_sessi_af7f3fb7
-    tests_test_playback_testplexparser_7a56380b -->|method| tests_test_playback_testplexparser_test_malforme_3ba40403
-    tests_test_playback_testplexparser_7a56380b -->|method| tests_test_playback_testplexparser_test_one_sess_e1eca714
-    tests_test_playback_testplexparser_7a56380b -->|method| tests_test_playback_testplexparser_test_session_8dff84a6
-    tests_test_playback_testplexclientconfigured_916c64f1 -->|method| tests_test_playback_testplexclientconfigured_tes_b931eb98
-    tests_test_playback_testplexclientconfigured_916c64f1 -->|method| tests_test_playback_testplexclientconfigured_tes_1370e07f
-    tests_test_playback_testplexclientconfigured_916c64f1 -->|method| tests_test_playback_testplexclientconfigured_tes_369d0982
-    %% Omitted for readability: 47 nodes, 0 edges
+    %% Section: Tests &amp; Fixtures (247 nodes, 393 edges)
+    subgraph tests_fixtures_integrations_jellyfin_client_py_12724d8c["integrations/jellyfin/client.py"]
+        jellyfin_client_jellyfinclient_bb23471a("JellyfinClient<br/><small>integrations/jellyfin/client.py</small>")
+        jellyfin_client_jellyfinclient_init_b7bb5249("__init__()<br/><small>integrations/jellyfin/client.py</small>")
+        jellyfin_client_jellyfinclient_get_active_sessio_b72be98f("get_active_sessions()<br/><small>integrations/jellyfin/client.py</small>")
+        jellyfin_client_jellyfinclient_build_unknown_ses_72aa8afa("_build_unknown_session()<br/><small>integrations/jellyfin/client.py</small>")
+    end
+    subgraph tests_fixtures_integrations_plex_client_py_7a5e64bd["integrations/plex/client.py"]
+        plex_client_plexclient_init_590c0f44("__init__()<br/><small>integrations/plex/client.py</small>")
+        plex_client_plexclient_get_active_sessions_15b29adc("get_active_sessions()<br/><small>integrations/plex/client.py</small>")
+        plex_client_plexclient_build_unknown_session_f5c13f3f("_build_unknown_session()<br/><small>integrations/plex/client.py</small>")
+        plex_client_plexclient_08e6e59f("PlexClient<br/><small>integrations/plex/client.py</small>")
+    end
+    subgraph tests_fixtures_backend_tests_test_playback_py_37babe81["backend/tests/test_playback.py"]
+        tests_test_playback_testplexparser_7a56380b("TestPlexParser<br/><small>backend/tests/test_playback.py</small>")
+        tests_test_playback_testplaybackcurrentunconfigu_fc8ecdc9("TestPlaybackCurrentUnconfigured<br/><small>backend/tests/test_playback.py</small>")
+        tests_test_playback_testplexclientconfigured_916c64f1("TestPlexClientConfigured<br/><small>backend/tests/test_playback.py</small>")
+    end
+    subgraph tests_fixtures_integrations_plex_parser_py_8611f2a1["integrations/plex/parser.py"]
+        plex_parser_parse_sessions_bb2dd516("parse_sessions()<br/><small>integrations/plex/parser.py</small>")
+        plex_parser_parse_video_element_acfb680c("_parse_video_element()<br/><small>integrations/plex/parser.py</small>")
+        plex_parser_parse_decision_dd48767d("_parse_decision()<br/><small>integrations/plex/parser.py</small>")
+    end
+    subgraph tests_fixtures_app_config_settings_py_845db05c["app/config/settings.py"]
+        config_settings_get_repo_root_2aa7ee2f("get_repo_root()<br/><small>app/config/settings.py</small>")
+        config_settings_get_default_env_file_5e7a433e("get_default_env_file()<br/><small>app/config/settings.py</small>")
+    end
+    tests_test_shield_testshieldadbmonitor_10533e62("TestShieldAdbMonitor<br/><small>backend/tests/test_shield.py</small>")
+    android_adb_shield_shieldadbmonitor_c52bbb95("ShieldAdbMonitor<br/><small>devices/android_adb/shield.py</small>")
+    config_settings_get_repo_root_2aa7ee2f -->|calls| config_settings_get_default_env_file_5e7a433e
+    jellyfin_client_jellyfinclient_bb23471a -->|method| jellyfin_client_jellyfinclient_init_b7bb5249
+    jellyfin_client_jellyfinclient_bb23471a -->|method| jellyfin_client_jellyfinclient_get_active_sessio_b72be98f
+    jellyfin_client_jellyfinclient_bb23471a -->|method| jellyfin_client_jellyfinclient_build_unknown_ses_72aa8afa
+    jellyfin_client_jellyfinclient_bb23471a -->|method| plex_client_plexclient_init_590c0f44
+    jellyfin_client_jellyfinclient_bb23471a -->|method| plex_client_plexclient_get_active_sessions_15b29adc
+    jellyfin_client_jellyfinclient_bb23471a -->|method| plex_client_plexclient_build_unknown_session_f5c13f3f
+    plex_client_plexclient_08e6e59f -->|method| plex_client_plexclient_init_590c0f44
+    plex_client_plexclient_08e6e59f -->|method| plex_client_plexclient_get_active_sessions_15b29adc
+    plex_client_plexclient_08e6e59f -->|method| plex_client_plexclient_build_unknown_session_f5c13f3f
+    plex_parser_parse_sessions_bb2dd516 -->|calls| plex_parser_parse_video_element_acfb680c
+    plex_parser_parse_video_element_acfb680c -->|calls| plex_parser_parse_decision_dd48767d
+    %% Omitted for readability: 229 nodes, 0 edges
+    class jellyfin_client_jellyfinclient_bb23471a entry;
+    class jellyfin_client_jellyfinclient_init_b7bb5249 function;
+    class jellyfin_client_jellyfinclient_get_active_sessio_b72be98f function;
+    class jellyfin_client_jellyfinclient_build_unknown_ses_72aa8afa function;
+    class plex_client_plexclient_init_590c0f44 function;
+    class plex_client_plexclient_get_active_sessions_15b29adc function;
+    class plex_client_plexclient_build_unknown_session_f5c13f3f function;
+    class plex_client_plexclient_08e6e59f entry;
     class tests_test_playback_testplexparser_7a56380b test;
     class tests_test_playback_testplaybackcurrentunconfigu_fc8ecdc9 test;
     class tests_test_playback_testplexclientconfigured_916c64f1 test;
-    class tests_test_playback_make_mock_response_3edbd639 test;
-    class tests_test_playback_testhealthstillworks_4dc1e861 test;
-    class tests_test_playback_testplexclientconfigured_tes_b931eb98 test;
-    class tests_test_playback_testplexclientconfigured_tes_1370e07f test;
-    class tests_test_playback_testplexclientconfigured_tes_369d0982 test;
-    class tests_test_playback_testhealthstillworks_test_he_11152e4e test;
-    class tests_test_playback_testplaybackcurrentunconfigu_57f01bbb test;
-    class tests_test_playback_testplaybackcurrentunconfigu_8b701ba6 test;
-    class tests_test_playback_testplaybackcurrentunconfigu_141f9144 test;
-    class tests_test_playback_testplaybackcurrentunconfigu_4cd9bf38 test;
-    class tests_test_playback_testplaybackcurrentunconfigu_b80009af test;
-    class tests_test_playback_testplexparser_test_no_sessi_af7f3fb7 test;
-    class tests_test_playback_testplexparser_test_malforme_3ba40403 test;
-    class tests_test_playback_testplexparser_test_one_sess_e1eca714 test;
-    class tests_test_playback_testplexparser_test_session_8dff84a6 test;
+    class plex_parser_parse_sessions_bb2dd516 function;
+    class plex_parser_parse_video_element_acfb680c function;
+    class plex_parser_parse_decision_dd48767d function;
+    class config_settings_get_repo_root_2aa7ee2f function;
+    class config_settings_get_default_env_file_5e7a433e function;
+    class tests_test_shield_testshieldadbmonitor_10533e62 test;
+    class android_adb_shield_shieldadbmonitor_c52bbb95 klass;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -1746,243 +1495,243 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td><code>BaseModel</code><br><small style="color:var(--muted)"></small></td>
+  <td><span class="tag tag-class">Class</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>test_audio_channels_parsed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_audio_codec_confirmed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_hdr_format_is_none()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br>+13 more</td>
-  <td>parse_sessions() node in integrations/plex/parser.py.</td>
+  <td>No direct outbound edge</td>
+  <td>BaseModel node in project.</td>
 </tr>
 <tr>
   <td>2</td>
-  <td><code>Parse a Plex ``/status/sessions`` XML response into session objects.      Args:</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
+  <td><code>PlaybackCurrentResponse</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
   <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Parse a Plex ``/status/sessions`` XML response into session objects.      Args:.</td>
+  <td><code>ConfiguredSourcesState</code><br><small style="color:var(--muted)">app/models/system.py</small><br><code>ConfiguredSourceState</code><br><small style="color:var(--muted)">app/models/system.py</small><br><code>HealthStatusResponse</code><br><small style="color:var(--muted)">app/models/system.py</small><br>+5 more</td>
+  <td>PlaybackCurrentResponse node in app/models/playback.py.</td>
 </tr>
 <tr>
   <td>3</td>
-  <td><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>PlexClient</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td><code>test_audio_channels_parsed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_audio_codec_confirmed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_hdr_format_is_none()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br>+13 more</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
+  <td><code>Response envelope for ``GET /playback/current``.      Attributes:         sessio</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Response envelope for ``GET /playback/current``.      Attributes:         sessio.</td>
 </tr>
 <tr>
   <td>4</td>
-  <td><code>.test_no_sessions_returns_empty_list()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
+  <td><code>system.py</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-class">Module</span></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
+  <td>Module file in app/models/system.py.</td>
 </tr>
 <tr>
   <td>5</td>
-  <td><code>.test_malformed_xml_returns_empty_list()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
+  <td><code>HealthStatusResponse</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>PlaybackCurrentResponse</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>ShieldDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small><br><code>test_warnings_are_aggregated_from_children()</code><br><small style="color:var(--muted)">backend/tests/test_system_overview.py</small><br>+1 more</td>
+  <td>HealthStatusResponse node in app/models/system.py.</td>
 </tr>
 <tr>
   <td>6</td>
-  <td><code>.test_one_session_returns_one_item()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>.test_session_source_is_plex()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>.test_session_title_confirmed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>.test_session_user_parsed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>.test_session_client_name_parsed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td><code>.test_session_is_playing_true()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td><code>.test_session_decision_direct_play_when_no_transcode()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td><code>.test_session_decision_transcode()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>14</td>
-  <td><code>.test_video_codec_confirmed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>15</td>
-  <td><code>.test_video_resolution_parsed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>16</td>
-  <td><code>.test_video_bitrate_parsed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>17</td>
-  <td><code>.test_hdr_format_is_none()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>18</td>
-  <td><code>.test_audio_codec_confirmed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>19</td>
-  <td><code>.test_audio_channels_parsed()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>parse_sessions()</code><br><small style="color:var(--muted)">integrations/plex/parser.py</small><br><code>TestPlexParser</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
-</tr>
-<tr>
-  <td>20</td>
-  <td><code>Unit tests for parse_sessions() against fixture XML strings.</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Unit tests for parse_sessions() against fixture XML strings..</td>
-</tr>
-<tr>
-  <td>21</td>
-  <td><code>HDR must never be inferred from Plex session XML.</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for HDR must never be inferred from Plex session XML..</td>
-</tr>
-<tr>
-  <td>22</td>
-  <td><code>PlexClient</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td><span class="tag tag-cmd">Entry</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>test_http_error_returns_empty_no_crash()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_malformed_xml_returns_empty_no_crash()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_no_sessions_returns_empty_and_sources_checked()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br>+6 more</td>
-  <td>PlexClient node in integrations/plex/client.py.</td>
-</tr>
-<tr>
-  <td>23</td>
-  <td><code>Interface to the Plex Media Server session API.      All public methods must:</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Design note for Interface to the Plex Media Server session API.      All public methods must:.</td>
-</tr>
-<tr>
-  <td>24</td>
-  <td><code>_make_mock_response()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>test_malformed_xml_returns_empty_no_crash()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_no_sessions_returns_empty_and_sources_checked()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_one_session_returned()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>_make_mock_response() node in backend/tests/test_playback.py.</td>
-</tr>
-<tr>
-  <td>25</td>
-  <td><code>TestPlexClientConfigured</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>PlexClient</code><br><small style="color:var(--muted)">integrations/plex/client.py</small></td>
-  <td><code>test_http_error_returns_empty_no_crash()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_malformed_xml_returns_empty_no_crash()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>test_no_sessions_returns_empty_and_sources_checked()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br>+2 more</td>
+  <td><code>ConfiguredSourceState</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>PlaybackCurrentResponse</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>ShieldDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
   <td>Reads, resolves, or persists project configuration.</td>
 </tr>
 <tr>
-  <td>26</td>
-  <td><code>.test_no_sessions_returns_empty_and_sources_checked()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>_make_mock_response()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>PlexClient</code><br><small style="color:var(--muted)">integrations/plex/client.py</small><br><code>TestPlexClientConfigured</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
+  <td>7</td>
+  <td><code>ConfiguredSourcesState</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>PlaybackCurrentResponse</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>ShieldDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td>Reads, resolves, or persists project configuration.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>IntegrationStatusState</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>PlaybackCurrentResponse</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>ShieldDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small><br><code>TestSystemOverview</code><br><small style="color:var(--muted)">backend/tests/test_system_overview.py</small></td>
+  <td>IntegrationStatusState node in app/models/system.py.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>IntegrationStatusResponse</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>PlaybackCurrentResponse</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>ShieldDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td>IntegrationStatusResponse node in app/models/system.py.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>SystemOverviewResponse</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>PlaybackCurrentResponse</code><br><small style="color:var(--muted)">app/models/playback.py</small></td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>ShieldDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td>SystemOverviewResponse node in app/models/system.py.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>Typed models for system-wide monitoring overview responses.</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
+  <td>Design note for Typed models for system-wide monitoring overview responses..</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>Health status payload for the backend service.</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Health status payload for the backend service..</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>Whether a given integration is configured locally.</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Whether a given integration is configured locally..</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>Configured/unconfigured integration summary.</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Configured/unconfigured integration summary..</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>Read-only integration connectivity status.</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Read-only integration connectivity status..</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>Integration status summary for Plex and Jellyfin.</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Integration status summary for Plex and Jellyfin..</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>Aggregated monitoring overview for the production dashboard.</code><br><small style="color:var(--muted)">app/models/system.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Aggregated monitoring overview for the production dashboard..</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>MediaServerState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>OutputState</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>SourceMediaState</code><br><small style="color:var(--muted)">app/models/chain.py</small></td>
+  <td>MediaServerState node in app/models/device.py.</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>PlaybackClientState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td><span class="tag tag-cmd">Entry</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>OutputState</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>SourceMediaState</code><br><small style="color:var(--muted)">app/models/chain.py</small></td>
+  <td>PlaybackClientState node in app/models/device.py.</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><code>AudioDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>OutputState</code><br><small style="color:var(--muted)">app/models/chain.py</small><br><code>SourceMediaState</code><br><small style="color:var(--muted)">app/models/chain.py</small></td>
+  <td>AudioDeviceState node in app/models/device.py.</td>
+</tr>
+<tr>
+  <td>21</td>
+  <td><code>ShieldDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>ConfiguredSourcesState</code><br><small style="color:var(--muted)">app/models/system.py</small><br><code>ConfiguredSourceState</code><br><small style="color:var(--muted)">app/models/system.py</small><br><code>HealthStatusResponse</code><br><small style="color:var(--muted)">app/models/system.py</small><br>+3 more</td>
+  <td><code>_AdbFailure</code><br><small style="color:var(--muted)">devices/android_adb/shield.py</small><br><code>get_state_with_debug()</code><br><small style="color:var(--muted)">devices/android_adb/shield.py</small><br><code>ShieldAdbMonitor</code><br><small style="color:var(--muted)">devices/android_adb/shield.py</small><br>+10 more</td>
+  <td>ShieldDeviceState node in app/models/device.py.</td>
+</tr>
+<tr>
+  <td>22</td>
+  <td><code>Authoritative media server state for the current chain.</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Authoritative media server state for the current chain..</td>
+</tr>
+<tr>
+  <td>23</td>
+  <td><code>Current playback client state.</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Current playback client state..</td>
+</tr>
+<tr>
+  <td>24</td>
+  <td><code>Current downstream audio device state.</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Current downstream audio device state..</td>
+</tr>
+<tr>
+  <td>25</td>
+  <td><code>Read-only Nvidia Shield device state derived from ADB.</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Read-only Nvidia Shield device state derived from ADB..</td>
+</tr>
+<tr>
+  <td>26</td>
+  <td><code>chain.py</code><br><small style="color:var(--muted)">app/models/chain.py</small></td>
+  <td><span class="tag tag-class">Module</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Module file in app/models/chain.py.</td>
 </tr>
 <tr>
   <td>27</td>
-  <td><code>.test_one_session_returned()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>_make_mock_response()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>PlexClient</code><br><small style="color:var(--muted)">integrations/plex/client.py</small><br><code>TestPlexClientConfigured</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
+  <td><code>SourceMediaState</code><br><small style="color:var(--muted)">app/models/chain.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>AudioDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small><br><code>MediaServerState</code><br><small style="color:var(--muted)">app/models/device.py</small><br><code>PlaybackClientState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
   <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
+  <td>SourceMediaState node in app/models/chain.py.</td>
 </tr>
 <tr>
   <td>28</td>
-  <td><code>.test_timeout_returns_empty_no_crash()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>PlexClient</code><br><small style="color:var(--muted)">integrations/plex/client.py</small><br><code>TestPlexClientConfigured</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
+  <td><code>OutputState</code><br><small style="color:var(--muted)">app/models/chain.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>AudioDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small><br><code>MediaServerState</code><br><small style="color:var(--muted)">app/models/device.py</small><br><code>PlaybackClientState</code><br><small style="color:var(--muted)">app/models/device.py</small></td>
   <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
+  <td>OutputState node in app/models/chain.py.</td>
 </tr>
 <tr>
   <td>29</td>
-  <td><code>.test_http_error_returns_empty_no_crash()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>PlexClient</code><br><small style="color:var(--muted)">integrations/plex/client.py</small><br><code>TestPlexClientConfigured</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
+  <td><code>ChainSnapshotResponse</code><br><small style="color:var(--muted)">app/models/chain.py</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td><code>AudioDeviceState</code><br><small style="color:var(--muted)">app/models/device.py</small><br><code>ConfiguredSourcesState</code><br><small style="color:var(--muted)">app/models/system.py</small><br><code>ConfiguredSourceState</code><br><small style="color:var(--muted)">app/models/system.py</small><br>+6 more</td>
+  <td><code>test_warnings_are_aggregated_from_children()</code><br><small style="color:var(--muted)">backend/tests/test_system_overview.py</small><br><code>TestSystemOverview</code><br><small style="color:var(--muted)">backend/tests/test_system_overview.py</small></td>
+  <td>ChainSnapshotResponse node in app/models/chain.py.</td>
 </tr>
 <tr>
   <td>30</td>
-  <td><code>.test_malformed_xml_returns_empty_no_crash()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
-  <td><span class="tag tag-func">Test</span></td>
-  <td><code>_make_mock_response()</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small><br><code>PlexClient</code><br><small style="color:var(--muted)">integrations/plex/client.py</small><br><code>TestPlexClientConfigured</code><br><small style="color:var(--muted)">backend/tests/test_playback.py</small></td>
+  <td><code>Playback chain snapshot models for the production dashboard foundation.</code><br><small style="color:var(--muted)">app/models/chain.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>Verifies imports, entry points, or version behavior.</td>
+  <td>Design note for Playback chain snapshot models for the production dashboard foundation..</td>
 </tr>
 </table>
 
@@ -1991,23 +1740,25 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>backend/tests/test_playback.py</code></td><td>45 nodes</td></tr>
-<tr><td><code>skills/postiz/PUBLISHING.md</code></td><td>9 nodes</td></tr>
-<tr><td><code>skills/postiz/HOW_TO_RUN.md</code></td><td>5 nodes</td></tr>
-<tr><td><code>integrations/plex/client.py</code></td><td>2 nodes</td></tr>
-<tr><td><code>integrations/plex/parser.py</code></td><td>2 nodes</td></tr>
-<tr><td><code>backend/tests/conftest.py</code></td><td>2 nodes</td></tr>
+      <tr><td><code>backend/tests/test_playback.py</code></td><td>53 nodes</td></tr>
+<tr><td><code>devices/android_adb/shield.py</code></td><td>27 nodes</td></tr>
+<tr><td><code>app/models/playback.py</code></td><td>15 nodes</td></tr>
+<tr><td><code>app/models/system.py</code></td><td>14 nodes</td></tr>
+<tr><td><code>backend/tests/test_shield.py</code></td><td>14 nodes</td></tr>
+<tr><td><code>integrations/plex/parser.py</code></td><td>13 nodes</td></tr>
+<tr><td><code>backend/tests/test_chain.py</code></td><td>12 nodes</td></tr>
+<tr><td><code>integrations/plex/client.py</code></td><td>10 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: method x27, contains x17, explains x15, calls x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: explains x99, method x70, contains x57, calls x22. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 8. Community 35 ====== -->
-<h2 id="community-35">8. Community 35</h2>
+<!-- ====== 7. Community 35 ====== -->
+<h2 id="community-35">7. Community 35</h2>
 <p>Community 35 groups implementation around server, postiz, servermd, agents, mostly in postiz/server/SERVER.md. This section covers 18 nodes and 17 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -2249,8 +2000,8 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 9. Community 37 ====== -->
-<h2 id="community-37">9. Community 37</h2>
+<!-- ====== 8. Community 37 ====== -->
+<h2 id="community-37">8. Community 37</h2>
 <p>Community 37 groups implementation around postiz, agents, skills, provider, mostly in skills/postiz/PROVIDER_SETTINGS.md. This section covers 17 nodes and 16 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -2481,8 +2232,8 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 10. Community 39 ====== -->
-<h2 id="community-39">10. Community 39</h2>
+<!-- ====== 9. Community 39 ====== -->
+<h2 id="community-39">9. Community 39</h2>
 <p>Community 39 groups implementation around indexts, server, agents, skills, mostly in postiz/server/index.ts. This section covers 16 nodes and 27 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -2699,8 +2450,8 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 11. Community 40 ====== -->
-<h2 id="community-40">11. Community 40</h2>
+<!-- ====== 10. Community 40 ====== -->
+<h2 id="community-40">10. Community 40</h2>
 <p>Community 40 groups implementation around how, runmd, postiz, agents, mostly in skills/postiz/HOW_TO_RUN.md. This section covers 15 nodes and 14 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -2909,8 +2660,8 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 12. Community 45 ====== -->
-<h2 id="community-45">12. Community 45</h2>
+<!-- ====== 11. Community 45 ====== -->
+<h2 id="community-45">11. Community 45</h2>
 <p>Community 45 groups implementation around postiz, agents, skills, integration, mostly in skills/postiz/INTEGRATION_SETTINGS_DISCOVERY.md. This section covers 13 nodes and 12 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -3093,6 +2844,183 @@ flowchart LR
   <div class="card">
     <h4>Design Notes</h4>
     <p>This section comes from graphify community clustering. Relationship summary: contains x12. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 12. Community 146 ====== -->
+<h2 id="community-146">12. Community 146</h2>
+<p>Community 146 groups implementation around product, brand, contextmd, docs, mostly in docs/ai/PRODUCT_AND_BRAND_CONTEXT.md. This section covers 12 nodes and 11 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Community 146 (12 nodes, 11 edges)
+    ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c("Cinema Machina — Product and Brand Context<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    ai_product_and_brand_context_product_stack_relat_debc8ae5("Product stack relationship<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    docs_ai_product_and_brand_context_md_25d2a2d3("PRODUCT_AND_BRAND_CONTEXT.md")
+    ai_product_and_brand_context_brand_position_aac1d9f9("Brand position<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    ai_product_and_brand_context_core_promise_6a7a9bef("Core promise<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    ai_product_and_brand_context_business_audience_6f7278da("Business audience<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    ai_product_and_brand_context_ai_working_guidance_c76665d5("AI working guidance<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    ai_product_and_brand_context_cinema_machina_core_396d4270("Cinema Machina Core<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    ai_product_and_brand_context_non_negotiables_d8bdaad2("Non-negotiables<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    ai_product_and_brand_context_tone_5dc7d048("Tone<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    ai_product_and_brand_context_website_6b20f669("Website<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    ai_product_and_brand_context_website_intent_19f99c4c("Website intent<br/><small>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small>")
+    docs_ai_product_and_brand_context_md_25d2a2d3 -->|contains| ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c
+    ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c -->|contains| ai_product_and_brand_context_brand_position_aac1d9f9
+    ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c -->|contains| ai_product_and_brand_context_core_promise_6a7a9bef
+    ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c -->|contains| ai_product_and_brand_context_business_audience_6f7278da
+    ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c -->|contains| ai_product_and_brand_context_website_intent_19f99c4c
+    ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c -->|contains| ai_product_and_brand_context_product_stack_relat_debc8ae5
+    ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c -->|contains| ai_product_and_brand_context_tone_5dc7d048
+    ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c -->|contains| ai_product_and_brand_context_ai_working_guidance_c76665d5
+    ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c -->|contains| ai_product_and_brand_context_non_negotiables_d8bdaad2
+    ai_product_and_brand_context_product_stack_relat_debc8ae5 -->|contains| ai_product_and_brand_context_website_6b20f669
+    ai_product_and_brand_context_product_stack_relat_debc8ae5 -->|contains| ai_product_and_brand_context_cinema_machina_core_396d4270
+    class ai_product_and_brand_context_cinema_machina_prod_6eaa8d6c concept;
+    class ai_product_and_brand_context_product_stack_relat_debc8ae5 concept;
+    class docs_ai_product_and_brand_context_md_25d2a2d3 concept;
+    class ai_product_and_brand_context_brand_position_aac1d9f9 concept;
+    class ai_product_and_brand_context_core_promise_6a7a9bef concept;
+    class ai_product_and_brand_context_business_audience_6f7278da concept;
+    class ai_product_and_brand_context_ai_working_guidance_c76665d5 concept;
+    class ai_product_and_brand_context_cinema_machina_core_396d4270 concept;
+    class ai_product_and_brand_context_non_negotiables_d8bdaad2 concept;
+    class ai_product_and_brand_context_tone_5dc7d048 concept;
+    class ai_product_and_brand_context_website_6b20f669 concept;
+    class ai_product_and_brand_context_website_intent_19f99c4c concept;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>PRODUCT_AND_BRAND_CONTEXT.md</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing PRODUCT_AND_BRAND_CONTEXT.md.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>Cinema Machina — Product and Brand Context</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Cinema Machina — Product and Brand Context.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>Brand position</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Brand position.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>Core promise</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Core promise.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>Business audience</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Business audience.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>Website intent</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Website intent.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>Product stack relationship</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Product stack relationship.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>Website</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Website.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>Cinema Machina Core</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Cinema Machina Core.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>Tone</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Tone.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>AI working guidance</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing AI working guidance.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>Non-negotiables</code><br><small style="color:var(--muted)">docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Non-negotiables.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>docs/ai/PRODUCT_AND_BRAND_CONTEXT.md</code></td><td>12 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x11. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -3597,23 +3525,21 @@ flowchart LR
 
 <!-- ====== 16. Other ====== -->
 <h2 id="other">16. Other</h2>
-<p>Other groups implementation around postiz, agents, skills, codebash, mostly in skills/postiz/PUBLISHING.md, skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md, skills/postiz/QUICK_START.md. This section covers 207 nodes and 174 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<p>Other groups implementation around postiz, agents, skills, codebash, mostly in skills/postiz/PUBLISHING.md, skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md, skills/postiz/QUICK_START.md. This section covers 246 nodes and 195 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Other (207 nodes, 174 edges)
+    %% Section: Other (246 nodes, 195 edges)
     subgraph other_src_app_layout_tsx_399704fb["src/app/layout.tsx"]
         frontend_src_app_layout_tsx_5044f8f8("layout.tsx")
-        app_layout_inter_7446aabf("inter<br/><small>src/app/layout.tsx</small>")
         app_layout_metadata_57b95e99("metadata<br/><small>src/app/layout.tsx</small>")
         app_layout_rootlayout_bcc6c561("RootLayout()<br/><small>src/app/layout.tsx</small>")
+        app_layout_inter_7446aabf("inter<br/><small>src/app/layout.tsx</small>")
     end
-    subgraph other_src_app_page_tsx_da3aede8["src/app/page.tsx"]
-        frontend_src_app_page_tsx_a039672b("page.tsx")
-        app_page_healthstatus_d92802a4("HealthStatus<br/><small>src/app/page.tsx</small>")
-        app_page_playbackstate_9ce05ec8("PlaybackState<br/><small>src/app/page.tsx</small>")
-        app_page_dashboard_c64941d4("Dashboard()<br/><small>src/app/page.tsx</small>")
+    subgraph other_frontend_next_config_mjs_421541c9["frontend/next.config.mjs"]
+        frontend_next_config_mjs_a6d7ff40("next.config.mjs")
+        frontend_next_config_nextconfig_e3f7ac6f("nextConfig<br/><small>frontend/next.config.mjs</small>")
     end
     subgraph other_frontend_tailwind_config_ts_ed487a93["frontend/tailwind.config.ts"]
         frontend_tailwind_config_ts_1834a217("tailwind.config.ts")
@@ -3623,37 +3549,36 @@ flowchart LR
         postiz_integration_tools_workflow_integration_to_37bcc78d("Integration Tools Workflow<br/><small>skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small>")
         postiz_integration_tools_workflow_common_tool_me_f7b8cfc8("Common Tool Methods<br/><small>skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small>")
     end
-    basesettings_10620791("BaseSettings")
-    config_settings_settings_3511e911("Settings<br/><small>app/config/settings.py</small>")
-    postiz_how_to_run_development_workflow_901a230a("Development Workflow<br/><small>skills/postiz/HOW_TO_RUN.md</small>")
+    backend_app_api_routes_init_py_2d994ac6("__init__.py")
+    backend_app_devices_init_py_db0b5703("__init__.py")
+    backend_app_services_init_py_ca2c69a5("__init__.py")
+    backend_app_devices_android_adb_init_py_e7fe5657("__init__.py")
+    ai_architecture_overview_cinema_machina_core_arc_b11faa14("Cinema Machina Core — Architecture Over...<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
     postiz_publishing_publishing_the_postiz_cli_to_n_36bf97a2("Publishing the Postiz CLI to npm<br/><small>skills/postiz/PUBLISHING.md</small>")
     postiz_quick_start_postiz_cli_quick_start_guide_f10a36fc("Postiz CLI - Quick Start Guide<br/><small>skills/postiz/QUICK_START.md</small>")
     postiz_supported_file_types_platform_specific_no_e2a142ae("Platform-Specific Notes<br/><small>skills/postiz/SUPPORTED_FILE_TYPES.md</small>")
-    config_settings_settings_3511e911 -->|inherits| basesettings_10620791
-    postiz_integration_tools_workflow_integration_to_37bcc78d -->|contains| postiz_integration_tools_workflow_common_tool_me_f7b8cfc8
+    frontend_next_config_mjs_a6d7ff40 -->|contains| frontend_next_config_nextconfig_e3f7ac6f
     frontend_tailwind_config_ts_1834a217 -->|contains| frontend_tailwind_config_config_431be840
-    frontend_src_app_layout_tsx_5044f8f8 -->|contains| app_layout_inter_7446aabf
     frontend_src_app_layout_tsx_5044f8f8 -->|contains| app_layout_metadata_57b95e99
     frontend_src_app_layout_tsx_5044f8f8 -->|contains| app_layout_rootlayout_bcc6c561
-    frontend_src_app_page_tsx_a039672b -->|contains| app_page_healthstatus_d92802a4
-    frontend_src_app_page_tsx_a039672b -->|contains| app_page_playbackstate_9ce05ec8
-    frontend_src_app_page_tsx_a039672b -->|contains| app_page_dashboard_c64941d4
-    %% Omitted for readability: 189 nodes, 0 edges
+    frontend_src_app_layout_tsx_5044f8f8 -->|contains| app_layout_inter_7446aabf
+    postiz_integration_tools_workflow_integration_to_37bcc78d -->|contains| postiz_integration_tools_workflow_common_tool_me_f7b8cfc8
+    %% Omitted for readability: 228 nodes, 0 edges
     class frontend_src_app_layout_tsx_5044f8f8 ui;
-    class app_layout_inter_7446aabf ui;
     class app_layout_metadata_57b95e99 ui;
     class app_layout_rootlayout_bcc6c561 ui;
-    class frontend_src_app_page_tsx_a039672b ui;
-    class app_page_healthstatus_d92802a4 ui;
-    class app_page_playbackstate_9ce05ec8 ui;
-    class app_page_dashboard_c64941d4 ui;
+    class app_layout_inter_7446aabf ui;
+    class frontend_next_config_mjs_a6d7ff40 function;
+    class frontend_next_config_nextconfig_e3f7ac6f function;
     class frontend_tailwind_config_ts_1834a217 module;
     class frontend_tailwind_config_config_431be840 function;
     class postiz_integration_tools_workflow_integration_to_37bcc78d concept;
     class postiz_integration_tools_workflow_common_tool_me_f7b8cfc8 concept;
-    class basesettings_10620791 klass;
-    class config_settings_settings_3511e911 klass;
-    class postiz_how_to_run_development_workflow_901a230a concept;
+    class backend_app_api_routes_init_py_2d994ac6 module;
+    class backend_app_devices_init_py_db0b5703 module;
+    class backend_app_services_init_py_ca2c69a5 module;
+    class backend_app_devices_android_adb_init_py_e7fe5657 module;
+    class ai_architecture_overview_cinema_machina_core_arc_b11faa14 concept;
     class postiz_publishing_publishing_the_postiz_cli_to_n_36bf97a2 concept;
     class postiz_quick_start_postiz_cli_quick_start_guide_f10a36fc concept;
     class postiz_supported_file_types_platform_specific_no_e2a142ae concept;
@@ -3680,6 +3605,158 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
+  <td><code>ARCHITECTURE_OVERVIEW.md</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing ARCHITECTURE_OVERVIEW.md.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>Cinema Machina Core — Architecture Overview</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Cinema Machina Core — Architecture Overview.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>Purpose</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Purpose.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>Current product direction</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Current product direction.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>Architecture shape</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Architecture shape.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>Backend</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Backend.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>Frontend</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Frontend.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>AI / agent routing</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing AI / agent routing.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>Core architecture principles</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Core architecture principles.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>High-value areas for future development</code><br><small style="color:var(--muted)">docs/ai/ARCHITECTURE_OVERVIEW.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing High-value areas for future development.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>BRAIN_STACK.md</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing BRAIN_STACK.md.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>Cinema Machina Brain Stack</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Cinema Machina Brain Stack.</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>Purpose</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Purpose.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>Layers</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Layers.</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>Graphify</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Graphify.</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>Codex Memories</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Codex Memories.</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>OMEGA</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing OMEGA.</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>Obsidian</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Obsidian.</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>Working Rule</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Working Rule.</td>
+</tr>
+<tr>
+  <td>20</td>
   <td><code>PUBLISHING.md</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3687,7 +3764,7 @@ flowchart LR
   <td>Documentation node describing PUBLISHING.md.</td>
 </tr>
 <tr>
-  <td>2</td>
+  <td>21</td>
   <td><code>Publishing the Postiz CLI to npm</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3695,7 +3772,7 @@ flowchart LR
   <td>Documentation node describing Publishing the Postiz CLI to npm.</td>
 </tr>
 <tr>
-  <td>3</td>
+  <td>22</td>
   <td><code>Quick Publish (Current Name: &quot;postiz&quot;)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3703,7 +3780,7 @@ flowchart LR
   <td>Documentation node describing Quick Publish (Current Name: &quot;postiz&quot;).</td>
 </tr>
 <tr>
-  <td>4</td>
+  <td>23</td>
   <td><code>code:bash (# From apps/cli directory)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3711,7 +3788,7 @@ flowchart LR
   <td>Documentation node describing code:bash (# From apps/cli directory).</td>
 </tr>
 <tr>
-  <td>5</td>
+  <td>24</td>
   <td><code>code:bash (npm install -g postiz)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3719,7 +3796,7 @@ flowchart LR
   <td>Documentation node describing code:bash (npm install -g postiz).</td>
 </tr>
 <tr>
-  <td>6</td>
+  <td>25</td>
   <td><code>Using from Monorepo Root</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3727,7 +3804,7 @@ flowchart LR
   <td>Documentation node describing Using from Monorepo Root.</td>
 </tr>
 <tr>
-  <td>7</td>
+  <td>26</td>
   <td><code>code:json ({)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3735,7 +3812,7 @@ flowchart LR
   <td>Documentation node describing code:json ({).</td>
 </tr>
 <tr>
-  <td>8</td>
+  <td>27</td>
   <td><code>code:bash (# From monorepo root)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3743,7 +3820,7 @@ flowchart LR
   <td>Documentation node describing code:bash (# From monorepo root).</td>
 </tr>
 <tr>
-  <td>9</td>
+  <td>28</td>
   <td><code>Recommended Names</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3751,7 +3828,7 @@ flowchart LR
   <td>Documentation node describing Recommended Names.</td>
 </tr>
 <tr>
-  <td>10</td>
+  <td>29</td>
   <td><code>Common Workflows</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3759,164 +3836,12 @@ flowchart LR
   <td>Documentation node describing Common Workflows.</td>
 </tr>
 <tr>
-  <td>11</td>
+  <td>30</td>
   <td><code>Reddit Post with Flair</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>Documentation node describing Reddit Post with Flair.</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td><code>code:bash (#!/bin/bash)</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (#!/bin/bash).</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td><code>YouTube Video Upload</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing YouTube Video Upload.</td>
-</tr>
-<tr>
-  <td>14</td>
-  <td><code>code:bash (#!/bin/bash)</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (#!/bin/bash).</td>
-</tr>
-<tr>
-  <td>15</td>
-  <td><code>Multi-Platform Campaign</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Multi-Platform Campaign.</td>
-</tr>
-<tr>
-  <td>16</td>
-  <td><code>code:bash (#!/bin/bash)</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (#!/bin/bash).</td>
-</tr>
-<tr>
-  <td>17</td>
-  <td><code>Batch Scheduling</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Batch Scheduling.</td>
-</tr>
-<tr>
-  <td>18</td>
-  <td><code>code:bash (#!/bin/bash)</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (#!/bin/bash).</td>
-</tr>
-<tr>
-  <td>19</td>
-  <td><code>INTEGRATION_TOOLS_WORKFLOW.md</code><br><small style="color:var(--muted)">skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing INTEGRATION_TOOLS_WORKFLOW.md.</td>
-</tr>
-<tr>
-  <td>20</td>
-  <td><code>Integration Tools Workflow</code><br><small style="color:var(--muted)">skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Integration Tools Workflow.</td>
-</tr>
-<tr>
-  <td>21</td>
-  <td><code>AI Agent Workflow</code><br><small style="color:var(--muted)">skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing AI Agent Workflow.</td>
-</tr>
-<tr>
-  <td>22</td>
-  <td><code>code:bash (#!/bin/bash)</code><br><small style="color:var(--muted)">skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (#!/bin/bash).</td>
-</tr>
-<tr>
-  <td>23</td>
-  <td><code>Tips</code><br><small style="color:var(--muted)">skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Tips.</td>
-</tr>
-<tr>
-  <td>24</td>
-  <td><code>Complete Example Script</code><br><small style="color:var(--muted)">skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Complete Example Script.</td>
-</tr>
-<tr>
-  <td>25</td>
-  <td><code>code:bash (#!/bin/bash)</code><br><small style="color:var(--muted)">skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (#!/bin/bash).</td>
-</tr>
-<tr>
-  <td>26</td>
-  <td><code>Summary</code><br><small style="color:var(--muted)">skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Summary.</td>
-</tr>
-<tr>
-  <td>27</td>
-  <td><code>PROVIDER_SETTINGS.md</code><br><small style="color:var(--muted)">skills/postiz/PROVIDER_SETTINGS.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing PROVIDER_SETTINGS.md.</td>
-</tr>
-<tr>
-  <td>28</td>
-  <td><code>Provider-Specific Settings</code><br><small style="color:var(--muted)">skills/postiz/PROVIDER_SETTINGS.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Provider-Specific Settings.</td>
-</tr>
-<tr>
-  <td>29</td>
-  <td><code>Platforms Without Specific Settings</code><br><small style="color:var(--muted)">skills/postiz/PROVIDER_SETTINGS.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Platforms Without Specific Settings.</td>
-</tr>
-<tr>
-  <td>30</td>
-  <td><code>code:bash (-p threads  # or any of the above)</code><br><small style="color:var(--muted)">skills/postiz/PROVIDER_SETTINGS.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (-p threads  # or any of the above).</td>
 </tr>
 </table>
 
@@ -3937,7 +3862,7 @@ flowchart LR
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x171, explains x2, inherits x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x192, explains x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -3948,18 +3873,18 @@ flowchart LR
   <div class="card">
     <h4>Graph</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>Nodes</td><td>1331</td></tr>
-      <tr><td>Edges</td><td>1420</td></tr>
+      <tr><td>Nodes</td><td>2475</td></tr>
+      <tr><td>Edges</td><td>2741</td></tr>
       <tr><td>Hyperedges</td><td>0</td></tr>
-      <tr><td>Communities</td><td>137</td></tr>
+      <tr><td>Communities</td><td>250</td></tr>
       <tr><td>Documented Sections</td><td>15</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Edge Confidence</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>EXTRACTED</td><td>1375</td></tr>
-      <tr><td>INFERRED</td><td>45</td></tr>
+      <tr><td>EXTRACTED</td><td>2556</td></tr>
+      <tr><td>INFERRED</td><td>185</td></tr>
       <tr><td>AMBIGUOUS</td><td>0</td></tr>
     </table>
   </div>
@@ -3967,7 +3892,7 @@ flowchart LR
 
 <div style="text-align:center; padding:40px 0; color: var(--muted); font-size:0.9rem;">
   <p>Cinema Machina Core — Architecture Documentation</p>
-  <p>Generated: 2026-05-17 19:01 UTC · graphify callflow-html</p>
+  <p>Generated: 2026-05-18 20:04 UTC · graphify callflow-html</p>
 </div>
 
 </div><!-- .container -->

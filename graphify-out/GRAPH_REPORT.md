@@ -1,16 +1,16 @@
-# Graph Report - Cinema Machina Core  (2026-05-17)
+# Graph Report - Cinema Machina Core  (2026-05-19)
 
 ## Corpus Check
-- 151 files · ~48,102 words
+- 179 files · ~52,992 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1331 nodes · 1420 edges · 137 communities (129 shown, 8 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 45 edges (avg confidence: 0.69)
+- 2475 nodes · 2741 edges · 250 communities (229 shown, 21 thin omitted)
+- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 185 edges (avg confidence: 0.64)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7cb67af8`
+- Built from commit: `3930583f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,9 +28,11 @@
 - [[_COMMUNITY_Community 10|Community 10]]
 - [[_COMMUNITY_Community 11|Community 11]]
 - [[_COMMUNITY_Community 12|Community 12]]
+- [[_COMMUNITY_Community 13|Community 13]]
 - [[_COMMUNITY_Community 14|Community 14]]
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Community 16|Community 16]]
+- [[_COMMUNITY_Community 17|Community 17]]
 - [[_COMMUNITY_Community 22|Community 22]]
 - [[_COMMUNITY_Community 23|Community 23]]
 - [[_COMMUNITY_Community 24|Community 24]]
@@ -143,76 +145,190 @@
 - [[_COMMUNITY_Community 131|Community 131]]
 - [[_COMMUNITY_Community 132|Community 132]]
 - [[_COMMUNITY_Community 133|Community 133]]
+- [[_COMMUNITY_Community 137|Community 137]]
+- [[_COMMUNITY_Community 138|Community 138]]
+- [[_COMMUNITY_Community 139|Community 139]]
+- [[_COMMUNITY_Community 140|Community 140]]
+- [[_COMMUNITY_Community 141|Community 141]]
+- [[_COMMUNITY_Community 142|Community 142]]
+- [[_COMMUNITY_Community 143|Community 143]]
+- [[_COMMUNITY_Community 144|Community 144]]
+- [[_COMMUNITY_Community 145|Community 145]]
+- [[_COMMUNITY_Community 146|Community 146]]
+- [[_COMMUNITY_Community 147|Community 147]]
+- [[_COMMUNITY_Community 148|Community 148]]
+- [[_COMMUNITY_Community 149|Community 149]]
+- [[_COMMUNITY_Community 150|Community 150]]
+- [[_COMMUNITY_Community 151|Community 151]]
+- [[_COMMUNITY_Community 152|Community 152]]
+- [[_COMMUNITY_Community 153|Community 153]]
+- [[_COMMUNITY_Community 154|Community 154]]
+- [[_COMMUNITY_Community 155|Community 155]]
+- [[_COMMUNITY_Community 156|Community 156]]
+- [[_COMMUNITY_Community 157|Community 157]]
+- [[_COMMUNITY_Community 158|Community 158]]
+- [[_COMMUNITY_Community 159|Community 159]]
+- [[_COMMUNITY_Community 160|Community 160]]
+- [[_COMMUNITY_Community 161|Community 161]]
+- [[_COMMUNITY_Community 162|Community 162]]
+- [[_COMMUNITY_Community 163|Community 163]]
+- [[_COMMUNITY_Community 164|Community 164]]
+- [[_COMMUNITY_Community 165|Community 165]]
+- [[_COMMUNITY_Community 166|Community 166]]
+- [[_COMMUNITY_Community 167|Community 167]]
+- [[_COMMUNITY_Community 168|Community 168]]
+- [[_COMMUNITY_Community 169|Community 169]]
+- [[_COMMUNITY_Community 170|Community 170]]
+- [[_COMMUNITY_Community 171|Community 171]]
+- [[_COMMUNITY_Community 172|Community 172]]
+- [[_COMMUNITY_Community 173|Community 173]]
+- [[_COMMUNITY_Community 174|Community 174]]
+- [[_COMMUNITY_Community 175|Community 175]]
+- [[_COMMUNITY_Community 176|Community 176]]
+- [[_COMMUNITY_Community 177|Community 177]]
+- [[_COMMUNITY_Community 178|Community 178]]
+- [[_COMMUNITY_Community 179|Community 179]]
+- [[_COMMUNITY_Community 180|Community 180]]
+- [[_COMMUNITY_Community 181|Community 181]]
+- [[_COMMUNITY_Community 182|Community 182]]
+- [[_COMMUNITY_Community 183|Community 183]]
+- [[_COMMUNITY_Community 184|Community 184]]
+- [[_COMMUNITY_Community 185|Community 185]]
+- [[_COMMUNITY_Community 186|Community 186]]
+- [[_COMMUNITY_Community 187|Community 187]]
+- [[_COMMUNITY_Community 188|Community 188]]
+- [[_COMMUNITY_Community 189|Community 189]]
+- [[_COMMUNITY_Community 190|Community 190]]
+- [[_COMMUNITY_Community 191|Community 191]]
+- [[_COMMUNITY_Community 192|Community 192]]
+- [[_COMMUNITY_Community 193|Community 193]]
+- [[_COMMUNITY_Community 194|Community 194]]
+- [[_COMMUNITY_Community 195|Community 195]]
+- [[_COMMUNITY_Community 196|Community 196]]
+- [[_COMMUNITY_Community 197|Community 197]]
+- [[_COMMUNITY_Community 198|Community 198]]
+- [[_COMMUNITY_Community 199|Community 199]]
+- [[_COMMUNITY_Community 200|Community 200]]
+- [[_COMMUNITY_Community 201|Community 201]]
+- [[_COMMUNITY_Community 202|Community 202]]
+- [[_COMMUNITY_Community 203|Community 203]]
+- [[_COMMUNITY_Community 204|Community 204]]
+- [[_COMMUNITY_Community 205|Community 205]]
+- [[_COMMUNITY_Community 206|Community 206]]
+- [[_COMMUNITY_Community 207|Community 207]]
+- [[_COMMUNITY_Community 208|Community 208]]
+- [[_COMMUNITY_Community 209|Community 209]]
+- [[_COMMUNITY_Community 210|Community 210]]
+- [[_COMMUNITY_Community 211|Community 211]]
+- [[_COMMUNITY_Community 212|Community 212]]
+- [[_COMMUNITY_Community 213|Community 213]]
+- [[_COMMUNITY_Community 214|Community 214]]
+- [[_COMMUNITY_Community 215|Community 215]]
+- [[_COMMUNITY_Community 216|Community 216]]
+- [[_COMMUNITY_Community 217|Community 217]]
+- [[_COMMUNITY_Community 218|Community 218]]
+- [[_COMMUNITY_Community 219|Community 219]]
+- [[_COMMUNITY_Community 220|Community 220]]
+- [[_COMMUNITY_Community 221|Community 221]]
+- [[_COMMUNITY_Community 222|Community 222]]
+- [[_COMMUNITY_Community 223|Community 223]]
+- [[_COMMUNITY_Community 224|Community 224]]
+- [[_COMMUNITY_Community 225|Community 225]]
+- [[_COMMUNITY_Community 226|Community 226]]
+- [[_COMMUNITY_Community 227|Community 227]]
+- [[_COMMUNITY_Community 228|Community 228]]
+- [[_COMMUNITY_Community 229|Community 229]]
+- [[_COMMUNITY_Community 230|Community 230]]
+- [[_COMMUNITY_Community 231|Community 231]]
+- [[_COMMUNITY_Community 232|Community 232]]
+- [[_COMMUNITY_Community 233|Community 233]]
+- [[_COMMUNITY_Community 234|Community 234]]
+- [[_COMMUNITY_Community 235|Community 235]]
+- [[_COMMUNITY_Community 236|Community 236]]
+- [[_COMMUNITY_Community 237|Community 237]]
+- [[_COMMUNITY_Community 238|Community 238]]
+- [[_COMMUNITY_Community 239|Community 239]]
+- [[_COMMUNITY_Community 247|Community 247]]
+- [[_COMMUNITY_Community 248|Community 248]]
+- [[_COMMUNITY_Community 249|Community 249]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `PlexClient` - 20 edges
-2. `parse_sessions()` - 20 edges
-3. `PostizAPI` - 19 edges
-4. `TestPlexParser` - 19 edges
-5. `getConfig()` - 18 edges
-6. `Postiz CLI` - 17 edges
-7. `compilerOptions` - 17 edges
-8. `Cinema Machina Core — AGENTS.md` - 16 edges
-9. `Supported Platforms & Settings` - 15 edges
-10. `compilerOptions` - 15 edges
+1. `Cinema Machina Core — SKILLS.md` - 34 edges
+2. `Confidence` - 33 edges
+3. `PlexClient` - 24 edges
+4. `ShieldDeviceState` - 23 edges
+5. `ShieldAdbMonitor` - 23 edges
+6. `parse_sessions()` - 21 edges
+7. `TestPlexParser` - 20 edges
+8. `PostizAPI` - 19 edges
+9. `getConfig()` - 18 edges
+10. `Cinema Machina Core — AGENTS.md` - 18 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `get_current_chain_snapshot()` --calls--> `next`  [INFERRED]
+  backend/app/services/chain_snapshot.py → frontend/package.json
 - `Cinema Machina Core README` --references--> `Cinema Machina Core SKILLS.md`  [EXTRACTED]
   README.md → SKILLS.md
 - `Backend Requirements.txt` --references--> `Cinema Machina Core SKILLS.md`  [EXTRACTED]
   backend/requirements.txt → SKILLS.md
-- `Architecture.md` --references--> `Cinema Machina Core SKILLS.md`  [EXTRACTED]
-  docs/ARCHITECTURE.md → SKILLS.md
-- `Server and Device Context.md` --references--> `Cinema Machina Core SKILLS.md`  [EXTRACTED]
-  docs/ai/SERVER_AND_DEVICE_CONTEXT.md → SKILLS.md
-- `API and Integrations.md` --references--> `Cinema Machina Core SKILLS.md`  [EXTRACTED]
-  docs/ai/API_AND_INTEGRATIONS.md → SKILLS.md
+- `HealthStatusResponse` --uses--> `Confidence`  [INFERRED]
+  backend/app/models/system.py → backend/app/models/playback.py
+- `ConfiguredSourceState` --uses--> `Confidence`  [INFERRED]
+  backend/app/models/system.py → backend/app/models/playback.py
 
-## Communities (137 total, 8 thin omitted)
+## Communities (250 total, 21 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.27
-Nodes (10): Enum, Confidence, PlaybackDecision, PlaybackSource, Playback state Pydantic models.  Every field that describes a playback attribute, Confidence level for a playback attribute.      confirmed: Value was reported di, Which media server reported this session., How the media server is delivering the stream to the client. (+2 more)
+Cohesion: 0.2
+Nodes (17): Enum, AudioDeviceKind, DisplayDeviceKind, DisplayDeviceState, MediaServerKind, PlaybackClientKind, Typed device models for the playback chain snapshot., Supported media server platforms. (+9 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.09
-Nodes (21): dependencies, next, react, react-dom, devDependencies, autoprefixer, eslint, eslint-config-next (+13 more)
+Nodes (22): dependencies, next, react, react-dom, devDependencies, autoprefixer, eslint, eslint-config-next (+14 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.17
-Nodes (5): parse_sessions(), Parse a Plex ``/status/sessions`` XML response into session objects.      Args:, Unit tests for parse_sessions() against fixture XML strings., HDR must never be inferred from Plex session XML., TestPlexParser
+Cohesion: 0.09
+Nodes (16): _parse_audio_state(), _parse_decision(), parse_sessions(), _parse_video_element(), _parse_video_state(), Plex session XML parser — Phase 2.1.  Parses the ``/status/sessions`` XML respon, Parse a single ``<Video>`` element into a ``SessionState``.      Args:         v, Derive the playback decision from a ``<Video>`` element.      Plex exposes the d (+8 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.18
-Nodes (11): PlexClient, Interface to the Plex Media Server session API.      All public methods must:, _make_mock_response(), PlexClient behaviour with mocked settings and mocked httpx., Configured Plex with no active sessions → sources_checked=['plex'],         sess, Configured Plex with one active session → one SessionState., Plex timeout → empty sessions, no exception raised., Plex HTTP 401 → empty sessions, no exception raised. (+3 more)
+Cohesion: 0.07
+Nodes (20): _make_mock_response(), Tests for /health and /playback/current — Phase 2.1.  Coverage: - Phase 1 regres, Regression: Phase 1 /health must remain intact after Phase 2.1 wiring., Behaviour of /playback/current when no credentials are set., PlexClient behaviour with mocked settings and mocked httpx., Configured Plex with no active sessions → sources_checked=['plex'],         sess, PlexClient behaviour with mocked settings and mocked httpx., Configured Plex with no active sessions → sources_checked=['plex'],         sess (+12 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.18
-Nodes (11): Backend Requirements.txt, API and Integrations.md, Decisions.md, Environment Map.md, Known Issues.md, Project State.md, Server and Device Context.md, Task Log.md (+3 more)
+Cohesion: 0.06
+Nodes (26): Cinema Machina Core — API and Integrations, Rules, Cinema Machina Core — Decisions, Decision, Format, Status, Tradeoffs, Why (+18 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.17
-Nodes (5): Tests for /health and /playback/current — Phase 2.1.  Coverage: - Phase 1 regres, Regression: Phase 1 /health must remain intact after Phase 2.1 wiring., Behaviour of /playback/current when no credentials are set., TestHealthStillWorks, TestPlaybackCurrentUnconfigured
+Cohesion: 0.05
+Nodes (43): 10 — Playback Chain Model, 11 — FFprobe Rules, 12 — Plex Rules, 13 — ADB Rules, 14 — Docker Rules, 15 — API Rules, 16 — Testing Rules, 17 — Logging Rules (+35 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.16
-Nodes (15): AudioState, Video stream attributes for the current session.      Attributes:         codec:, Full playback session state snapshot.      Attributes:         source: Which med, SessionState, VideoState, Build a fully-unknown session state for safe fallback.          Returns:, _parse_audio_state(), _parse_decision() (+7 more)
+Cohesion: 0.1
+Nodes (23): JellyfinClient, Interface to the Jellyfin server session API.      All public methods must:, Initialise the client using values from ``settings``., Fetch active Jellyfin playback sessions.          Returns:             A list of, Build a fully-unknown session state for safe fallback.          Returns:, AudioState, PlaybackDecision, Playback state Pydantic models.  Every field that describes a playback attribute (+15 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.4
-Nodes (4): BaseSettings, Application settings loaded from environment variables.  All credentials are opt, Runtime configuration for Cinema Machina Core.      Values are read from the env, Settings
+Cohesion: 0.15
+Nodes (12): BaseSettings, get_default_env_file(), get_repo_root(), Application settings loaded from environment variables.  All credentials are opt, Runtime configuration for Cinema Machina Core.      Values are read from the env, Return the repository root from the location of this module., Return the repo-root .env path regardless of current working directory., Runtime configuration for Cinema Machina Core.      Values are read from the env (+4 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.4
 Nodes (4): extraPaths, pythonPath, venv, venvPath
 
+### Community 11 - "Community 11"
+Cohesion: 0.05
+Nodes (46): apiStateLabel(), apiStateTone(), chainNodes, ChainSnapshot, Confidence, ConfidenceChip(), confidenceTone(), ConfiguredSources (+38 more)
+
 ### Community 12 - "Community 12"
-Cohesion: 0.18
-Nodes (7): JellyfinClient, Jellyfin server integration client — Phase 2 scaffold.  This module provides a s, Interface to the Jellyfin server session API.      All public methods must:, Fetch active Jellyfin playback sessions.          Returns:             A list of, Plex Media Server integration client — Phase 2.1.  Makes a real HTTP call to ``/, Initialise the client using values from ``settings``., Fetch active Plex playback sessions.          Makes a synchronous GET request to
+Cohesion: 0.11
+Nodes (17): Fetch active Jellyfin playback sessions.          Returns:             A list of, PlexClient, Interface to the Plex Media Server session API.      All public methods must:, Initialise the client using values from ``settings``., Fetch active Plex playback sessions.          Makes a synchronous GET request to, Fetch active Plex playback sessions.          Makes a synchronous GET request to, get_jellyfin_status(), get_plex_status() (+9 more)
+
+### Community 13 - "Community 13"
+Cohesion: 0.15
+Nodes (12): health_check(), Return a typed backend health response., get_overview(), System monitoring overview API routes., Return the aggregated system overview., get_health_status(), get_system_overview(), _merge_warnings() (+4 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.1
@@ -232,7 +348,7 @@ Nodes (34): AI Agent Usage, Basic Usage, 🔧 Build System Integration, 📋 Che
 
 ### Community 27 - "Community 27"
 Cohesion: 0.06
-Nodes (33): 10 — Agent Workflow, 11 — Done Definition, 12 — First Milestone, 13 — Agent Commit / Push Policy, 1 — Required Reading, 2 — Product Definition, 3 — Core Rule, 4 — Protected Files (+25 more)
+Nodes (35): 10 — Agent Workflow, 11 — Done Definition, 12 — First Milestone, 13 — Agent Commit / Push Policy, 1 — Required Reading, 2 — Product Definition, 3 — Core Rule, 4 — Protected Files (+27 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.06
@@ -551,8 +667,8 @@ Cohesion: 0.4
 Nodes (4): [1.0.0] - 2026-02-13, Added, Changelog, Features
 
 ### Community 107 - "Community 107"
-Cohesion: 0.4
-Nodes (5): BaseModel, PlaybackCurrentResponse, Response envelope for ``GET /playback/current``.      Attributes:         sessio, get_current_playback(), Return all active playback sessions across configured sources.      Queries Plex
+Cohesion: 0.1
+Nodes (35): BaseModel, ChainSnapshotResponse, OutputState, Playback chain snapshot models for the production dashboard foundation., Source media properties reported by upstream playback metadata., Downstream output state of the active chain., Unified playback chain snapshot for the dashboard., SourceMediaState (+27 more)
 
 ### Community 108 - "Community 108"
 Cohesion: 0.4
@@ -650,25 +766,397 @@ Nodes (3): code:bash (postiz posts:create \), code:bash (postiz posts:create \),
 Cohesion: 0.67
 Nodes (3): code:bash (npm install -g postiz), From npm (Recommended), Installation
 
+### Community 137 - "Community 137"
+Cohesion: 0.07
+Nodes (22): _AdbFailure, Read-only Nvidia Shield monitoring via ADB-over-network., Return the last captured raw debug outputs., Run one adb command safely and return its result., Parse the foreground package and activity from dumpsys output., Parse a compact media session summary., Parse the basic display mode from dumpsys output., Derive a human-friendly app name from the package name. (+14 more)
+
+### Community 138 - "Community 138"
+Cohesion: 0.05
+Nodes (40): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+32 more)
+
+### Community 139 - "Community 139"
+Cohesion: 0.2
+Nodes (31): ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard (+23 more)
+
+### Community 140 - "Community 140"
+Cohesion: 0.07
+Nodes (26): 1. Create the virtual environment, 2. Install dependencies, API Endpoints (Phase 2.1), API Reference, Cinema Machina Core, code:bash (uv venv .venv --python 3.11), code:bash (uv pip install -r backend/requirements.txt), code:bash (cd backend) (+18 more)
+
+### Community 141 - "Community 141"
+Cohesion: 0.14
+Nodes (18): get_current_chain(), Playback chain snapshot API route., Return the current unified playback chain snapshot., _build_media_server_state(), _build_playback_client_state(), _build_source_state(), get_current_chain_snapshot(), _get_sessions_from_client() (+10 more)
+
+### Community 142 - "Community 142"
+Cohesion: 0.11
+Nodes (19): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, first_seen_at, kind (+11 more)
+
+### Community 143 - "Community 143"
+Cohesion: 0.14
+Nodes (13): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3966-08d3-73e0-bf03-052c296bc609|agent-turn-complete, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e396a-03f5-7752-af5b-796c20f337b9|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b38-7e95-7303-b3b3-cb9a21683c30|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b3a-4756-7970-abe0-3a18c81ec4b8|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b3a-73f5-7fa2-be0d-193b428a05fa|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b3a-e895-71a1-a390-3f3774306cb4|agent-turn-complete (+5 more)
+
+### Community 144 - "Community 144"
+Cohesion: 0.15
+Nodes (12): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3b63-5ae4-7341-824a-3aa92f8f89de|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b67-f05b-71b0-975b-0f8e91c35bab|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-4008-7022-80eb-1abce4ba76d3|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-741e-7df0-af2d-661599fcc739|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-e951-7ea3-97d4-aa2f7d511b91|agent-turn-complete, 019e3b47-ee24-7891-a647-dfa1b46ef78d|019e3b47-ee55-7532-87dc-62e85e831fb5|agent-turn-complete (+4 more)
+
+### Community 145 - "Community 145"
+Cohesion: 0.15
+Nodes (12): leader_thread_id, session_id, threads, updated_at, leader_thread_id, session_id, threads, updated_at (+4 more)
+
+### Community 146 - "Community 146"
+Cohesion: 0.17
+Nodes (11): AI working guidance, Brand position, Business audience, Cinema Machina Core, Cinema Machina — Product and Brand Context, Core promise, Non-negotiables, Product stack relationship (+3 more)
+
+### Community 147 - "Community 147"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, leader_thread_id, session_id (+4 more)
+
+### Community 148 - "Community 148"
+Cohesion: 0.17
+Nodes (12): leader_thread_id, session_id, threads, updated_at, first_seen_at, kind, last_seen_at, last_turn_id (+4 more)
+
+### Community 149 - "Community 149"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 150 - "Community 150"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 151 - "Community 151"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 152 - "Community 152"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 153 - "Community 153"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 154 - "Community 154"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 155 - "Community 155"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 156 - "Community 156"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, leader_thread_id, session_id (+4 more)
+
+### Community 157 - "Community 157"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 158 - "Community 158"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 159 - "Community 159"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 160 - "Community 160"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 161 - "Community 161"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 162 - "Community 162"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 163 - "Community 163"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 164 - "Community 164"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 165 - "Community 165"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 166 - "Community 166"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 167 - "Community 167"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 168 - "Community 168"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 169 - "Community 169"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 170 - "Community 170"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 171 - "Community 171"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 172 - "Community 172"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 173 - "Community 173"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 174 - "Community 174"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 175 - "Community 175"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 176 - "Community 176"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 177 - "Community 177"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 178 - "Community 178"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 179 - "Community 179"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 180 - "Community 180"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 181 - "Community 181"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 182 - "Community 182"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 183 - "Community 183"
+Cohesion: 0.2
+Nodes (9): AI / agent routing, Architecture shape, Backend, Cinema Machina Core — Architecture Overview, Core architecture principles, Current product direction, Frontend, High-value areas for future development (+1 more)
+
+### Community 184 - "Community 184"
+Cohesion: 0.22
+Nodes (8): Cinema Machina Brain Stack, Codex Memories, Graphify, Layers, Obsidian, OMEGA, Purpose, Working Rule
+
+### Community 185 - "Community 185"
+Cohesion: 0.22
+Nodes (7): get_current_playback(), Playback API route — GET /playback/current.  This route delegates to the Plex an, Return all active playback sessions across configured sources.      Queries Plex, Return all active playback sessions across configured sources.      Queries Plex, get_current_playback_snapshot(), Business logic for current playback aggregation., Return all active playback sessions across configured sources.
+
+### Community 187 - "Community 187"
+Cohesion: 0.25
+Nodes (7): last_event_at, last_injection_ts, last_reason, pane_counts, recent_keys, session_counts, total_injections
+
+### Community 188 - "Community 188"
+Cohesion: 0.29
+Nodes (6): last_activity, session_input_tokens, session_output_tokens, session_total_tokens, session_turns, total_turns
+
+### Community 189 - "Community 189"
+Cohesion: 0.29
+Nodes (6): cwd, native_session_id, pid, platform, session_id, started_at
+
+### Community 190 - "Community 190"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e303f-e931-7871-afe7-f65d6f5392c8
+
+### Community 191 - "Community 191"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e89b-7732-9684-2b7e6f090e97
+
+### Community 192 - "Community 192"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e92e-75b2-ac1f-c68f9ff3a8cf
+
+### Community 193 - "Community 193"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e939-7d83-b914-9d2df91b2b7a
+
+### Community 194 - "Community 194"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e939-7d83-b914-9d3e020c429e
+
+### Community 195 - "Community 195"
+Cohesion: 0.33
+Nodes (5): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3b2f-a9e3-7d91-8207-afd6acac4e8e|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b43-7509-7f41-b1f5-91d516c5188e|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b44-b270-71e2-b6e6-735edccb95be|agent-turn-complete
+
+### Community 196 - "Community 196"
+Cohesion: 0.33
+Nodes (5): Codex, Langflow, Obsidian, RuFlo, Toolchain Routing
+
+### Community 197 - "Community 197"
+Cohesion: 0.33
+Nodes (3): CORS regression tests for the local dashboard integration., Local Next.js origins can read backend API responses in the browser., TestLocalDashboardCors
+
+### Community 198 - "Community 198"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 199 - "Community 199"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 200 - "Community 200"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 201 - "Community 201"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 202 - "Community 202"
+Cohesion: 0.4
+Nodes (4): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3053-6504-7c40-aa59-02cf37e74920|agent-turn-complete, 019e3053-8978-7a31-b9e4-4f1be3eb9d2d|019e3053-89a2-7163-8be2-37e0c06e26b1|agent-turn-complete
+
+### Community 203 - "Community 203"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 204 - "Community 204"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 205 - "Community 205"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 206 - "Community 206"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 207 - "Community 207"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 208 - "Community 208"
+Cohesion: 0.4
+Nodes (4): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e308f-8428-7ae1-8cba-cb0198b7c9e6|agent-turn-complete, 019e308d-5a61-7353-a928-2b9da1999fee|019e308d-5a90-7d20-9798-3d1e0b1884aa|agent-turn-complete
+
+### Community 209 - "Community 209"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 210 - "Community 210"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 211 - "Community 211"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 212 - "Community 212"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 213 - "Community 213"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 214 - "Community 214"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 215 - "Community 215"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 216 - "Community 216"
+Cohesion: 0.4
+Nodes (4): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3ca6-690c-7ff0-a3b9-380d6e888a89|agent-turn-complete, 019e3ca6-69c6-7810-98d3-a1ed05acd73b|019e3ca6-69f9-7050-9e86-46ff609404e9|agent-turn-complete
+
+### Community 217 - "Community 217"
+Cohesion: 0.4
+Nodes (5): leader_thread_id, session_id, threads, updated_at, 019e306f-b4a9-72a1-9f4b-a28a73f8b2b3
+
+### Community 218 - "Community 218"
+Cohesion: 0.4
+Nodes (5): leader_thread_id, session_id, threads, updated_at, 019e3c5d-31e3-73b0-97db-60507588a851
+
+### Community 219 - "Community 219"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e3043-a7e8-74e0-ad38-06bb4e868fb6|019e3043-a811-7f92-97a7-ff7f258bbb69|agent-turn-complete
+
+### Community 220 - "Community 220"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3048-8b3b-79b3-8e69-9becc9168dc7|agent-turn-complete
+
+### Community 221 - "Community 221"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e305c-f7e3-7aa0-bd03-573ea13d9bd4|agent-turn-complete
+
+### Community 222 - "Community 222"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3071-9df7-7c60-aabc-2d9efddc2c86|agent-turn-complete
+
+### Community 223 - "Community 223"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e307c-a135-77f3-9406-413320fb049b|019e307c-a161-7b50-8247-14745d4d0d07|agent-turn-complete
+
+### Community 224 - "Community 224"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3082-f6f0-7470-b254-eb9b39a9b898|agent-turn-complete
+
+### Community 225 - "Community 225"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e310b-8eb4-7bf0-acc8-7bd1870659fe|019e310b-8f05-7292-8fc9-db985275800c|agent-turn-complete
+
+### Community 226 - "Community 226"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e3213-1fc6-7be3-940e-4fbe88ead336|019e3213-1fef-71f1-bc85-4b25383617ad|agent-turn-complete
+
+### Community 227 - "Community 227"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e3750-a865-7b50-bb43-15167e319811|019e3750-a88f-7730-a834-994a1c39745d|agent-turn-complete
+
+### Community 228 - "Community 228"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3c58-2d54-7de2-bfc5-400c7cda80e1|agent-turn-complete
+
+### Community 229 - "Community 229"
+Cohesion: 0.5
+Nodes (3): get_shield_state(), Device monitoring API routes., Return the current read-only Nvidia Shield state.
+
+### Community 230 - "Community 230"
+Cohesion: 0.5
+Nodes (3): last_idle_nudged_by_team, last_nudged_by_team, progress_by_team
+
 ## Knowledge Gaps
-- **723 isolated node(s):** `name`, `name`, `email`, `description`, `version` (+718 more)
+- **1469 isolated node(s):** `version`, `source`, `sourceType`, `skillPath`, `computedHash` (+1464 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **21 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Postiz CLI` connect `Community 52` to `Community 133`, `Community 69`, `Community 70`, `Community 46`, `Community 78`, `Community 89`, `Community 125`, `Community 31`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
-- **Why does `PlexClient` connect `Community 4` to `Community 0`, `Community 2`, `Community 6`, `Community 7`, `Community 12`?**
-  _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `Postiz CLI - Quick Start Guide` connect `Community 97` to `Community 68`, `Community 51`, `Community 86`, `Community 55`, `Community 88`, `Community 87`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Are the 15 inferred relationships involving `PlexClient` (e.g. with `Confidence` and `PlaybackSource`) actually correct?**
-  _`PlexClient` has 15 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 17 inferred relationships involving `parse_sessions()` (e.g. with `.get_active_sessions()` and `.test_no_sessions_returns_empty_list()`) actually correct?**
-  _`parse_sessions()` has 17 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `name`, `name`, `email` to the rest of the system?**
-  _723 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.09 - nodes in this community are weakly interconnected._
+- **Why does `Confidence` connect `Community 0` to `Community 137`, `Community 107`, `Community 12`, `Community 7`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Why does `sessions` connect `Community 145` to `Community 153`, `Community 218`, `Community 138`, `Community 142`, `Community 147`, `Community 148`, `Community 149`, `Community 150`, `Community 151`, `Community 152`, `Community 217`, `Community 154`, `Community 155`, `Community 156`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **Why does `PlexClient` connect `Community 12` to `Community 0`, `Community 2`, `Community 4`, `Community 7`, `Community 186`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **Are the 29 inferred relationships involving `Confidence` (e.g. with `HealthStatusResponse` and `ConfiguredSourceState`) actually correct?**
+  _`Confidence` has 29 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 19 inferred relationships involving `PlexClient` (e.g. with `AudioState` and `Confidence`) actually correct?**
+  _`PlexClient` has 19 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 20 inferred relationships involving `ShieldDeviceState` (e.g. with `HealthStatusResponse` and `ConfiguredSourceState`) actually correct?**
+  _`ShieldDeviceState` has 20 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 12 inferred relationships involving `ShieldAdbMonitor` (e.g. with `ShieldDeviceState` and `Confidence`) actually correct?**
+  _`ShieldAdbMonitor` has 12 INFERRED edges - model-reasoned connections that need verification._
