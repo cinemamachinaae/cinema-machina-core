@@ -327,3 +327,14 @@ Before broad codebase analysis, follow:
 - `docs/ai/CODEX_TOOL_ROUTING.md`
 
 Use Graphify first for repository understanding and only open exact files after graph-level analysis.
+
+## Cinema Machina Brain Routing
+Before broad repo analysis, follow:
+- `docs/ai/BRAIN_STACK.md`
+- `docs/ai/TOOLCHAIN_ROUTING.md`
+
+Workflow:
+1. Use Graphify first for project structure.
+2. Retrieve persistent memory when prior decisions may matter.
+3. Open exact files only after graph/memory review.
+4. Keep responses concise and execution-focused unless deeper detail is requested.
