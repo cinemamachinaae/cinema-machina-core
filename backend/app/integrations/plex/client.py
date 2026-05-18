@@ -76,6 +76,11 @@ class PlexClient:
         """Return True if credentials are present in settings."""
         return self._configured
 
+    @property
+    def base_url(self) -> str:
+        """Return the configured base URL without exposing the token."""
+        return (self._url or "").strip()
+
     def get_active_sessions(self) -> list[SessionState]:
         """Fetch active Plex playback sessions.
 

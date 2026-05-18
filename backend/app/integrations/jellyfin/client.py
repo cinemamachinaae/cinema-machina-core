@@ -61,6 +61,11 @@ class JellyfinClient:
         """Return True if credentials are present in settings."""
         return self._configured
 
+    @property
+    def base_url(self) -> str:
+        """Return the configured base URL without exposing the API key."""
+        return (self._url or "").strip()
+
     def get_active_sessions(self) -> list[SessionState]:
         """Fetch active Jellyfin playback sessions.
 

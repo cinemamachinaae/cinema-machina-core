@@ -10,7 +10,7 @@ from app.main import app
 from app.models.chain import ChainSnapshotResponse
 from app.models.device import ShieldDeviceState
 from app.models.playback import Confidence, PlaybackCurrentResponse
-from app.models.system import HealthStatusResponse
+from app.models.system import HealthStatusResponse, IntegrationStatusState
 
 client = TestClient(app)
 
@@ -19,7 +19,17 @@ class TestSystemOverview:
     """System overview route behaviour."""
 
     def test_returns_200_and_expected_shape(self) -> None:
-        response = client.get("/system/overview")
+        with (
+            patch(
+                "app.services.system_overview.get_plex_status",
+                return_value=IntegrationStatusState(),
+            ),
+            patch(
+                "app.services.system_overview.get_jellyfin_status",
+                return_value=IntegrationStatusState(),
+            ),
+        ):
+            response = client.get("/system/overview")
 
         assert response.status_code == 200
         data = response.json()
@@ -29,6 +39,7 @@ class TestSystemOverview:
         assert "chain" in data
         assert "shield" in data
         assert "configured_sources" in data
+        assert "integrations" in data
         assert "warnings" in data
 
     def test_unconfigured_overview_stays_safe(self) -> None:
@@ -41,6 +52,14 @@ class TestSystemOverview:
             patch(
                 "app.services.system_overview.ShieldAdbMonitor.get_state",
                 return_value=ShieldDeviceState(configured=False),
+            ),
+            patch(
+                "app.services.system_overview.get_plex_status",
+                return_value=IntegrationStatusState(),
+            ),
+            patch(
+                "app.services.system_overview.get_jellyfin_status",
+                return_value=IntegrationStatusState(),
             ),
         ):
             response = client.get("/system/overview")
@@ -71,6 +90,14 @@ class TestSystemOverview:
                     confidence=Confidence.INFERRED,
                     warnings=["Shield is unreachable over ADB."],
                 ),
+            ),
+            patch(
+                "app.services.system_overview.get_plex_status",
+                return_value=IntegrationStatusState(),
+            ),
+            patch(
+                "app.services.system_overview.get_jellyfin_status",
+                return_value=IntegrationStatusState(),
             ),
         ):
             response = client.get("/system/overview")

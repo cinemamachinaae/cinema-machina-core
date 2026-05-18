@@ -106,6 +106,21 @@ type ConfiguredSources = {
   shield: ConfiguredSourceState;
 };
 
+type IntegrationStatusState = {
+  configured: boolean;
+  configured_confidence: Confidence;
+  reachable: boolean | null;
+  reachable_confidence: Confidence;
+  last_error_summary: string | null;
+  last_error_confidence: Confidence;
+  confidence: Confidence;
+};
+
+type IntegrationStatusResponse = {
+  plex: IntegrationStatusState;
+  jellyfin: IntegrationStatusState;
+};
+
 type SystemOverview = {
   timestamp: string;
   health: HealthStatus;
@@ -113,6 +128,7 @@ type SystemOverview = {
   chain: ChainSnapshot;
   shield: ShieldState;
   configured_sources: ConfiguredSources;
+  integrations: IntegrationStatusResponse;
   warnings: string[];
 };
 
@@ -184,6 +200,26 @@ const defaultOverview: SystemOverview = {
   chain: defaultChain,
   shield: defaultShield,
   configured_sources: defaultConfiguredSources,
+  integrations: {
+    plex: {
+      configured: false,
+      configured_confidence: "confirmed",
+      reachable: null,
+      reachable_confidence: "unknown",
+      last_error_summary: null,
+      last_error_confidence: "unknown",
+      confidence: "unknown",
+    },
+    jellyfin: {
+      configured: false,
+      configured_confidence: "confirmed",
+      reachable: null,
+      reachable_confidence: "unknown",
+      last_error_summary: null,
+      last_error_confidence: "unknown",
+      confidence: "unknown",
+    },
+  },
   warnings: [],
 };
 
@@ -350,6 +386,10 @@ function normalizeOverview(overview: SystemOverview | null): SystemOverview {
       plex: overview.configured_sources?.plex ?? defaultConfiguredSources.plex,
       jellyfin: overview.configured_sources?.jellyfin ?? defaultConfiguredSources.jellyfin,
       shield: overview.configured_sources?.shield ?? defaultConfiguredSources.shield,
+    },
+    integrations: {
+      plex: overview.integrations?.plex ?? defaultOverview.integrations.plex,
+      jellyfin: overview.integrations?.jellyfin ?? defaultOverview.integrations.jellyfin,
     },
     warnings: Array.isArray(overview.warnings) ? overview.warnings : [],
   };
@@ -572,6 +612,60 @@ function SourceTile({
   );
 }
 
+function IntegrationCard({
+  label,
+  status,
+}: {
+  label: string;
+  status: IntegrationStatusState;
+}) {
+  const configured = status.configured;
+  const reachableLabel =
+    status.reachable === true ? "Reachable" : status.reachable === false ? "Unreachable" : "Unknown";
+  const tone: "default" | "online" | "warning" = !configured
+    ? "default"
+    : status.reachable === false
+      ? "warning"
+      : status.reachable === true
+        ? "online"
+        : "default";
+
+  return (
+    <div className="dashboard-card rounded-2xl border border-white/8 bg-black/20 p-4">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
+          <p className="mt-3 text-sm font-medium text-slate-100">
+            {configured ? reachableLabel : "Unconfigured"}
+          </p>
+        </div>
+        <div className="flex flex-col items-end gap-2">
+          <StatusChip label={configured ? reachableLabel : "Unconfigured"} tone={tone} />
+          <ConfidenceChip confidence={status.confidence} />
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-2">
+        <DataLine
+          label="Configured"
+          value={configured ? "Yes" : "No"}
+          confidence={status.configured_confidence}
+        />
+        <DataLine
+          label="Reachable"
+          value={status.reachable === null ? "Unknown" : status.reachable ? "Yes" : "No"}
+          confidence={status.reachable_confidence}
+        />
+        <DataLine
+          label="Last Error"
+          value={status.last_error_summary ?? "None"}
+          confidence={status.last_error_summary ? status.last_error_confidence : "unknown"}
+        />
+      </div>
+    </div>
+  );
+}
+
 function EmptyState({ text }: { text: string }) {
   return (
     <div className="rounded-2xl border border-dashed border-white/10 bg-black/15 px-4 py-6 text-sm text-slate-300">
@@ -689,6 +783,7 @@ export default function Dashboard() {
   const chain = overview.chain;
   const shield = overview.shield;
   const configuredSources = overview.configured_sources;
+  const integrations = overview.integrations;
   const activeSession = playback.sessions[0] ?? null;
   const systemOnline = health.status === "ok";
   const apiState = apiStateLabel(isLoading, state.health, state.overview, state.diagnostics);
@@ -861,6 +956,10 @@ export default function Dashboard() {
                   sessions={shield.foreground_app_name ? 1 : 0}
                   confidence={configuredSources.shield.confidence}
                 />
+              </div>
+              <div className="mt-5 grid gap-3">
+                <IntegrationCard label="Plex Status" status={integrations.plex} />
+                <IntegrationCard label="Jellyfin Status" status={integrations.jellyfin} />
               </div>
               <div className="mt-5 rounded-2xl border border-white/8 bg-black/20 px-4 py-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-slate-500">API Connection</p>

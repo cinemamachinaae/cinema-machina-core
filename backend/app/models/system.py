@@ -34,6 +34,25 @@ class ConfiguredSourcesState(BaseModel):
     shield: ConfiguredSourceState = Field(default_factory=ConfiguredSourceState)
 
 
+class IntegrationStatusState(BaseModel):
+    """Read-only integration connectivity status."""
+
+    configured: bool = False
+    configured_confidence: Confidence = Confidence.CONFIRMED
+    reachable: bool | None = None
+    reachable_confidence: Confidence = Confidence.UNKNOWN
+    last_error_summary: str | None = None
+    last_error_confidence: Confidence = Confidence.UNKNOWN
+    confidence: Confidence = Confidence.UNKNOWN
+
+
+class IntegrationStatusResponse(BaseModel):
+    """Integration status summary for Plex and Jellyfin."""
+
+    plex: IntegrationStatusState = Field(default_factory=IntegrationStatusState)
+    jellyfin: IntegrationStatusState = Field(default_factory=IntegrationStatusState)
+
+
 class SystemOverviewResponse(BaseModel):
     """Aggregated monitoring overview for the production dashboard."""
 
@@ -43,4 +62,5 @@ class SystemOverviewResponse(BaseModel):
     chain: ChainSnapshotResponse = Field(default_factory=ChainSnapshotResponse)
     shield: ShieldDeviceState = Field(default_factory=ShieldDeviceState)
     configured_sources: ConfiguredSourcesState = Field(default_factory=ConfiguredSourcesState)
+    integrations: IntegrationStatusResponse = Field(default_factory=IntegrationStatusResponse)
     warnings: list[str] = Field(default_factory=list)

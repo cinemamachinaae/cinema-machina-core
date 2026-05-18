@@ -12,8 +12,10 @@ from app.models.system import (
     ConfiguredSourceState,
     ConfiguredSourcesState,
     HealthStatusResponse,
+    IntegrationStatusResponse,
     SystemOverviewResponse,
 )
+from app.services.integration_status import get_jellyfin_status, get_plex_status
 from app.services.chain_snapshot import get_current_chain_snapshot
 from app.services.playback_snapshot import get_current_playback_snapshot
 
@@ -53,6 +55,10 @@ def get_system_overview() -> SystemOverviewResponse:
             plex=ConfiguredSourceState(configured=_plex.is_configured),
             jellyfin=ConfiguredSourceState(configured=_jellyfin.is_configured),
             shield=ConfiguredSourceState(configured=ShieldAdbMonitor().is_configured),
+        ),
+        integrations=IntegrationStatusResponse(
+            plex=get_plex_status(_plex),
+            jellyfin=get_jellyfin_status(_jellyfin),
         ),
         warnings=warnings,
     )
