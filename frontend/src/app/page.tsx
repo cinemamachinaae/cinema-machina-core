@@ -107,10 +107,13 @@ type ConfiguredSources = {
 };
 
 type IntegrationStatusState = {
+  kind: string;
+  name: string;
   configured: boolean;
   configured_confidence: Confidence;
   reachable: boolean | null;
   reachable_confidence: Confidence;
+  last_checked_at: string;
   last_error_summary: string | null;
   last_error_confidence: Confidence;
   confidence: Confidence;
@@ -202,19 +205,25 @@ const defaultOverview: SystemOverview = {
   configured_sources: defaultConfiguredSources,
   integrations: {
     plex: {
+      kind: "media_server",
+      name: "Plex",
       configured: false,
       configured_confidence: "confirmed",
       reachable: null,
       reachable_confidence: "unknown",
+      last_checked_at: "",
       last_error_summary: null,
       last_error_confidence: "unknown",
       confidence: "unknown",
     },
     jellyfin: {
+      kind: "media_server",
+      name: "Jellyfin",
       configured: false,
       configured_confidence: "confirmed",
       reachable: null,
       reachable_confidence: "unknown",
+      last_checked_at: "",
       last_error_summary: null,
       last_error_confidence: "unknown",
       confidence: "unknown",
@@ -355,6 +364,29 @@ function formatLastUpdated(value: string | null): string {
     minute: "2-digit",
     second: "2-digit",
   });
+}
+
+function formatFreshness(value: string | null | undefined, nowMs: number): string {
+  if (!value) {
+    return "Unknown";
+  }
+
+  const parsed = new Date(value);
+  const parsedMs = parsed.getTime();
+  if (Number.isNaN(parsedMs)) {
+    return "Unknown";
+  }
+
+  const deltaSeconds = Math.max(0, Math.floor((nowMs - parsedMs) / 1000));
+  if (deltaSeconds < 2) {
+    return "Just now";
+  }
+  if (deltaSeconds < 120) {
+    return `${deltaSeconds}s ago`;
+  }
+
+  const minutes = Math.floor(deltaSeconds / 60);
+  return `${minutes}m ago`;
 }
 
 function normalizeOverview(overview: SystemOverview | null): SystemOverview {
@@ -615,9 +647,11 @@ function SourceTile({
 function IntegrationCard({
   label,
   status,
+  freshnessNowMs,
 }: {
   label: string;
   status: IntegrationStatusState;
+  freshnessNowMs: number;
 }) {
   const configured = status.configured;
   const reachableLabel =
@@ -638,6 +672,9 @@ function IntegrationCard({
           <p className="mt-3 text-sm font-medium text-slate-100">
             {configured ? reachableLabel : "Unconfigured"}
           </p>
+          <p className="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">
+            {formatFreshness(status.last_checked_at, freshnessNowMs)}
+          </p>
         </div>
         <div className="flex flex-col items-end gap-2">
           <StatusChip label={configured ? reachableLabel : "Unconfigured"} tone={tone} />
@@ -655,6 +692,11 @@ function IntegrationCard({
           label="Reachable"
           value={status.reachable === null ? "Unknown" : status.reachable ? "Yes" : "No"}
           confidence={status.reachable_confidence}
+        />
+        <DataLine
+          label="Last Checked"
+          value={formatFreshness(status.last_checked_at, freshnessNowMs)}
+          confidence={status.confidence}
         />
         <DataLine
           label="Last Error"
@@ -803,6 +845,7 @@ export default function Dashboard() {
   const jellyfinChecked = sourcesChecked.has("jellyfin");
   const shieldChecked = shield.configured;
   const totalSessions = playback.sessions?.length ?? 0;
+  const freshnessNowMs = state.lastUpdated ? new Date(state.lastUpdated).getTime() : Date.now();
   return (
     <main className="cinema-ambient signal-grid min-h-screen text-slate-100">
       <div className="mx-auto flex min-h-screen max-w-[1600px] gap-6 px-4 py-5 md:px-6 xl:px-8">
@@ -958,8 +1001,8 @@ export default function Dashboard() {
                 />
               </div>
               <div className="mt-5 grid gap-3">
-                <IntegrationCard label="Plex Status" status={integrations.plex} />
-                <IntegrationCard label="Jellyfin Status" status={integrations.jellyfin} />
+                <IntegrationCard label="Plex Status" status={integrations.plex} freshnessNowMs={freshnessNowMs} />
+                <IntegrationCard label="Jellyfin Status" status={integrations.jellyfin} freshnessNowMs={freshnessNowMs} />
               </div>
               <div className="mt-5 rounded-2xl border border-white/8 bg-black/20 px-4 py-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-slate-500">API Connection</p>

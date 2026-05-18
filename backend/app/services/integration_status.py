@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from datetime import datetime, timezone
 
 import httpx
 
@@ -22,12 +23,16 @@ _SECRET_PATTERNS: tuple[re.Pattern[str], ...] = (
 
 def get_plex_status(client: PlexClient) -> IntegrationStatusState:
     """Return a safe Plex integration status snapshot."""
+    checked_at = datetime.now(timezone.utc)
     if not client.is_configured:
         return IntegrationStatusState(
+            kind="media_server",
+            name="Plex",
             configured=False,
             configured_confidence=Confidence.CONFIRMED,
             reachable=None,
             reachable_confidence=Confidence.UNKNOWN,
+            last_checked_at=checked_at,
             last_error_summary=None,
             last_error_confidence=Confidence.UNKNOWN,
             confidence=Confidence.UNKNOWN,
@@ -36,20 +41,26 @@ def get_plex_status(client: PlexClient) -> IntegrationStatusState:
     try:
         reachable = _probe_http_endpoint(client.base_url, "/identity")
         return IntegrationStatusState(
+            kind="media_server",
+            name="Plex",
             configured=True,
             configured_confidence=Confidence.CONFIRMED,
             reachable=reachable,
             reachable_confidence=Confidence.INFERRED,
+            last_checked_at=checked_at,
             last_error_summary=None,
             last_error_confidence=Confidence.UNKNOWN,
             confidence=Confidence.INFERRED,
         )
     except Exception as exc:  # noqa: BLE001
         return IntegrationStatusState(
+            kind="media_server",
+            name="Plex",
             configured=True,
             configured_confidence=Confidence.CONFIRMED,
             reachable=False,
             reachable_confidence=Confidence.INFERRED,
+            last_checked_at=checked_at,
             last_error_summary=_sanitize_error(str(exc)),
             last_error_confidence=Confidence.INFERRED,
             confidence=Confidence.INFERRED,
@@ -58,12 +69,16 @@ def get_plex_status(client: PlexClient) -> IntegrationStatusState:
 
 def get_jellyfin_status(client: JellyfinClient) -> IntegrationStatusState:
     """Return a safe Jellyfin integration status snapshot."""
+    checked_at = datetime.now(timezone.utc)
     if not client.is_configured:
         return IntegrationStatusState(
+            kind="media_server",
+            name="Jellyfin",
             configured=False,
             configured_confidence=Confidence.CONFIRMED,
             reachable=None,
             reachable_confidence=Confidence.UNKNOWN,
+            last_checked_at=checked_at,
             last_error_summary=None,
             last_error_confidence=Confidence.UNKNOWN,
             confidence=Confidence.UNKNOWN,
@@ -72,20 +87,26 @@ def get_jellyfin_status(client: JellyfinClient) -> IntegrationStatusState:
     try:
         reachable = _probe_http_endpoint(client.base_url, "/System/Info/Public")
         return IntegrationStatusState(
+            kind="media_server",
+            name="Jellyfin",
             configured=True,
             configured_confidence=Confidence.CONFIRMED,
             reachable=reachable,
             reachable_confidence=Confidence.INFERRED,
+            last_checked_at=checked_at,
             last_error_summary=None,
             last_error_confidence=Confidence.UNKNOWN,
             confidence=Confidence.INFERRED,
         )
     except Exception as exc:  # noqa: BLE001
         return IntegrationStatusState(
+            kind="media_server",
+            name="Jellyfin",
             configured=True,
             configured_confidence=Confidence.CONFIRMED,
             reachable=False,
             reachable_confidence=Confidence.INFERRED,
+            last_checked_at=checked_at,
             last_error_summary=_sanitize_error(str(exc)),
             last_error_confidence=Confidence.INFERRED,
             confidence=Confidence.INFERRED,

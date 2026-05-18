@@ -50,6 +50,9 @@ class TestIntegrationStatus:
         assert status.reachable is True
         assert status.reachable_confidence == Confidence.INFERRED
         assert status.last_error_summary is None
+        assert status.name == "Plex"
+        assert status.kind == "media_server"
+        assert status.last_checked_at is not None
 
     def test_error_summary_is_sanitized(self) -> None:
         with patch("app.integrations.plex.client.settings") as mock_settings:
@@ -70,3 +73,5 @@ class TestIntegrationStatus:
         assert status.last_error_summary is not None
         assert "secretToken" not in status.last_error_summary
         assert "http://" not in status.last_error_summary
+        assert status.name == "Plex"
+        assert status.kind == "media_server"

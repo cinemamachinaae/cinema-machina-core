@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 
 from pydantic import BaseModel, Field
 
@@ -37,10 +37,13 @@ class ConfiguredSourcesState(BaseModel):
 class IntegrationStatusState(BaseModel):
     """Read-only integration connectivity status."""
 
+    kind: str = "media_server"
+    name: str = "Unknown"
     configured: bool = False
     configured_confidence: Confidence = Confidence.CONFIRMED
     reachable: bool | None = None
     reachable_confidence: Confidence = Confidence.UNKNOWN
+    last_checked_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     last_error_summary: str | None = None
     last_error_confidence: Confidence = Confidence.UNKNOWN
     confidence: Confidence = Confidence.UNKNOWN
