@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --cm-bg0: #02040a;
+  --cm-bg1: #060b18;
+  --cm-panel: rgba(10, 15, 30, 0.45);
+  --cm-panel-border: rgba(255, 255, 255, 0.06);
+  --cm-text: #f3f4f6;
+  --cm-text-dim: #9ca3af;
+  --cm-text-faint: #6b7280;
+  --cm-cyan: #00e5ff;
+  --cm-blue: #3b82f6;
+  --cm-amber: #f59e0b;
+  --cm-green: #10b981;
+
+  --background: var(--cm-bg0);
+  --foreground: var(--cm-text);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: radial-gradient(1200px 720px at 50% 45%, rgba(59, 130, 246, 0.10), transparent 58%),
+    radial-gradient(900px 560px at 24% 35%, rgba(0, 229, 255, 0.06), transparent 60%),
+    radial-gradient(900px 560px at 74% 62%, rgba(16, 185, 129, 0.035), transparent 62%),
+    linear-gradient(180deg, var(--cm-bg1), var(--cm-bg0));
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Premium cinematic vignette + ultra-faint grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.14) 58%, rgba(0,0,0,0.62) 100%);
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.045;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0 1px, transparent 1px 5px);
+  mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 70%);
+}
+
+* { box-sizing: border-box; }
