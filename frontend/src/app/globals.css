@@ -197,11 +197,26 @@
     background: linear-gradient(90deg, rgba(132, 149, 170, 0.1), rgba(169, 191, 214, 0.55));
     transform: translateY(-50%);
     transform-origin: left center;
-    animation: chain-flow 4s ease-in-out infinite;
+    animation: none;
   }
 
   .chain-link:last-child::after {
     display: none;
+  }
+
+  .chain-online .chain-link::after {
+    animation: chain-flow 4s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cinema-ambient::before,
+    .cinema-ambient::after,
+    .dashboard-card-online,
+    .loading-sheen,
+    .chain-online .chain-link::after,
+    .scanline-loading::after {
+      animation: none !important;
+    }
   }
 
   .scanline-loading {

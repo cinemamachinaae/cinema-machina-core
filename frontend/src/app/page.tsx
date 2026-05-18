@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-import { fetchApiJson, resolveApiBaseUrl } from "../lib/api";
+import { fetchApiJsonResult, resolveApiBaseUrl } from "../lib/api";
 
 type Confidence = "confirmed" | "inferred" | "unknown";
 
@@ -355,6 +355,50 @@ function normalizeOverview(overview: SystemOverview | null): SystemOverview {
   };
 }
 
+function summarizeWarning(warning: string): string {
+  const trimmed = warning.trim();
+  if (!trimmed) {
+    return "Diagnostic event reported.";
+  }
+
+  const lowered = trimmed.toLowerCase();
+  if (lowered.startsWith("plex:")) {
+    return "Plex integration reported an error.";
+  }
+  if (lowered.startsWith("jellyfin:")) {
+    return "Jellyfin integration reported an error.";
+  }
+
+  return trimmed.length > 180 ? `${trimmed.slice(0, 176)}...` : trimmed;
+}
+
+function sourceHealthTone(
+  configured: boolean,
+  checked: boolean,
+  hasIssue: boolean,
+): "default" | "online" | "warning" {
+  if (!configured) {
+    return "default";
+  }
+  if (hasIssue) {
+    return "warning";
+  }
+  if (checked) {
+    return "online";
+  }
+  return "default";
+}
+
+function sourceStatusLabel(configured: boolean, checked: boolean, hasIssue: boolean): string {
+  if (!configured) {
+    return "Unconfigured";
+  }
+  if (hasIssue) {
+    return "Degraded";
+  }
+  return checked ? "Online" : "Idle";
+}
+
 function getChainNodePresentation(
   key: (typeof chainNodes)[number]["key"],
   chain: ChainSnapshot,
@@ -483,22 +527,47 @@ function DeviceCard({
   );
 }
 
-function SourceBadge({
+function SourceTile({
   label,
   configured,
+  checked,
+  hasIssue,
+  sessions,
   confidence,
 }: {
   label: string;
   configured: boolean;
+  checked: boolean;
+  hasIssue: boolean;
+  sessions: number;
   confidence: Confidence;
 }) {
+  const tone = sourceHealthTone(configured, checked, hasIssue);
+  const status = sourceStatusLabel(configured, checked, hasIssue);
+
   return (
-    <div className="rounded-xl border border-white/8 bg-black/20 px-3 py-3">
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
-        <ConfidenceChip confidence={confidence} />
+    <div className="dashboard-card rounded-2xl border border-white/8 bg-black/20 p-4">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
+          <p className="mt-3 text-sm font-medium text-slate-100">{status}</p>
+        </div>
+        <div className="flex flex-col items-end gap-2">
+          <StatusChip label={status} tone={tone} />
+          <ConfidenceChip confidence={confidence} />
+        </div>
       </div>
-      <p className="mt-3 text-sm text-slate-100">{configured ? "Configured" : "Unconfigured"}</p>
+
+      <div className="mt-4 grid grid-cols-2 gap-2 text-xs uppercase tracking-[0.16em] text-slate-500">
+        <div className="rounded-xl border border-white/8 bg-black/20 px-3 py-2">
+          <p>Checked</p>
+          <p className="mt-1 text-sm font-medium text-slate-100">{checked ? "Yes" : "No"}</p>
+        </div>
+        <div className="rounded-xl border border-white/8 bg-black/20 px-3 py-2">
+          <p>Sessions</p>
+          <p className="mt-1 text-sm font-medium text-slate-100">{sessions}</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -516,49 +585,64 @@ export default function Dashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [apiBaseUrl, setApiBaseUrl] = useState("http://127.0.0.1:8000");
+  const refreshInFlight = useRef(false);
+  const refreshController = useRef<AbortController | null>(null);
 
   useEffect(() => {
     let cancelled = false;
 
     async function refreshDashboard(initialLoad: boolean): Promise<void> {
-      if (initialLoad) {
-        setIsLoading(true);
-      } else {
-        setIsRefreshing(true);
-      }
-
-      const [healthResult, overviewResult] = await Promise.allSettled([
-        fetchApiJson<HealthStatus>("/health"),
-        fetchApiJson<SystemOverview>("/system/overview"),
-      ]);
-
-      if (cancelled) {
+      if (!initialLoad && refreshInFlight.current) {
         return;
       }
 
-      const diagnostics: string[] = [];
-      if (healthResult.status === "rejected") {
-        diagnostics.push("Health endpoint is unavailable.");
-      }
-      if (overviewResult.status === "rejected") {
-        diagnostics.push("System overview is unavailable.");
-      }
+      refreshInFlight.current = true;
+      refreshController.current?.abort();
+      const controller = new AbortController();
+      refreshController.current = controller;
 
-      const sampleTime = new Date().toISOString();
-      setState((previous) => ({
-        health: healthResult.status === "fulfilled" ? healthResult.value : previous.health,
-        overview:
-          overviewResult.status === "fulfilled"
-            ? normalizeOverview(overviewResult.value)
-            : previous.overview,
-        diagnostics,
-        lastUpdated:
-          healthResult.status === "fulfilled" || overviewResult.status === "fulfilled"
-            ? sampleTime
-            : previous.lastUpdated,
-      }));
-      setIsLoading(false);
-      setIsRefreshing(false);
+      try {
+        if (initialLoad) {
+          setIsLoading(true);
+        } else {
+          setIsRefreshing(true);
+        }
+
+        const [healthResult, overviewResult] = await Promise.all([
+          fetchApiJsonResult<HealthStatus>("/health", {
+            signal: controller.signal,
+            timeoutMs: 5000,
+          }),
+          fetchApiJsonResult<SystemOverview>("/system/overview", {
+            signal: controller.signal,
+            timeoutMs: 6000,
+          }),
+        ]);
+
+        if (cancelled) {
+          return;
+        }
+
+        const diagnostics: string[] = [];
+        if (!healthResult.ok) {
+          diagnostics.push("Health endpoint is unavailable.");
+        }
+        if (!overviewResult.ok) {
+          diagnostics.push("System overview is unavailable.");
+        }
+
+        const sampleTime = new Date().toISOString();
+        setState((previous) => ({
+          health: healthResult.ok ? healthResult.data : previous.health,
+          overview: overviewResult.ok ? normalizeOverview(overviewResult.data) : previous.overview,
+          diagnostics,
+          lastUpdated: healthResult.ok || overviewResult.ok ? sampleTime : previous.lastUpdated,
+        }));
+        setIsLoading(false);
+        setIsRefreshing(false);
+      } finally {
+        refreshInFlight.current = false;
+      }
     }
 
     refreshDashboard(true).catch(() => {
@@ -571,6 +655,7 @@ export default function Dashboard() {
         });
         setIsLoading(false);
         setIsRefreshing(false);
+        refreshInFlight.current = false;
       }
     });
 
@@ -582,12 +667,14 @@ export default function Dashboard() {
             diagnostics: ["Dashboard refresh is unavailable."],
           }));
           setIsRefreshing(false);
+          refreshInFlight.current = false;
         }
       });
     }, REFRESH_INTERVAL_MS);
 
     return () => {
       cancelled = true;
+      refreshController.current?.abort();
       window.clearInterval(interval);
     };
   }, []);
@@ -605,9 +692,22 @@ export default function Dashboard() {
   const activeSession = playback.sessions[0] ?? null;
   const systemOnline = health.status === "ok";
   const apiState = apiStateLabel(isLoading, state.health, state.overview, state.diagnostics);
-  const diagnostics = [...overview.warnings, ...state.diagnostics];
+  const diagnostics = [...overview.warnings.map(summarizeWarning), ...state.diagnostics];
   const sourceSummary = chain.source;
   const output = chain.output_state;
+  const warningsJoined = diagnostics.join(" ").toLowerCase();
+  const plexIssue = warningsJoined.includes("plex integration reported");
+  const jellyfinIssue = warningsJoined.includes("jellyfin integration reported");
+  const shieldIssue =
+    warningsJoined.includes("shield is unreachable") ||
+    warningsJoined.includes("adb executable is not available") ||
+    warningsJoined.includes("adb connection timed out");
+
+  const sourcesChecked = new Set(playback.sources_checked ?? []);
+  const plexChecked = sourcesChecked.has("plex");
+  const jellyfinChecked = sourcesChecked.has("jellyfin");
+  const shieldChecked = shield.configured;
+  const totalSessions = playback.sessions?.length ?? 0;
   return (
     <main className="cinema-ambient signal-grid min-h-screen text-slate-100">
       <div className="mx-auto flex min-h-screen max-w-[1600px] gap-6 px-4 py-5 md:px-6 xl:px-8">
@@ -702,7 +802,7 @@ export default function Dashboard() {
 
           <div className="mt-6 grid gap-6 xl:grid-cols-[1.7fr_1fr]">
             <Panel title="Live Playback Chain Map" eyebrow="Playback Chain" online={systemOnline}>
-              <div className={`grid gap-3 md:grid-cols-5 ${isLoading ? "scanline-loading" : ""}`}>
+              <div className={`grid gap-3 md:grid-cols-5 ${isLoading ? "scanline-loading" : ""} ${systemOnline ? "chain-online" : ""}`}>
                 {chainNodes.map((node) => {
                   const presentation = getChainNodePresentation(node.key, chain);
 
@@ -737,9 +837,30 @@ export default function Dashboard() {
 
             <Panel title="Configured Sources" eyebrow="System Inputs" online={systemOnline}>
               <div className="grid gap-3">
-                <SourceBadge label="Plex" configured={configuredSources.plex.configured} confidence={configuredSources.plex.confidence} />
-                <SourceBadge label="Jellyfin" configured={configuredSources.jellyfin.configured} confidence={configuredSources.jellyfin.confidence} />
-                <SourceBadge label="Shield" configured={configuredSources.shield.configured} confidence={configuredSources.shield.confidence} />
+                <SourceTile
+                  label="Plex"
+                  configured={configuredSources.plex.configured}
+                  checked={plexChecked}
+                  hasIssue={plexIssue}
+                  sessions={totalSessions}
+                  confidence={configuredSources.plex.confidence}
+                />
+                <SourceTile
+                  label="Jellyfin"
+                  configured={configuredSources.jellyfin.configured}
+                  checked={jellyfinChecked}
+                  hasIssue={jellyfinIssue}
+                  sessions={totalSessions}
+                  confidence={configuredSources.jellyfin.confidence}
+                />
+                <SourceTile
+                  label="Shield"
+                  configured={configuredSources.shield.configured}
+                  checked={shieldChecked}
+                  hasIssue={shieldIssue}
+                  sessions={shield.foreground_app_name ? 1 : 0}
+                  confidence={configuredSources.shield.confidence}
+                />
               </div>
               <div className="mt-5 rounded-2xl border border-white/8 bg-black/20 px-4 py-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-slate-500">API Connection</p>

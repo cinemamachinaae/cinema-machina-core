@@ -19,29 +19,96 @@ export function resolveApiBaseUrl(): string {
   return `${protocol}//${window.location.hostname}:${DEFAULT_BACKEND_PORT}`;
 }
 
-export async function fetchApiJson<T>(path: string): Promise<T> {
-  const response = await fetch(`${resolveApiBaseUrl()}${path}`, {
-    headers: {
-      Accept: "application/json",
-    },
-    cache: "no-store",
-  });
+type FetchApiOptions = {
+  signal?: AbortSignal;
+  timeoutMs?: number;
+};
+
+export type ApiResult<T> =
+  | { ok: true; data: T }
+  | { ok: false; error: string; status?: number };
+
+async function fetchWithTimeout(
+  input: RequestInfo | URL,
+  init: RequestInit,
+  timeoutMs: number | undefined,
+): Promise<Response> {
+  if (!timeoutMs) {
+    return fetch(input, init);
+  }
+
+  const controller = new AbortController();
+  const timeoutId = globalThis.setTimeout(() => controller.abort(), timeoutMs);
+
+  const signal = init.signal
+    ? mergeSignals(init.signal, controller.signal)
+    : controller.signal;
+
+  try {
+    return await fetch(input, { ...init, signal });
+  } finally {
+    globalThis.clearTimeout(timeoutId);
+  }
+}
+
+function mergeSignals(primary: AbortSignal, secondary: AbortSignal): AbortSignal {
+  if (primary.aborted) {
+    return primary;
+  }
+
+  const controller = new AbortController();
+  const onAbort = () => controller.abort();
+
+  primary.addEventListener("abort", onAbort, { once: true });
+  secondary.addEventListener("abort", onAbort, { once: true });
+
+  return controller.signal;
+}
+
+export async function fetchApiJsonResult<T>(
+  path: string,
+  options: FetchApiOptions = {},
+): Promise<ApiResult<T>> {
+  const url = `${resolveApiBaseUrl()}${path}`;
+
+  let response: Response;
+  try {
+    response = await fetchWithTimeout(
+      url,
+      {
+        headers: {
+          Accept: "application/json",
+        },
+        cache: "no-store",
+        signal: options.signal,
+      },
+      options.timeoutMs,
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Network error";
+    return { ok: false, error: message };
+  }
+
   const bodyText = await response.text();
+  if (!response.ok) {
+    return { ok: false, error: `Request failed (${response.status})`, status: response.status };
+  }
 
   if (!bodyText.trim()) {
-    throw new Error(`Request failed (${response.status})`);
+    return { ok: false, error: `Request failed (${response.status})`, status: response.status };
   }
 
-  let payload: unknown;
   try {
-    payload = JSON.parse(bodyText);
+    return { ok: true, data: JSON.parse(bodyText) as T };
   } catch {
-    throw new Error("Invalid API response");
+    return { ok: false, error: "Invalid API response", status: response.status };
   }
+}
 
-  if (!response.ok) {
-    throw new Error(`Request failed (${response.status})`);
+export async function fetchApiJson<T>(path: string): Promise<T> {
+  const result = await fetchApiJsonResult<T>(path);
+  if (!result.ok) {
+    throw new Error(result.error);
   }
-
-  return payload as T;
+  return result.data;
 }
