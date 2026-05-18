@@ -60,7 +60,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 <div class="container">
 
 <h1>Cinema Machina Core — Complete Call Flow &amp; Architecture Documentation</h1>
-<p class="subtitle">Generated from graphify knowledge graph: 2747 nodes, 3069 edges, 279 communities. Commit: af681e3</p>
+<p class="subtitle">Generated from graphify knowledge graph: 2747 nodes, 3070 edges, 279 communities. Commit: 587ea7b</p>
 
 <div class="nav">
     <a href="#overview">Architecture Overview</a>
@@ -77,7 +77,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
     <a href="#community-146">Community 146</a>
     <a href="#community-48">Community 48</a>
     <a href="#community-49">Community 49</a>
-    <a href="#community-183">Community 183</a>
+    <a href="#community-52">Community 52</a>
     <a href="#other">Other</a>
 </div>
 
@@ -88,13 +88,13 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    BUILD_GRAPH_321CBB04("Graph Build<br/><small>1341 nodes</small>")
+    BUILD_GRAPH_321CBB04("Graph Build<br/><small>1333 nodes</small>")
     class BUILD_GRAPH_321CBB04 module;
-    CLI_SKILLS_9964CBB8("CLI &amp; Skill Installers<br/><small>331 nodes</small>")
+    CLI_SKILLS_9964CBB8("CLI &amp; Skill Installers<br/><small>317 nodes</small>")
     class CLI_SKILLS_9964CBB8 module;
     INGEST_CACHE_UPDATE_FF457338("Ingestion &amp; Updates<br/><small>13 nodes</small>")
     class INGEST_CACHE_UPDATE_FF457338 module;
-    SERVE_API_35EC8E86("Serving API<br/><small>436 nodes</small>")
+    SERVE_API_35EC8E86("Serving API<br/><small>449 nodes</small>")
     class SERVE_API_35EC8E86 module;
     TESTS_FIXTURES_B84B1DCC("Tests &amp; Fixtures<br/><small>229 nodes</small>")
     class TESTS_FIXTURES_B84B1DCC module;
@@ -114,9 +114,9 @@ flowchart LR
     class COMMUNITY_48_CA50C6CA module;
     COMMUNITY_49_2104F0AE("Community 49<br/><small>11 nodes</small>")
     class COMMUNITY_49_2104F0AE module;
-    COMMUNITY_183_A03B8903("Community 183<br/><small>10 nodes</small>")
-    class COMMUNITY_183_A03B8903 module;
-    OTHER_D0941E68("Other<br/><small>274 nodes</small>")
+    COMMUNITY_52_19459BA9("Community 52<br/><small>11 nodes</small>")
+    class COMMUNITY_52_19459BA9 module;
+    OTHER_D0941E68("Other<br/><small>282 nodes</small>")
     class OTHER_D0941E68 module;
     SERVE_API_35EC8E86 -->|contains x11| TESTS_FIXTURES_B84B1DCC
     OTHER_D0941E68 -->|contains x8| BUILD_GRAPH_321CBB04
@@ -125,8 +125,8 @@ flowchart LR
     OTHER_D0941E68 -->|contains x4| SERVE_API_35EC8E86
     OTHER_D0941E68 -->|contains x3| TESTS_FIXTURES_B84B1DCC
     COMMUNITY_48_CA50C6CA -->|contains x3| OTHER_D0941E68
-    CLI_SKILLS_9964CBB8 -->|contains x3| SERVE_API_35EC8E86
-    SERVE_API_35EC8E86 -->|contains x3| OTHER_D0941E68
+    COMMUNITY_52_19459BA9 -->|contains x3| OTHER_D0941E68
+    COMMUNITY_52_19459BA9 -->|contains x3| SERVE_API_35EC8E86
     INGEST_CACHE_UPDATE_FF457338 -->|contains x2| TESTS_FIXTURES_B84B1DCC
     COMMUNITY_48_CA50C6CA -->|contains x2| BUILD_GRAPH_321CBB04
     OTHER_D0941E68 -->|contains x2| CLI_SKILLS_9964CBB8
@@ -146,19 +146,19 @@ flowchart LR
     <h4>Architecture Layers</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>Layer</th><th>Nodes</th><th>Communities</th></tr>
-      <tr><td>Graph Build</td><td>1341</td><td><code>138, 148, 24, 6, 25, 26, 28, 139, 29, 30, 156, 142, 1, 141, 185, 32, 3, 34, 44, 147, 149, 150, 151, 152, 153, 154, 155, 133, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 190, 191, 257, 261, 262, 54, 57, 60, 61, 62, 63, 64, 65, 69, 187, 217, 266, 74, 188, 189, 82, 84, 100, 101, 103, 90, 91, 92, 93, 94, 95, 96, 145, 198, 199, 200, 201, 203, 204, 205, 206, 207, 209, 210, 211, 212, 213, 214, 215, 218, 252, 254, 255, 258, 267, 268, 270, 9, 124, 230, 126, 231, 232, 273, 16</code></td></tr><tr><td>CLI &amp; Skill Installers</td><td>331</td><td><code>27, 33, 36, 38, 52, 41, 42, 143, 43, 144, 192, 47, 50, 66, 80, 195, 216, 108, 109, 111, 116, 202, 208, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 256, 271, 272, 127, 135, 21, 277</code></td></tr><tr><td>Ingestion &amp; Updates</td><td>13</td><td><code>186, 117</code></td></tr><tr><td>Serving API</td><td>436</td><td><code>125, 11, 23, 5, 140, 0, 13, 31, 194, 46, 51, 53, 55, 56, 263, 59, 68, 71, 76, 78, 79, 83, 88, 229, 128</code></td></tr><tr><td>Tests &amp; Fixtures</td><td>229</td><td><code>107, 2, 137, 7, 8, 12, 4, 265, 67, 251, 197, 110, 269, 15, 259</code></td></tr><tr><td>Community 35</td><td>18</td><td><code>35</code></td></tr><tr><td>Community 37</td><td>17</td><td><code>37</code></td></tr><tr><td>Community 39</td><td>16</td><td><code>39</code></td></tr><tr><td>Community 40</td><td>15</td><td><code>40</code></td></tr><tr><td>Community 45</td><td>13</td><td><code>45</code></td></tr><tr><td>Community 146</td><td>12</td><td><code>146</code></td></tr><tr><td>Community 48</td><td>11</td><td><code>48</code></td></tr><tr><td>Community 49</td><td>11</td><td><code>49</code></td></tr><tr><td>Community 183</td><td>10</td><td><code>183</code></td></tr><tr><td>Other</td><td>274</td><td><code>184, 264, 58, 70, 193, 72, 73, 75, 77, 10, 81, 85, 86, 87, 89, 102, 104, 105, 196, 250, 97, 98, 99, 106, 112, 113, 114, 115, 253, 118, 119, 120, 121, 122, 123, 129, 130, 131, 132, 260, 14, 17, 233, 234, 235, 236, 237, 274, 275, 276, 134, 136, 18, 19, 20, 22, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 278</code></td></tr>
+      <tr><td>Graph Build</td><td>1333</td><td><code>138, 148, 24, 6, 25, 26, 28, 139, 29, 30, 156, 142, 1, 141, 185, 32, 3, 34, 44, 147, 149, 150, 151, 152, 153, 154, 155, 133, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 190, 191, 257, 261, 262, 54, 57, 60, 61, 62, 63, 64, 65, 69, 187, 266, 74, 188, 189, 82, 84, 100, 101, 103, 90, 91, 92, 93, 94, 95, 96, 145, 198, 199, 200, 201, 203, 204, 205, 206, 207, 209, 210, 211, 212, 213, 214, 215, 218, 252, 254, 255, 258, 267, 268, 270, 9, 124, 230, 126, 231, 232, 273, 16</code></td></tr><tr><td>CLI &amp; Skill Installers</td><td>317</td><td><code>27, 33, 36, 38, 41, 42, 143, 43, 144, 192, 47, 50, 66, 80, 195, 216, 108, 109, 111, 116, 202, 208, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 256, 271, 272, 127, 217, 135, 21, 277</code></td></tr><tr><td>Ingestion &amp; Updates</td><td>13</td><td><code>186, 117</code></td></tr><tr><td>Serving API</td><td>449</td><td><code>125, 11, 23, 5, 31, 140, 0, 13, 194, 46, 51, 53, 55, 56, 263, 59, 68, 71, 76, 78, 79, 83, 88, 229, 128</code></td></tr><tr><td>Tests &amp; Fixtures</td><td>229</td><td><code>107, 2, 137, 7, 8, 12, 4, 265, 67, 251, 197, 110, 269, 15, 259</code></td></tr><tr><td>Community 35</td><td>18</td><td><code>35</code></td></tr><tr><td>Community 37</td><td>17</td><td><code>37</code></td></tr><tr><td>Community 39</td><td>16</td><td><code>39</code></td></tr><tr><td>Community 40</td><td>15</td><td><code>40</code></td></tr><tr><td>Community 45</td><td>13</td><td><code>45</code></td></tr><tr><td>Community 146</td><td>12</td><td><code>146</code></td></tr><tr><td>Community 48</td><td>11</td><td><code>48</code></td></tr><tr><td>Community 49</td><td>11</td><td><code>49</code></td></tr><tr><td>Community 52</td><td>11</td><td><code>52</code></td></tr><tr><td>Other</td><td>282</td><td><code>183, 184, 264, 58, 70, 193, 72, 73, 75, 77, 10, 81, 85, 86, 87, 89, 102, 104, 105, 196, 250, 97, 98, 99, 106, 112, 113, 114, 115, 118, 119, 120, 121, 122, 123, 129, 130, 131, 132, 253, 260, 14, 17, 233, 234, 235, 236, 237, 274, 275, 276, 134, 136, 18, 19, 20, 22, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 278</code></td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Core Flow</h4>
-    <div class="arrow-chain">Community 35 -&gt; Graph Build -&gt; Serving API -&gt; Tests &amp; Fixtures -&gt; Other -&gt; CLI &amp; Skill Installers -&gt; Ingestion &amp; Updates</div>
+    <div class="arrow-chain">Community 35 -&gt; Graph Build -&gt; Serving API -&gt; Tests &amp; Fixtures -&gt; Other -&gt; CLI &amp; Skill Installers -&gt; Community 52</div>
   </div>
 </div>
 <div class="grid">
   <div class="card">
     <h4>Graph Report Highlights</h4>
     <ul>
-      <li>2747 nodes · 3069 edges · 279 communities (253 shown, 26 thin omitted)</li>
+      <li>2747 nodes · 3070 edges · 279 communities (252 shown, 27 thin omitted)</li>
       <li>Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 185 edges (avg confidence: 0.64)</li>
       <li>Token cost: 0 input · 0 output</li>
       <li>1. `Cinema Machina Core — SKILLS.md` - 34 edges</li>
@@ -170,12 +170,12 @@ flowchart LR
 <hr>
 <!-- ====== 2. Graph Build ====== -->
 <h2 id="build-graph">2. Graph Build</h2>
-<p>Graph Build groups implementation around state, omx, statejson, postiz, mostly in .omx/state/subagent-tracking.json, skills/postiz/SYNTAX_UPGRADE.md, SKILLS.md. This section covers 1341 nodes and 1327 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<p>Graph Build groups implementation around state, omx, statejson, postiz, mostly in .omx/state/subagent-tracking.json, skills/postiz/SYNTAX_UPGRADE.md, SKILLS.md. This section covers 1333 nodes and 1320 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Graph Build (1341 nodes, 1327 edges)
+    %% Section: Graph Build (1333 nodes, 1320 edges)
     subgraph build_graph_omx_metrics_json_d739ec70[".omx/metrics.json"]
         omx_metrics_last_activity_c62d9153("last_activity<br/><small>.omx/metrics.json</small>")
         omx_metrics_json_d726a489("metrics.json")
@@ -207,7 +207,7 @@ flowchart LR
     services_chain_snapshot_get_current_chain_snapsh_c421ebb7 -->|calls| services_chain_snapshot_build_playback_client_st_792ddf3b
     services_chain_snapshot_build_playback_client_st_792ddf3b -->|calls| services_chain_snapshot_infer_playback_client_ki_9325ddca
     services_chain_snapshot_infer_playback_client_ki_9325ddca -->|calls| services_chain_snapshot_get_shield_state_for_cha_81cccf2e
-    %% Omitted for readability: 1323 nodes, 0 edges
+    %% Omitted for readability: 1315 nodes, 0 edges
     class omx_metrics_last_activity_c62d9153 function;
     class omx_metrics_json_d726a489 function;
     class omx_metrics_session_input_tokens_bd53b18c function;
@@ -506,19 +506,19 @@ flowchart LR
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x1308, explains x10, calls x7. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x1301, explains x10, calls x7. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
 <!-- ====== 3. CLI & Skill Installers ====== -->
 <h2 id="cli-skills">3. CLI &amp; Skill Installers</h2>
-<p>CLI &amp; Skill Installers groups implementation around postiz, skills, agents, notify, mostly in skills/postiz/SKILL.md, postiz/examples/COMMAND_LINE_GUIDE.md, AGENTS.md. This section covers 331 nodes and 311 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<p>CLI &amp; Skill Installers groups implementation around postiz, skills, agents, notify, mostly in skills/postiz/SKILL.md, postiz/examples/COMMAND_LINE_GUIDE.md, AGENTS.md. This section covers 317 nodes and 297 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: CLI &amp; Skill Installers (331 nodes, 311 edges)
+    %% Section: CLI &amp; Skill Installers (317 nodes, 297 edges)
     subgraph cli_skills_sessions_019e3053_8978_7a31_b9e4_4f1b_3bf1c72d["sessions/019e3053-8978-7a31-b9e4-4f1be3eb9d2d/notify-hook-state.json"]
         omx_state_sessions_019e3053_8978_7a31_b9e4_4f1be_368e0933("notify-hook-state.json")
         node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_44d7a96d("recent_turns<br/><small>sessions/019e3053-8978-7a31-b9e4-4f1be3eb9d2d/notify-hook-state.json</small>")
@@ -538,10 +538,12 @@ flowchart LR
         node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_29288f32("last_event_at<br/><small>sessions/019e3213-1fc6-7be3-940e-4fbe88ead336/notify-hook-state.json</small>")
         node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_36510dfc("019e3213-1fc6-7be3-940e-4fbe88ead336 01...<br/><small>sessions/019e3213-1fc6-7be3-940e-4fbe88ead336/notify-hook-state.json</small>")
     end
+    subgraph cli_skills_postiz_examples_COMMAND_LINE_GUIDE_md_61f9d6b8["postiz/examples/COMMAND_LINE_GUIDE.md"]
+        examples_command_line_guide_postiz_cli_command_l_993373c5("Postiz CLI - Command Line Guide<br/><small>postiz/examples/COMMAND_LINE_GUIDE.md</small>")
+        examples_command_line_guide_examples_5a399179("Examples<br/><small>postiz/examples/COMMAND_LINE_GUIDE.md</small>")
+    end
     cinema_machina_core_agents_cinema_machina_core_a_c29863a0("Cinema Machina Core — AGENTS.md")
-    examples_command_line_guide_postiz_cli_command_l_993373c5("Postiz CLI - Command Line Guide<br/><small>postiz/examples/COMMAND_LINE_GUIDE.md</small>")
     node_019e3b47_ee24_7891_a647_dfa1b46ef78d_notify_c17049d3("recent_turns<br/><small>sessions/019e3b47-ee24-7891-a647-dfa1b46ef78d/notify-hook-state.json</small>")
-    postiz_readme_postiz_cli_cb848979("Postiz CLI<br/><small>skills/postiz/README.md</small>")
     agents_skills_postiz_skill_md_bb6f1c4c("SKILL.md")
     omx_state_sessions_019e3053_8978_7a31_b9e4_4f1be_368e0933 -->|contains| node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_44d7a96d
     omx_state_sessions_019e3053_8978_7a31_b9e4_4f1be_368e0933 -->|contains| node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_4eab8ed8
@@ -553,7 +555,8 @@ flowchart LR
     omx_state_sessions_019e303f_e44f_7eb1_b180_8ec88_3a253d01 -->|contains| node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_364a670c
     omx_state_sessions_019e303f_e44f_7eb1_b180_8ec88_3a253d01 -->|contains| node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_0c43299e
     node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_364a670c -->|contains| node_019e303f_e44f_7eb1_b180_8ec8800c3a61_notify_f0b35ca6
-    %% Omitted for readability: 313 nodes, 0 edges
+    examples_command_line_guide_postiz_cli_command_l_993373c5 -->|contains| examples_command_line_guide_examples_5a399179
+    %% Omitted for readability: 299 nodes, 0 edges
     class omx_state_sessions_019e3053_8978_7a31_b9e4_4f1be_368e0933 ui;
     class node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_44d7a96d function;
     class node_019e3053_8978_7a31_b9e4_4f1be3eb9d2d_notify_4eab8ed8 function;
@@ -567,10 +570,10 @@ flowchart LR
     class node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_e3cd8c7d function;
     class node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_29288f32 function;
     class node_019e3213_1fc6_7be3_940e_4fbe88ead336_notify_36510dfc function;
-    class cinema_machina_core_agents_cinema_machina_core_a_c29863a0 concept;
     class examples_command_line_guide_postiz_cli_command_l_993373c5 concept;
+    class examples_command_line_guide_examples_5a399179 concept;
+    class cinema_machina_core_agents_cinema_machina_core_a_c29863a0 concept;
     class node_019e3b47_ee24_7891_a647_dfa1b46ef78d_notify_c17049d3 function;
-    class postiz_readme_postiz_cli_cb848979 concept;
     class agents_skills_postiz_skill_md_bb6f1c4c concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
@@ -843,16 +846,16 @@ flowchart LR
       <tr><td><code>skills/postiz/SKILL.md</code></td><td>77 nodes</td></tr>
 <tr><td><code>postiz/examples/COMMAND_LINE_GUIDE.md</code></td><td>53 nodes</td></tr>
 <tr><td><code>AGENTS.md</code></td><td>36 nodes</td></tr>
-<tr><td><code>skills/postiz/README.md</code></td><td>17 nodes</td></tr>
 <tr><td><code>skills/postiz/PUBLISHING.md</code></td><td>14 nodes</td></tr>
 <tr><td><code>sessions/019e303f-e44f-7eb1-b180-8ec8800c3a61/notify-hook-state.json</code></td><td>14 nodes</td></tr>
 <tr><td><code>sessions/019e3b47-ee24-7891-a647-dfa1b46ef78d/notify-hook-state.json</code></td><td>13 nodes</td></tr>
 <tr><td><code>ai/brain-portal/implementation_plan.md</code></td><td>12 nodes</td></tr>
+<tr><td><code>docs/ai/CODEX_TOOL_ROUTING.md</code></td><td>11 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x311. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x297. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -1054,12 +1057,12 @@ flowchart LR
 
 <!-- ====== 5. Serving API ====== -->
 <h2 id="serve-api">5. Serving API</h2>
-<p>Serving API groups implementation around postiz, agents, skills, app, mostly in src/app/page.tsx, skills/postiz/QUICK_START.md, skills/postiz/SUPPORTED_FILE_TYPES.md. This section covers 436 nodes and 590 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<p>Serving API groups implementation around postiz, agents, skills, app, mostly in skills/postiz/README.md, src/app/page.tsx, skills/postiz/QUICK_START.md. This section covers 449 nodes and 604 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Serving API (436 nodes, 590 edges)
+    %% Section: Serving API (449 nodes, 604 edges)
     subgraph serve_api_api_status_route_ts_207dd4a7["api/status/route.ts"]
         tools_brain_portal_src_app_api_status_route_ts_334ffefe("route.ts")
         status_route_nowiso_15f873c6("nowIso()<br/><small>api/status/route.ts</small>")
@@ -1096,7 +1099,7 @@ flowchart LR
     status_route_getgraphifyfreshness_5cd84cad -->|calls| status_route_get_f0413828
     status_route_gettoolreadiness_bae46683 -->|calls| status_route_get_f0413828
     src_api_postizapi_289782fc -->|method| src_api_postizapi_request_1a778d53
-    %% Omitted for readability: 418 nodes, 0 edges
+    %% Omitted for readability: 431 nodes, 0 edges
     class tools_brain_portal_src_app_api_status_route_ts_334ffefe api;
     class status_route_nowiso_15f873c6 function;
     class status_route_get_f0413828 function;
@@ -1197,7 +1200,7 @@ flowchart LR
   <td><code>getGraphifyFreshness()</code><br><small style="color:var(--muted)">api/status/route.ts</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>fileSizeBytes()</code><br><small style="color:var(--muted)">api/status/route.ts</small></td>
-  <td><code>GET()</code><br><small style="color:var(--muted)">api/status/route.ts</small><br><code>repoPath()</code><br><small style="color:var(--muted)">src/lib/paths.ts</small></td>
+  <td><code>GET()</code><br><small style="color:var(--muted)">api/status/route.ts</small><br><code>repoPath()</code><br><small style="color:var(--muted)">src/lib/paths.ts</small><br><code>safeExecFile()</code><br><small style="color:var(--muted)">src/lib/safe-exec.ts</small></td>
   <td>Builds dependency relationships and graph data.</td>
 </tr>
 <tr>
@@ -1383,10 +1386,10 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>src/app/page.tsx</code></td><td>48 nodes</td></tr>
+      <tr><td><code>skills/postiz/README.md</code></td><td>49 nodes</td></tr>
+<tr><td><code>src/app/page.tsx</code></td><td>48 nodes</td></tr>
 <tr><td><code>skills/postiz/QUICK_START.md</code></td><td>37 nodes</td></tr>
 <tr><td><code>skills/postiz/SUPPORTED_FILE_TYPES.md</code></td><td>37 nodes</td></tr>
-<tr><td><code>skills/postiz/README.md</code></td><td>36 nodes</td></tr>
 <tr><td><code>README.md</code></td><td>28 nodes</td></tr>
 <tr><td><code>skills/postiz/HOW_TO_RUN.md</code></td><td>17 nodes</td></tr>
 <tr><td><code>postiz/src/api.ts</code></td><td>17 nodes</td></tr>
@@ -1395,7 +1398,7 @@ flowchart LR
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x335, calls x89, imports x58, imports x38. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x348, calls x90, imports x58, imports x38. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -3352,43 +3355,237 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 15. Community 183 ====== -->
-<h2 id="community-183">15. Community 183</h2>
-<p>Community 183 groups implementation around architecture, overviewmd, docs, cinema, mostly in docs/ai/ARCHITECTURE_OVERVIEW.md. This section covers 10 nodes and 9 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 15. Community 52 ====== -->
+<h2 id="community-52">15. Community 52</h2>
+<p>Community 52 groups implementation around postiz, agents, skills, readmemd, mostly in skills/postiz/README.md. This section covers 11 nodes and 10 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Community 183 (10 nodes, 9 edges)
+    %% Section: Community 52 (11 nodes, 10 edges)
+    postiz_readme_postiz_cli_cb848979("Postiz CLI<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_quick_reference_f4da1d03("Quick Reference<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_documentation_c91a3330("Documentation<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_api_endpoints_d8046421("API Endpoints<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_environment_variables_56b92d7b("Environment Variables<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_error_handling_60e2ed70("Error Handling<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_contributing_1f0e73ba("Contributing<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_license_8439c659("License<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_links_c3ab267e("Links<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_supported_platforms_c696ea5e("Supported Platforms<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_codeblock_45_00c49b42("code:bash ( Authentication)<br/><small>skills/postiz/README.md</small>")
+    postiz_readme_postiz_cli_cb848979 -->|contains| postiz_readme_documentation_c91a3330
+    postiz_readme_postiz_cli_cb848979 -->|contains| postiz_readme_api_endpoints_d8046421
+    postiz_readme_postiz_cli_cb848979 -->|contains| postiz_readme_environment_variables_56b92d7b
+    postiz_readme_postiz_cli_cb848979 -->|contains| postiz_readme_error_handling_60e2ed70
+    postiz_readme_postiz_cli_cb848979 -->|contains| postiz_readme_quick_reference_f4da1d03
+    postiz_readme_postiz_cli_cb848979 -->|contains| postiz_readme_contributing_1f0e73ba
+    postiz_readme_postiz_cli_cb848979 -->|contains| postiz_readme_license_8439c659
+    postiz_readme_postiz_cli_cb848979 -->|contains| postiz_readme_links_c3ab267e
+    postiz_readme_postiz_cli_cb848979 -->|contains| postiz_readme_supported_platforms_c696ea5e
+    postiz_readme_quick_reference_f4da1d03 -->|contains| postiz_readme_codeblock_45_00c49b42
+    class postiz_readme_postiz_cli_cb848979 concept;
+    class postiz_readme_quick_reference_f4da1d03 concept;
+    class postiz_readme_documentation_c91a3330 concept;
+    class postiz_readme_api_endpoints_d8046421 concept;
+    class postiz_readme_environment_variables_56b92d7b concept;
+    class postiz_readme_error_handling_60e2ed70 concept;
+    class postiz_readme_contributing_1f0e73ba concept;
+    class postiz_readme_license_8439c659 concept;
+    class postiz_readme_links_c3ab267e concept;
+    class postiz_readme_supported_platforms_c696ea5e concept;
+    class postiz_readme_codeblock_45_00c49b42 concept;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>Postiz CLI</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Postiz CLI.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>Documentation</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Documentation.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>API Endpoints</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing API Endpoints.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>Environment Variables</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Environment Variables.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>Error Handling</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Error Handling.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>Quick Reference</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Quick Reference.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>code:bash (# Authentication)</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing code:bash (# Authentication).</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>Contributing</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Contributing.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>License</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing License.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>Links</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Links.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>Supported Platforms</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Supported Platforms.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>skills/postiz/README.md</code></td><td>11 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x10. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 16. Other ====== -->
+<h2 id="other">16. Other</h2>
+<p>Other groups implementation around postiz, agents, skills, tools, mostly in skills/postiz/PUBLISHING.md, skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md, skills/postiz/QUICK_START.md. This section covers 282 nodes and 224 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Other (282 nodes, 224 edges)
+    subgraph other_src_app_layout_tsx_399704fb["src/app/layout.tsx"]
+        tools_brain_portal_src_app_layout_tsx_9833dbf8("layout.tsx")
+        app_layout_geistsans_fa87a2b6("geistSans<br/><small>src/app/layout.tsx</small>")
+        app_layout_geistmono_2107c89f("geistMono<br/><small>src/app/layout.tsx</small>")
+        app_layout_metadata_57b95e99("metadata<br/><small>src/app/layout.tsx</small>")
+        app_layout_rootlayout_bcc6c561("RootLayout()<br/><small>src/app/layout.tsx</small>")
+        frontend_src_app_layout_tsx_5044f8f8("layout.tsx")
+    end
+    subgraph other_frontend_next_config_mjs_421541c9["frontend/next.config.mjs"]
+        frontend_next_config_mjs_a6d7ff40("next.config.mjs")
+        frontend_next_config_nextconfig_e3f7ac6f("nextConfig<br/><small>frontend/next.config.mjs</small>")
+    end
+    subgraph other_skills_postiz_INTEGRATION_TOOLS_WORKFLOW_m_775bd63a["skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md"]
+        postiz_integration_tools_workflow_integration_to_37bcc78d("Integration Tools Workflow<br/><small>skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small>")
+        postiz_integration_tools_workflow_common_tool_me_f7b8cfc8("Common Tool Methods<br/><small>skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small>")
+    end
+    subgraph other_tools_brain_portal_next_config_mjs_fc435717["tools/brain-portal/next.config.mjs"]
+        tools_brain_portal_next_config_mjs_b973f642("next.config.mjs")
+        brain_portal_next_config_nextconfig_928a4ad1("nextConfig<br/><small>tools/brain-portal/next.config.mjs</small>")
+    end
+    subgraph other_tools_brain_portal_postcss_config_mjs_25a67a10["tools/brain-portal/postcss.config.mjs"]
+        tools_brain_portal_postcss_config_mjs_da33be39("postcss.config.mjs")
+        brain_portal_postcss_config_config_ea501d75("config<br/><small>tools/brain-portal/postcss.config.mjs</small>")
+    end
+    backend_app_devices_android_adb_shield_py_9029b09b("shield.py")
     ai_architecture_overview_cinema_machina_core_arc_b11faa14("Cinema Machina Core — Architecture Over...<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
-    ai_architecture_overview_architecture_shape_448931c6("Architecture shape<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
-    docs_ai_architecture_overview_md_160dd9d0("ARCHITECTURE_OVERVIEW.md")
-    ai_architecture_overview_purpose_49da0652("Purpose<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
-    ai_architecture_overview_current_product_directi_15dd779d("Current product direction<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
-    ai_architecture_overview_core_architecture_princ_269afb42("Core architecture principles<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
-    ai_architecture_overview_ai_agent_routing_cad40765("AI / agent routing<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
-    ai_architecture_overview_backend_f46a4324("Backend<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
-    ai_architecture_overview_frontend_e2137009("Frontend<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
-    ai_architecture_overview_high_value_areas_for_fu_e7305adb("High-value areas for future development<br/><small>docs/ai/ARCHITECTURE_OVERVIEW.md</small>")
-    docs_ai_architecture_overview_md_160dd9d0 -->|contains| ai_architecture_overview_cinema_machina_core_arc_b11faa14
-    ai_architecture_overview_cinema_machina_core_arc_b11faa14 -->|contains| ai_architecture_overview_purpose_49da0652
-    ai_architecture_overview_cinema_machina_core_arc_b11faa14 -->|contains| ai_architecture_overview_current_product_directi_15dd779d
-    ai_architecture_overview_cinema_machina_core_arc_b11faa14 -->|contains| ai_architecture_overview_architecture_shape_448931c6
-    ai_architecture_overview_cinema_machina_core_arc_b11faa14 -->|contains| ai_architecture_overview_core_architecture_princ_269afb42
-    ai_architecture_overview_cinema_machina_core_arc_b11faa14 -->|contains| ai_architecture_overview_high_value_areas_for_fu_e7305adb
-    ai_architecture_overview_architecture_shape_448931c6 -->|contains| ai_architecture_overview_backend_f46a4324
-    ai_architecture_overview_architecture_shape_448931c6 -->|contains| ai_architecture_overview_frontend_e2137009
-    ai_architecture_overview_architecture_shape_448931c6 -->|contains| ai_architecture_overview_ai_agent_routing_cad40765
+    postiz_publishing_publishing_the_postiz_cli_to_n_36bf97a2("Publishing the Postiz CLI to npm<br/><small>skills/postiz/PUBLISHING.md</small>")
+    postiz_supported_file_types_platform_specific_no_e2a142ae("Platform-Specific Notes<br/><small>skills/postiz/SUPPORTED_FILE_TYPES.md</small>")
+    tools_brain_portal_postcss_config_mjs_da33be39 -->|contains| brain_portal_postcss_config_config_ea501d75
+    tools_brain_portal_next_config_mjs_b973f642 -->|contains| brain_portal_next_config_nextconfig_928a4ad1
+    tools_brain_portal_src_app_layout_tsx_9833dbf8 -->|contains| app_layout_geistsans_fa87a2b6
+    tools_brain_portal_src_app_layout_tsx_9833dbf8 -->|contains| app_layout_geistmono_2107c89f
+    tools_brain_portal_src_app_layout_tsx_9833dbf8 -->|contains| app_layout_metadata_57b95e99
+    tools_brain_portal_src_app_layout_tsx_9833dbf8 -->|contains| app_layout_rootlayout_bcc6c561
+    app_layout_metadata_57b95e99 -->|contains| frontend_src_app_layout_tsx_5044f8f8
+    app_layout_rootlayout_bcc6c561 -->|contains| frontend_src_app_layout_tsx_5044f8f8
+    frontend_next_config_mjs_a6d7ff40 -->|contains| frontend_next_config_nextconfig_e3f7ac6f
+    postiz_integration_tools_workflow_integration_to_37bcc78d -->|contains| postiz_integration_tools_workflow_common_tool_me_f7b8cfc8
+    %% Omitted for readability: 264 nodes, 0 edges
+    class tools_brain_portal_src_app_layout_tsx_9833dbf8 ui;
+    class app_layout_geistsans_fa87a2b6 ui;
+    class app_layout_geistmono_2107c89f ui;
+    class app_layout_metadata_57b95e99 ui;
+    class app_layout_rootlayout_bcc6c561 ui;
+    class frontend_src_app_layout_tsx_5044f8f8 ui;
+    class frontend_next_config_mjs_a6d7ff40 function;
+    class frontend_next_config_nextconfig_e3f7ac6f function;
+    class postiz_integration_tools_workflow_integration_to_37bcc78d concept;
+    class postiz_integration_tools_workflow_common_tool_me_f7b8cfc8 concept;
+    class tools_brain_portal_next_config_mjs_b973f642 function;
+    class brain_portal_next_config_nextconfig_928a4ad1 function;
+    class tools_brain_portal_postcss_config_mjs_da33be39 function;
+    class brain_portal_postcss_config_config_ea501d75 function;
+    class backend_app_devices_android_adb_shield_py_9029b09b module;
     class ai_architecture_overview_cinema_machina_core_arc_b11faa14 concept;
-    class ai_architecture_overview_architecture_shape_448931c6 concept;
-    class docs_ai_architecture_overview_md_160dd9d0 concept;
-    class ai_architecture_overview_purpose_49da0652 concept;
-    class ai_architecture_overview_current_product_directi_15dd779d concept;
-    class ai_architecture_overview_core_architecture_princ_269afb42 concept;
-    class ai_architecture_overview_ai_agent_routing_cad40765 concept;
-    class ai_architecture_overview_backend_f46a4324 concept;
-    class ai_architecture_overview_frontend_e2137009 concept;
-    class ai_architecture_overview_high_value_areas_for_fu_e7305adb concept;
+    class postiz_publishing_publishing_the_postiz_cli_to_n_36bf97a2 concept;
+    class postiz_supported_file_types_platform_specific_no_e2a142ae concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -3490,111 +3687,8 @@ flowchart LR
   <td>No direct outbound edge</td>
   <td>Documentation node describing High-value areas for future development.</td>
 </tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>docs/ai/ARCHITECTURE_OVERVIEW.md</code></td><td>10 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x9. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 16. Other ====== -->
-<h2 id="other">16. Other</h2>
-<p>Other groups implementation around postiz, agents, skills, codebash, mostly in skills/postiz/PUBLISHING.md, skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md, skills/postiz/README.md. This section covers 274 nodes and 217 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Other (274 nodes, 217 edges)
-    subgraph other_src_app_layout_tsx_399704fb["src/app/layout.tsx"]
-        tools_brain_portal_src_app_layout_tsx_9833dbf8("layout.tsx")
-        app_layout_geistsans_fa87a2b6("geistSans<br/><small>src/app/layout.tsx</small>")
-        app_layout_geistmono_2107c89f("geistMono<br/><small>src/app/layout.tsx</small>")
-        app_layout_metadata_57b95e99("metadata<br/><small>src/app/layout.tsx</small>")
-        app_layout_rootlayout_bcc6c561("RootLayout()<br/><small>src/app/layout.tsx</small>")
-        frontend_src_app_layout_tsx_5044f8f8("layout.tsx")
-    end
-    subgraph other_frontend_next_config_mjs_421541c9["frontend/next.config.mjs"]
-        frontend_next_config_mjs_a6d7ff40("next.config.mjs")
-        frontend_next_config_nextconfig_e3f7ac6f("nextConfig<br/><small>frontend/next.config.mjs</small>")
-    end
-    subgraph other_skills_postiz_INTEGRATION_TOOLS_WORKFLOW_m_775bd63a["skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md"]
-        postiz_integration_tools_workflow_integration_to_37bcc78d("Integration Tools Workflow<br/><small>skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small>")
-        postiz_integration_tools_workflow_common_tool_me_f7b8cfc8("Common Tool Methods<br/><small>skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</small>")
-    end
-    subgraph other_tools_brain_portal_next_config_mjs_fc435717["tools/brain-portal/next.config.mjs"]
-        tools_brain_portal_next_config_mjs_b973f642("next.config.mjs")
-        brain_portal_next_config_nextconfig_928a4ad1("nextConfig<br/><small>tools/brain-portal/next.config.mjs</small>")
-    end
-    subgraph other_tools_brain_portal_postcss_config_mjs_25a67a10["tools/brain-portal/postcss.config.mjs"]
-        tools_brain_portal_postcss_config_mjs_da33be39("postcss.config.mjs")
-        brain_portal_postcss_config_config_ea501d75("config<br/><small>tools/brain-portal/postcss.config.mjs</small>")
-    end
-    backend_app_devices_android_adb_shield_py_9029b09b("shield.py")
-    postiz_publishing_publishing_the_postiz_cli_to_n_36bf97a2("Publishing the Postiz CLI to npm<br/><small>skills/postiz/PUBLISHING.md</small>")
-    postiz_quick_start_postiz_cli_quick_start_guide_f10a36fc("Postiz CLI - Quick Start Guide<br/><small>skills/postiz/QUICK_START.md</small>")
-    postiz_supported_file_types_platform_specific_no_e2a142ae("Platform-Specific Notes<br/><small>skills/postiz/SUPPORTED_FILE_TYPES.md</small>")
-    tools_brain_portal_postcss_config_mjs_da33be39 -->|contains| brain_portal_postcss_config_config_ea501d75
-    tools_brain_portal_next_config_mjs_b973f642 -->|contains| brain_portal_next_config_nextconfig_928a4ad1
-    tools_brain_portal_src_app_layout_tsx_9833dbf8 -->|contains| app_layout_geistsans_fa87a2b6
-    tools_brain_portal_src_app_layout_tsx_9833dbf8 -->|contains| app_layout_geistmono_2107c89f
-    tools_brain_portal_src_app_layout_tsx_9833dbf8 -->|contains| app_layout_metadata_57b95e99
-    tools_brain_portal_src_app_layout_tsx_9833dbf8 -->|contains| app_layout_rootlayout_bcc6c561
-    app_layout_metadata_57b95e99 -->|contains| frontend_src_app_layout_tsx_5044f8f8
-    app_layout_rootlayout_bcc6c561 -->|contains| frontend_src_app_layout_tsx_5044f8f8
-    frontend_next_config_mjs_a6d7ff40 -->|contains| frontend_next_config_nextconfig_e3f7ac6f
-    postiz_integration_tools_workflow_integration_to_37bcc78d -->|contains| postiz_integration_tools_workflow_common_tool_me_f7b8cfc8
-    %% Omitted for readability: 256 nodes, 0 edges
-    class tools_brain_portal_src_app_layout_tsx_9833dbf8 ui;
-    class app_layout_geistsans_fa87a2b6 ui;
-    class app_layout_geistmono_2107c89f ui;
-    class app_layout_metadata_57b95e99 ui;
-    class app_layout_rootlayout_bcc6c561 ui;
-    class frontend_src_app_layout_tsx_5044f8f8 ui;
-    class frontend_next_config_mjs_a6d7ff40 function;
-    class frontend_next_config_nextconfig_e3f7ac6f function;
-    class postiz_integration_tools_workflow_integration_to_37bcc78d concept;
-    class postiz_integration_tools_workflow_common_tool_me_f7b8cfc8 concept;
-    class tools_brain_portal_next_config_mjs_b973f642 function;
-    class brain_portal_next_config_nextconfig_928a4ad1 function;
-    class tools_brain_portal_postcss_config_mjs_da33be39 function;
-    class brain_portal_postcss_config_config_ea501d75 function;
-    class backend_app_devices_android_adb_shield_py_9029b09b module;
-    class postiz_publishing_publishing_the_postiz_cli_to_n_36bf97a2 concept;
-    class postiz_quick_start_postiz_cli_quick_start_guide_f10a36fc concept;
-    class postiz_supported_file_types_platform_specific_no_e2a142ae concept;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
 <tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
+  <td>11</td>
   <td><code>BRAIN_STACK.md</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3602,7 +3696,7 @@ flowchart LR
   <td>Documentation node describing BRAIN_STACK.md.</td>
 </tr>
 <tr>
-  <td>2</td>
+  <td>12</td>
   <td><code>Cinema Machina Brain Stack</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3610,7 +3704,7 @@ flowchart LR
   <td>Documentation node describing Cinema Machina Brain Stack.</td>
 </tr>
 <tr>
-  <td>3</td>
+  <td>13</td>
   <td><code>Purpose</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3618,7 +3712,7 @@ flowchart LR
   <td>Documentation node describing Purpose.</td>
 </tr>
 <tr>
-  <td>4</td>
+  <td>14</td>
   <td><code>Layers</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3626,7 +3720,7 @@ flowchart LR
   <td>Documentation node describing Layers.</td>
 </tr>
 <tr>
-  <td>5</td>
+  <td>15</td>
   <td><code>Graphify</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3634,7 +3728,7 @@ flowchart LR
   <td>Documentation node describing Graphify.</td>
 </tr>
 <tr>
-  <td>6</td>
+  <td>16</td>
   <td><code>Codex Memories</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3642,7 +3736,7 @@ flowchart LR
   <td>Documentation node describing Codex Memories.</td>
 </tr>
 <tr>
-  <td>7</td>
+  <td>17</td>
   <td><code>OMEGA</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3650,7 +3744,7 @@ flowchart LR
   <td>Documentation node describing OMEGA.</td>
 </tr>
 <tr>
-  <td>8</td>
+  <td>18</td>
   <td><code>Obsidian</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3658,7 +3752,7 @@ flowchart LR
   <td>Documentation node describing Obsidian.</td>
 </tr>
 <tr>
-  <td>9</td>
+  <td>19</td>
   <td><code>Working Rule</code><br><small style="color:var(--muted)">docs/ai/BRAIN_STACK.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3666,7 +3760,7 @@ flowchart LR
   <td>Documentation node describing Working Rule.</td>
 </tr>
 <tr>
-  <td>10</td>
+  <td>20</td>
   <td><code>README.md</code><br><small style="color:var(--muted)">tools/brain-portal/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3674,7 +3768,7 @@ flowchart LR
   <td>Documentation node describing README.md.</td>
 </tr>
 <tr>
-  <td>11</td>
+  <td>21</td>
   <td><code>Cinema Machina Brain Portal</code><br><small style="color:var(--muted)">tools/brain-portal/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3682,7 +3776,7 @@ flowchart LR
   <td>Documentation node describing Cinema Machina Brain Portal.</td>
 </tr>
 <tr>
-  <td>12</td>
+  <td>22</td>
   <td><code>Run (local)</code><br><small style="color:var(--muted)">tools/brain-portal/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3690,7 +3784,7 @@ flowchart LR
   <td>Documentation node describing Run (local).</td>
 </tr>
 <tr>
-  <td>13</td>
+  <td>23</td>
   <td><code>code:bash (cd tools/brain-portal)</code><br><small style="color:var(--muted)">tools/brain-portal/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3698,7 +3792,7 @@ flowchart LR
   <td>Documentation node describing code:bash (cd tools/brain-portal).</td>
 </tr>
 <tr>
-  <td>14</td>
+  <td>24</td>
   <td><code>Build</code><br><small style="color:var(--muted)">tools/brain-portal/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3706,7 +3800,7 @@ flowchart LR
   <td>Documentation node describing Build.</td>
 </tr>
 <tr>
-  <td>15</td>
+  <td>25</td>
   <td><code>code:bash (cd tools/brain-portal)</code><br><small style="color:var(--muted)">tools/brain-portal/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3714,7 +3808,7 @@ flowchart LR
   <td>Documentation node describing code:bash (cd tools/brain-portal).</td>
 </tr>
 <tr>
-  <td>16</td>
+  <td>26</td>
   <td><code>Ollama enrichment (optional)</code><br><small style="color:var(--muted)">tools/brain-portal/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3722,7 +3816,7 @@ flowchart LR
   <td>Documentation node describing Ollama enrichment (optional).</td>
 </tr>
 <tr>
-  <td>17</td>
+  <td>27</td>
   <td><code>code:bash (cd tools/brain-portal)</code><br><small style="color:var(--muted)">tools/brain-portal/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3730,7 +3824,7 @@ flowchart LR
   <td>Documentation node describing code:bash (cd tools/brain-portal).</td>
 </tr>
 <tr>
-  <td>18</td>
+  <td>28</td>
   <td><code>Notes</code><br><small style="color:var(--muted)">tools/brain-portal/README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3738,7 +3832,7 @@ flowchart LR
   <td>Documentation node describing Notes.</td>
 </tr>
 <tr>
-  <td>19</td>
+  <td>29</td>
   <td><code>PUBLISHING.md</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -3746,92 +3840,12 @@ flowchart LR
   <td>Documentation node describing PUBLISHING.md.</td>
 </tr>
 <tr>
-  <td>20</td>
+  <td>30</td>
   <td><code>Publishing the Postiz CLI to npm</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>Documentation node describing Publishing the Postiz CLI to npm.</td>
-</tr>
-<tr>
-  <td>21</td>
-  <td><code>Quick Publish (Current Name: &quot;postiz&quot;)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Quick Publish (Current Name: &quot;postiz&quot;).</td>
-</tr>
-<tr>
-  <td>22</td>
-  <td><code>code:bash (# From apps/cli directory)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (# From apps/cli directory).</td>
-</tr>
-<tr>
-  <td>23</td>
-  <td><code>code:bash (npm install -g postiz)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (npm install -g postiz).</td>
-</tr>
-<tr>
-  <td>24</td>
-  <td><code>Using from Monorepo Root</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Using from Monorepo Root.</td>
-</tr>
-<tr>
-  <td>25</td>
-  <td><code>code:json ({)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:json ({).</td>
-</tr>
-<tr>
-  <td>26</td>
-  <td><code>code:bash (# From monorepo root)</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (# From monorepo root).</td>
-</tr>
-<tr>
-  <td>27</td>
-  <td><code>Recommended Names</code><br><small style="color:var(--muted)">skills/postiz/PUBLISHING.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Recommended Names.</td>
-</tr>
-<tr>
-  <td>28</td>
-  <td><code>Common Workflows</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Common Workflows.</td>
-</tr>
-<tr>
-  <td>29</td>
-  <td><code>Reddit Post with Flair</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Reddit Post with Flair.</td>
-</tr>
-<tr>
-  <td>30</td>
-  <td><code>code:bash (#!/bin/bash)</code><br><small style="color:var(--muted)">skills/postiz/README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (#!/bin/bash).</td>
 </tr>
 </table>
 
@@ -3842,9 +3856,9 @@ flowchart LR
       <tr><th>File</th><th>Coverage</th></tr>
       <tr><td><code>skills/postiz/INTEGRATION_TOOLS_WORKFLOW.md</code></td><td>34 nodes</td></tr>
 <tr><td><code>skills/postiz/PUBLISHING.md</code></td><td>34 nodes</td></tr>
-<tr><td><code>skills/postiz/README.md</code></td><td>21 nodes</td></tr>
 <tr><td><code>skills/postiz/PROJECT_STRUCTURE.md</code></td><td>20 nodes</td></tr>
 <tr><td><code>skills/postiz/QUICK_START.md</code></td><td>20 nodes</td></tr>
+<tr><td><code>skills/postiz/README.md</code></td><td>19 nodes</td></tr>
 <tr><td><code>skills/postiz/HOW_TO_RUN.md</code></td><td>14 nodes</td></tr>
 <tr><td><code>skills/postiz/PROVIDER_SETTINGS.md</code></td><td>14 nodes</td></tr>
 <tr><td><code>skills/postiz/INTEGRATION_SETTINGS_DISCOVERY.md</code></td><td>13 nodes</td></tr>
@@ -3852,7 +3866,7 @@ flowchart LR
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x211, explains x6. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x218, explains x6. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -3864,7 +3878,7 @@ flowchart LR
     <h4>Graph</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><td>Nodes</td><td>2747</td></tr>
-      <tr><td>Edges</td><td>3069</td></tr>
+      <tr><td>Edges</td><td>3070</td></tr>
       <tr><td>Hyperedges</td><td>0</td></tr>
       <tr><td>Communities</td><td>279</td></tr>
       <tr><td>Documented Sections</td><td>15</td></tr>
@@ -3873,7 +3887,7 @@ flowchart LR
   <div class="card">
     <h4>Edge Confidence</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>EXTRACTED</td><td>2884</td></tr>
+      <tr><td>EXTRACTED</td><td>2885</td></tr>
       <tr><td>INFERRED</td><td>185</td></tr>
       <tr><td>AMBIGUOUS</td><td>0</td></tr>
     </table>
@@ -3882,7 +3896,7 @@ flowchart LR
 
 <div style="text-align:center; padding:40px 0; color: var(--muted); font-size:0.9rem;">
   <p>Cinema Machina Core — Architecture Documentation</p>
-  <p>Generated: 2026-05-18 21:10 UTC · graphify callflow-html</p>
+  <p>Generated: 2026-05-18 21:12 UTC · graphify callflow-html</p>
 </div>
 
 </div><!-- .container -->

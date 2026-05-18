@@ -862,7 +862,7 @@
       "label": "getDocsQuality()",
       "file_type": "code",
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
-      "source_location": "L87",
+      "source_location": "L114",
       "id": "status_route_getdocsquality",
       "community": 125,
       "norm_label": "getdocsquality()"
@@ -871,7 +871,7 @@
       "label": "which()",
       "file_type": "code",
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
-      "source_location": "L114",
+      "source_location": "L141",
       "id": "status_route_which",
       "community": 125,
       "norm_label": "which()"
@@ -880,7 +880,7 @@
       "label": "getOllamaStatus()",
       "file_type": "code",
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
-      "source_location": "L122",
+      "source_location": "L149",
       "id": "status_route_getollamastatus",
       "community": 125,
       "norm_label": "getollamastatus()"
@@ -889,7 +889,7 @@
       "label": "getCodexHooksStatus()",
       "file_type": "code",
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
-      "source_location": "L156",
+      "source_location": "L183",
       "id": "status_route_getcodexhooksstatus",
       "community": 125,
       "norm_label": "getcodexhooksstatus()"
@@ -898,7 +898,7 @@
       "label": "getToolReadiness()",
       "file_type": "code",
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
-      "source_location": "L176",
+      "source_location": "L203",
       "id": "status_route_gettoolreadiness",
       "community": 125,
       "norm_label": "gettoolreadiness()"
@@ -907,7 +907,7 @@
       "label": "probeHttp()",
       "file_type": "code",
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
-      "source_location": "L185",
+      "source_location": "L212",
       "id": "status_route_probehttp",
       "community": 125,
       "norm_label": "probehttp()"
@@ -916,7 +916,7 @@
       "label": "getLangflowStatus()",
       "file_type": "code",
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
-      "source_location": "L197",
+      "source_location": "L224",
       "id": "status_route_getlangflowstatus",
       "community": 125,
       "norm_label": "getlangflowstatus()"
@@ -925,7 +925,7 @@
       "label": "GET()",
       "file_type": "code",
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
-      "source_location": "L212",
+      "source_location": "L239",
       "id": "status_route_get",
       "community": 125,
       "norm_label": "get()"
@@ -19350,7 +19350,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L1",
       "id": "agents_skills_postiz_readme_md",
-      "community": 52,
+      "community": 217,
       "norm_label": "readme.md"
     },
     {
@@ -19359,7 +19359,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L1",
       "id": "postiz_readme_install_as_a_skill",
-      "community": 52,
+      "community": 217,
       "norm_label": "install as a skill"
     },
     {
@@ -19368,7 +19368,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L3",
       "id": "postiz_readme_codeblock_1",
-      "community": 52,
+      "community": 217,
       "norm_label": "code:bash (npx skills add gitroomhq/postiz-agent)"
     },
     {
@@ -19386,7 +19386,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L15",
       "id": "postiz_readme_installation",
-      "community": 52,
+      "community": 253,
       "norm_label": "installation"
     },
     {
@@ -19395,7 +19395,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L17",
       "id": "postiz_readme_from_npm_recommended",
-      "community": 52,
+      "community": 253,
       "norm_label": "from npm (recommended)"
     },
     {
@@ -19404,7 +19404,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L19",
       "id": "postiz_readme_codeblock_2",
-      "community": 52,
+      "community": 253,
       "norm_label": "code:bash (npm install -g postiz)"
     },
     {
@@ -19494,7 +19494,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L72",
       "id": "postiz_readme_discovery_settings",
-      "community": 253,
+      "community": 31,
       "norm_label": "discovery & settings"
     },
     {
@@ -19503,7 +19503,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L75",
       "id": "postiz_readme_codeblock_7",
-      "community": 253,
+      "community": 31,
       "norm_label": "code:bash (postiz integrations:list)"
     },
     {
@@ -19512,7 +19512,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L82",
       "id": "postiz_readme_codeblock_8",
-      "community": 253,
+      "community": 31,
       "norm_label": "code:bash (postiz integrations:settings <integration-id>)"
     },
     {
@@ -19521,7 +19521,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L89",
       "id": "postiz_readme_codeblock_9",
-      "community": 253,
+      "community": 31,
       "norm_label": "code:bash (postiz integrations:trigger <integration-id> <method-name>)"
     },
     {
@@ -19530,7 +19530,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L97",
       "id": "postiz_readme_codeblock_10",
-      "community": 253,
+      "community": 31,
       "norm_label": "code:bash (# get reddit flairs)"
     },
     {
@@ -19539,7 +19539,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L110",
       "id": "postiz_readme_creating_posts",
-      "community": 217,
+      "community": 31,
       "norm_label": "creating posts"
     },
     {
@@ -19548,7 +19548,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L113",
       "id": "postiz_readme_codeblock_11",
-      "community": 217,
+      "community": 31,
       "norm_label": "code:bash (postiz posts:create -c \"content\" -s \"2024-12-31t12:00:00z\" -)"
     },
     {
@@ -19557,7 +19557,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L118",
       "id": "postiz_readme_codeblock_12",
-      "community": 217,
+      "community": 31,
       "norm_label": "code:bash (postiz posts:create -c \"content\" -s \"2024-12-31t12:00:00z\" -)"
     },
     {
@@ -19566,7 +19566,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L123",
       "id": "postiz_readme_codeblock_13",
-      "community": 217,
+      "community": 31,
       "norm_label": "code:bash (postiz posts:create -c \"content\" -m \"img1.jpg,img2.jpg\" -s \")"
     },
     {
@@ -19575,7 +19575,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L128",
       "id": "postiz_readme_codeblock_14",
-      "community": 217,
+      "community": 31,
       "norm_label": "code:bash (postiz posts:create \\)"
     },
     {
@@ -19584,7 +19584,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L138",
       "id": "postiz_readme_codeblock_15",
-      "community": 217,
+      "community": 31,
       "norm_label": "code:bash (postiz posts:create -c \"content\" -s \"2024-12-31t12:00:00z\" -)"
     },
     {
@@ -19593,7 +19593,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L143",
       "id": "postiz_readme_codeblock_16",
-      "community": 217,
+      "community": 31,
       "norm_label": "code:bash (postiz posts:create \\)"
     },
     {
@@ -19602,7 +19602,7 @@
       "source_file": ".agents/skills/postiz/README.md",
       "source_location": "L152",
       "id": "postiz_readme_codeblock_17",
-      "community": 217,
+      "community": 31,
       "norm_label": "code:bash (postiz posts:create --json post.json)"
     },
     {
@@ -24856,9 +24856,9 @@
       "source_file": "tools/brain-portal/postcss.config.mjs",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_postcss_config_mjs",
-      "target": "brain_portal_postcss_config_config",
-      "confidence_score": 1.0
+      "target": "brain_portal_postcss_config_config"
     },
     {
       "relation": "contains",
@@ -24866,9 +24866,9 @@
       "source_file": "tools/brain-portal/next.config.mjs",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_next_config_mjs",
-      "target": "brain_portal_next_config_nextconfig",
-      "confidence_score": 1.0
+      "target": "brain_portal_next_config_nextconfig"
     },
     {
       "relation": "contains",
@@ -24876,9 +24876,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_package_json",
-      "target": "brain_portal_package_name",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_name"
     },
     {
       "relation": "contains",
@@ -24886,9 +24886,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_package_json",
-      "target": "brain_portal_package_version",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_version"
     },
     {
       "relation": "contains",
@@ -24896,9 +24896,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_package_json",
-      "target": "brain_portal_package_private",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_private"
     },
     {
       "relation": "contains",
@@ -24906,9 +24906,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_package_json",
-      "target": "brain_portal_package_scripts",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_scripts"
     },
     {
       "relation": "contains",
@@ -24916,9 +24916,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_package_json",
-      "target": "brain_portal_package_dependencies",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_dependencies"
     },
     {
       "relation": "contains",
@@ -24926,9 +24926,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_package_json",
-      "target": "brain_portal_package_devdependencies",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies"
     },
     {
       "relation": "contains",
@@ -24936,9 +24936,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_scripts",
-      "target": "brain_portal_package_scripts_dev",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_scripts_dev"
     },
     {
       "relation": "contains",
@@ -24946,9 +24946,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_scripts",
-      "target": "brain_portal_package_scripts_build",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_scripts_build"
     },
     {
       "relation": "contains",
@@ -24956,9 +24956,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_scripts",
-      "target": "brain_portal_package_scripts_start",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_scripts_start"
     },
     {
       "relation": "contains",
@@ -24966,9 +24966,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_scripts",
-      "target": "brain_portal_package_scripts_lint",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_scripts_lint"
     },
     {
       "relation": "contains",
@@ -24976,9 +24976,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_scripts",
-      "target": "brain_portal_package_scripts_enrich",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_scripts_enrich"
     },
     {
       "relation": "contains",
@@ -24986,9 +24986,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_dependencies",
-      "target": "brain_portal_package_dependencies_3d_force_graph",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_dependencies_3d_force_graph"
     },
     {
       "relation": "contains",
@@ -24996,9 +24996,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_dependencies",
-      "target": "brain_portal_package_dependencies_lucide_react",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_dependencies_lucide_react"
     },
     {
       "relation": "contains",
@@ -25006,9 +25006,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_dependencies",
-      "target": "brain_portal_package_dependencies_next",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_dependencies_next"
     },
     {
       "relation": "contains",
@@ -25016,9 +25016,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_dependencies",
-      "target": "brain_portal_package_dependencies_react",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_dependencies_react"
     },
     {
       "relation": "contains",
@@ -25026,9 +25026,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_dependencies",
-      "target": "brain_portal_package_dependencies_react_dom",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_dependencies_react_dom"
     },
     {
       "relation": "contains",
@@ -25036,9 +25036,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_dependencies",
-      "target": "brain_portal_package_dependencies_three",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_dependencies_three"
     },
     {
       "relation": "contains",
@@ -25046,9 +25046,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_devdependencies",
-      "target": "brain_portal_package_devdependencies_tailwindcss_postcss",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies_tailwindcss_postcss"
     },
     {
       "relation": "contains",
@@ -25056,9 +25056,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_devdependencies",
-      "target": "brain_portal_package_devdependencies_types_node",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies_types_node"
     },
     {
       "relation": "contains",
@@ -25066,9 +25066,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_devdependencies",
-      "target": "brain_portal_package_devdependencies_types_react",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies_types_react"
     },
     {
       "relation": "contains",
@@ -25076,9 +25076,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_devdependencies",
-      "target": "brain_portal_package_devdependencies_types_react_dom",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies_types_react_dom"
     },
     {
       "relation": "contains",
@@ -25086,9 +25086,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_devdependencies",
-      "target": "brain_portal_package_devdependencies_types_three",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies_types_three"
     },
     {
       "relation": "contains",
@@ -25096,9 +25096,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_devdependencies",
-      "target": "brain_portal_package_devdependencies_eslint",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies_eslint"
     },
     {
       "relation": "contains",
@@ -25106,9 +25106,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_devdependencies",
-      "target": "brain_portal_package_devdependencies_eslint_config_next",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies_eslint_config_next"
     },
     {
       "relation": "contains",
@@ -25116,9 +25116,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_devdependencies",
-      "target": "brain_portal_package_devdependencies_tailwindcss",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies_tailwindcss"
     },
     {
       "relation": "contains",
@@ -25126,9 +25126,9 @@
       "source_file": "tools/brain-portal/package.json",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_package_devdependencies",
-      "target": "brain_portal_package_devdependencies_typescript",
-      "confidence_score": 1.0
+      "target": "brain_portal_package_devdependencies_typescript"
     },
     {
       "relation": "contains",
@@ -25136,9 +25136,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_tsconfig_json",
-      "target": "brain_portal_tsconfig_compileroptions",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions"
     },
     {
       "relation": "contains",
@@ -25146,9 +25146,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_tsconfig_json",
-      "target": "brain_portal_tsconfig_include",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_include"
     },
     {
       "relation": "contains",
@@ -25156,9 +25156,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_tsconfig_json",
-      "target": "brain_portal_tsconfig_exclude",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_exclude"
     },
     {
       "relation": "contains",
@@ -25166,9 +25166,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_target",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_target"
     },
     {
       "relation": "contains",
@@ -25176,9 +25176,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_lib",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_lib"
     },
     {
       "relation": "contains",
@@ -25186,9 +25186,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_allowjs",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_allowjs"
     },
     {
       "relation": "contains",
@@ -25196,9 +25196,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_skiplibcheck",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_skiplibcheck"
     },
     {
       "relation": "contains",
@@ -25206,9 +25206,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_strict",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_strict"
     },
     {
       "relation": "contains",
@@ -25216,9 +25216,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_noemit",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_noemit"
     },
     {
       "relation": "contains",
@@ -25226,9 +25226,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_esmoduleinterop",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_esmoduleinterop"
     },
     {
       "relation": "contains",
@@ -25236,9 +25236,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_module",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_module"
     },
     {
       "relation": "contains",
@@ -25246,9 +25246,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_moduleresolution",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_moduleresolution"
     },
     {
       "relation": "contains",
@@ -25256,9 +25256,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_resolvejsonmodule",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_resolvejsonmodule"
     },
     {
       "relation": "contains",
@@ -25266,9 +25266,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_isolatedmodules",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_isolatedmodules"
     },
     {
       "relation": "contains",
@@ -25276,9 +25276,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_jsx",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_jsx"
     },
     {
       "relation": "contains",
@@ -25286,9 +25286,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_incremental",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_incremental"
     },
     {
       "relation": "contains",
@@ -25296,9 +25296,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_plugins",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_plugins"
     },
     {
       "relation": "contains",
@@ -25306,9 +25306,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions",
-      "target": "brain_portal_tsconfig_compileroptions_paths",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_compileroptions_paths"
     },
     {
       "relation": "contains",
@@ -25316,9 +25316,9 @@
       "source_file": "tools/brain-portal/tsconfig.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_tsconfig_compileroptions_paths",
-      "target": "brain_portal_tsconfig_paths",
-      "confidence_score": 1.0
+      "target": "brain_portal_tsconfig_paths"
     },
     {
       "relation": "contains",
@@ -25326,9 +25326,9 @@
       "source_file": "tools/brain-portal/.eslintrc.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_eslintrc_json",
-      "target": "brain_portal_eslintrc_root",
-      "confidence_score": 1.0
+      "target": "brain_portal_eslintrc_root"
     },
     {
       "relation": "contains",
@@ -25336,9 +25336,9 @@
       "source_file": "tools/brain-portal/.eslintrc.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_eslintrc_json",
-      "target": "brain_portal_eslintrc_extends",
-      "confidence_score": 1.0
+      "target": "brain_portal_eslintrc_extends"
     },
     {
       "relation": "contains",
@@ -25346,9 +25346,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_repo_root",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_repo_root"
     },
     {
       "relation": "contains",
@@ -25356,9 +25356,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_graph_path",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_graph_path"
     },
     {
       "relation": "contains",
@@ -25366,9 +25366,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_out_communities",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_out_communities"
     },
     {
       "relation": "contains",
@@ -25376,9 +25376,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_out_nodes",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_out_nodes"
     },
     {
       "relation": "contains",
@@ -25386,9 +25386,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_max_communities",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_max_communities"
     },
     {
       "relation": "contains",
@@ -25396,9 +25396,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_max_top_nodes",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_max_top_nodes"
     },
     {
       "relation": "contains",
@@ -25406,9 +25406,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_nowiso",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_nowiso"
     },
     {
       "relation": "contains",
@@ -25416,9 +25416,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_run",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_run"
     },
     {
       "relation": "contains",
@@ -25426,9 +25426,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_ensureollamaavailable",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_ensureollamaavailable"
     },
     {
       "relation": "contains",
@@ -25436,9 +25436,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_computedegrees",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_computedegrees"
     },
     {
       "relation": "contains",
@@ -25446,9 +25446,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_summarizenodeforprompt",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_summarizenodeforprompt"
     },
     {
       "relation": "contains",
@@ -25456,9 +25456,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_ollamasummarize",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_ollamasummarize"
     },
     {
       "relation": "contains",
@@ -25466,9 +25466,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_scripts_enrich_graphify_mjs",
-      "target": "scripts_enrich_graphify_main",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_main"
     },
     {
       "relation": "calls",
@@ -25477,9 +25477,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_enrich_graphify_main",
-      "target": "scripts_enrich_graphify_nowiso",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_nowiso"
     },
     {
       "relation": "calls",
@@ -25488,9 +25488,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_enrich_graphify_ensureollamaavailable",
-      "target": "scripts_enrich_graphify_run",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_run"
     },
     {
       "relation": "calls",
@@ -25499,9 +25499,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_enrich_graphify_ollamasummarize",
-      "target": "scripts_enrich_graphify_run",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_run"
     },
     {
       "relation": "calls",
@@ -25510,9 +25510,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_enrich_graphify_main",
-      "target": "scripts_enrich_graphify_ensureollamaavailable",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_ensureollamaavailable"
     },
     {
       "relation": "calls",
@@ -25521,9 +25521,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_enrich_graphify_main",
-      "target": "scripts_enrich_graphify_computedegrees",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_computedegrees"
     },
     {
       "relation": "calls",
@@ -25532,9 +25532,9 @@
       "source_file": "tools/brain-portal/scripts/enrich-graphify.mjs",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_enrich_graphify_main",
-      "target": "scripts_enrich_graphify_ollamasummarize",
-      "confidence_score": 1.0
+      "target": "scripts_enrich_graphify_ollamasummarize"
     },
     {
       "relation": "contains",
@@ -25542,9 +25542,9 @@
       "source_file": "tools/brain-portal/src/app/layout.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_layout_tsx",
-      "target": "app_layout_geistsans",
-      "confidence_score": 1.0
+      "target": "app_layout_geistsans"
     },
     {
       "relation": "contains",
@@ -25552,9 +25552,9 @@
       "source_file": "tools/brain-portal/src/app/layout.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_layout_tsx",
-      "target": "app_layout_geistmono",
-      "confidence_score": 1.0
+      "target": "app_layout_geistmono"
     },
     {
       "relation": "contains",
@@ -25562,9 +25562,9 @@
       "source_file": "tools/brain-portal/src/app/layout.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_layout_tsx",
-      "target": "app_layout_metadata",
-      "confidence_score": 1.0
+      "target": "app_layout_metadata"
     },
     {
       "relation": "contains",
@@ -25572,9 +25572,9 @@
       "source_file": "tools/brain-portal/src/app/layout.tsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_layout_tsx",
-      "target": "app_layout_rootlayout",
-      "confidence_score": 1.0
+      "target": "app_layout_rootlayout"
     },
     {
       "relation": "contains",
@@ -25603,9 +25603,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "tools_brain_portal_src_components_bottom_pulse_strip_tsx",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_components_bottom_pulse_strip_tsx"
     },
     {
       "relation": "imports",
@@ -25614,9 +25614,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "components_bottom_pulse_strip_bottompulsestrip",
-      "confidence_score": 1.0
+      "target": "components_bottom_pulse_strip_bottompulsestrip"
     },
     {
       "relation": "imports_from",
@@ -25625,9 +25625,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "tools_brain_portal_src_components_hero_orb_canvas_tsx",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_components_hero_orb_canvas_tsx"
     },
     {
       "relation": "imports",
@@ -25636,9 +25636,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "components_hero_orb_canvas_heroorbcanvas",
-      "confidence_score": 1.0
+      "target": "components_hero_orb_canvas_heroorbcanvas"
     },
     {
       "relation": "imports_from",
@@ -25647,9 +25647,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "tools_brain_portal_src_components_left_control_rail_tsx",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_components_left_control_rail_tsx"
     },
     {
       "relation": "imports",
@@ -25658,9 +25658,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "components_left_control_rail_leftcontrolrail",
-      "confidence_score": 1.0
+      "target": "components_left_control_rail_leftcontrolrail"
     },
     {
       "relation": "imports_from",
@@ -25669,9 +25669,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "tools_brain_portal_src_components_right_inspector_tsx",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_components_right_inspector_tsx"
     },
     {
       "relation": "imports",
@@ -25680,9 +25680,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "components_right_inspector_rightinspector",
-      "confidence_score": 1.0
+      "target": "components_right_inspector_rightinspector"
     },
     {
       "relation": "imports_from",
@@ -25691,9 +25691,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "tools_brain_portal_src_lib_types_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_types_ts"
     },
     {
       "relation": "imports",
@@ -25702,9 +25702,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "lib_types_brainportalnode",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalnode"
     },
     {
       "relation": "imports",
@@ -25713,9 +25713,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "lib_types_brainportalstatus",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalstatus"
     },
     {
       "relation": "imports",
@@ -25724,9 +25724,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "lib_types_graphifygraph",
-      "confidence_score": 1.0
+      "target": "lib_types_graphifygraph"
     },
     {
       "relation": "imports",
@@ -25735,9 +25735,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "lib_types_orbsummaries",
-      "confidence_score": 1.0
+      "target": "lib_types_orbsummaries"
     },
     {
       "relation": "contains",
@@ -25745,9 +25745,9 @@
       "source_file": "tools/brain-portal/src/app/page.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_page_tsx",
-      "target": "app_page_brainportalhome",
-      "confidence_score": 1.0
+      "target": "app_page_brainportalhome"
     },
     {
       "relation": "imports_from",
@@ -25756,9 +25756,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "tools_brain_portal_src_lib_paths_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_paths_ts"
     },
     {
       "relation": "imports",
@@ -25767,9 +25767,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "lib_paths_repopath",
-      "confidence_score": 1.0
+      "target": "lib_paths_repopath"
     },
     {
       "relation": "imports_from",
@@ -25778,9 +25778,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "tools_brain_portal_src_lib_safe_exec_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_safe_exec_ts"
     },
     {
       "relation": "imports",
@@ -25789,9 +25789,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "lib_safe_exec_safeexecfile",
-      "confidence_score": 1.0
+      "target": "lib_safe_exec_safeexecfile"
     },
     {
       "relation": "imports_from",
@@ -25800,9 +25800,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "tools_brain_portal_src_lib_types_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_types_ts"
     },
     {
       "relation": "imports",
@@ -25811,9 +25811,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "lib_types_brainportalstatus",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalstatus"
     },
     {
       "relation": "imports",
@@ -25822,9 +25822,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "lib_types_docsquality",
-      "confidence_score": 1.0
+      "target": "lib_types_docsquality"
     },
     {
       "relation": "imports",
@@ -25833,9 +25833,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "lib_types_graphifyfreshness",
-      "confidence_score": 1.0
+      "target": "lib_types_graphifyfreshness"
     },
     {
       "relation": "imports",
@@ -25844,9 +25844,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "lib_types_ollamastatus",
-      "confidence_score": 1.0
+      "target": "lib_types_ollamastatus"
     },
     {
       "relation": "imports",
@@ -25855,9 +25855,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "lib_types_toolreadiness",
-      "confidence_score": 1.0
+      "target": "lib_types_toolreadiness"
     },
     {
       "relation": "contains",
@@ -25865,9 +25865,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_nowiso",
-      "confidence_score": 1.0
+      "target": "status_route_nowiso"
     },
     {
       "relation": "contains",
@@ -25875,9 +25875,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_levelfromavailability",
-      "confidence_score": 1.0
+      "target": "status_route_levelfromavailability"
     },
     {
       "relation": "contains",
@@ -25885,9 +25885,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_filesizebytes",
-      "confidence_score": 1.0
+      "target": "status_route_filesizebytes"
     },
     {
       "relation": "contains",
@@ -25895,9 +25895,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_getgitstatus",
-      "confidence_score": 1.0
+      "target": "status_route_getgitstatus"
     },
     {
       "relation": "contains",
@@ -25905,9 +25905,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_getgraphifyfreshness",
-      "confidence_score": 1.0
+      "target": "status_route_getgraphifyfreshness"
     },
     {
       "relation": "contains",
@@ -25915,9 +25915,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_getdocsquality",
-      "confidence_score": 1.0
+      "target": "status_route_getdocsquality"
     },
     {
       "relation": "contains",
@@ -25925,9 +25925,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_which",
-      "confidence_score": 1.0
+      "target": "status_route_which"
     },
     {
       "relation": "contains",
@@ -25935,9 +25935,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_getollamastatus",
-      "confidence_score": 1.0
+      "target": "status_route_getollamastatus"
     },
     {
       "relation": "contains",
@@ -25945,9 +25945,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_getcodexhooksstatus",
-      "confidence_score": 1.0
+      "target": "status_route_getcodexhooksstatus"
     },
     {
       "relation": "contains",
@@ -25955,9 +25955,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L176",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_gettoolreadiness",
-      "confidence_score": 1.0
+      "target": "status_route_gettoolreadiness"
     },
     {
       "relation": "contains",
@@ -25965,9 +25965,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L185",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_probehttp",
-      "confidence_score": 1.0
+      "target": "status_route_probehttp"
     },
     {
       "relation": "contains",
@@ -25975,9 +25975,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L197",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_getlangflowstatus",
-      "confidence_score": 1.0
+      "target": "status_route_getlangflowstatus"
     },
     {
       "relation": "contains",
@@ -25985,9 +25985,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L212",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_status_route_ts",
-      "target": "status_route_get",
-      "confidence_score": 1.0
+      "target": "status_route_get"
     },
     {
       "relation": "calls",
@@ -25996,9 +25996,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L227",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_get",
-      "target": "status_route_nowiso",
-      "confidence_score": 1.0
+      "target": "status_route_nowiso"
     },
     {
       "relation": "calls",
@@ -26007,9 +26007,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L180",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_gettoolreadiness",
-      "target": "status_route_levelfromavailability",
-      "confidence_score": 1.0
+      "target": "status_route_levelfromavailability"
     },
     {
       "relation": "calls",
@@ -26018,9 +26018,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_getgraphifyfreshness",
-      "target": "status_route_filesizebytes",
-      "confidence_score": 1.0
+      "target": "status_route_filesizebytes"
     },
     {
       "relation": "calls",
@@ -26029,9 +26029,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L158",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_getcodexhooksstatus",
-      "target": "status_route_filesizebytes",
-      "confidence_score": 1.0
+      "target": "status_route_filesizebytes"
     },
     {
       "relation": "calls",
@@ -26040,9 +26040,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L213",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_get",
-      "target": "status_route_getgitstatus",
-      "confidence_score": 1.0
+      "target": "status_route_getgitstatus"
     },
     {
       "relation": "calls",
@@ -26073,9 +26073,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L214",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_get",
-      "target": "status_route_getgraphifyfreshness",
-      "confidence_score": 1.0
+      "target": "status_route_getgraphifyfreshness"
     },
     {
       "relation": "calls",
@@ -26092,12 +26092,23 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tools/brain-portal/src/app/api/status/route.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "status_route_getgraphifyfreshness",
+      "target": "lib_safe_exec_safeexecfile"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L215",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_get",
-      "target": "status_route_getdocsquality",
-      "confidence_score": 1.0
+      "target": "status_route_getdocsquality"
     },
     {
       "relation": "calls",
@@ -26106,9 +26117,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_getollamastatus",
-      "target": "status_route_which",
-      "confidence_score": 1.0
+      "target": "status_route_which"
     },
     {
       "relation": "calls",
@@ -26117,9 +26128,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L177",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_gettoolreadiness",
-      "target": "status_route_which",
-      "confidence_score": 1.0
+      "target": "status_route_which"
     },
     {
       "relation": "calls",
@@ -26150,9 +26161,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L216",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_get",
-      "target": "status_route_getollamastatus",
-      "confidence_score": 1.0
+      "target": "status_route_getollamastatus"
     },
     {
       "relation": "calls",
@@ -26183,9 +26194,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L224",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_get",
-      "target": "status_route_getcodexhooksstatus",
-      "confidence_score": 1.0
+      "target": "status_route_getcodexhooksstatus"
     },
     {
       "relation": "calls",
@@ -26205,9 +26216,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_get",
-      "target": "status_route_gettoolreadiness",
-      "confidence_score": 1.0
+      "target": "status_route_gettoolreadiness"
     },
     {
       "relation": "calls",
@@ -26216,9 +26227,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L204",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_getlangflowstatus",
-      "target": "status_route_probehttp",
-      "confidence_score": 1.0
+      "target": "status_route_probehttp"
     },
     {
       "relation": "calls",
@@ -26227,9 +26238,9 @@
       "source_file": "tools/brain-portal/src/app/api/status/route.ts",
       "source_location": "L222",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "status_route_get",
-      "target": "status_route_getlangflowstatus",
-      "confidence_score": 1.0
+      "target": "status_route_getlangflowstatus"
     },
     {
       "relation": "imports_from",
@@ -26238,9 +26249,9 @@
       "source_file": "tools/brain-portal/src/app/api/enrichment/summaries/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_enrichment_summaries_route_ts",
-      "target": "tools_brain_portal_src_lib_paths_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_paths_ts"
     },
     {
       "relation": "imports",
@@ -26249,9 +26260,9 @@
       "source_file": "tools/brain-portal/src/app/api/enrichment/summaries/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_enrichment_summaries_route_ts",
-      "target": "lib_paths_repopath",
-      "confidence_score": 1.0
+      "target": "lib_paths_repopath"
     },
     {
       "relation": "imports_from",
@@ -26260,9 +26271,9 @@
       "source_file": "tools/brain-portal/src/app/api/enrichment/summaries/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_enrichment_summaries_route_ts",
-      "target": "tools_brain_portal_src_lib_types_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_types_ts"
     },
     {
       "relation": "imports",
@@ -26271,9 +26282,9 @@
       "source_file": "tools/brain-portal/src/app/api/enrichment/summaries/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_enrichment_summaries_route_ts",
-      "target": "lib_types_orbsummaries",
-      "confidence_score": 1.0
+      "target": "lib_types_orbsummaries"
     },
     {
       "relation": "contains",
@@ -26281,9 +26292,9 @@
       "source_file": "tools/brain-portal/src/app/api/enrichment/summaries/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_enrichment_summaries_route_ts",
-      "target": "summaries_route_sidecarenvelope",
-      "confidence_score": 1.0
+      "target": "summaries_route_sidecarenvelope"
     },
     {
       "relation": "contains",
@@ -26291,9 +26302,9 @@
       "source_file": "tools/brain-portal/src/app/api/enrichment/summaries/route.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_enrichment_summaries_route_ts",
-      "target": "summaries_route_readsidecar",
-      "confidence_score": 1.0
+      "target": "summaries_route_readsidecar"
     },
     {
       "relation": "contains",
@@ -26301,9 +26312,9 @@
       "source_file": "tools/brain-portal/src/app/api/enrichment/summaries/route.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_enrichment_summaries_route_ts",
-      "target": "summaries_route_get",
-      "confidence_score": 1.0
+      "target": "summaries_route_get"
     },
     {
       "relation": "calls",
@@ -26312,9 +26323,9 @@
       "source_file": "tools/brain-portal/src/app/api/enrichment/summaries/route.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "summaries_route_get",
-      "target": "summaries_route_readsidecar",
-      "confidence_score": 1.0
+      "target": "summaries_route_readsidecar"
     },
     {
       "relation": "calls",
@@ -26334,9 +26345,9 @@
       "source_file": "tools/brain-portal/src/app/api/graphify/graph/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_graphify_graph_route_ts",
-      "target": "tools_brain_portal_src_lib_paths_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_paths_ts"
     },
     {
       "relation": "imports",
@@ -26345,9 +26356,9 @@
       "source_file": "tools/brain-portal/src/app/api/graphify/graph/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_graphify_graph_route_ts",
-      "target": "lib_paths_repopath",
-      "confidence_score": 1.0
+      "target": "lib_paths_repopath"
     },
     {
       "relation": "imports_from",
@@ -26356,9 +26367,9 @@
       "source_file": "tools/brain-portal/src/app/api/graphify/graph/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_graphify_graph_route_ts",
-      "target": "tools_brain_portal_src_lib_types_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_types_ts"
     },
     {
       "relation": "imports",
@@ -26367,9 +26378,9 @@
       "source_file": "tools/brain-portal/src/app/api/graphify/graph/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_graphify_graph_route_ts",
-      "target": "lib_types_graphifygraph",
-      "confidence_score": 1.0
+      "target": "lib_types_graphifygraph"
     },
     {
       "relation": "contains",
@@ -26377,9 +26388,9 @@
       "source_file": "tools/brain-portal/src/app/api/graphify/graph/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_api_graphify_graph_route_ts",
-      "target": "graph_route_get",
-      "confidence_score": 1.0
+      "target": "graph_route_get"
     },
     {
       "relation": "calls",
@@ -26399,9 +26410,9 @@
       "source_file": "tools/brain-portal/src/app/orb/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_orb_route_ts",
-      "target": "tools_brain_portal_src_lib_paths_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_paths_ts"
     },
     {
       "relation": "imports",
@@ -26410,9 +26421,9 @@
       "source_file": "tools/brain-portal/src/app/orb/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_orb_route_ts",
-      "target": "lib_paths_repopath",
-      "confidence_score": 1.0
+      "target": "lib_paths_repopath"
     },
     {
       "relation": "contains",
@@ -26420,9 +26431,9 @@
       "source_file": "tools/brain-portal/src/app/orb/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_orb_route_ts",
-      "target": "orb_route_get",
-      "confidence_score": 1.0
+      "target": "orb_route_get"
     },
     {
       "relation": "calls",
@@ -26442,9 +26453,9 @@
       "source_file": "tools/brain-portal/src/app/orb/orb-assets/[file]/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_orb_orb_assets_file_route_ts",
-      "target": "tools_brain_portal_src_lib_paths_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_paths_ts"
     },
     {
       "relation": "imports",
@@ -26453,9 +26464,9 @@
       "source_file": "tools/brain-portal/src/app/orb/orb-assets/[file]/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_orb_orb_assets_file_route_ts",
-      "target": "lib_paths_repopath",
-      "confidence_score": 1.0
+      "target": "lib_paths_repopath"
     },
     {
       "relation": "contains",
@@ -26463,9 +26474,9 @@
       "source_file": "tools/brain-portal/src/app/orb/orb-assets/[file]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_orb_orb_assets_file_route_ts",
-      "target": "file_route_contenttypefor",
-      "confidence_score": 1.0
+      "target": "file_route_contenttypefor"
     },
     {
       "relation": "contains",
@@ -26473,9 +26484,9 @@
       "source_file": "tools/brain-portal/src/app/orb/orb-assets/[file]/route.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_app_orb_orb_assets_file_route_ts",
-      "target": "file_route_get",
-      "confidence_score": 1.0
+      "target": "file_route_get"
     },
     {
       "relation": "calls",
@@ -26484,9 +26495,9 @@
       "source_file": "tools/brain-portal/src/app/orb/orb-assets/[file]/route.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "file_route_get",
-      "target": "file_route_contenttypefor",
-      "confidence_score": 1.0
+      "target": "file_route_contenttypefor"
     },
     {
       "relation": "calls",
@@ -26506,9 +26517,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_right_inspector_tsx",
-      "target": "tools_brain_portal_src_components_panel_tsx",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_components_panel_tsx"
     },
     {
       "relation": "imports",
@@ -26517,9 +26528,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_right_inspector_tsx",
-      "target": "components_panel_panel",
-      "confidence_score": 1.0
+      "target": "components_panel_panel"
     },
     {
       "relation": "imports_from",
@@ -26528,9 +26539,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_right_inspector_tsx",
-      "target": "tools_brain_portal_src_lib_types_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_types_ts"
     },
     {
       "relation": "imports",
@@ -26539,9 +26550,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_right_inspector_tsx",
-      "target": "lib_types_brainportalnode",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalnode"
     },
     {
       "relation": "imports",
@@ -26550,9 +26561,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_right_inspector_tsx",
-      "target": "lib_types_brainportalstatus",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalstatus"
     },
     {
       "relation": "imports",
@@ -26561,9 +26572,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_right_inspector_tsx",
-      "target": "lib_types_orbsummaries",
-      "confidence_score": 1.0
+      "target": "lib_types_orbsummaries"
     },
     {
       "relation": "contains",
@@ -26571,9 +26582,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_right_inspector_tsx",
-      "target": "components_right_inspector_pillclass",
-      "confidence_score": 1.0
+      "target": "components_right_inspector_pillclass"
     },
     {
       "relation": "contains",
@@ -26581,9 +26592,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_right_inspector_tsx",
-      "target": "components_right_inspector_getnodekey",
-      "confidence_score": 1.0
+      "target": "components_right_inspector_getnodekey"
     },
     {
       "relation": "contains",
@@ -26591,9 +26602,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_right_inspector_tsx",
-      "target": "components_right_inspector_rightinspector",
-      "confidence_score": 1.0
+      "target": "components_right_inspector_rightinspector"
     },
     {
       "relation": "calls",
@@ -26602,9 +26613,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_right_inspector_rightinspector",
-      "target": "components_right_inspector_pillclass",
-      "confidence_score": 1.0
+      "target": "components_right_inspector_pillclass"
     },
     {
       "relation": "calls",
@@ -26613,9 +26624,9 @@
       "source_file": "tools/brain-portal/src/components/right-inspector.tsx",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_right_inspector_rightinspector",
-      "target": "components_right_inspector_getnodekey",
-      "confidence_score": 1.0
+      "target": "components_right_inspector_getnodekey"
     },
     {
       "relation": "imports_from",
@@ -26624,9 +26635,9 @@
       "source_file": "tools/brain-portal/src/components/bottom-pulse-strip.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_bottom_pulse_strip_tsx",
-      "target": "tools_brain_portal_src_lib_types_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_types_ts"
     },
     {
       "relation": "imports",
@@ -26635,9 +26646,9 @@
       "source_file": "tools/brain-portal/src/components/bottom-pulse-strip.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_bottom_pulse_strip_tsx",
-      "target": "lib_types_brainportalstatus",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalstatus"
     },
     {
       "relation": "imports",
@@ -26646,9 +26657,9 @@
       "source_file": "tools/brain-portal/src/components/bottom-pulse-strip.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_bottom_pulse_strip_tsx",
-      "target": "lib_types_statuslevel",
-      "confidence_score": 1.0
+      "target": "lib_types_statuslevel"
     },
     {
       "relation": "contains",
@@ -26656,9 +26667,9 @@
       "source_file": "tools/brain-portal/src/components/bottom-pulse-strip.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_bottom_pulse_strip_tsx",
-      "target": "components_bottom_pulse_strip_dotclass",
-      "confidence_score": 1.0
+      "target": "components_bottom_pulse_strip_dotclass"
     },
     {
       "relation": "contains",
@@ -26666,9 +26677,9 @@
       "source_file": "tools/brain-portal/src/components/bottom-pulse-strip.tsx",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_bottom_pulse_strip_tsx",
-      "target": "components_bottom_pulse_strip_item",
-      "confidence_score": 1.0
+      "target": "components_bottom_pulse_strip_item"
     },
     {
       "relation": "contains",
@@ -26676,9 +26687,9 @@
       "source_file": "tools/brain-portal/src/components/bottom-pulse-strip.tsx",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_bottom_pulse_strip_tsx",
-      "target": "components_bottom_pulse_strip_bottompulsestrip",
-      "confidence_score": 1.0
+      "target": "components_bottom_pulse_strip_bottompulsestrip"
     },
     {
       "relation": "calls",
@@ -26687,9 +26698,9 @@
       "source_file": "tools/brain-portal/src/components/bottom-pulse-strip.tsx",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_bottom_pulse_strip_item",
-      "target": "components_bottom_pulse_strip_dotclass",
-      "confidence_score": 1.0
+      "target": "components_bottom_pulse_strip_dotclass"
     },
     {
       "relation": "calls",
@@ -26698,9 +26709,9 @@
       "source_file": "tools/brain-portal/src/components/bottom-pulse-strip.tsx",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_bottom_pulse_strip_bottompulsestrip",
-      "target": "components_bottom_pulse_strip_item",
-      "confidence_score": 1.0
+      "target": "components_bottom_pulse_strip_item"
     },
     {
       "relation": "imports_from",
@@ -26709,9 +26720,9 @@
       "source_file": "tools/brain-portal/src/components/left-control-rail.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_left_control_rail_tsx",
-      "target": "tools_brain_portal_src_components_panel_tsx",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_components_panel_tsx"
     },
     {
       "relation": "imports",
@@ -26720,9 +26731,9 @@
       "source_file": "tools/brain-portal/src/components/left-control-rail.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_left_control_rail_tsx",
-      "target": "components_panel_panel",
-      "confidence_score": 1.0
+      "target": "components_panel_panel"
     },
     {
       "relation": "imports_from",
@@ -26731,9 +26742,9 @@
       "source_file": "tools/brain-portal/src/components/left-control-rail.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_left_control_rail_tsx",
-      "target": "tools_brain_portal_src_lib_types_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_types_ts"
     },
     {
       "relation": "imports",
@@ -26742,9 +26753,9 @@
       "source_file": "tools/brain-portal/src/components/left-control-rail.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_left_control_rail_tsx",
-      "target": "lib_types_brainportalstatus",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalstatus"
     },
     {
       "relation": "contains",
@@ -26752,9 +26763,9 @@
       "source_file": "tools/brain-portal/src/components/left-control-rail.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_left_control_rail_tsx",
-      "target": "components_left_control_rail_leftcontrolrail",
-      "confidence_score": 1.0
+      "target": "components_left_control_rail_leftcontrolrail"
     },
     {
       "relation": "imports_from",
@@ -26763,9 +26774,9 @@
       "source_file": "tools/brain-portal/src/components/hero-orb-canvas.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_hero_orb_canvas_tsx",
-      "target": "tools_brain_portal_src_lib_types_ts",
-      "confidence_score": 1.0
+      "target": "tools_brain_portal_src_lib_types_ts"
     },
     {
       "relation": "imports",
@@ -26774,9 +26785,9 @@
       "source_file": "tools/brain-portal/src/components/hero-orb-canvas.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_hero_orb_canvas_tsx",
-      "target": "lib_types_brainportalnode",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalnode"
     },
     {
       "relation": "imports",
@@ -26785,9 +26796,9 @@
       "source_file": "tools/brain-portal/src/components/hero-orb-canvas.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_hero_orb_canvas_tsx",
-      "target": "lib_types_graphifygraph",
-      "confidence_score": 1.0
+      "target": "lib_types_graphifygraph"
     },
     {
       "relation": "contains",
@@ -26795,9 +26806,9 @@
       "source_file": "tools/brain-portal/src/components/hero-orb-canvas.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_hero_orb_canvas_tsx",
-      "target": "components_hero_orb_canvas_ismobilelike",
-      "confidence_score": 1.0
+      "target": "components_hero_orb_canvas_ismobilelike"
     },
     {
       "relation": "contains",
@@ -26805,9 +26816,9 @@
       "source_file": "tools/brain-portal/src/components/hero-orb-canvas.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_hero_orb_canvas_tsx",
-      "target": "components_hero_orb_canvas_stablecolorforcommunity",
-      "confidence_score": 1.0
+      "target": "components_hero_orb_canvas_stablecolorforcommunity"
     },
     {
       "relation": "contains",
@@ -26815,9 +26826,9 @@
       "source_file": "tools/brain-portal/src/components/hero-orb-canvas.tsx",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_hero_orb_canvas_tsx",
-      "target": "components_hero_orb_canvas_buildhalotexture",
-      "confidence_score": 1.0
+      "target": "components_hero_orb_canvas_buildhalotexture"
     },
     {
       "relation": "contains",
@@ -26825,9 +26836,9 @@
       "source_file": "tools/brain-portal/src/components/hero-orb-canvas.tsx",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_hero_orb_canvas_tsx",
-      "target": "components_hero_orb_canvas_heroorbcanvas",
-      "confidence_score": 1.0
+      "target": "components_hero_orb_canvas_heroorbcanvas"
     },
     {
       "relation": "contains",
@@ -26835,9 +26846,9 @@
       "source_file": "tools/brain-portal/src/components/panel.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_components_panel_tsx",
-      "target": "components_panel_panel",
-      "confidence_score": 1.0
+      "target": "components_panel_panel"
     },
     {
       "relation": "contains",
@@ -26845,9 +26856,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_statuslevel",
-      "confidence_score": 1.0
+      "target": "lib_types_statuslevel"
     },
     {
       "relation": "contains",
@@ -26855,9 +26866,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_brainportalnode",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalnode"
     },
     {
       "relation": "contains",
@@ -26865,9 +26876,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_graphifylink",
-      "confidence_score": 1.0
+      "target": "lib_types_graphifylink"
     },
     {
       "relation": "contains",
@@ -26875,9 +26886,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_graphifygraph",
-      "confidence_score": 1.0
+      "target": "lib_types_graphifygraph"
     },
     {
       "relation": "contains",
@@ -26885,9 +26896,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_gitstatus",
-      "confidence_score": 1.0
+      "target": "lib_types_gitstatus"
     },
     {
       "relation": "contains",
@@ -26895,9 +26906,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_graphifyfreshness",
-      "confidence_score": 1.0
+      "target": "lib_types_graphifyfreshness"
     },
     {
       "relation": "contains",
@@ -26905,9 +26916,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_docsquality",
-      "confidence_score": 1.0
+      "target": "lib_types_docsquality"
     },
     {
       "relation": "contains",
@@ -26915,9 +26926,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_toolreadiness",
-      "confidence_score": 1.0
+      "target": "lib_types_toolreadiness"
     },
     {
       "relation": "contains",
@@ -26925,9 +26936,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_ollamastatus",
-      "confidence_score": 1.0
+      "target": "lib_types_ollamastatus"
     },
     {
       "relation": "contains",
@@ -26935,9 +26946,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_brainportalstatus",
-      "confidence_score": 1.0
+      "target": "lib_types_brainportalstatus"
     },
     {
       "relation": "contains",
@@ -26945,9 +26956,9 @@
       "source_file": "tools/brain-portal/src/lib/types.ts",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_types_ts",
-      "target": "lib_types_orbsummaries",
-      "confidence_score": 1.0
+      "target": "lib_types_orbsummaries"
     },
     {
       "relation": "contains",
@@ -26955,9 +26966,9 @@
       "source_file": "tools/brain-portal/src/lib/paths.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_paths_ts",
-      "target": "lib_paths_getreporoot",
-      "confidence_score": 1.0
+      "target": "lib_paths_getreporoot"
     },
     {
       "relation": "contains",
@@ -26965,9 +26976,9 @@
       "source_file": "tools/brain-portal/src/lib/paths.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_paths_ts",
-      "target": "lib_paths_repopath",
-      "confidence_score": 1.0
+      "target": "lib_paths_repopath"
     },
     {
       "relation": "calls",
@@ -26976,9 +26987,9 @@
       "source_file": "tools/brain-portal/src/lib/paths.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_paths_repopath",
-      "target": "lib_paths_getreporoot",
-      "confidence_score": 1.0
+      "target": "lib_paths_getreporoot"
     },
     {
       "relation": "contains",
@@ -26986,9 +26997,9 @@
       "source_file": "tools/brain-portal/src/lib/safe-exec.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_safe_exec_ts",
-      "target": "lib_safe_exec_execfileasync",
-      "confidence_score": 1.0
+      "target": "lib_safe_exec_execfileasync"
     },
     {
       "relation": "contains",
@@ -26996,9 +27007,9 @@
       "source_file": "tools/brain-portal/src/lib/safe-exec.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_safe_exec_ts",
-      "target": "lib_safe_exec_execresult",
-      "confidence_score": 1.0
+      "target": "lib_safe_exec_execresult"
     },
     {
       "relation": "contains",
@@ -27006,9 +27017,9 @@
       "source_file": "tools/brain-portal/src/lib/safe-exec.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_src_lib_safe_exec_ts",
-      "target": "lib_safe_exec_safeexecfile",
-      "confidence_score": 1.0
+      "target": "lib_safe_exec_safeexecfile"
     },
     {
       "relation": "calls",
@@ -27017,9 +27028,9 @@
       "source_file": "tools/brain-portal/src/lib/safe-exec.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_safe_exec_safeexecfile",
-      "target": "lib_safe_exec_execfileasync",
-      "confidence_score": 1.0
+      "target": "lib_safe_exec_execfileasync"
     },
     {
       "relation": "contains",
@@ -36915,9 +36926,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L395",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions",
-      "target": "state_subagent_tracking_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0"
     },
     {
       "relation": "contains",
@@ -36925,9 +36936,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L410",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions",
-      "target": "state_subagent_tracking_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93"
     },
     {
       "relation": "contains",
@@ -37335,9 +37346,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L415",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_019e3cde_617d_7932_9e23_eb0b145b3f93_threads",
-      "target": "state_subagent_tracking_threads_019e303f_e44f_7eb1_b180_8ec8800c3a61",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_threads_019e303f_e44f_7eb1_b180_8ec8800c3a61"
     },
     {
       "relation": "contains",
@@ -39245,9 +39256,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L400",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_threads",
-      "target": "state_subagent_tracking_threads_019e3ca6_6477_7e33_a423_cf583f609166",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_threads_019e3ca6_6477_7e33_a423_cf583f609166"
     },
     {
       "relation": "contains",
@@ -39295,9 +39306,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L396",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0",
-      "target": "state_subagent_tracking_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_session_id",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_session_id"
     },
     {
       "relation": "contains",
@@ -39305,9 +39316,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L397",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0",
-      "target": "state_subagent_tracking_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_leader_thread_id",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_leader_thread_id"
     },
     {
       "relation": "contains",
@@ -39315,9 +39326,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L398",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0",
-      "target": "state_subagent_tracking_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_updated_at",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_updated_at"
     },
     {
       "relation": "contains",
@@ -39325,9 +39336,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L399",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0",
-      "target": "state_subagent_tracking_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_threads",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_threads"
     },
     {
       "relation": "contains",
@@ -39335,9 +39346,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L411",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93",
-      "target": "state_subagent_tracking_019e3cde_617d_7932_9e23_eb0b145b3f93_session_id",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_019e3cde_617d_7932_9e23_eb0b145b3f93_session_id"
     },
     {
       "relation": "contains",
@@ -39345,9 +39356,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L412",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93",
-      "target": "state_subagent_tracking_019e3cde_617d_7932_9e23_eb0b145b3f93_leader_thread_id",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_019e3cde_617d_7932_9e23_eb0b145b3f93_leader_thread_id"
     },
     {
       "relation": "contains",
@@ -39355,9 +39366,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L413",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93",
-      "target": "state_subagent_tracking_019e3cde_617d_7932_9e23_eb0b145b3f93_updated_at",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_019e3cde_617d_7932_9e23_eb0b145b3f93_updated_at"
     },
     {
       "relation": "contains",
@@ -39365,9 +39376,9 @@
       "source_file": ".omx/state/subagent-tracking.json",
       "source_location": "L414",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "state_subagent_tracking_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93",
-      "target": "state_subagent_tracking_019e3cde_617d_7932_9e23_eb0b145b3f93_threads",
-      "confidence_score": 1.0
+      "target": "state_subagent_tracking_019e3cde_617d_7932_9e23_eb0b145b3f93_threads"
     },
     {
       "relation": "contains",
@@ -40745,9 +40756,9 @@
       "source_file": ".omx/state/sessions/019e3ce7-e96f-7f11-aa2b-cb7d279b5e9c/prompt-routing-state.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_json",
-      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_version",
-      "confidence_score": 1.0
+      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_version"
     },
     {
       "relation": "contains",
@@ -40755,9 +40766,9 @@
       "source_file": ".omx/state/sessions/019e3ce7-e96f-7f11-aa2b-cb7d279b5e9c/prompt-routing-state.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_json",
-      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage",
-      "confidence_score": 1.0
+      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage"
     },
     {
       "relation": "contains",
@@ -40765,9 +40776,9 @@
       "source_file": ".omx/state/sessions/019e3ce7-e96f-7f11-aa2b-cb7d279b5e9c/prompt-routing-state.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_json",
-      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_suppress_followup",
-      "confidence_score": 1.0
+      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_suppress_followup"
     },
     {
       "relation": "contains",
@@ -40775,9 +40786,9 @@
       "source_file": ".omx/state/sessions/019e3ce7-e96f-7f11-aa2b-cb7d279b5e9c/prompt-routing-state.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage",
-      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_lane",
-      "confidence_score": 1.0
+      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_lane"
     },
     {
       "relation": "contains",
@@ -40785,9 +40796,9 @@
       "source_file": ".omx/state/sessions/019e3ce7-e96f-7f11-aa2b-cb7d279b5e9c/prompt-routing-state.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage",
-      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_destination",
-      "confidence_score": 1.0
+      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_destination"
     },
     {
       "relation": "contains",
@@ -40795,9 +40806,9 @@
       "source_file": ".omx/state/sessions/019e3ce7-e96f-7f11-aa2b-cb7d279b5e9c/prompt-routing-state.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage",
-      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_reason",
-      "confidence_score": 1.0
+      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_reason"
     },
     {
       "relation": "contains",
@@ -40805,9 +40816,9 @@
       "source_file": ".omx/state/sessions/019e3ce7-e96f-7f11-aa2b-cb7d279b5e9c/prompt-routing-state.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage",
-      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_prompt_signature",
-      "confidence_score": 1.0
+      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_prompt_signature"
     },
     {
       "relation": "contains",
@@ -40815,9 +40826,9 @@
       "source_file": ".omx/state/sessions/019e3ce7-e96f-7f11-aa2b-cb7d279b5e9c/prompt-routing-state.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage",
-      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_turn_id",
-      "confidence_score": 1.0
+      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_turn_id"
     },
     {
       "relation": "contains",
@@ -40825,9 +40836,9 @@
       "source_file": ".omx/state/sessions/019e3ce7-e96f-7f11-aa2b-cb7d279b5e9c/prompt-routing-state.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage",
-      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_created_at",
-      "confidence_score": 1.0
+      "target": "019e3ce7_e96f_7f11_aa2b_cb7d279b5e9c_prompt_routing_state_last_triage_created_at"
     },
     {
       "relation": "contains",
@@ -42505,9 +42516,9 @@
       "source_file": ".omx/state/sessions/019e3ccf-0f4f-71c1-8294-c061541e714d/prompt-routing-state.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_json",
-      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_version",
-      "confidence_score": 1.0
+      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_version"
     },
     {
       "relation": "contains",
@@ -42515,9 +42526,9 @@
       "source_file": ".omx/state/sessions/019e3ccf-0f4f-71c1-8294-c061541e714d/prompt-routing-state.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_json",
-      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage",
-      "confidence_score": 1.0
+      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage"
     },
     {
       "relation": "contains",
@@ -42525,9 +42536,9 @@
       "source_file": ".omx/state/sessions/019e3ccf-0f4f-71c1-8294-c061541e714d/prompt-routing-state.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_json",
-      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_suppress_followup",
-      "confidence_score": 1.0
+      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_suppress_followup"
     },
     {
       "relation": "contains",
@@ -42535,9 +42546,9 @@
       "source_file": ".omx/state/sessions/019e3ccf-0f4f-71c1-8294-c061541e714d/prompt-routing-state.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage",
-      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_lane",
-      "confidence_score": 1.0
+      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_lane"
     },
     {
       "relation": "contains",
@@ -42545,9 +42556,9 @@
       "source_file": ".omx/state/sessions/019e3ccf-0f4f-71c1-8294-c061541e714d/prompt-routing-state.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage",
-      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_destination",
-      "confidence_score": 1.0
+      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_destination"
     },
     {
       "relation": "contains",
@@ -42555,9 +42566,9 @@
       "source_file": ".omx/state/sessions/019e3ccf-0f4f-71c1-8294-c061541e714d/prompt-routing-state.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage",
-      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_reason",
-      "confidence_score": 1.0
+      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_reason"
     },
     {
       "relation": "contains",
@@ -42565,9 +42576,9 @@
       "source_file": ".omx/state/sessions/019e3ccf-0f4f-71c1-8294-c061541e714d/prompt-routing-state.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage",
-      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_prompt_signature",
-      "confidence_score": 1.0
+      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_prompt_signature"
     },
     {
       "relation": "contains",
@@ -42575,9 +42586,9 @@
       "source_file": ".omx/state/sessions/019e3ccf-0f4f-71c1-8294-c061541e714d/prompt-routing-state.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage",
-      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_turn_id",
-      "confidence_score": 1.0
+      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_turn_id"
     },
     {
       "relation": "contains",
@@ -42585,9 +42596,9 @@
       "source_file": ".omx/state/sessions/019e3ccf-0f4f-71c1-8294-c061541e714d/prompt-routing-state.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage",
-      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_created_at",
-      "confidence_score": 1.0
+      "target": "019e3ccf_0f4f_71c1_8294_c061541e714d_prompt_routing_state_last_triage_created_at"
     },
     {
       "relation": "contains",
@@ -43275,9 +43286,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/prompt-routing-state.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_json",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_version",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_version"
     },
     {
       "relation": "contains",
@@ -43285,9 +43296,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/prompt-routing-state.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_json",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage"
     },
     {
       "relation": "contains",
@@ -43295,9 +43306,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/prompt-routing-state.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_json",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_suppress_followup",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_suppress_followup"
     },
     {
       "relation": "contains",
@@ -43305,9 +43316,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/prompt-routing-state.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_lane",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_lane"
     },
     {
       "relation": "contains",
@@ -43315,9 +43326,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/prompt-routing-state.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_destination",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_destination"
     },
     {
       "relation": "contains",
@@ -43325,9 +43336,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/prompt-routing-state.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_reason",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_reason"
     },
     {
       "relation": "contains",
@@ -43335,9 +43346,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/prompt-routing-state.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_prompt_signature",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_prompt_signature"
     },
     {
       "relation": "contains",
@@ -43345,9 +43356,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/prompt-routing-state.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_turn_id",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_turn_id"
     },
     {
       "relation": "contains",
@@ -43355,9 +43366,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/prompt-routing-state.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_created_at",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_prompt_routing_state_last_triage_created_at"
     },
     {
       "relation": "contains",
@@ -43365,9 +43376,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/notify-hook-state.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93_notify_hook_state_json",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_notify_hook_state_recent_turns",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_notify_hook_state_recent_turns"
     },
     {
       "relation": "contains",
@@ -43375,9 +43386,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/notify-hook-state.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93_notify_hook_state_json",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_notify_hook_state_last_event_at",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_notify_hook_state_last_event_at"
     },
     {
       "relation": "contains",
@@ -43385,9 +43396,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/notify-hook-state.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3cde_617d_7932_9e23_eb0b145b3f93_notify_hook_state_recent_turns",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_notify_hook_state_recent_turns_019e303f_e44f_7eb1_b180_8ec8800c3a61_019e3ce1_9b08_72a1_8a11_97be02a0de45_agent_turn_complete",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_notify_hook_state_recent_turns_019e303f_e44f_7eb1_b180_8ec8800c3a61_019e3ce1_9b08_72a1_8a11_97be02a0de45_agent_turn_complete"
     },
     {
       "relation": "contains",
@@ -43395,9 +43406,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/hud-state.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_json",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_last_turn_at",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_last_turn_at"
     },
     {
       "relation": "contains",
@@ -43405,9 +43416,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/hud-state.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_json",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_turn_count",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_turn_count"
     },
     {
       "relation": "contains",
@@ -43415,9 +43426,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/hud-state.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_json",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_last_progress_at",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_last_progress_at"
     },
     {
       "relation": "contains",
@@ -43425,9 +43436,9 @@
       "source_file": ".omx/state/sessions/019e3cde-617d-7932-9e23-eb0b145b3f93/hud-state.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_json",
-      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_last_agent_output",
-      "confidence_score": 1.0
+      "target": "019e3cde_617d_7932_9e23_eb0b145b3f93_hud_state_last_agent_output"
     },
     {
       "relation": "contains",
@@ -44455,9 +44466,9 @@
       "source_file": ".omx/state/sessions/019e3cc5-d9ed-7be2-80c8-7c18139b3ac0/notify-hook-state.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_notify_hook_state_json",
-      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_notify_hook_state_recent_turns",
-      "confidence_score": 1.0
+      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_notify_hook_state_recent_turns"
     },
     {
       "relation": "contains",
@@ -44465,9 +44476,9 @@
       "source_file": ".omx/state/sessions/019e3cc5-d9ed-7be2-80c8-7c18139b3ac0/notify-hook-state.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_notify_hook_state_json",
-      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_notify_hook_state_last_event_at",
-      "confidence_score": 1.0
+      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_notify_hook_state_last_event_at"
     },
     {
       "relation": "contains",
@@ -44475,9 +44486,9 @@
       "source_file": ".omx/state/sessions/019e3cc5-d9ed-7be2-80c8-7c18139b3ac0/notify-hook-state.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_notify_hook_state_recent_turns",
-      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_notify_hook_state_recent_turns_019e3ca6_6477_7e33_a423_cf583f609166_019e3cc2_c204_7f50_b5d8_154e681c4c6f_agent_turn_complete",
-      "confidence_score": 1.0
+      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_notify_hook_state_recent_turns_019e3ca6_6477_7e33_a423_cf583f609166_019e3cc2_c204_7f50_b5d8_154e681c4c6f_agent_turn_complete"
     },
     {
       "relation": "contains",
@@ -44485,9 +44496,9 @@
       "source_file": ".omx/state/sessions/019e3cc5-d9ed-7be2-80c8-7c18139b3ac0/hud-state.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_json",
-      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_last_turn_at",
-      "confidence_score": 1.0
+      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_last_turn_at"
     },
     {
       "relation": "contains",
@@ -44495,9 +44506,9 @@
       "source_file": ".omx/state/sessions/019e3cc5-d9ed-7be2-80c8-7c18139b3ac0/hud-state.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_json",
-      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_turn_count",
-      "confidence_score": 1.0
+      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_turn_count"
     },
     {
       "relation": "contains",
@@ -44505,9 +44516,9 @@
       "source_file": ".omx/state/sessions/019e3cc5-d9ed-7be2-80c8-7c18139b3ac0/hud-state.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_json",
-      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_last_progress_at",
-      "confidence_score": 1.0
+      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_last_progress_at"
     },
     {
       "relation": "contains",
@@ -44515,9 +44526,9 @@
       "source_file": ".omx/state/sessions/019e3cc5-d9ed-7be2-80c8-7c18139b3ac0/hud-state.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "omx_state_sessions_019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_json",
-      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_last_agent_output",
-      "confidence_score": 1.0
+      "target": "019e3cc5_d9ed_7be2_80c8_7c18139b3ac0_hud_state_last_agent_output"
     },
     {
       "relation": "contains",
@@ -45905,9 +45916,9 @@
       "source_file": "tools/brain-portal/README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_readme_md",
-      "target": "brain_portal_readme_cinema_machina_brain_portal",
-      "confidence_score": 1.0
+      "target": "brain_portal_readme_cinema_machina_brain_portal"
     },
     {
       "relation": "contains",
@@ -45915,9 +45926,9 @@
       "source_file": "tools/brain-portal/README.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_readme_cinema_machina_brain_portal",
-      "target": "brain_portal_readme_run_local",
-      "confidence_score": 1.0
+      "target": "brain_portal_readme_run_local"
     },
     {
       "relation": "contains",
@@ -45925,9 +45936,9 @@
       "source_file": "tools/brain-portal/README.md",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_readme_cinema_machina_brain_portal",
-      "target": "brain_portal_readme_build",
-      "confidence_score": 1.0
+      "target": "brain_portal_readme_build"
     },
     {
       "relation": "contains",
@@ -45935,9 +45946,9 @@
       "source_file": "tools/brain-portal/README.md",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_readme_cinema_machina_brain_portal",
-      "target": "brain_portal_readme_ollama_enrichment_optional",
-      "confidence_score": 1.0
+      "target": "brain_portal_readme_ollama_enrichment_optional"
     },
     {
       "relation": "contains",
@@ -45945,9 +45956,9 @@
       "source_file": "tools/brain-portal/README.md",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_readme_cinema_machina_brain_portal",
-      "target": "brain_portal_readme_notes",
-      "confidence_score": 1.0
+      "target": "brain_portal_readme_notes"
     },
     {
       "relation": "contains",
@@ -45955,9 +45966,9 @@
       "source_file": "tools/brain-portal/README.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_readme_run_local",
-      "target": "brain_portal_readme_codeblock_1",
-      "confidence_score": 1.0
+      "target": "brain_portal_readme_codeblock_1"
     },
     {
       "relation": "contains",
@@ -45965,9 +45976,9 @@
       "source_file": "tools/brain-portal/README.md",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_readme_build",
-      "target": "brain_portal_readme_codeblock_2",
-      "confidence_score": 1.0
+      "target": "brain_portal_readme_codeblock_2"
     },
     {
       "relation": "contains",
@@ -45975,9 +45986,9 @@
       "source_file": "tools/brain-portal/README.md",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "brain_portal_readme_ollama_enrichment_optional",
-      "target": "brain_portal_readme_codeblock_3",
-      "confidence_score": 1.0
+      "target": "brain_portal_readme_codeblock_3"
     },
     {
       "relation": "contains",
@@ -45985,9 +45996,9 @@
       "source_file": "tools/brain-portal/AGENTS.md",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tools_brain_portal_agents_md",
-      "target": "brain_portal_agents_this_is_not_the_next_js_you_know",
-      "confidence_score": 1.0
+      "target": "brain_portal_agents_this_is_not_the_next_js_you_know"
     },
     {
       "relation": "contains",
@@ -55535,9 +55546,9 @@
       "source_file": "docs/ai/brain-portal/task.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_ai_brain_portal_task_md",
-      "target": "brain_portal_task_cinema_machina_brain_portal_implementation_tasks",
-      "confidence_score": 1.0
+      "target": "brain_portal_task_cinema_machina_brain_portal_implementation_tasks"
     },
     {
       "relation": "contains",
@@ -55555,9 +55566,9 @@
       "source_file": "docs/ai/brain-portal/walkthrough.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_ai_brain_portal_walkthrough_md",
-      "target": "brain_portal_walkthrough_cinema_machina_brain_portal_blueprint_complete",
-      "confidence_score": 1.0
+      "target": "brain_portal_walkthrough_cinema_machina_brain_portal_blueprint_complete"
     },
     {
       "relation": "contains",
@@ -55605,9 +55616,9 @@
       "source_file": "docs/ai/brain-portal/implementation_plan.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_ai_brain_portal_implementation_plan_md",
-      "target": "brain_portal_implementation_plan_cinema_machina_brain_portal_design_specification_implementation_blueprint",
-      "confidence_score": 1.0
+      "target": "brain_portal_implementation_plan_cinema_machina_brain_portal_design_specification_implementation_blueprint"
     },
     {
       "relation": "contains",
@@ -55741,5 +55752,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "af681e37adaf094935974c24b891a2d11e8d06bd"
+  "built_at_commit": "587ea7bdfb8eda64e855298ab208c5a9dafb4165"
 }

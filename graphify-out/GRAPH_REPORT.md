@@ -1,16 +1,16 @@
 # Graph Report - Cinema Machina Core  (2026-05-19)
 
 ## Corpus Check
-- 219 files · ~60,047 words
+- 219 files · ~60,164 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2747 nodes · 3069 edges · 279 communities (253 shown, 26 thin omitted)
+- 2747 nodes · 3070 edges · 279 communities (252 shown, 27 thin omitted)
 - Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 185 edges (avg confidence: 0.64)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `af681e37`
+- Built from commit: `587ea7bd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -303,7 +303,7 @@
 - `PlaybackClientKind` --uses--> `Confidence`  [INFERRED]
   backend/app/models/device.py → backend/app/models/playback.py
 
-## Communities (279 total, 26 thin omitted)
+## Communities (279 total, 27 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.13
@@ -394,8 +394,8 @@ Cohesion: 0.07
 Nodes (29): 1. Simple Mode (Command Line), 2. Advanced Mode (JSON Files), ✅ Advanced Features, AI Agent Tips, API Structure Reference, code:bash (# Single post), code:bash (postiz posts:create --json complex-post.json), code:json ({) (+21 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.13
-Nodes (15): Analytics, code:bash (postiz posts:list), code:bash (postiz posts:delete <post-id>), code:bash (postiz posts:status <post-id> --status draft), code:bash (postiz analytics:platform <integration-id>), code:bash (postiz analytics:post <post-id>), code:bash (# 1. List available content from the provider), code:bash (postiz posts:missing <post-id>) (+7 more)
+Cohesion: 0.07
+Nodes (28): Analytics, code:bash (# Get Reddit flairs), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -m "img1.jpg,img2.jpg" -s "), code:bash (postiz posts:create \), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create \) (+20 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.1
@@ -478,8 +478,8 @@ Cohesion: 0.18
 Nodes (11): Basic Commands, code:bash (postiz integrations:list), code:bash (postiz upload ./path/to/image.png), code:bash (# Simple post), code:bash (# List all posts), code:bash (postiz posts:delete abc123xyz), Create a Post, Delete a Post (+3 more)
 
 ### Community 52 - "Community 52"
-Cohesion: 0.12
-Nodes (16): API Endpoints, code:bash (npx skills add gitroomhq/postiz-agent), code:bash (npm install -g postiz), code:bash (# Authentication), Contributing, Documentation, Environment Variables, Error Handling (+8 more)
+Cohesion: 0.18
+Nodes (11): API Endpoints, code:bash (# Authentication), Contributing, Documentation, Environment Variables, Error Handling, License, Links (+3 more)
 
 ### Community 53 - "Community 53"
 Cohesion: 0.18
@@ -1117,10 +1117,6 @@ Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
 Cohesion: 0.33
 Nodes (5): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3ca6-690c-7ff0-a3b9-380d6e888a89|agent-turn-complete, 019e3ca6-6477-7e33-a423-cf583f609166|019e3cad-9215-72f0-bf01-ec24b27a199b|agent-turn-complete, 019e3ca6-69c6-7810-98d3-a1ed05acd73b|019e3ca6-69f9-7050-9e86-46ff609404e9|agent-turn-complete
 
-### Community 217 - "Community 217"
-Cohesion: 0.25
-Nodes (8): code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -m "img1.jpg,img2.jpg" -s "), code:bash (postiz posts:create \), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create \), code:bash (postiz posts:create --json post.json), Creating Posts
-
 ### Community 218 - "Community 218"
 Cohesion: 0.4
 Nodes (5): leader_thread_id, session_id, threads, updated_at, 019e3048-f116-7ab2-8dbe-d23268d4ee2b
@@ -1182,8 +1178,8 @@ Cohesion: 0.4
 Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
 
 ### Community 253 - "Community 253"
-Cohesion: 0.4
-Nodes (5): code:bash (# Get Reddit flairs), code:bash (postiz integrations:list), code:bash (postiz integrations:settings <integration-id>), code:bash (postiz integrations:trigger <integration-id> <method-name>), Discovery & Settings
+Cohesion: 0.67
+Nodes (3): code:bash (npm install -g postiz), From npm (Recommended), Installation
 
 ### Community 254 - "Community 254"
 Cohesion: 0.4
@@ -1256,7 +1252,7 @@ Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019
 ## Knowledge Gaps
 - **1617 isolated node(s):** `version`, `source`, `sourceType`, `skillPath`, `computedHash` (+1612 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **26 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **27 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
