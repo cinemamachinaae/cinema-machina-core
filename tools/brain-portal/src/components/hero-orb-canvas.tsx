@@ -12,25 +12,17 @@ function isMobileLike(): boolean {
   return /iPhone|iPad|Android/i.test(ua) || window.matchMedia?.("(max-width: 720px)")?.matches;
 }
 
+const COMMUNITY_PALETTE = [
+  "#7CA9FF", "#9A7BFF", "#46D7C8", "#E07AA6", "#E6C26E",
+  "#5DB6E6", "#B5A0FF", "#7ED6B5", "#D98DBA", "#C9D2E3",
+];
+
 function stableColorForCommunity(community: number | string | undefined): string {
-  const palette = [
-    "#7CA9FF",
-    "#9A7BFF",
-    "#46D7C8",
-    "#E07AA6",
-    "#E6C26E",
-    "#5DB6E6",
-    "#B5A0FF",
-    "#7ED6B5",
-    "#D98DBA",
-    "#C9D2E3",
-  ];
   const key = String(community ?? "0");
   let hash = 0;
   for (let i = 0; i < key.length; i += 1) hash = (hash * 31 + key.charCodeAt(i)) | 0;
-  const hex = palette[Math.abs(hash) % palette.length] ?? "#7CA9FF";
+  const hex = COMMUNITY_PALETTE[Math.abs(hash) % COMMUNITY_PALETTE.length] ?? "#7CA9FF";
 
-  // De-saturate slightly for premium dark UI.
   const color = new THREE.Color(hex);
   const hsl = { h: 0, s: 0, l: 0 };
   color.getHSL(hsl);
@@ -46,9 +38,9 @@ function buildHaloTexture(): THREE.Texture {
   if (!ctx) return new THREE.CanvasTexture(canvas);
 
   const g = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-  g.addColorStop(0, "rgba(255,255,255,0.9)");
-  g.addColorStop(0.18, "rgba(255,255,255,0.35)");
-  g.addColorStop(0.45, "rgba(255,255,255,0.10)");
+  g.addColorStop(0, "rgba(255,255,255,0.85)");
+  g.addColorStop(0.15, "rgba(255,255,255,0.30)");
+  g.addColorStop(0.4, "rgba(255,255,255,0.08)");
   g.addColorStop(1, "rgba(255,255,255,0)");
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, 256, 256);
@@ -56,7 +48,56 @@ function buildHaloTexture(): THREE.Texture {
   const tex = new THREE.CanvasTexture(canvas);
   tex.minFilter = THREE.LinearFilter;
   tex.magFilter = THREE.LinearFilter;
+  
+  // Protect from automatic disposal by 3d-force-graph since we share this texture
+  tex.dispose = () => {
+    // intentional no-op
+  };
+  
   return tex;
+}
+
+function buildLabelSprite(text: string, color: string, fontSize = 14, isCluster = false): THREE.Sprite {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d")!;
+  const padding = 8;
+  const font = `${isCluster ? "600" : "500"} ${fontSize}px ui-sans-serif, system-ui, sans-serif`;
+  ctx.font = font;
+  const metrics = ctx.measureText(text);
+  const width = Math.ceil(metrics.width) + padding * 2;
+  const height = fontSize + padding * 2;
+  canvas.width = width;
+  canvas.height = height;
+
+  if (isCluster) {
+    ctx.fillStyle = "rgba(0,0,0,0.55)";
+    ctx.beginPath();
+    ctx.roundRect(1, 1, width - 2, height - 2, 6);
+    ctx.fill();
+    ctx.strokeStyle = "rgba(255,255,255,0.15)";
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  ctx.font = font;
+  ctx.fillStyle = color;
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "center";
+  ctx.fillText(text, width / 2, height / 2);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.minFilter = THREE.LinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+
+  const mat = new THREE.SpriteMaterial({
+    map: texture,
+    transparent: true,
+    depthWrite: false,
+    sizeAttenuation: true,
+  });
+  const sprite = new THREE.Sprite(mat);
+  sprite.scale.set(width / 6, height / 6, 1);
+  return sprite;
 }
 
 export function HeroOrbCanvas(props: {
@@ -72,6 +113,16 @@ export function HeroOrbCanvas(props: {
   const mobileLike = useMemo(() => isMobileLike(), []);
 
   const searchLower = props.search.trim().toLowerCase();
+
+  const onHoverRef = useRef(props.onHover);
+  const onSelectRef = useRef(props.onSelect);
+  const graphDataRef = useRef(props.graph);
+
+  useEffect(() => {
+    onHoverRef.current = props.onHover;
+    onSelectRef.current = props.onSelect;
+    graphDataRef.current = props.graph;
+  }, [props.onHover, props.onSelect, props.graph]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -90,78 +141,89 @@ export function HeroOrbCanvas(props: {
       graphRef.current = graph;
 
       graph
-      .backgroundColor("rgba(0,0,0,0)")
-      .nodeOpacity(1.0)
-      .linkOpacity(mobileLike ? 0.12 : 0.18)
-      .linkWidth((l: any) => (l.label ? 0.6 : 0.22))
-      .linkColor(() => "rgba(164,202,255,0.18)")
-      .d3Force("charge")
-      ?.strength(-55);
+        .backgroundColor("rgba(0,0,0,0)")
+        .nodeOpacity(1.0)
+        .linkOpacity(mobileLike ? 0.10 : 0.15)
+        .linkWidth((l: any) => (l.label ? 0.5 : 0.18))
+        .linkColor(() => "rgba(164,202,255,0.15)")
+        .d3Force("charge")
+        ?.strength(-55);
 
       graph.d3Force("link")?.distance(24);
 
-      // Premium motion: slow orbit drift on desktop, reduced on mobile.
+      // Premium slow orbit on desktop
       const controls = graph.controls();
       controls.autoRotate = !mobileLike;
-      controls.autoRotateSpeed = 0.20;
+      controls.autoRotateSpeed = 0.18;
       controls.enableDamping = true;
       controls.dampingFactor = 0.06;
 
       graph.cameraPosition({ x: 0, y: 0, z: 420 });
       setTimeout(() => {
-        try {
-          graph.zoomToFit(1200, 70);
-        } catch {
-          // ignore
-        }
+        try { graph.zoomToFit(1200, 70); } catch { /* ignore */ }
       }, 850);
 
-      // Subtle neon pulse trails on a sparse subset of links (desktop only).
+      // Particle trails on a sparse subset of links (desktop only)
       if (!mobileLike) {
         graph
           .linkDirectionalParticles((l: any) => {
             const key = `${typeof l.source === "object" ? l.source.id : l.source}|${typeof l.target === "object" ? l.target.id : l.target}`;
             let h = 0;
             for (let i = 0; i < key.length; i += 1) h = (h * 33 + key.charCodeAt(i)) | 0;
-            return Math.abs(h) % 17 === 0 ? 1 : 0;
+            return Math.abs(h) % 12 === 0 ? 1 : 0;
           })
-          .linkDirectionalParticleWidth(1.0)
-          .linkDirectionalParticleSpeed(0.002)
-          .linkDirectionalParticleColor(() => "rgba(110, 190, 255, 0.86)");
+          .linkDirectionalParticleWidth(0.8)
+          .linkDirectionalParticleSpeed(0.0018)
+          .linkDirectionalParticleColor(() => "rgba(110, 190, 255, 0.75)");
       }
 
       graph.onNodeHover((node: any) => {
-        props.onHover((node as BrainPortalNode) ?? null);
+        onHoverRef.current((node as BrainPortalNode) ?? null);
         containerRef.current!.style.cursor = node ? "pointer" : "default";
       });
 
       graph.onNodeClick((node: any) => {
-        props.onSelect(node as BrainPortalNode);
+        onSelectRef.current(node as BrainPortalNode);
       });
+
+      // Apply initial data if already available
+      if (graphDataRef.current) {
+        graph.graphData(graphDataRef.current);
+      }
     }
 
     void boot();
 
     return () => {
       cancelled = true;
-      try {
-        graphRef.current?._destructor?.();
-      } catch {
-        // ignore
-      }
+      try { graphRef.current?._destructor?.(); } catch { /* ignore */ }
       graphRef.current = null;
     };
-  }, [mobileLike, props]);
+  }, [mobileLike]);
 
   useEffect(() => {
     const graph = graphRef.current;
     if (!graph) return;
+
+    if (props.graph) {
+      const currentData = graph.graphData();
+      const needsUpdate =
+        !currentData ||
+        !currentData.nodes ||
+        currentData.nodes.length !== props.graph.nodes.length ||
+        currentData.links.length !== props.graph.links.length;
+
+      if (needsUpdate) {
+        graph.graphData(props.graph);
+      }
+    }
 
     const haloTexture = haloTextureRef.current;
     if (!haloTexture) return;
 
     const pinnedId = props.pinnedNode?.id ?? null;
 
+    graph.nodeThreeObjectExtend(true);
     graph.nodeThreeObject((node: any) => {
       const n = node as BrainPortalNode;
       const group = new THREE.Group();
@@ -172,19 +234,39 @@ export function HeroOrbCanvas(props: {
           (searchLower && String(n.label || "").toLowerCase().includes(searchLower)),
       );
 
+      // Halo sprite
       const haloMat = new THREE.SpriteMaterial({
         map: haloTexture,
         color: new THREE.Color(emphasized ? "#dff5ff" : colorHex),
         transparent: true,
-        opacity: emphasized ? 0.42 : 0.16,
+        opacity: emphasized ? 0.6 : 0.25,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
       });
       const halo = new THREE.Sprite(haloMat);
       const baseVal = n.val || 4;
       const haloScale = 10 + Math.min(28, baseVal * 2.2);
-      halo.scale.set(haloScale * (emphasized ? 1.08 : 1.0), haloScale * (emphasized ? 1.08 : 1.0), 1);
+      halo.scale.set(
+        haloScale * (emphasized ? 1.12 : 1.0),
+        haloScale * (emphasized ? 1.12 : 1.0),
+        1,
+      );
       group.add(halo);
+
+      // Show label on emphasized or high-importance nodes
+      const showLabel = emphasized || (n.val != null && n.val >= 12);
+      const isClusterHub = n.val != null && n.val >= 18;
+      
+      if (showLabel && n.label) {
+        const label = buildLabelSprite(
+          n.label,
+          emphasized ? "rgba(255,255,255,0.95)" : "rgba(200,210,225,0.65)",
+          emphasized ? 14 : (isClusterHub ? 12 : 11),
+          isClusterHub
+        );
+        label.position.set(0, haloScale * 0.45, 0);
+        group.add(label);
+      }
 
       return group;
     });
@@ -203,7 +285,7 @@ export function HeroOrbCanvas(props: {
     });
 
     graph.refresh();
-  }, [props.pinnedNode, props.search, searchLower]);
+  }, [props.graph, props.pinnedNode, props.search, searchLower]);
 
   return (
     <div className="fixed inset-0 z-[1]">

@@ -317,6 +317,7 @@ This project has a knowledge graph at graphify-out/ with god nodes, community st
 When the user types `/graphify`, invoke the `skill` tool with `skill: "graphify"` before doing anything else.
 
 Rules:
+
 - ALWAYS read graphify-out/GRAPH_REPORT.md before reading any source files, running grep/glob searches, or answering codebase questions. The graph is your primary map of the codebase.
 - IF graphify-out/wiki/index.md EXISTS, navigate it instead of reading raw files
 - For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
@@ -324,16 +325,19 @@ Rules:
 
 ## Cinema Machina Tool Routing
 Before broad codebase analysis, follow:
+
 - `docs/ai/CODEX_TOOL_ROUTING.md`
 
 Use Graphify first for repository understanding and only open exact files after graph-level analysis.
 
 ## Cinema Machina Brain Routing
 Before broad repo analysis, follow:
+
 - `docs/ai/BRAIN_STACK.md`
 - `docs/ai/TOOLCHAIN_ROUTING.md`
 
 Workflow:
+
 1. Use Graphify first for project structure.
 2. Retrieve persistent memory when prior decisions may matter.
 3. Open exact files only after graph/memory review.

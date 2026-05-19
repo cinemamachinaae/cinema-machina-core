@@ -34,7 +34,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "/var/folders/bx/jx4zmf7j2j5_p458lsgbgg4r0000gn/T/brain-portal-next-cache/types/**/*.ts",
+    ".next-local/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

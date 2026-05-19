@@ -68,6 +68,8 @@ export type BrainPortalStatus = {
   langflow: ToolReadiness;
   ruflo: ToolReadiness;
   codexHooks: ToolReadiness;
+  antigravity: ToolReadiness;
+  claudeCode: ToolReadiness;
 };
 
 export type OrbSummaries = {

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -27,6 +27,7 @@
       background: rgba(8, 13, 27, .76);
       border: 1px solid rgba(150, 190, 255, .18);
       box-shadow: 0 24px 80px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.03);
+      -webkit-backdrop-filter: blur(18px);
       backdrop-filter: blur(18px);
       z-index: 5;
     }
@@ -107,6 +108,7 @@
       background: rgba(8, 13, 27, .82);
       border: 1px solid rgba(150, 190, 255, .18);
       box-shadow: 0 24px 80px rgba(0,0,0,.45);
+      -webkit-backdrop-filter: blur(18px);
       backdrop-filter: blur(18px);
       z-index: 5;
       display: none;
@@ -140,6 +142,7 @@
       font-size: 12px;
       opacity: .9;
       z-index: 5;
+      -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
     }
     @media (max-width: 720px) {
@@ -182,6 +185,7 @@
       linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
     background-size: 160px 160px;
+    -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
     mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
   }
 
@@ -219,6 +223,7 @@
       repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 3px),
       repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0 1px, transparent 1px 4px);
     filter: blur(0.2px);
+    -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
     mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
   }
 
@@ -231,6 +236,7 @@
     box-shadow:
       0 28px 96px rgba(0, 0, 0, 0.62),
       inset 0 1px 0 rgba(255,255,255,0.05) !important;
+    -webkit-backdrop-filter: blur(26px) saturate(130%);
     backdrop-filter: blur(26px) saturate(130%);
   }
 
@@ -276,6 +282,7 @@
     box-shadow:
       0 30px 100px rgba(0, 0, 0, 0.68),
       inset 0 1px 0 rgba(255,255,255,0.05);
+    -webkit-backdrop-filter: blur(28px) saturate(135%);
     backdrop-filter: blur(28px) saturate(135%);
     color: rgba(239, 245, 255, 0.98);
   }

@@ -1,13 +1,16 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-
 import { NextResponse } from "next/server";
-
 import { repoPath } from "@/lib/paths";
 import { safeExecFile } from "@/lib/safe-exec";
 import type { BrainPortalStatus, DocsQuality, GraphifyFreshness, OllamaStatus, ToolReadiness } from "@/lib/types";
 
 const OLLAMA_DEFAULT_MODEL = "qwen2.5-coder:7b";
+
+// Global cache to prevent inference blocking on frequent polls
+let cachedOllamaStatus: OllamaStatus | null = null;
+let lastOllamaCheckTime = 0;
+let isOllamaChecking = false;
 
 function nowIso(): string {
   return new Date().toISOString();
@@ -24,6 +27,15 @@ async function fileSizeBytes(filePath: string): Promise<number> {
     return stat.size;
   } catch {
     return 0;
+  }
+}
+
+async function dirExists(dirPath: string): Promise<boolean> {
+  try {
+    const stat = await fs.stat(dirPath);
+    return stat.isDirectory();
+  } catch {
+    return false;
   }
 }
 
@@ -75,9 +87,6 @@ async function getGraphifyFreshness(headSha: string): Promise<GraphifyFreshness>
   if (normalizedHead && normalizedBuilt) {
     matchesHead = normalizedHead.startsWith(normalizedBuilt) || normalizedBuilt.startsWith(normalizedHead);
 
-    // If HEAD only changes graphify-out artifacts, allow the report to match the
-    // immediately-previous commit. This avoids a misleading "stale" state when
-    // the latest commit exists only to commit regenerated graph outputs.
     if (matchesHead === false) {
       const root = repoPath();
       const changed = await safeExecFile(
@@ -146,7 +155,8 @@ async function which(cmd: string): Promise<boolean> {
   return res.ok;
 }
 
-async function getOllamaStatus(): Promise<OllamaStatus> {
+// Background deep probe for Ollama to prevent 2.5s blocking polls
+async function runOllamaDeepCheck(): Promise<OllamaStatus> {
   const available = await which("ollama");
   if (!available) {
     return {
@@ -155,28 +165,113 @@ async function getOllamaStatus(): Promise<OllamaStatus> {
       modelPresent: null,
       model: OLLAMA_DEFAULT_MODEL,
       level: "unknown",
-      detail: "ollama not found on PATH",
+      detail: "Missing: Ollama not found on PATH",
     };
   }
 
-  const list = await safeExecFile("ollama", ["list"], { cwd: repoPath(), timeoutMs: 1500 });
-  const modelsText = (list.stdout || "").trim();
-  const modelPresent = modelsText.toLowerCase().includes(OLLAMA_DEFAULT_MODEL.toLowerCase());
+  // Fast check for daemon reachability and models
+  let running = false;
+  let modelPresent = false;
+  try {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), 1000);
+    const res = await fetch("http://127.0.0.1:11434/api/tags", { signal: controller.signal });
+    clearTimeout(id);
+    if (res.ok) {
+      running = true;
+      const data = await res.json();
+      modelPresent = data.models?.some((m: any) => m.name.toLowerCase().includes(OLLAMA_DEFAULT_MODEL.toLowerCase())) || false;
+    }
+  } catch {
+    running = false;
+  }
 
-  // If `ollama list` succeeds, we treat the daemon as reachable.
-  const running = list.ok;
+  if (!running) {
+    return {
+      available: true,
+      running: false,
+      modelPresent: null,
+      model: OLLAMA_DEFAULT_MODEL,
+      level: "warn",
+      detail: "Detected: Ollama daemon unreachable on port 11434",
+    };
+  }
+
+  if (!modelPresent) {
+    return {
+      available: true,
+      running: true,
+      modelPresent: false,
+      model: OLLAMA_DEFAULT_MODEL,
+      level: "warn",
+      detail: `Detected: Model ${OLLAMA_DEFAULT_MODEL} not pulled`,
+    };
+  }
+
+  // Deep inference probe
+  let callable = false;
+  let latencyMs = 0;
+  try {
+    const start = Date.now();
+    const controller = new AbortController();
+    // Allow up to 10s for inference probe (since it's cached)
+    const id = setTimeout(() => controller.abort(), 10000);
+    const res = await fetch("http://127.0.0.1:11434/api/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: OLLAMA_DEFAULT_MODEL,
+        prompt: "Return the word 'OK' strictly.",
+        stream: false,
+      }),
+      signal: controller.signal,
+    });
+    clearTimeout(id);
+    latencyMs = Date.now() - start;
+    if (res.ok) {
+      callable = true;
+    }
+  } catch {
+    callable = false;
+  }
 
   return {
     available: true,
-    running,
-    modelPresent,
+    running: true,
+    modelPresent: true,
     model: OLLAMA_DEFAULT_MODEL,
-    level: running ? (modelPresent ? "ok" : "warn") : "warn",
-    detail: running
-      ? modelPresent
-        ? "ollama running; model present"
-        : "ollama running; model not pulled"
-      : "ollama installed; daemon unreachable",
+    level: callable ? "ok" : "warn",
+    detail: callable 
+      ? `Configured: Model callable (${latencyMs}ms latency)` 
+      : "Detected: Model present but failed inference (timeout/OOM)",
+  };
+}
+
+async function getOllamaStatus(): Promise<OllamaStatus> {
+  const now = Date.now();
+  // Return cached result if within 60s, or trigger background update
+  if (cachedOllamaStatus && (now - lastOllamaCheckTime < 60000)) {
+    return cachedOllamaStatus;
+  }
+  
+  if (!isOllamaChecking) {
+    isOllamaChecking = true;
+    runOllamaDeepCheck().then(res => {
+      cachedOllamaStatus = res;
+      lastOllamaCheckTime = Date.now();
+      isOllamaChecking = false;
+    }).catch(() => {
+      isOllamaChecking = false;
+    });
+  }
+
+  return cachedOllamaStatus || {
+    available: true,
+    running: null,
+    modelPresent: null,
+    model: OLLAMA_DEFAULT_MODEL,
+    level: "unknown",
+    detail: "Probing Ollama inference...",
   };
 }
 
@@ -184,73 +279,150 @@ async function getCodexHooksStatus(): Promise<ToolReadiness> {
   const hookPath = repoPath(".codex", "hooks.json");
   const bytes = await fileSizeBytes(hookPath);
   if (bytes === 0) {
-    return { available: false, level: "unknown", detail: ".codex/hooks.json not found" };
+    return { available: false, level: "unknown", detail: ".codex/hooks.json missing" };
   }
-
   try {
     const text = await fs.readFile(hookPath, "utf-8");
     const hasGraphifyHook = /graphify\s+hook-check/i.test(text);
     return {
       available: true,
       level: hasGraphifyHook ? "ok" : "warn",
-      detail: hasGraphifyHook ? "graphify hook-check configured" : "hooks present; graphify hook-check not detected",
+      detail: hasGraphifyHook ? "Configured and active" : "Hooks present, but Graphify missing",
     };
   } catch {
-    return { available: true, level: "warn", detail: "hooks.json present but unreadable" };
+    return { available: true, level: "warn", detail: "hooks.json unreadable" };
   }
 }
 
-async function getToolReadiness(label: string, command: string, extraDetail?: string): Promise<ToolReadiness> {
-  const available = await which(command);
-  return {
-    available,
-    level: levelFromAvailability(available),
-    detail: available ? `${label} available` : `${label} not found on PATH${extraDetail ? ` (${extraDetail})` : ""}`,
-  };
+async function getAntigravityStatus(): Promise<ToolReadiness> {
+  const agentsDir = await dirExists(repoPath(".agents"));
+  const skillsLock = await fileSizeBytes(repoPath("skills-lock.json"));
+  
+  if (agentsDir || skillsLock > 0) {
+    return {
+      available: true,
+      level: "ok",
+      detail: "Antigravity .agents workspace and skills detected",
+    };
+  }
+  return { available: false, level: "unknown", detail: "No Antigravity footprints detected" };
 }
 
-async function probeHttp(url: string): Promise<boolean> {
+async function getOmegaStatus(): Promise<ToolReadiness> {
+  const omxDir = await dirExists(repoPath(".omx"));
+  if (omxDir) {
+    return {
+      available: true,
+      level: "ok",
+      detail: "OMEGA .omx memory layer detected",
+    };
+  }
+  return { available: false, level: "unknown", detail: "No repo-level OMEGA adapter configured" };
+}
+
+async function getClaudeCodeStatus(): Promise<ToolReadiness> {
+  // Truthful check: Is there a real agent handoff protocol documented?
+  const handoffProtocol = await fileSizeBytes(repoPath("docs/AGENT_HANDOFF.md"));
+  const contextPack = await fileSizeBytes(repoPath("tools/brain-portal/tools/brain-ops/data/context/agent-context-pack.md"));
+  
+  if (handoffProtocol > 0 && contextPack > 0) {
+    return {
+      available: true,
+      level: "ok",
+      detail: "Configured: Handoff protocol and context pack active",
+    };
+  } else if (handoffProtocol > 0) {
+    return {
+      available: true,
+      level: "warn",
+      detail: "Detected: Handoff protocol present, but no context pack yet",
+    };
+  }
+  return { available: false, level: "unknown", detail: "Missing: No handoff protocol found" };
+}
+
+async function probeHttp(url: string): Promise<{ok: boolean, status?: number}> {
   try {
     const controller = new AbortController();
     const id = setTimeout(() => controller.abort(), 700);
     const response = await fetch(url, { signal: controller.signal, cache: "no-store" });
     clearTimeout(id);
-    return response.status > 0;
+    return { ok: response.ok, status: response.status };
   } catch {
-    return false;
+    return { ok: false };
   }
 }
 
 async function getLangflowStatus(): Promise<ToolReadiness> {
-  // Common local Langflow defaults (user can run elsewhere; this is best-effort).
-  const candidates = ["http://127.0.0.1:7860", "http://127.0.0.1:7861"];
-  for (const base of candidates) {
-    // A 404 still means "reachable".
-    // We avoid reading any content; just check if the port responds.
-    // eslint-disable-next-line no-await-in-loop
-    const ok = await probeHttp(base);
-    if (ok) {
-      return { available: true, level: "ok", detail: `reachable at ${base}` };
-    }
+  const adapterPath = repoPath("backend", "langflow_adapter.py");
+  const adapterSize = await fileSizeBytes(adapterPath);
+  
+  if (adapterSize === 0) {
+    return { available: false, level: "warn", detail: "No adapter wired - missing backend/langflow_adapter.py" };
   }
-  return { available: false, level: "unknown", detail: "not reachable on :7860 or :7861" };
+
+  try {
+    const { exec } = require('child_process');
+    const util = require('util');
+    const execPromise = util.promisify(exec);
+    const { stdout } = await execPromise(`python3 "${adapterPath}"`, { timeout: 3000 });
+    const health = JSON.parse(stdout.trim());
+    return {
+      available: true,
+      level: health.level,
+      detail: health.detail
+    };
+  } catch (err) {
+    return { available: true, level: "error", detail: "Adapter execution failed" };
+  }
+}
+
+async function getRuFloStatus(): Promise<ToolReadiness> {
+  const adapterPath = repoPath("backend", "ruflo_adapter.py");
+  const adapterSize = await fileSizeBytes(adapterPath);
+  
+  if (adapterSize === 0) {
+    return { available: false, level: "warn", detail: "No adapter wired - missing backend/ruflo_adapter.py" };
+  }
+
+  try {
+    const { exec } = require('child_process');
+    const util = require('util');
+    const execPromise = util.promisify(exec);
+    const { stdout } = await execPromise(`python3 "${adapterPath}"`, { timeout: 3000, cwd: repoPath() });
+    const health = JSON.parse(stdout.trim());
+    return {
+      available: true,
+      level: health.level,
+      detail: health.detail
+    };
+  } catch (err) {
+    return { available: true, level: "error", detail: "Adapter execution failed" };
+  }
 }
 
 export async function GET() {
-  const git = await getGitStatus();
+  const gitPromise = getGitStatus();
+  const docsPromise = getDocsQuality();
+  const ollamaPromise = getOllamaStatus();
+  const langflowPromise = getLangflowStatus();
+  const rufloPromise = getRuFloStatus();
+  const codexHooksPromise = getCodexHooksStatus();
+  const antigravityPromise = getAntigravityStatus();
+  const omegaPromise = getOmegaStatus();
+  const claudeCodePromise = getClaudeCodeStatus();
+
+  // Graphify depends on git head
+  const git = await gitPromise;
   const graphify = await getGraphifyFreshness(git.head.sha);
-  const docs = await getDocsQuality();
-  const ollama = await getOllamaStatus();
 
-  // OMEGA status: only surface what is safely instrumentable inside the repo.
-  // We do not assume a configured MCP bridge here.
-  const omega: ToolReadiness = { available: false, level: "unknown", detail: "no repo-level OMEGA adapter configured" };
+  const [
+    docs, ollama, langflow, ruflo, codexHooks, antigravity, omega, claudeCode
+  ] = await Promise.all([
+    docsPromise, ollamaPromise, langflowPromise, rufloPromise, codexHooksPromise, antigravityPromise, omegaPromise, claudeCodePromise
+  ]);
 
-  const langflow = await getLangflowStatus();
-  const ruflo = await getToolReadiness("RuFlo", "ruflo");
-  const codexHooks = await getCodexHooksStatus();
-
-  const status: BrainPortalStatus = {
+  const status: BrainPortalStatus & { antigravity: ToolReadiness, claudeCode: ToolReadiness } = {
     timestampIso: nowIso(),
     git,
     graphify,
@@ -260,6 +432,8 @@ export async function GET() {
     langflow,
     ruflo,
     codexHooks,
+    antigravity,
+    claudeCode
   };
 
   return NextResponse.json(status, {

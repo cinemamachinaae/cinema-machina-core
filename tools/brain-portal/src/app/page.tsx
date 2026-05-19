@@ -98,6 +98,7 @@ export default function BrainPortalHome() {
               setHoveredNode(null);
               setIsPinned(false);
             }}
+            glow={search ? "cyan" : null}
           />
         </div>
 
@@ -109,6 +110,7 @@ export default function BrainPortalHome() {
             pinnedNode={isPinned ? selectedNode : null}
             summaries={summaries}
             onUnpin={() => setIsPinned(false)}
+            glow={isPinned ? "cyan" : effectiveHovered ? "blue" : null}
           />
         </div>
 
