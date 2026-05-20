@@ -50,6 +50,6 @@ Nodes returned by `/api/graphify/graph` include both Graphify's original extract
 
 ## 3. Recommended Entry Points for Investigation
 
-- **System Health & Telemetry:** Refer to the status route at [route.ts](file:///Users/sunnymacbookpro/Library/Mobile%20Documents/com~apple~CloudDocs/Ai/Cinema%20Machina%20Core/tools/brain-portal/src/app/api/status/route.ts).
-- **Graph Generation API:** Refer to the cached graph route at [route.ts](file:///Users/sunnymacbookpro/Library/Mobile%20Documents/com~apple~CloudDocs/Ai/Cinema%20Machina%20Core/tools/brain-portal/src/app/api/graphify/graph/route.ts).
-- **Handoff & Session Memory:** Refer to [AGENT_HANDOFF.md](file:///Users/sunnymacbookpro/Library/Mobile%20Documents/com~apple~CloudDocs/Ai/Cinema%20Machina%20Core/docs/AGENT_HANDOFF.md).
+- **System Health & Telemetry:** `tools/brain-portal/src/app/api/status/route.ts`
+- **Graph Generation API:** `tools/brain-portal/src/app/api/graphify/graph/route.ts`
+- **Handoff & Session Memory:** `docs/AGENT_HANDOFF.md`
