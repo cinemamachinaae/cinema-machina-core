@@ -5,13 +5,15 @@ This document explains how to "actively wire" local intelligence and agent frame
 The Brain Portal enforces a "Truth-First" model: it distinguishes between a tool simply being installed/reachable vs. having an explicit adapter that allows the Portal to orchestrate it.
 
 ## Langflow
-- **Status Check**: Probes `http://127.0.0.1:7860/health` (or `/api/v1/version`).
+- **Status Check**: Probes `LANGFLOW_BASE_URL` for `/health`, `/api/v1/version`, authenticated `/api/v1/flows/`, and the configured `LANGFLOW_FLOW_ENDPOINT` or `LANGFLOW_FLOW_ID`.
 - **Adapter**: `backend/langflow_adapter.py`
-- **How to Connect**: Create the `langflow_adapter.py` script. It should wrap the Langflow API and expose standard methods (e.g., `trigger_pipeline()`, `get_status()`). Once this file exists, the Portal will detect it and mark Langflow as "Integrated".
+- **Integrated Means**: The daemon is reachable, API auth is valid, and the configured flow is reachable and tied to Cinema Machina by name, endpoint, description, or tags.
+- **How to Connect**: Add secrets only to ignored local env, then run `python3 backend/langflow_adapter.py`. Required variables are documented in `docs/ai/LANGFLOW_RUFLO_WIRING.md`.
 
 ## RuFlo
-- **Status Check**: Checks for `ruflo.toml` or `ruflo.config.json` in the workspace root.
-- **How to Connect**: Initialize RuFlo in the workspace. The presence of the configuration file will mark RuFlo as integrated.
+- **Status Check**: Checks `ruflo` on `PATH`, `.claude-flow/config.yaml`, the generated context pack, and validates `.claude-flow/workflows/cinema-machina-brain-check.json` with `ruflo workflow validate --file`.
+- **Integrated Means**: The binary is detected, repo config is present, the workflow validates through the real RuFlo CLI, and the workflow points at the Cinema Machina Brain checks.
+- **How to Connect**: Keep `.claude-flow/config.yaml` and `.claude-flow/workflows/cinema-machina-brain-check.json` under version control. Runtime state under `.claude-flow/data`, `.claude-flow/logs`, `.swarm`, and `ruvector.db` stays ignored.
 
 ## Codex
 - **Status Check**: Checks for `.codex/hooks.json` and a `/graphify hook-check/` string inside.

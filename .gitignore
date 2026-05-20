@@ -47,3 +47,11 @@ graphify-out/cost.json
 graphify-out/cache/
 graphify-out/*.bak.*
 graphify-out/**/*.bak.*
+
+# Local RuFlo / Claude Flow runtime artifacts
+.claude/
+.swarm/
+ruvector.db
+agentdb.rvf
+agentdb.rvf.lock
+CLAUDE.md

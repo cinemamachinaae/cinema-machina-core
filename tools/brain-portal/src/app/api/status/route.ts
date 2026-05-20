@@ -366,18 +366,17 @@ async function getLangflowStatus(): Promise<ToolReadiness> {
   }
 
   try {
-    const { exec } = require('child_process');
-    const util = require('util');
-    const execPromise = util.promisify(exec);
-    const { stdout } = await execPromise(`python3 "${adapterPath}"`, { timeout: 3000 });
-    const health = JSON.parse(stdout.trim());
+    const result = await safeExecFile("python3", [adapterPath], { cwd: repoPath(), timeoutMs: 5000 });
+    if (!result.ok) {
+      return { available: true, level: "error", detail: "Adapter execution failed", status: "adapter_failed" };
+    }
+    const health = JSON.parse(result.stdout.trim());
     return {
       available: true,
-      level: health.level,
-      detail: health.detail
+      ...health,
     };
   } catch (err) {
-    return { available: true, level: "error", detail: "Adapter execution failed" };
+    return { available: true, level: "error", detail: "Adapter execution failed", status: "adapter_failed" };
   }
 }
 
@@ -390,18 +389,17 @@ async function getRuFloStatus(): Promise<ToolReadiness> {
   }
 
   try {
-    const { exec } = require('child_process');
-    const util = require('util');
-    const execPromise = util.promisify(exec);
-    const { stdout } = await execPromise(`python3 "${adapterPath}"`, { timeout: 3000, cwd: repoPath() });
-    const health = JSON.parse(stdout.trim());
+    const result = await safeExecFile("python3", [adapterPath], { cwd: repoPath(), timeoutMs: 5000 });
+    if (!result.ok) {
+      return { available: true, level: "error", detail: "Adapter execution failed", status: "adapter_failed" };
+    }
+    const health = JSON.parse(result.stdout.trim());
     return {
       available: true,
-      level: health.level,
-      detail: health.detail
+      ...health,
     };
   } catch (err) {
-    return { available: true, level: "error", detail: "Adapter execution failed" };
+    return { available: true, level: "error", detail: "Adapter execution failed", status: "adapter_failed" };
   }
 }
 

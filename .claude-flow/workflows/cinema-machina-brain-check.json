@@ -1,0 +1,14 @@
+{
+  "name": "cinema-machina-brain-check",
+  "description": "Validate the Cinema Machina AI Brain handoff, Graphify artifacts, and local toolchain readiness from the repo root.",
+  "steps": [
+    {
+      "name": "refresh-agent-context",
+      "command": "scripts/cm-agent-context-refresh.sh"
+    },
+    {
+      "name": "brain-check",
+      "command": "scripts/cm-brain-check.sh"
+    }
+  ]
+}

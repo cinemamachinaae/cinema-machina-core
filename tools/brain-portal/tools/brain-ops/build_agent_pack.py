@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from datetime import datetime, timezone
+import subprocess
 
 BASE = Path(__file__).parent
 CAPSULE_DIR = BASE / "data" / "capsules"
@@ -15,12 +16,36 @@ def load_latest(limit: int = 8) -> list[dict]:
     return [json.loads(path.read_text(encoding="utf-8")) for path in files]
 
 
+def adapter_status(repo_root: Path, adapter: str) -> str:
+    path = repo_root / "backend" / adapter
+    if not path.exists():
+        return "missing adapter"
+
+    try:
+        result = subprocess.run(
+            ["python3", str(path)],
+            cwd=repo_root,
+            capture_output=True,
+            text=True,
+            timeout=8,
+            check=False,
+        )
+        data = json.loads(result.stdout)
+        return f"{data.get('level', 'unknown')} / {data.get('status', 'unknown')} — {data.get('detail', '').strip()}"
+    except Exception as exc:
+        return f"error — adapter probe failed: {exc}"
+
+
 def check_integrations(repo_root: Path) -> list[str]:
     active = []
-    if (repo_root / ".codex").exists(): active.append("Codex")
-    if (repo_root / ".agents").exists(): active.append("Antigravity")
-    if (repo_root / ".claudecode").exists() or (repo_root / "claude.json").exists(): active.append("Claude Code")
-    if (repo_root / "ruflo.toml").exists(): active.append("RuFlo")
+    if (repo_root / ".codex").exists():
+        active.append("Codex: configured via .codex")
+    if (repo_root / ".agents").exists():
+        active.append("Antigravity: configured via .agents")
+    if (repo_root / "docs" / "AGENT_HANDOFF.md").exists():
+        active.append("Claude Code: handoff doc available")
+    active.append(f"Langflow: {adapter_status(repo_root, 'langflow_adapter.py')}")
+    active.append(f"RuFlo: {adapter_status(repo_root, 'ruflo_adapter.py')}")
     return active
 
 def render(capsules: list[dict], repo_root: Path) -> str:
@@ -35,7 +60,7 @@ def render(capsules: list[dict], repo_root: Path) -> str:
     
     lines.append("## Integration Readiness")
     integrations = check_integrations(repo_root)
-    lines.append(f"Active footprints: {', '.join(integrations) if integrations else 'None'}")
+    lines.extend([f"- {item}" for item in integrations] if integrations else ["- None"])
     lines.append("")
     
     graph_report = repo_root / "graphify-out" / "GRAPH_REPORT.md"

@@ -51,6 +51,8 @@ export type ToolReadiness = {
   available: boolean;
   level: StatusLevel;
   detail: string;
+  status?: string;
+  [key: string]: unknown;
 };
 
 export type OllamaStatus = {
@@ -82,4 +84,3 @@ export type OrbSummaries = {
   generatedAtIso: string | null;
   model: string | null;
 };
-

@@ -65,13 +65,13 @@ else
 fi
 
 if [ -f "backend/langflow_adapter.py" ]; then
-  python3 backend/langflow_adapter.py | python3 -c 'import json,sys; data=json.load(sys.stdin); print("[INFO] Langflow:", data.get("detail", data))' || warn "Langflow adapter probe failed"
+  python3 backend/langflow_adapter.py | python3 -c 'import json,sys; data=json.load(sys.stdin); level=data.get("level"); prefix="[FAIL]" if level=="error" else "[INFO]"; print(prefix, "Langflow:", data.get("status", "unknown"), "-", data.get("detail", data)); sys.exit(1 if level=="error" else 0)' || warn "Langflow adapter probe failed"
 else
   warn "Langflow adapter missing"
 fi
 
 if [ -f "backend/ruflo_adapter.py" ]; then
-  python3 backend/ruflo_adapter.py | python3 -c 'import json,sys; data=json.load(sys.stdin); print("[INFO] RuFlo:", data.get("detail", data))' || warn "RuFlo adapter probe failed"
+  python3 backend/ruflo_adapter.py | python3 -c 'import json,sys; data=json.load(sys.stdin); level=data.get("level"); prefix="[FAIL]" if level=="error" else "[INFO]"; print(prefix, "RuFlo:", data.get("status", "unknown"), "-", data.get("detail", data)); sys.exit(1 if level=="error" else 0)' || warn "RuFlo adapter probe failed"
 else
   warn "RuFlo adapter missing"
 fi

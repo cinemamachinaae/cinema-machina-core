@@ -1,0 +1,10 @@
+# RuFlo runtime files
+data/
+logs/
+sessions/
+neural/
+workflows/store.json
+metrics/
+security/
+*.log
+*.tmp

@@ -31,12 +31,13 @@ The old iCloud checkout is backup only. Do not use it for active development, de
 ## Integration Footprints
 The Brain Portal checks instrumentable presence markers and daemon reachability only. It does not monitor private reasoning streams.
 
-- `ruflo.toml` / `ruflo.config.json` -> RuFlo orchestration configured
+- `.claude-flow/config.yaml` and `.claude-flow/workflows/cinema-machina-brain-check.json` -> RuFlo repo workflow configured and CLI-validatable
 - `.agents/` workspace -> Antigravity presence
-- `claude.json` / `.claudecode` -> Claude Code presence
+- `docs/AGENT_HANDOFF.md` plus generated context pack -> Claude Code handoff presence
 - `.codex/hooks.json` -> Codex workflow hooks
-- `backend/langflow_adapter.py` -> Langflow integration
-- `backend/ruflo_adapter.py` -> RuFlo integration
+- `backend/langflow_adapter.py` -> Langflow daemon/auth/flow readiness probe
+- `backend/ruflo_adapter.py` -> RuFlo binary/config/workflow readiness probe
+- `docs/ai/LANGFLOW_RUFLO_WIRING.md` -> exact Langflow/RuFlo verification commands and local env expectations
 
 ## Local Portal Launch
 

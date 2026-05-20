@@ -61,8 +61,9 @@ curl -I http://127.0.0.1:3000/api/enrichment/summaries
 ## Tooling Truth Rules
 - Codex/Claude/Antigravity readiness means repo-level handoff files, hooks, or workspace footprints are present.
 - Qwen/Ollama readiness means Ollama is on PATH, daemon is reachable, and `qwen2.5-coder:7b` is present/callable.
-- RuFlo readiness means the binary and repo config are present; a global install alone is not repo integration.
-- Langflow readiness means the daemon is reachable and a flow is configured when required; a global process alone is not full workflow integration.
+- RuFlo readiness means the binary, `.claude-flow/config.yaml`, context pack, and `.claude-flow/workflows/cinema-machina-brain-check.json` validate through the real CLI; a global install alone is not repo integration.
+- Langflow readiness means the daemon is reachable, API auth is valid, and a Cinema Machina flow endpoint or ID is configured and reachable; a global process alone is not full workflow integration.
+- Langflow/RuFlo setup details live in `docs/ai/LANGFLOW_RUFLO_WIRING.md`.
 - Never expose `.env` values, API keys, tokens, or private credentials in agent reports.
 
 ## Future Project Adaptation
