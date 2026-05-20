@@ -14,7 +14,7 @@ function getMacroSectionAndSubcluster(node: any): { macroSectionId: number; macr
   let macroSectionLabel = "Docs / Config / Runtime";
   let subcluster = "other";
 
-  const pathLower = source.toLowerCase() || id.toLowerCase();
+  const pathLower = String(node.source_file || node.source || node.id || "").toLowerCase();
 
   // 1. Brain Portal UI
   if (
@@ -128,6 +128,72 @@ function getMacroSectionAndSubcluster(node: any): { macroSectionId: number; macr
   return { macroSectionId, macroSectionLabel, subcluster };
 }
 
+const FRIENDLY_LABELS: Record<string, string> = {
+  "tools/brain-portal/src/app/page.tsx": "Brain Portal Home",
+  "tools/brain-portal/src/components/hero-orb-canvas.tsx": "Hero Orb Canvas",
+  "tools/brain-portal/src/components/right-inspector.tsx": "Right Inspector Panel",
+  "tools/brain-portal/src/components/left-control-rail.tsx": "Left Control Rail",
+  "tools/brain-portal/src/components/bottom-pulse-strip.tsx": "Bottom Pulse Strip",
+  "tools/brain-portal/src/components/panel.tsx": "Dashboard Panel Component",
+  "tools/brain-portal/src/app/api/status/route.ts": "Status Telemetry API",
+  "tools/brain-portal/src/app/api/graphify/graph/route.ts": "Graphify Graph API",
+  "tools/brain-portal/src/app/api/enrichment/summaries/route.ts": "Orb Summaries API",
+  "backend/langflow_adapter.py": "Langflow Integration Adapter",
+  "backend/ruflo_adapter.py": "RuFlo Integration Adapter",
+  "tools/brain-ops/build_agent_pack.py": "Context Pack Builder",
+  "tools/brain-ops/run_brain_cycle.sh": "Brain Cycle Orchestrator",
+  "docs/AGENT_HANDOFF.md": "Agent Handoff Protocol",
+  "graphify-out/GRAPH_REPORT.md": "Graphify Architecture Report",
+  "tools/brain-portal/tools/brain-ops/data/context/agent-context-pack.md": "Agent Context Pack",
+  "docs/ai/AI_BRAIN_TEMPLATE.md": "AI Project Brain Template",
+  "docs/ai/QWEN_LOCAL_ROLE.md": "Qwen Local Role Docs",
+  "docs/ai/BRAIN_STACK.md": "Brain Stack Docs",
+  "docs/ai/TOOLCHAIN_ROUTING.md": "Toolchain Routing Docs",
+  "docs/ai/PROJECT_STATE.md": "Project State Docs",
+  "docs/ai/TASK_LOG.md": "Task Log Docs",
+  "docs/ai/DECISIONS.md": "Decisions Docs",
+  "docs/ai/KNOWN_ISSUES.md": "Known Issues Docs",
+  "docs/ai/ENVIRONMENT_MAP.md": "Environment Map Docs",
+  "docs/ai/SERVER_AND_DEVICE_CONTEXT.md": "Server & Device Context Docs",
+  "docs/ai/API_AND_INTEGRATIONS.md": "API & Integrations Docs",
+  "docs/ai/ARCHITECTURE_OVERVIEW.md": "Architecture Overview Docs",
+  "docs/ai/PRODUCT_AND_BRAND_CONTEXT.md": "Product & Brand Context Docs",
+  ".codex/hooks.json": "Codex Git Hooks Config",
+  "skills-lock.json": "Agent Skills Registry",
+  "package.json": "Workspace Configuration",
+  "next.config.mjs": "Next.js Configuration",
+  "tsconfig.json": "TypeScript Config",
+  "tools/brain-portal/src/lib/types.ts": "Brain Portal Types",
+  "tools/brain-portal/src/lib/paths.ts": "Repo Path Utilities",
+  "tools/brain-portal/src/lib/safe-exec.ts": "Safe Command Executor",
+  "backend/requirements.txt": "Python Backend Dependencies",
+};
+
+const getBasename = (filePath: string) => {
+  const parts = filePath.split("/");
+  return parts[parts.length - 1] || filePath;
+};
+
+function getCleanNodeLabel(node: any): string {
+  let cleanLabel = node.label || node.id || "unknown";
+  const sourceFile = node.source_file || "";
+  const isFileNode = node.source_location === "L1" || !node.source_location || node.source_location === "";
+  
+  if (isFileNode) {
+    if (sourceFile && FRIENDLY_LABELS[sourceFile]) {
+      return FRIENDLY_LABELS[sourceFile];
+    } else if (sourceFile) {
+      return getBasename(sourceFile);
+    }
+  } else {
+    const baseName = sourceFile ? getBasename(sourceFile) : "";
+    if (baseName) {
+      return `${baseName} : ${cleanLabel}`;
+    }
+  }
+  return cleanLabel;
+}
+
 export async function GET() {
   const graphPath = repoPath("graphify-out", "graph.json");
   try {
@@ -152,17 +218,20 @@ export async function GET() {
       
       // Let's amplify node importance dynamically if they are important files
       let baseVal = node.val ?? 4;
-      const isImportantFile =
-        node.id?.endsWith("/page.tsx") ||
-        node.id?.endsWith("/route.ts") ||
-        node.id?.endsWith("/layout.tsx") ||
-        node.id?.includes("adapter.py") ||
-        node.id?.includes("run_brain_cycle.sh") ||
-        node.id?.includes("AGENT_HANDOFF.md") ||
-        node.id?.includes("GRAPH_REPORT.md");
+      const isFileNode = node.source_location === "L1" || !node.source_location || node.source_location === "";
+      
+      const isImportantFile = isFileNode && (
+        node.source_file?.endsWith("/page.tsx") ||
+        node.source_file?.endsWith("/route.ts") ||
+        node.source_file?.endsWith("/layout.tsx") ||
+        node.source_file?.includes("adapter.py") ||
+        node.source_file?.includes("run_brain_cycle.sh") ||
+        node.source_file?.includes("AGENT_HANDOFF.md") ||
+        node.source_file?.includes("GRAPH_REPORT.md")
+      );
 
       if (isImportantFile) {
-        baseVal = Math.max(baseVal, 16);
+        baseVal = Math.max(baseVal, 18);
       }
 
       // Preserve original community, set graphifyCommunity, macroSectionId, and macroSectionLabel
@@ -170,6 +239,7 @@ export async function GET() {
 
       return {
         ...node,
+        label: getCleanNodeLabel(node),
         community: origCommunity,
         graphifyCommunity: origCommunity,
         macroSectionId: info.macroSectionId,

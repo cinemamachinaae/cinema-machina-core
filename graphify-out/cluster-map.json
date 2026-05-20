@@ -3,42 +3,42 @@
     {
       "id": 0,
       "label": "Brain Portal UI",
-      "stableColor": "#4f46e5",
+      "stableColor": "#7CA9FF",
       "subclusters": ["routes", "components", "runtime"],
       "description": "Visualizes telemetry status, 3D Orb, and system monitoring rails."
     },
     {
       "id": 1,
       "label": "Graphify / Orb Visualization",
-      "stableColor": "#06b6d4",
+      "stableColor": "#00E5FF",
       "subclusters": ["scripts", "generated-artifacts"],
       "description": "AST-based repository mapping, layout rendering, and Orb asset compilation."
     },
     {
       "id": 2,
       "label": "Brain Ops / Context Pipeline",
-      "stableColor": "#eab308",
+      "stableColor": "#E6C26E",
       "subclusters": ["scripts", "docs"],
       "description": "Orchestrates background context compilation, agent memory backups, and sync operations."
     },
     {
       "id": 3,
       "label": "Integrations",
-      "stableColor": "#10b981",
+      "stableColor": "#46D7C8",
       "subclusters": ["adapters", "runtime"],
       "description": "Ollama/Qwen routing logic, Langflow graph pipelines, and RuFlo execution interfaces."
     },
     {
       "id": 4,
       "label": "Agent Handoff",
-      "stableColor": "#ef4444",
+      "stableColor": "#E07AA6",
       "subclusters": ["docs", "generated-artifacts"],
       "description": "Codex integration points, Antigravity session handoffs, and Claude Code sync states."
     },
     {
       "id": 5,
       "label": "Docs / Config / Runtime",
-      "stableColor": "#64748b",
+      "stableColor": "#C9D2E3",
       "subclusters": ["docs", "runtime", "other"],
       "description": "Project configuration, package setup, architecture manuals, and environment defaults."
     }

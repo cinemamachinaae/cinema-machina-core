@@ -9,6 +9,8 @@ export type BrainPortalNode = {
   macroSectionId?: number;
   macroSectionLabel?: string;
   source?: string;
+  source_file?: string;
+  source_location?: string;
   val?: number;
   subcluster?: "routes" | "components" | "adapters" | "scripts" | "docs" | "generated-artifacts" | "runtime" | "other" | string;
 };

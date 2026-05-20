@@ -12,22 +12,19 @@ function isMobileLike(): boolean {
   return /iPhone|iPad|Android/i.test(ua) || window.matchMedia?.("(max-width: 720px)")?.matches;
 }
 
-const COMMUNITY_PALETTE = [
-  "#7CA9FF", "#9A7BFF", "#46D7C8", "#E07AA6", "#E6C26E",
-  "#5DB6E6", "#B5A0FF", "#7ED6B5", "#D98DBA", "#C9D2E3",
-];
+const STABLE_SECTION_COLORS: Record<number, string> = {
+  0: "#7CA9FF", // Brain Portal UI
+  1: "#00E5FF", // Graphify / Orb Visualization
+  2: "#E6C26E", // Brain Ops / Context Pipeline
+  3: "#46D7C8", // Integrations
+  4: "#E07AA6", // Agent Handoff
+  5: "#C9D2E3", // Docs / Config / Runtime
+};
 
-function stableColorForCommunity(community: number | string | undefined): string {
-  const key = String(community ?? "0");
-  let hash = 0;
-  for (let i = 0; i < key.length; i += 1) hash = (hash * 31 + key.charCodeAt(i)) | 0;
-  const hex = COMMUNITY_PALETTE[Math.abs(hash) % COMMUNITY_PALETTE.length] ?? "#7CA9FF";
-
-  const color = new THREE.Color(hex);
-  const hsl = { h: 0, s: 0, l: 0 };
-  color.getHSL(hsl);
-  color.setHSL(hsl.h, Math.min(0.85, hsl.s * 0.72), Math.min(0.85, hsl.l * 0.92));
-  return `#${color.getHexString()}`;
+function stableColorForCommunity(macroSectionId: number | string | undefined): string {
+  const numId = typeof macroSectionId === "number" ? macroSectionId : parseInt(String(macroSectionId ?? "5"), 10);
+  const hex = STABLE_SECTION_COLORS[isNaN(numId) ? 5 : numId] || "#C9D2E3";
+  return hex;
 }
 
 function buildHaloTexture(): THREE.Texture {
@@ -38,10 +35,11 @@ function buildHaloTexture(): THREE.Texture {
   if (!ctx) return new THREE.CanvasTexture(canvas);
 
   const g = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-  g.addColorStop(0, "rgba(255,255,255,0.85)");
-  g.addColorStop(0.15, "rgba(255,255,255,0.30)");
-  g.addColorStop(0.4, "rgba(255,255,255,0.08)");
-  g.addColorStop(1, "rgba(255,255,255,0)");
+  g.addColorStop(0, "rgba(255,255,255,1.0)");
+  g.addColorStop(0.2, "rgba(255,255,255,0.8)");
+  g.addColorStop(0.5, "rgba(255,255,255,0.35)");
+  g.addColorStop(0.8, "rgba(255,255,255,0.08)");
+  g.addColorStop(1.0, "rgba(255,255,255,0)");
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, 256, 256);
 
@@ -143,13 +141,14 @@ export function HeroOrbCanvas(props: {
       graph
         .backgroundColor("rgba(0,0,0,0)")
         .nodeOpacity(1.0)
-        .linkOpacity(mobileLike ? 0.10 : 0.15)
+        .linkOpacity(mobileLike ? 0.15 : 0.25)
         .linkWidth((l: any) => (l.label ? 0.5 : 0.18))
-        .linkColor(() => "rgba(164,202,255,0.15)")
+        .linkColor(() => "rgba(164,202,255,0.18)")
         .d3Force("charge")
         ?.strength(-55);
 
       graph.d3Force("link")?.distance(24);
+      graph.d3AlphaTarget(0.02); // Keep simulation warm for continuous auto-rotation
 
       // Premium slow orbit on desktop
       const controls = graph.controls();
@@ -239,9 +238,9 @@ export function HeroOrbCanvas(props: {
         map: haloTexture,
         color: new THREE.Color(emphasized ? "#dff5ff" : colorHex),
         transparent: true,
-        opacity: emphasized ? 0.45 : 0.20,
+        opacity: emphasized ? 0.85 : 0.45,
         depthWrite: false,
-        blending: THREE.NormalBlending,
+        blending: THREE.AdditiveBlending, // Glow effect!
       });
       const halo = new THREE.Sprite(haloMat);
       
@@ -259,7 +258,7 @@ export function HeroOrbCanvas(props: {
         map: haloTexture,
         color: new THREE.Color(emphasized ? "#ffffff" : colorHex),
         transparent: true,
-        opacity: emphasized ? 0.95 : 0.70,
+        opacity: emphasized ? 1.0 : 0.85,
         depthWrite: false,
         blending: THREE.NormalBlending,
       });
