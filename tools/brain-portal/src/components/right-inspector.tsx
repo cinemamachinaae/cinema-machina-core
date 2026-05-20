@@ -65,7 +65,7 @@ export function RightInspector(props: {
     ? props.summaries?.nodeSummaries?.[getNodeKey(props.node)] ?? null
     : null;
 
-  const communityKey = props.node?.community != null ? String(props.node.community) : null;
+  const communityKey = props.node?.macroSectionId != null ? String(props.node.macroSectionId) : null;
   const communitySummary =
     communityKey && props.summaries?.communitySummaries
       ? props.summaries.communitySummaries[communityKey] ?? null
@@ -188,21 +188,28 @@ export function RightInspector(props: {
                 { name: "Claude Code", status: props.status?.claudeCode },
                 { name: "OMEGA Memory", status: props.status?.omega },
               ].map((tool) => (
-                <div key={tool.name} className="flex items-center gap-2 py-1.5 px-2 rounded-lg hover:bg-white/4 transition-colors group">
-                  {statusDot(tool.status?.level)}
-                  <span className="text-[11px] font-medium text-white/80 flex-1">{tool.name}</span>
-                  <span
-                    className={[
-                      "text-[9px] uppercase tracking-wider font-mono",
-                      tool.status?.level === "ok"
-                        ? "text-emerald-400/70"
-                        : tool.status?.level === "warn"
-                          ? "text-amber-400/70"
-                          : "text-white/30",
-                    ].join(" ")}
-                  >
-                    {statusLabel(tool.status?.level)}
-                  </span>
+                <div key={tool.name} className="flex flex-col py-1.5 px-2 rounded-lg hover:bg-white/4 transition-colors group">
+                  <div className="flex items-center gap-2">
+                    {statusDot(tool.status?.level)}
+                    <span className="text-[11px] font-medium text-white/80 flex-1">{tool.name}</span>
+                    <span
+                      className={[
+                        "text-[9px] uppercase tracking-wider font-mono",
+                        tool.status?.level === "ok"
+                          ? "text-emerald-400/70"
+                          : tool.status?.level === "warn"
+                            ? "text-amber-400/70"
+                            : "text-white/30",
+                      ].join(" ")}
+                    >
+                      {statusLabel(tool.status?.level)}
+                    </span>
+                  </div>
+                  {tool.status?.detail && (
+                    <div className="pl-4 pr-1 pt-1 text-[9px] leading-relaxed text-white/40">
+                      {tool.status.detail}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -225,10 +232,16 @@ export function RightInspector(props: {
               <div className="text-[14px] font-semibold text-white/95">
                 {props.node.label || props.node.id}
               </div>
-              <div className="mt-1 text-[11px] text-white/50">
+              <div className="mt-1 text-[11px] text-white/50 flex flex-wrap gap-1.5 items-center">
                 <span className="font-mono text-[10px] bg-white/5 rounded px-1.5 py-0.5">{props.node.type ?? "node"}</span>
+                {props.node.macroSectionLabel ? (
+                  <span className="text-white/60">· {props.node.macroSectionLabel}</span>
+                ) : null}
                 {props.node.community != null ? (
-                  <span className="ml-2">· cluster {String(props.node.community)}</span>
+                  <span className="text-white/40">· g-comm {String(props.node.community)}</span>
+                ) : null}
+                {props.node.subcluster ? (
+                  <span className="text-[9px] uppercase tracking-wider font-mono bg-white/5 px-1 rounded text-white/40">{props.node.subcluster}</span>
                 ) : null}
               </div>
             </div>

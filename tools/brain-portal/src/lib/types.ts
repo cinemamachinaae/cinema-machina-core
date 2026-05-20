@@ -5,8 +5,12 @@ export type BrainPortalNode = {
   label?: string;
   type?: string;
   community?: number | string;
+  graphifyCommunity?: number | string;
+  macroSectionId?: number;
+  macroSectionLabel?: string;
   source?: string;
   val?: number;
+  subcluster?: "routes" | "components" | "adapters" | "scripts" | "docs" | "generated-artifacts" | "runtime" | "other" | string;
 };
 
 export type GraphifyLink = {

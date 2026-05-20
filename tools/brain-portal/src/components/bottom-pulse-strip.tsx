@@ -74,10 +74,10 @@ export function BottomPulseStrip(props: { status: BrainPortalStatus | null }) {
         {item(<Orbit size={12} />, "Graph", graphLevel, graphify?.matchesHead === true ? "synced" : graphify?.matchesHead === false ? "stale" : "—")}
         {item(<GitBranch size={12} />, "Git", git ? (git.dirty ? "warn" : "ok") : "unknown", git ? (git.dirty ? `${git.changedFiles} dirty` : "clean") : "—")}
         {item(<Sparkles size={12} />, "Ollama", props.status?.ollama.level ?? "unknown", props.status?.ollama.level === "ok" ? "ready" : props.status?.ollama.detail ?? "—")}
-        {item(<Database size={12} />, "OMEGA", props.status?.omega.level ?? "unknown", props.status?.omega.level === "ok" ? "active" : "—")}
-        {item(<Workflow size={12} />, "Langflow", props.status?.langflow.level ?? "unknown", props.status?.langflow.level === "ok" ? "wired" : "—")}
-        {item(<Brain size={12} />, "RuFlo", props.status?.ruflo.level ?? "unknown", props.status?.ruflo.level === "ok" ? "wired" : "—")}
-        {item(<Network size={12} />, "Codex", props.status?.codexHooks.level ?? "unknown", props.status?.codexHooks.level === "ok" ? "hooked" : "—")}
+        {item(<Database size={12} />, "OMEGA", props.status?.omega.level ?? "unknown", props.status?.omega.level === "ok" ? "active" : props.status?.omega.detail ?? "—")}
+        {item(<Workflow size={12} />, "Langflow", props.status?.langflow.level ?? "unknown", props.status?.langflow.level === "ok" ? "wired" : props.status?.langflow.detail ?? "—")}
+        {item(<Brain size={12} />, "RuFlo", props.status?.ruflo.level ?? "unknown", props.status?.ruflo.level === "ok" ? "wired" : props.status?.ruflo.detail ?? "—")}
+        {item(<Network size={12} />, "Codex", props.status?.codexHooks.level ?? "unknown", props.status?.codexHooks.level === "ok" ? "hooked" : props.status?.codexHooks.detail ?? "—")}
       </div>
     </div>
   );

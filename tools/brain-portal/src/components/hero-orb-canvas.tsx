@@ -223,37 +223,52 @@ export function HeroOrbCanvas(props: {
 
     const pinnedId = props.pinnedNode?.id ?? null;
 
-    graph.nodeThreeObjectExtend(true);
+    graph.nodeThreeObjectExtend(false);
     graph.nodeThreeObject((node: any) => {
       const n = node as BrainPortalNode;
       const group = new THREE.Group();
 
-      const colorHex = stableColorForCommunity(n.community);
+      const colorHex = stableColorForCommunity(n.macroSectionId);
       const emphasized = Boolean(
         (pinnedId && n.id === pinnedId) ||
           (searchLower && String(n.label || "").toLowerCase().includes(searchLower)),
       );
 
-      // Halo sprite
+      // 1. Outer Halo Sprite
       const haloMat = new THREE.SpriteMaterial({
         map: haloTexture,
         color: new THREE.Color(emphasized ? "#dff5ff" : colorHex),
         transparent: true,
-        opacity: emphasized ? 0.6 : 0.25,
+        opacity: emphasized ? 0.45 : 0.20,
         depthWrite: false,
-        blending: THREE.AdditiveBlending,
+        blending: THREE.NormalBlending,
       });
       const halo = new THREE.Sprite(haloMat);
+      
       const baseVal = n.val || 4;
-      const haloScale = 10 + Math.min(28, baseVal * 2.2);
+      const haloScale = 7 + Math.min(22, baseVal * 1.6);
       halo.scale.set(
-        haloScale * (emphasized ? 1.12 : 1.0),
-        haloScale * (emphasized ? 1.12 : 1.0),
+        haloScale * (emphasized ? 1.15 : 1.0),
+        haloScale * (emphasized ? 1.15 : 1.0),
         1,
       );
       group.add(halo);
 
-      // Show label on emphasized or high-importance nodes
+      // 2. Inner Core Sprite (replaces default 3D sphere)
+      const coreMat = new THREE.SpriteMaterial({
+        map: haloTexture,
+        color: new THREE.Color(emphasized ? "#ffffff" : colorHex),
+        transparent: true,
+        opacity: emphasized ? 0.95 : 0.70,
+        depthWrite: false,
+        blending: THREE.NormalBlending,
+      });
+      const core = new THREE.Sprite(coreMat);
+      const coreScale = haloScale * 0.32;
+      core.scale.set(coreScale, coreScale, 1);
+      group.add(core);
+
+      // 3. Text Label Sprite
       const showLabel = emphasized || (n.val != null && n.val >= 12);
       const isClusterHub = n.val != null && n.val >= 18;
       
@@ -274,7 +289,7 @@ export function HeroOrbCanvas(props: {
     graph.nodeColor((node: any) => {
       const n = node as BrainPortalNode;
       if (searchLower && String(n.label || "").toLowerCase().includes(searchLower)) return "#f2f8ff";
-      return stableColorForCommunity(n.community);
+      return stableColorForCommunity(n.macroSectionId);
     });
 
     graph.nodeVal((node: any) => {
