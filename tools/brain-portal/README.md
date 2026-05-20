@@ -16,13 +16,14 @@ This portal is intentionally separate from the Cinema Machina Core product apps 
 
 ```bash
 cd tools/brain-portal
-npm install
-npm run dev
+npm ci
+./start-dev.sh
 ```
 
 Open:
 - `http://localhost:3000` (Portal)
 - `http://localhost:3000/orb` (Graphify Orb HTML served read-only via the portal)
+- `http://100.89.153.1:3000/` (Tailnet/iPhone access when the server is bound to `0.0.0.0`)
 
 ## Build
 
@@ -53,3 +54,4 @@ Defaults:
 
 - The portal does not attempt to read Codex/Claude internal reasoning. It only surfaces instrumentable signals.
 - If Graphify is stale vs `HEAD`, run `graphify update .` from the repo root.
+- The portal reads the repo-root `graphify-out/`; do not create a nested `tools/brain-portal/graphify-out`.

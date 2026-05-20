@@ -176,6 +176,7 @@ Returns the service health status.
 
 ## Notes
 
-- This repo is hosted in iCloud Drive. Avoid running commands that generate heavy cache output in the project root.
+- Active development now runs from the local SSD workspace at `$CM_CORE_HOME` (`$HOME/Developer/cinema-machina-core`). Keep the old iCloud checkout as backup only.
+- Use `~/.config/cinema-machina/paths.sh` for canonical local paths and run Graphify from the repo root.
 - Do not commit `.env`. Use `.env.example` as the reference.
 - Read `AGENTS.md` and `SKILLS.md` before making any code or architecture changes.

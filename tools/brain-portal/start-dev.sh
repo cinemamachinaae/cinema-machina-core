@@ -1,28 +1,10 @@
 #!/usr/bin/env bash
-# ─────────────────────────────────────────────────────────────
-# Cinema Machina Brain Portal — Dev Server Launcher
-# ─────────────────────────────────────────────────────────────
+# Cinema Machina Brain Portal — local SSD dev server launcher.
 #
-# CRITICAL: Run this from a normal Terminal.app session, NOT
-# from an AI agent (Antigravity/Claude Code). The agent's
-# sandbox blocks network operations and slows iCloud I/O to
-# a crawl.
-#
-# This script solves two problems:
-#
-#   1. iCloud CloudDocs makes node_modules unbearably slow
-#      (builds take 30+ minutes instead of 7 seconds).
-#
-#   2. The Antigravity sandbox blocks listen() / dlopen()
-#      so dev servers can never bind ports.
-#
-# HOW TO USE:
-#   cd tools/brain-portal
-#   ./start-dev.sh            # default: 127.0.0.1:3000
-#   ./start-dev.sh 3001       # alternative port
-#   ./start-dev.sh 3001 0.0.0.0  # bind to all interfaces
-#
-# ─────────────────────────────────────────────────────────────
+# Usage:
+#   ./start-dev.sh                 # 0.0.0.0:3000
+#   ./start-dev.sh 3001            # 0.0.0.0:3001
+#   ./start-dev.sh 3001 127.0.0.1  # loopback-only
 
 set -euo pipefail
 
@@ -30,10 +12,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
 PORT="${1:-3000}"
-HOST="${2:-127.0.0.1}"
-
-# ── Fast local cache for node_modules + build output ──
-LOCAL_CACHE="$HOME/.cache/cinema-machina/brain-portal"
+HOST="${2:-0.0.0.0}"
 
 echo ""
 echo "╔═══════════════════════════════════════════════════╗"
@@ -45,76 +24,35 @@ echo "  Host:    $HOST"
 echo "  Port:    $PORT"
 echo ""
 
-# Detect if we're on iCloud Drive
-if [[ "$SCRIPT_DIR" == *"com~apple~CloudDocs"* ]] || [[ "$SCRIPT_DIR" == *"Mobile Documents"* ]]; then
-  echo "⚡ Detected iCloud Drive — enabling local cache acceleration"
-  echo "   Cache: $LOCAL_CACHE"
-  echo ""
-  mkdir -p "$LOCAL_CACHE"
-
-  # Move node_modules off iCloud if it's a real directory
-  if [ -d "node_modules" ] && [ ! -L "node_modules" ]; then
-    echo "📦 Moving node_modules to local storage (this may take a minute)..."
-    if [ -d "$LOCAL_CACHE/node_modules" ]; then
-      echo "   Replacing stale local cache..."
-      rm -rf "$LOCAL_CACHE/node_modules"
-    fi
-    mv "node_modules" "$LOCAL_CACHE/node_modules"
-    ln -s "$LOCAL_CACHE/node_modules" "node_modules"
-    echo "   ✓ node_modules → $LOCAL_CACHE/node_modules"
-    echo ""
-  elif [ -L "node_modules" ]; then
-    TARGET=$(readlink "node_modules" 2>/dev/null || true)
-    echo "📦 node_modules symlinked → $TARGET ✓"
-    echo ""
-  fi
-
-  # Symlink .next-local build cache
-  if [ -d ".next-local" ] && [ ! -L ".next-local" ]; then
-    echo "🔧 Moving build cache to local storage..."
-    [ -d "$LOCAL_CACHE/.next-local" ] && rm -rf "$LOCAL_CACHE/.next-local"
-    mv ".next-local" "$LOCAL_CACHE/.next-local"
-    ln -s "$LOCAL_CACHE/.next-local" ".next-local"
-    echo "   ✓ .next-local → $LOCAL_CACHE/.next-local"
-    echo ""
-  elif [ ! -e ".next-local" ]; then
-    mkdir -p "$LOCAL_CACHE/.next-local"
-    ln -s "$LOCAL_CACHE/.next-local" ".next-local"
-    echo "🔧 Created local build cache ✓"
-    echo ""
-  elif [ -L ".next-local" ]; then
-    echo "🔧 Build cache already local ✓"
-    echo ""
-  fi
+if [ ! -d "node_modules" ]; then
+  echo "Missing node_modules. Run: npm ci"
+  exit 1
 fi
 
-# ── Ensure dependencies ──
-if [ ! -d "node_modules/next" ] && [ ! -L "node_modules" ]; then
-  echo "⏳ Installing dependencies..."
-  npm install
-  echo ""
-elif [ -L "node_modules" ] && [ ! -d "$(readlink node_modules)/next" ]; then
-  echo "⏳ Installing dependencies into local cache..."
-  npm install
-  echo ""
+if [ ! -x "node_modules/.bin/next" ]; then
+  echo "Missing Next.js binary. Run: npm ci"
+  exit 1
 fi
 
-# ── Check port ──
 if lsof -i ":$PORT" -sTCP:LISTEN -t >/dev/null 2>&1; then
   EXISTING_PID=$(lsof -i ":$PORT" -sTCP:LISTEN -t 2>/dev/null | head -1)
-  echo "⚠️  Port $PORT in use by PID $EXISTING_PID"
-  read -rp "   Kill it? (y/N) " REPLY
-  if [[ "$REPLY" =~ ^[Yy]$ ]]; then
-    kill "$EXISTING_PID" 2>/dev/null || true
-    sleep 1
-  else
-    echo "   Use: ./start-dev.sh 3001"
-    exit 1
-  fi
+  echo "Port $PORT is already in use by PID $EXISTING_PID."
+  echo "Stop that process or use: ./start-dev.sh 3001"
+  exit 1
 fi
 
 export NEXT_TELEMETRY_DISABLED=1
 
-echo "🚀 Starting → http://$HOST:$PORT"
+TAILSCALE_IP=""
+if command -v tailscale >/dev/null 2>&1; then
+  TAILSCALE_IP="$(tailscale ip -4 2>/dev/null | head -1 || true)"
+fi
+[ -z "$TAILSCALE_IP" ] && TAILSCALE_IP="100.89.153.1"
+
+echo "Local:    http://127.0.0.1:$PORT/"
+echo "Network:  http://<mac-lan-ip>:$PORT/"
+echo "Tailnet:  http://$TAILSCALE_IP:$PORT/"
 echo ""
-exec npx next dev -H "$HOST" -p "$PORT"
+echo "Starting Brain Portal..."
+echo ""
+exec npm run dev -- -H "$HOST" -p "$PORT"

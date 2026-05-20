@@ -67,7 +67,7 @@ def render(capsules: list[dict], repo_root: Path) -> str:
 
 def main() -> None:
     capsules = load_latest()
-    repo_root = BASE.parent.parent.parent
+    repo_root = BASE.parents[3]
     out = CONTEXT_DIR / "agent-context-pack.md"
     out.write_text(render(capsules, repo_root), encoding="utf-8")
     print(f"[OK] Agent pack written: {out}")

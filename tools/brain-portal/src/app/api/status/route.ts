@@ -99,8 +99,12 @@ async function getGraphifyFreshness(headSha: string): Promise<GraphifyFreshness>
         .map((l) => l.trim())
         .filter(Boolean);
 
+      const generatedGraphArtifacts = new Set([
+        "tools/brain-portal/tools/brain-ops/data/context/agent-context-pack.md",
+      ]);
       const headOnlyGraphifyOut =
-        files.length > 0 && files.every((file) => file.startsWith("graphify-out/"));
+        files.length > 0 &&
+        files.every((file) => file.startsWith("graphify-out/") || generatedGraphArtifacts.has(file));
 
       if (headOnlyGraphifyOut) {
         const parent = await safeExecFile("git", ["rev-parse", "HEAD^"], { cwd: root, timeoutMs: 1500 });

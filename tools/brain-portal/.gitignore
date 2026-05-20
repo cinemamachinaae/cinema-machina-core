@@ -21,6 +21,9 @@
 # production
 /build
 
+# Brain Portal reads the repo-root ../../graphify-out directory.
+/graphify-out/
+
 # misc
 .DS_Store
 *.pem
