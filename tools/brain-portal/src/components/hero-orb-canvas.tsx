@@ -36,9 +36,9 @@ function buildHaloTexture(): THREE.Texture {
 
   const g = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
   g.addColorStop(0, "rgba(255,255,255,1.0)");
-  g.addColorStop(0.2, "rgba(255,255,255,0.8)");
-  g.addColorStop(0.5, "rgba(255,255,255,0.35)");
-  g.addColorStop(0.8, "rgba(255,255,255,0.08)");
+  g.addColorStop(0.2, "rgba(255,255,255,0.95)");
+  g.addColorStop(0.5, "rgba(255,255,255,0.70)");
+  g.addColorStop(0.8, "rgba(255,255,255,0.25)");
   g.addColorStop(1.0, "rgba(255,255,255,0)");
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, 256, 256);
@@ -91,6 +91,8 @@ function buildLabelSprite(text: string, color: string, fontSize = 14, isCluster 
     map: texture,
     transparent: true,
     depthWrite: false,
+    depthTest: true,
+    blending: THREE.NormalBlending,
     sizeAttenuation: true,
   });
   const sprite = new THREE.Sprite(mat);
@@ -148,7 +150,6 @@ export function HeroOrbCanvas(props: {
         ?.strength(-55);
 
       graph.d3Force("link")?.distance(24);
-      graph.d3AlphaTarget(0.02); // Keep simulation warm for continuous auto-rotation
 
       // Premium slow orbit on desktop
       const controls = graph.controls();
@@ -233,19 +234,23 @@ export function HeroOrbCanvas(props: {
           (searchLower && String(n.label || "").toLowerCase().includes(searchLower)),
       );
 
-      // 1. Outer Halo Sprite
+      // 1. Outer Halo Sprite (glowing border)
+      const baseVal = n.val || 4;
+      const isHub = baseVal >= 18;
+      
       const haloMat = new THREE.SpriteMaterial({
         map: haloTexture,
-        color: new THREE.Color(emphasized ? "#dff5ff" : colorHex),
+        color: new THREE.Color(emphasized ? "#ffffff" : colorHex),
         transparent: true,
-        opacity: emphasized ? 0.85 : 0.45,
+        opacity: emphasized ? 0.95 : (isHub ? 0.90 : 0.75),
         depthWrite: false,
-        blending: THREE.AdditiveBlending, // Glow effect!
+        depthTest: true,
+        blending: THREE.NormalBlending,
       });
       const halo = new THREE.Sprite(haloMat);
+      halo.renderOrder = 1;
       
-      const baseVal = n.val || 4;
-      const haloScale = 7 + Math.min(22, baseVal * 1.6);
+      const haloScale = 8 + Math.min(25, baseVal * 1.8);
       halo.scale.set(
         haloScale * (emphasized ? 1.15 : 1.0),
         haloScale * (emphasized ? 1.15 : 1.0),
@@ -253,32 +258,35 @@ export function HeroOrbCanvas(props: {
       );
       group.add(halo);
 
-      // 2. Inner Core Sprite (replaces default 3D sphere)
+      // 2. Inner Core Sprite (bright central point)
       const coreMat = new THREE.SpriteMaterial({
         map: haloTexture,
         color: new THREE.Color(emphasized ? "#ffffff" : colorHex),
         transparent: true,
-        opacity: emphasized ? 1.0 : 0.85,
+        opacity: emphasized ? 1.0 : 0.95,
         depthWrite: false,
+        depthTest: true,
         blending: THREE.NormalBlending,
       });
       const core = new THREE.Sprite(coreMat);
-      const coreScale = haloScale * 0.32;
+      core.renderOrder = 2;
+      const coreScale = haloScale * 0.38;
       core.scale.set(coreScale, coreScale, 1);
       group.add(core);
 
-      // 3. Text Label Sprite
-      const showLabel = emphasized || (n.val != null && n.val >= 12);
+      // 3. Text Label Sprite (only show for emphasized nodes or macro-section hub nodes)
+      const showLabel = emphasized || (n.val != null && n.val >= 18);
       const isClusterHub = n.val != null && n.val >= 18;
       
       if (showLabel && n.label) {
         const label = buildLabelSprite(
           n.label,
-          emphasized ? "rgba(255,255,255,0.95)" : "rgba(200,210,225,0.65)",
-          emphasized ? 14 : (isClusterHub ? 12 : 11),
+          emphasized ? "rgba(255,255,255,1.0)" : "rgba(240,248,255,0.95)",
+          emphasized ? 15 : 12,
           isClusterHub
         );
-        label.position.set(0, haloScale * 0.45, 0);
+        label.position.set(0, haloScale * 0.5, 0);
+        label.renderOrder = 3;
         group.add(label);
       }
 
