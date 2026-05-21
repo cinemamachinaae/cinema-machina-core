@@ -64,7 +64,11 @@ export function LeftControlRail(props: {
   status: BrainPortalStatus | null;
   graphMeta: { nodes: number; links: number; communities: number } | null;
   search: string;
+  matchCount: number;
+  resetMessage: string | null;
   onSearchChange: (value: string) => void;
+  onClearSearch: () => void;
+  onDetailSelect: (id: string) => void;
   onResetSelection: () => void;
   glow?: "cyan" | "green" | "amber" | "rose" | "blue" | null;
 }) {
@@ -82,7 +86,12 @@ export function LeftControlRail(props: {
             Cinema Machina Brain
           </div>
           <div className="mt-1.5 flex items-center gap-3">
-            <div className="text-[11px] text-[color:var(--cm-text-dim)] font-mono">
+            <button
+              type="button"
+              onClick={() => props.onDetailSelect("git")}
+              className="rounded-lg text-left text-[11px] text-[color:var(--cm-text-dim)] font-mono hover:bg-white/5 focus:outline-none focus:ring-1 focus:ring-white/15"
+              title="Show Git workspace details"
+            >
               {head}
               <span className="ml-1.5 inline-flex items-center gap-1">
                 <span
@@ -95,7 +104,7 @@ export function LeftControlRail(props: {
                   {dirty ? `${git?.changedFiles ?? 0} changed` : "clean"}
                 </span>
               </span>
-            </div>
+            </button>
             <LiveHeartbeat status={props.status} />
           </div>
         </div>
@@ -116,14 +125,20 @@ export function LeftControlRail(props: {
           { value: props.graphMeta?.links, label: "Links" },
           { value: props.graphMeta?.communities, label: "Clusters" },
         ].map((metric) => (
-          <div key={metric.label} className="rounded-xl border border-white/8 bg-white/4 px-3 py-2 text-center">
+          <button
+            key={metric.label}
+            type="button"
+            onClick={() => props.onDetailSelect("graph")}
+            className="rounded-xl border border-white/8 bg-white/4 px-3 py-2 text-center hover:bg-white/7 focus:outline-none focus:ring-1 focus:ring-[color:var(--cm-cyan)]/35"
+            title="Show Graphify details"
+          >
             <div className="text-[14px] font-semibold text-white/95 tabular-nums">
               {metric.value?.toLocaleString() ?? "—"}
             </div>
             <div className="text-[9px] tracking-[0.16em] uppercase text-white/45 mt-0.5">
               {metric.label}
             </div>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -133,8 +148,12 @@ export function LeftControlRail(props: {
           <Activity size={12} />
           Data Freshness
         </div>
-        <FreshnessBar label="Graph" fresh={graphify?.matchesHead ?? null} />
-        <FreshnessBar label="Docs" fresh={props.status?.docs?.ok ?? null} />
+        <button type="button" onClick={() => props.onDetailSelect("graph")} className="block w-full rounded-lg hover:bg-white/5" title="Show graph freshness commands">
+          <FreshnessBar label="Graph" fresh={graphify?.matchesHead ?? null} />
+        </button>
+        <button type="button" onClick={() => props.onDetailSelect("reports")} className="block w-full rounded-lg hover:bg-white/5" title="Show report and docs details">
+          <FreshnessBar label="Docs" fresh={props.status?.docs?.ok ?? null} />
+        </button>
       </div>
 
       {/* Search */}
@@ -148,9 +167,22 @@ export function LeftControlRail(props: {
             value={props.search}
             onChange={(e) => props.onSearchChange(e.target.value)}
             placeholder="Search node labels…"
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 pl-8 text-[12px] text-white/95 placeholder:text-white/30 outline-none focus:border-[color:var(--cm-cyan)]/30 transition-colors"
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 pl-8 pr-16 text-[12px] text-white/95 placeholder:text-white/30 outline-none focus:border-[color:var(--cm-cyan)]/30 transition-colors"
           />
           <Search size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-white/40" />
+          {props.search ? (
+            <button
+              type="button"
+              onClick={props.onClearSearch}
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md px-1.5 py-0.5 text-[10px] text-white/50 hover:bg-white/10 hover:text-white/80"
+              title="Clear search"
+            >
+              Clear
+            </button>
+          ) : null}
+        </div>
+        <div className="text-[10px] text-white/40">
+          {props.search ? `${props.matchCount.toLocaleString()} matching node${props.matchCount === 1 ? "" : "s"}` : "Type to filter by label, cluster, or source."}
         </div>
       </div>
 
@@ -164,6 +196,11 @@ export function LeftControlRail(props: {
           Hover nodes to inspect · Click to pin · Search to filter ·
           Reset clears selection.
         </div>
+        {props.resetMessage ? (
+          <div className="mt-2 rounded-lg border border-emerald-400/15 bg-emerald-400/10 px-2 py-1.5 text-[10px] text-emerald-200/80">
+            {props.resetMessage}
+          </div>
+        ) : null}
       </div>
     </Panel>
   );

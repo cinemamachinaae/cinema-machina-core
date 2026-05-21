@@ -13,17 +13,47 @@ function isMobileLike(): boolean {
 }
 
 const STABLE_SECTION_COLORS: Record<number, string> = {
-  0: "#7CA9FF", // Brain Portal UI
-  1: "#00E5FF", // Graphify / Orb Visualization
-  2: "#E6C26E", // Brain Ops / Context Pipeline
-  3: "#46D7C8", // Integrations
-  4: "#E07AA6", // Agent Handoff
-  5: "#C9D2E3", // Docs / Config / Runtime
+  0: "#7CA9FF",
+  1: "#66E3B4",
+  2: "#C69CFF",
+  3: "#E6C26E",
+  4: "#9DBBFF",
+  5: "#E07AA6",
+  6: "#46D7C8",
+  7: "#8DEBFF",
+  8: "#FFB86B",
+  9: "#00E5FF",
+  10: "#B7C4D9",
+  11: "#8FE388",
+  12: "#F2D394",
+  13: "#C9D2E3",
 };
 
-function stableColorForCommunity(macroSectionId: number | string | undefined): string {
-  const numId = typeof macroSectionId === "number" ? macroSectionId : parseInt(String(macroSectionId ?? "5"), 10);
-  const hex = STABLE_SECTION_COLORS[isNaN(numId) ? 5 : numId] || "#C9D2E3";
+const CLUSTER_CENTERS: Record<number, { x: number; y: number; z: number }> = {
+  0: { x: 0, y: 0, z: 0 },
+  1: { x: -55, y: 24, z: -18 },
+  2: { x: 138, y: 54, z: -20 },
+  3: { x: -118, y: 88, z: 26 },
+  4: { x: -160, y: 30, z: 42 },
+  5: { x: -135, y: -24, z: 76 },
+  6: { x: -58, y: 116, z: -70 },
+  7: { x: -118, y: 138, z: -24 },
+  8: { x: -178, y: 92, z: -58 },
+  9: { x: 44, y: 36, z: -76 },
+  10: { x: 156, y: -12, z: 56 },
+  11: { x: 64, y: -130, z: 42 },
+  12: { x: -30, y: -150, z: -54 },
+  13: { x: 18, y: -78, z: 112 },
+};
+
+function clusterCenter(id: number | string | undefined) {
+  const numId = typeof id === "number" ? id : parseInt(String(id ?? "13"), 10);
+  return CLUSTER_CENTERS[isNaN(numId) ? 13 : numId] || CLUSTER_CENTERS[13];
+}
+
+function stableColorForCommunity(clusterId: number | string | undefined): string {
+  const numId = typeof clusterId === "number" ? clusterId : parseInt(String(clusterId ?? "13"), 10);
+  const hex = STABLE_SECTION_COLORS[isNaN(numId) ? 13 : numId] || "#C9D2E3";
   return hex;
 }
 
@@ -106,6 +136,7 @@ export function HeroOrbCanvas(props: {
   pinnedNode: BrainPortalNode | null;
   onHover: (node: BrainPortalNode | null) => void;
   onSelect: (node: BrainPortalNode) => void;
+  resetSignal: number;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const graphRef = useRef<any>(null);
@@ -146,10 +177,31 @@ export function HeroOrbCanvas(props: {
         .linkOpacity(mobileLike ? 0.15 : 0.25)
         .linkWidth((l: any) => (l.label ? 0.5 : 0.18))
         .linkColor(() => "rgba(164,202,255,0.18)")
+        .cooldownTicks(mobileLike ? 80 : 140)
+        .d3AlphaDecay(0.035)
+        .d3VelocityDecay(0.36)
         .d3Force("charge")
         ?.strength(-55);
 
       graph.d3Force("link")?.distance(24);
+      graph.d3Force("cluster", (alpha: number) => {
+        const data = graph.graphData?.();
+        const nodes = data?.nodes || [];
+        const strength = mobileLike ? 0.012 : 0.018;
+        for (const raw of nodes) {
+          const node = raw as any;
+          const center = clusterCenter(node.clusterId);
+          if (node.isClusterHub) {
+            node.fx = center.x;
+            node.fy = center.y;
+            node.fz = center.z;
+            continue;
+          }
+          node.vx = (node.vx || 0) + (center.x - (node.x || 0)) * strength * alpha;
+          node.vy = (node.vy || 0) + (center.y - (node.y || 0)) * strength * alpha;
+          node.vz = (node.vz || 0) + (center.z - (node.z || 0)) * strength * alpha;
+        }
+      });
 
       // Premium slow orbit on desktop
       const controls = graph.controls();
@@ -178,12 +230,12 @@ export function HeroOrbCanvas(props: {
       }
 
       graph.onNodeHover((node: any) => {
-        onHoverRef.current((node as BrainPortalNode) ?? null);
+        onHoverRef.current(node ? ({ ...node, label: node.cleanLabel || node.label || node.clusterName } as BrainPortalNode) : null);
         containerRef.current!.style.cursor = node ? "pointer" : "default";
       });
 
       graph.onNodeClick((node: any) => {
-        onSelectRef.current(node as BrainPortalNode);
+        onSelectRef.current({ ...node, label: node.cleanLabel || node.label || node.clusterName } as BrainPortalNode);
       });
 
       // Apply initial data if already available
@@ -215,6 +267,7 @@ export function HeroOrbCanvas(props: {
 
       if (needsUpdate) {
         graph.graphData(props.graph);
+        try { graph.d3ReheatSimulation?.(); } catch { /* ignore */ }
       }
     }
 
@@ -228,15 +281,15 @@ export function HeroOrbCanvas(props: {
       const n = node as BrainPortalNode;
       const group = new THREE.Group();
 
-      const colorHex = stableColorForCommunity(n.macroSectionId);
+      const colorHex = stableColorForCommunity(n.clusterId ?? n.macroSectionId);
       const emphasized = Boolean(
         (pinnedId && n.id === pinnedId) ||
-          (searchLower && String(n.label || "").toLowerCase().includes(searchLower)),
+          (searchLower && `${n.cleanLabel || n.label || ""} ${n.clusterName || ""}`.toLowerCase().includes(searchLower)),
       );
 
       // 1. Outer Halo Sprite (glowing border)
       const baseVal = n.val || 4;
-      const isHub = baseVal >= 18;
+      const isHub = Boolean(n.isClusterHub) || baseVal >= 18;
       
       const haloMat = new THREE.SpriteMaterial({
         map: haloTexture,
@@ -250,7 +303,7 @@ export function HeroOrbCanvas(props: {
       const halo = new THREE.Sprite(haloMat);
       halo.renderOrder = 1;
       
-      const haloScale = 8 + Math.min(25, baseVal * 1.8);
+      const haloScale = n.isClusterHub ? 34 : 8 + Math.min(25, baseVal * 1.8);
       halo.scale.set(
         haloScale * (emphasized ? 1.15 : 1.0),
         haloScale * (emphasized ? 1.15 : 1.0),
@@ -270,17 +323,17 @@ export function HeroOrbCanvas(props: {
       });
       const core = new THREE.Sprite(coreMat);
       core.renderOrder = 2;
-      const coreScale = haloScale * 0.38;
+      const coreScale = haloScale * (n.isClusterHub ? 0.46 : 0.38);
       core.scale.set(coreScale, coreScale, 1);
       group.add(core);
 
       // 3. Text Label Sprite (only show for emphasized nodes or macro-section hub nodes)
-      const showLabel = emphasized || (n.val != null && n.val >= 18);
-      const isClusterHub = n.val != null && n.val >= 18;
+      const showLabel = emphasized || Boolean(n.isClusterHub) || (n.val != null && n.val >= 22);
+      const isClusterHub = Boolean(n.isClusterHub) || (n.val != null && n.val >= 22);
       
-      if (showLabel && n.label) {
+      if (showLabel && (n.cleanLabel || n.label)) {
         const label = buildLabelSprite(
-          n.label,
+          n.cleanLabel || n.label || n.clusterName || "node",
           emphasized ? "rgba(255,255,255,1.0)" : "rgba(240,248,255,0.95)",
           emphasized ? 15 : 12,
           isClusterHub
@@ -295,19 +348,30 @@ export function HeroOrbCanvas(props: {
 
     graph.nodeColor((node: any) => {
       const n = node as BrainPortalNode;
-      if (searchLower && String(n.label || "").toLowerCase().includes(searchLower)) return "#f2f8ff";
-      return stableColorForCommunity(n.macroSectionId);
+      if (searchLower && `${n.cleanLabel || n.label || ""} ${n.clusterName || ""}`.toLowerCase().includes(searchLower)) return "#f2f8ff";
+      return stableColorForCommunity(n.clusterId ?? n.macroSectionId);
     });
 
     graph.nodeVal((node: any) => {
       const n = node as BrainPortalNode;
       const base = n.val || 4;
-      if (searchLower && String(n.label || "").toLowerCase().includes(searchLower)) return base * 1.35;
+      if (searchLower && `${n.cleanLabel || n.label || ""} ${n.clusterName || ""}`.toLowerCase().includes(searchLower)) return base * 1.35;
       return base * 1.05;
     });
 
     graph.refresh();
   }, [props.graph, props.pinnedNode, props.search, searchLower]);
+
+  useEffect(() => {
+    const graph = graphRef.current;
+    if (!graph || props.resetSignal === 0) return;
+    try {
+      graph.cameraPosition({ x: 0, y: 0, z: 420 }, { x: 0, y: 0, z: 0 }, 900);
+      graph.zoomToFit(900, 70);
+    } catch {
+      // Non-critical; reset still clears app state.
+    }
+  }, [props.resetSignal]);
 
   return (
     <div className="fixed inset-0 z-[1]">

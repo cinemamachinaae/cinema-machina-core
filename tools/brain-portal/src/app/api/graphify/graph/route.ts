@@ -1,22 +1,78 @@
 import fs from "node:fs/promises";
 import { NextResponse } from "next/server";
 import { repoPath } from "@/lib/paths";
-import type { GraphifyGraph, BrainPortalNode } from "@/lib/types";
+import type { BrainPortalNode, GraphifyGraph } from "@/lib/types";
 
 let cachedGraph: GraphifyGraph | null = null;
-let cachedMtime: number = 0;
+let cachedMtime = 0;
 
-function getMacroSectionAndSubcluster(node: any): { macroSectionId: number; macroSectionLabel: string; subcluster: string } {
-  const source = String(node.source || "").trim();
-  const id = String(node.id || "").trim();
+type BusinessCluster = {
+  id: number;
+  name: string;
+  group: string;
+  description: string;
+  color: string;
+};
+
+const BUSINESS_CLUSTERS: BusinessCluster[] = [
+  { id: 0, name: "Cinema Machina AI Brain", group: "brain", description: "Brain Portal, status telemetry, context packs, dashboard control plane.", color: "#7CA9FF" },
+  { id: 1, name: "Cinema Machina Core", group: "core", description: "Core local-first backend, scripts, APIs, and product runtime.", color: "#66E3B4" },
+  { id: 2, name: "Cinema Machina Website", group: "web", description: "Public website, Vercel surfaces, and web presentation references.", color: "#C69CFF" },
+  { id: 3, name: "AI Tools and Agents", group: "agents", description: "Generic agent tooling, model docs, workflows, and orchestration notes.", color: "#E6C26E" },
+  { id: 4, name: "Codex Workspace", group: "agents", description: "Codex hooks, prompts, skills, and repo workflow guidance.", color: "#9DBBFF" },
+  { id: 5, name: "Antigravity Workspace", group: "agents", description: "Antigravity .agents workspace, skills, and workflow artifacts.", color: "#E07AA6" },
+  { id: 6, name: "Local AI / Qwen / Ollama", group: "local-ai", description: "Local Ollama runtime, Qwen model, and enrichment pipeline.", color: "#46D7C8" },
+  { id: 7, name: "Langflow Orchestration", group: "local-ai", description: "Langflow daemon, flow endpoint readiness, and orchestration adapter.", color: "#8DEBFF" },
+  { id: 8, name: "RuFlo Workflows", group: "local-ai", description: "RuFlo CLI, repo workflow validation, and .claude-flow configuration.", color: "#FFB86B" },
+  { id: 9, name: "Graphify Knowledge Graph", group: "graph", description: "Graphify outputs, graph reports, cluster maps, and graph refresh automation.", color: "#00E5FF" },
+  { id: 10, name: "GitHub / Vercel / Repos", group: "repos", description: "Git state, GitHub remote workflows, Vercel references, and repo metadata.", color: "#B7C4D9" },
+  { id: 11, name: "Plex / Jellyfin / Movie Library", group: "media", description: "Media server adapters, movie library health, and playback source context.", color: "#8FE388" },
+  { id: 12, name: "Home Cinema / Client Signal Chain", group: "cinema", description: "Shield, playback client, audio passthrough, codecs, and client signal chain.", color: "#F2D394" },
+  { id: 13, name: "Docs / Config / Runtime", group: "support", description: "Fallback documentation, configuration, package setup, and runtime support files.", color: "#C9D2E3" },
+];
+
+const CLUSTER_BY_ID = new Map(BUSINESS_CLUSTERS.map((cluster) => [cluster.id, cluster]));
+
+function cluster(id: number): BusinessCluster {
+  return CLUSTER_BY_ID.get(id) ?? BUSINESS_CLUSTERS[13];
+}
+
+function getTextForClassification(node: any): string {
+  return [
+    node.source_file,
+    node.source,
+    node.id,
+    node.label,
+    node.type,
+  ].filter(Boolean).join(" ").toLowerCase();
+}
+
+function classifyBusinessCluster(node: any): BusinessCluster {
+  const text = getTextForClassification(node);
+
+  if (/(langflow)/i.test(text)) return cluster(7);
+  if (/(ruflo|\.claude-flow|claude-flow)/i.test(text)) return cluster(8);
+  if (/(ollama|qwen|local model|local-ai)/i.test(text)) return cluster(6);
+  if (/(graphify-out|graphify|graph_report|graph report|cluster-map|agent-query-cheatsheet|cm-graph-refresh)/i.test(text)) return cluster(9);
+  if (/(codex|\.codex|hooks\.json|prompt)/i.test(text)) return cluster(4);
+  if (/(\.agents|antigravity|skills-lock|skills\/|workflow)/i.test(text)) return cluster(5);
+  if (/(plex|jellyfin|radarr|sonarr|prowlarr|trailarr|bazarr|movie library|movies)/i.test(text)) return cluster(11);
+  if (/(shield|home cinema|client signal|signal chain|audio passthrough|truehd|dts|atmos|dolby|hdr|soundbar|adb)/i.test(text)) return cluster(12);
+  if (/(github|git\b|vercel|repo|origin\/main|remote)/i.test(text)) return cluster(10);
+  if (/(website|cinemamachinaae\/web|frontend\/|vercel web|public website)/i.test(text)) return cluster(2);
+  if (/(tools\/brain-portal|brain portal|status route|dashboard|agent-context-pack|context pack|brain-ops|cm-brain-check|cm-agent-context)/i.test(text)) return cluster(0);
+  if (/(backend\/app|backend\/tests|\/health|system\/overview|playback|chain\/current|devices\/shield|core)/i.test(text)) return cluster(1);
+  if (/(ai tool|agent|model|gemini|claude|openai|memory|orchestration)/i.test(text)) return cluster(3);
+  return cluster(13);
+}
+
+function getMacroSectionAndSubcluster(node: any): { macroSectionId: number; macroSectionLabel: string; macroSectionName: string; subcluster: string } {
+  const pathLower = String(node.source_file || node.source || node.id || "").toLowerCase();
 
   let macroSectionId = 5;
   let macroSectionLabel = "Docs / Config / Runtime";
   let subcluster = "other";
 
-  const pathLower = String(node.source_file || node.source || node.id || "").toLowerCase();
-
-  // 1. Brain Portal UI
   if (
     pathLower.includes("tools/brain-portal/src/components") ||
     pathLower.includes("tools/brain-portal/src/app") ||
@@ -26,50 +82,30 @@ function getMacroSectionAndSubcluster(node: any): { macroSectionId: number; macr
   ) {
     macroSectionId = 0;
     macroSectionLabel = "Brain Portal UI";
-    if (pathLower.includes("/components/")) {
-      subcluster = "components";
-    } else if (pathLower.includes("/api/")) {
-      subcluster = "routes";
-    } else {
-      subcluster = "components";
-    }
-  }
-  // 2. Graphify / Orb Visualization
-  else if (
+    subcluster = pathLower.includes("/api/") ? "routes" : "components";
+  } else if (
     pathLower.includes("graphify") ||
     pathLower.includes("graph_report") ||
-    pathLower.includes("enrich-graphify")
+    pathLower.includes("enrich-graphify") ||
+    pathLower.includes("cm-graph-refresh")
   ) {
     macroSectionId = 1;
     macroSectionLabel = "Graphify / Orb Visualization";
-    if (pathLower.endsWith(".md")) {
-      subcluster = "docs";
-    } else if (pathLower.includes("route") || pathLower.includes("/api/")) {
-      subcluster = "routes";
-    } else if (pathLower.endsWith(".json")) {
-      subcluster = "generated-artifacts";
-    } else {
-      subcluster = "scripts";
-    }
-  }
-  // 3. Brain Ops / Context Pipeline
-  else if (
+    if (pathLower.endsWith(".md")) subcluster = "docs";
+    else if (pathLower.includes("route") || pathLower.includes("/api/")) subcluster = "routes";
+    else if (pathLower.endsWith(".json")) subcluster = "generated-artifacts";
+    else subcluster = "scripts";
+  } else if (
     pathLower.includes("tools/brain-ops") ||
     pathLower.includes("run_brain_cycle") ||
-    pathLower.includes("build_agent_pack")
+    pathLower.includes("build_agent_pack") ||
+    pathLower.includes("cm-agent-context") ||
+    pathLower.includes("cm-brain-check")
   ) {
     macroSectionId = 2;
     macroSectionLabel = "Brain Ops / Context Pipeline";
-    if (pathLower.endsWith(".sh") || pathLower.endsWith(".py") || pathLower.endsWith(".mjs")) {
-      subcluster = "scripts";
-    } else if (pathLower.endsWith(".md") || pathLower.endsWith(".txt")) {
-      subcluster = "generated-artifacts";
-    } else {
-      subcluster = "scripts";
-    }
-  }
-  // 4. Integrations: Qwen, Langflow, RuFlo
-  else if (
+    subcluster = pathLower.endsWith(".md") || pathLower.endsWith(".txt") ? "generated-artifacts" : "scripts";
+  } else if (
     pathLower.includes("ollama") ||
     pathLower.includes("qwen") ||
     pathLower.includes("langflow") ||
@@ -77,16 +113,8 @@ function getMacroSectionAndSubcluster(node: any): { macroSectionId: number; macr
   ) {
     macroSectionId = 3;
     macroSectionLabel = "Integrations";
-    if (pathLower.includes("adapter")) {
-      subcluster = "adapters";
-    } else if (pathLower.endsWith(".toml") || pathLower.endsWith(".yaml") || pathLower.endsWith(".json")) {
-      subcluster = "docs";
-    } else {
-      subcluster = "adapters";
-    }
-  }
-  // 5. Agent Handoff: Codex, Antigravity, Claude Code
-  else if (
+    subcluster = pathLower.includes("adapter") ? "adapters" : "runtime";
+  } else if (
     pathLower.includes("codex") ||
     pathLower.includes("antigravity") ||
     pathLower.includes("claude") ||
@@ -95,37 +123,24 @@ function getMacroSectionAndSubcluster(node: any): { macroSectionId: number; macr
   ) {
     macroSectionId = 4;
     macroSectionLabel = "Agent Handoff";
-    if (pathLower.endsWith(".md")) {
-      subcluster = "docs";
-    } else if (pathLower.endsWith(".json") || pathLower.includes(".claudecode")) {
-      subcluster = "generated-artifacts";
-    } else {
-      subcluster = "generated-artifacts";
-    }
-  }
-  // 6. Docs / Config / Runtime (Fallback default)
-  else {
+    subcluster = pathLower.endsWith(".md") ? "docs" : "generated-artifacts";
+  } else {
     macroSectionId = 5;
     macroSectionLabel = "Docs / Config / Runtime";
-    if (pathLower.endsWith(".md")) {
-      subcluster = "docs";
-    } else if (
+    if (pathLower.endsWith(".md")) subcluster = "docs";
+    else if (
       pathLower.endsWith(".toml") ||
       pathLower.endsWith(".json") ||
       pathLower.includes(".env") ||
       pathLower.includes("package.json") ||
       pathLower.includes("next.config") ||
       pathLower.includes("tsconfig.json")
-    ) {
-      subcluster = "docs";
-    } else if (pathLower.includes("backend/app/")) {
-      subcluster = "adapters";
-    } else {
-      subcluster = "runtime";
-    }
+    ) subcluster = "docs";
+    else if (pathLower.includes("backend/app/")) subcluster = "adapters";
+    else subcluster = "runtime";
   }
 
-  return { macroSectionId, macroSectionLabel, subcluster };
+  return { macroSectionId, macroSectionLabel, macroSectionName: macroSectionLabel, subcluster };
 }
 
 const FRIENDLY_LABELS: Record<string, string> = {
@@ -145,53 +160,144 @@ const FRIENDLY_LABELS: Record<string, string> = {
   "docs/AGENT_HANDOFF.md": "Agent Handoff Protocol",
   "graphify-out/GRAPH_REPORT.md": "Graphify Architecture Report",
   "tools/brain-portal/tools/brain-ops/data/context/agent-context-pack.md": "Agent Context Pack",
-  "docs/ai/AI_BRAIN_TEMPLATE.md": "AI Project Brain Template",
-  "docs/ai/QWEN_LOCAL_ROLE.md": "Qwen Local Role Docs",
-  "docs/ai/BRAIN_STACK.md": "Brain Stack Docs",
-  "docs/ai/TOOLCHAIN_ROUTING.md": "Toolchain Routing Docs",
-  "docs/ai/PROJECT_STATE.md": "Project State Docs",
-  "docs/ai/TASK_LOG.md": "Task Log Docs",
-  "docs/ai/DECISIONS.md": "Decisions Docs",
-  "docs/ai/KNOWN_ISSUES.md": "Known Issues Docs",
-  "docs/ai/ENVIRONMENT_MAP.md": "Environment Map Docs",
-  "docs/ai/SERVER_AND_DEVICE_CONTEXT.md": "Server & Device Context Docs",
-  "docs/ai/API_AND_INTEGRATIONS.md": "API & Integrations Docs",
-  "docs/ai/ARCHITECTURE_OVERVIEW.md": "Architecture Overview Docs",
-  "docs/ai/PRODUCT_AND_BRAND_CONTEXT.md": "Product & Brand Context Docs",
   ".codex/hooks.json": "Codex Git Hooks Config",
+  ".claude-flow/workflows/cinema-machina-brain-check.json": "RuFlo Brain Check Workflow",
   "skills-lock.json": "Agent Skills Registry",
-  "package.json": "Workspace Configuration",
-  "next.config.mjs": "Next.js Configuration",
-  "tsconfig.json": "TypeScript Config",
-  "tools/brain-portal/src/lib/types.ts": "Brain Portal Types",
-  "tools/brain-portal/src/lib/paths.ts": "Repo Path Utilities",
-  "tools/brain-portal/src/lib/safe-exec.ts": "Safe Command Executor",
-  "backend/requirements.txt": "Python Backend Dependencies",
 };
 
-const getBasename = (filePath: string) => {
+function getBasename(filePath: string) {
   const parts = filePath.split("/");
   return parts[parts.length - 1] || filePath;
-};
+}
+
+function isFileNode(node: any): boolean {
+  return node.source_location === "L1" || !node.source_location || node.source_location === "";
+}
 
 function getCleanNodeLabel(node: any): string {
-  let cleanLabel = node.label || node.id || "unknown";
   const sourceFile = node.source_file || "";
-  const isFileNode = node.source_location === "L1" || !node.source_location || node.source_location === "";
-  
-  if (isFileNode) {
-    if (sourceFile && FRIENDLY_LABELS[sourceFile]) {
-      return FRIENDLY_LABELS[sourceFile];
-    } else if (sourceFile) {
-      return getBasename(sourceFile);
-    }
-  } else {
-    const baseName = sourceFile ? getBasename(sourceFile) : "";
-    if (baseName) {
-      return `${baseName} : ${cleanLabel}`;
+  if (isFileNode(node)) {
+    if (sourceFile && FRIENDLY_LABELS[sourceFile]) return FRIENDLY_LABELS[sourceFile];
+    if (sourceFile) return getBasename(sourceFile);
+  }
+
+  const cleanLabel = node.label || node.id || "unknown";
+  const baseName = sourceFile ? getBasename(sourceFile) : "";
+  return !isFileNode(node) && baseName ? `${baseName} : ${cleanLabel}` : cleanLabel;
+}
+
+function sourceKindFor(node: any): BrainPortalNode["sourceKind"] {
+  const sourceFile = String(node.source_file || node.source || node.id || "").toLowerCase();
+  if (node.isClusterHub) return "virtual-hub";
+  if (sourceFile.endsWith(".md") || sourceFile.endsWith(".txt")) return "doc";
+  if (sourceFile.endsWith(".json") || sourceFile.endsWith(".toml") || sourceFile.endsWith(".yaml") || sourceFile.endsWith(".yml")) return "config";
+  if (isFileNode(node)) return "file";
+  if (node.source_file) return "symbol";
+  if (sourceFile.includes("runtime") || sourceFile.includes("node_modules")) return "runtime";
+  return "unknown";
+}
+
+function actionSummary(node: any, cleanLabel: string, businessCluster: BusinessCluster, sourceKind: string): string {
+  if (sourceKind === "virtual-hub") return `Cluster hub for ${businessCluster.name}. Select nodes around it to inspect concrete files and symbols.`;
+  const source = node.source_file || node.source || node.id || "unknown source";
+  if (sourceKind === "file" || sourceKind === "doc" || sourceKind === "config") {
+    return `Open ${source} to inspect ${cleanLabel} in the ${businessCluster.name} cluster.`;
+  }
+  return `Inspect ${cleanLabel} from ${source}; classify impact under ${businessCluster.name}.`;
+}
+
+function importanceFor(node: any, baseVal: number, businessCluster: BusinessCluster): number {
+  const source = String(node.source_file || node.source || node.id || "").toLowerCase();
+  let importance = Math.max(1, Math.round(baseVal));
+  if (
+    source.endsWith("/page.tsx") ||
+    source.endsWith("/route.ts") ||
+    source.endsWith("/layout.tsx") ||
+    source.includes("adapter.py") ||
+    source.includes("cm-brain-check") ||
+    source.includes("cm-graph-refresh") ||
+    source.includes("agent_handoff") ||
+    source.includes("graph_report")
+  ) {
+    importance = Math.max(importance, 22);
+  }
+  if ([0, 1, 9].includes(businessCluster.id)) importance += 2;
+  return importance;
+}
+
+function enrichNode(node: any): BrainPortalNode {
+  const macro = getMacroSectionAndSubcluster(node);
+  const businessCluster = classifyBusinessCluster(node);
+  const cleanLabel = getCleanNodeLabel(node);
+  const origCommunity = node.community !== undefined ? node.community : 5;
+  const baseVal = node.val ?? 4;
+  const sourceKind = sourceKindFor(node);
+  const importance = importanceFor(node, baseVal, businessCluster);
+
+  return {
+    ...node,
+    label: cleanLabel,
+    cleanLabel,
+    community: origCommunity,
+    graphifyCommunity: origCommunity,
+    macroSectionId: macro.macroSectionId,
+    macroSectionLabel: macro.macroSectionLabel,
+    macroSectionName: macro.macroSectionName,
+    clusterId: businessCluster.id,
+    clusterName: businessCluster.name,
+    clusterGroup: businessCluster.group,
+    clusterDescription: businessCluster.description,
+    subcluster: macro.subcluster || "other",
+    sourceKind,
+    importance,
+    actionableSummary: actionSummary(node, cleanLabel, businessCluster, sourceKind),
+    val: Math.max(baseVal, Math.min(28, importance)),
+  };
+}
+
+function buildClusterHubs(nodes: BrainPortalNode[]): { hubs: BrainPortalNode[]; links: GraphifyGraph["links"] } {
+  const hubs: BrainPortalNode[] = [];
+  const links: GraphifyGraph["links"] = [];
+
+  for (const businessCluster of BUSINESS_CLUSTERS) {
+    const clusterNodes = nodes
+      .filter((node) => node.clusterId === businessCluster.id)
+      .sort((a, b) => (b.importance ?? 0) - (a.importance ?? 0))
+      .slice(0, 6);
+
+    const hubId = `__cluster_hub_${businessCluster.id}`;
+    hubs.push({
+      id: hubId,
+      label: businessCluster.name,
+      cleanLabel: businessCluster.name,
+      type: "cluster-hub",
+      community: `business-${businessCluster.id}`,
+      graphifyCommunity: `business-${businessCluster.id}`,
+      macroSectionId: 5,
+      macroSectionLabel: businessCluster.name,
+      macroSectionName: businessCluster.name,
+      clusterId: businessCluster.id,
+      clusterName: businessCluster.name,
+      clusterGroup: businessCluster.group,
+      clusterDescription: businessCluster.description,
+      subcluster: "hub",
+      sourceKind: "virtual-hub",
+      importance: 100,
+      actionableSummary: `Business cluster hub for ${businessCluster.name}. ${businessCluster.description}`,
+      isClusterHub: true,
+      val: 34,
+    });
+
+    for (const node of clusterNodes) {
+      links.push({
+        source: hubId,
+        target: node.id,
+        label: "cluster-hub",
+      });
     }
   }
-  return cleanLabel;
+
+  return { hubs, links };
 }
 
 export async function GET() {
@@ -213,45 +319,12 @@ export async function GET() {
     const parsed = JSON.parse(text) as GraphifyGraph;
 
     const rawNodes = Array.isArray(parsed.nodes) ? parsed.nodes : [];
-    const mappedNodes: BrainPortalNode[] = rawNodes.map((node) => {
-      const info = getMacroSectionAndSubcluster(node);
-      
-      // Let's amplify node importance dynamically if they are important files
-      let baseVal = node.val ?? 4;
-      const isFileNode = node.source_location === "L1" || !node.source_location || node.source_location === "";
-      
-      const isImportantFile = isFileNode && (
-        node.source_file?.endsWith("/page.tsx") ||
-        node.source_file?.endsWith("/route.ts") ||
-        node.source_file?.endsWith("/layout.tsx") ||
-        node.source_file?.includes("adapter.py") ||
-        node.source_file?.includes("run_brain_cycle.sh") ||
-        node.source_file?.includes("AGENT_HANDOFF.md") ||
-        node.source_file?.includes("GRAPH_REPORT.md")
-      );
-
-      if (isImportantFile) {
-        baseVal = Math.max(baseVal, 18);
-      }
-
-      // Preserve original community, set graphifyCommunity, macroSectionId, and macroSectionLabel
-      const origCommunity = node.community !== undefined ? node.community : 5;
-
-      return {
-        ...node,
-        label: getCleanNodeLabel(node),
-        community: origCommunity,
-        graphifyCommunity: origCommunity,
-        macroSectionId: info.macroSectionId,
-        macroSectionLabel: info.macroSectionLabel,
-        subcluster: info.subcluster,
-        val: baseVal,
-      };
-    });
+    const mappedNodes = rawNodes.map(enrichNode);
+    const { hubs, links: hubLinks } = buildClusterHubs(mappedNodes);
 
     const safe: GraphifyGraph = {
-      nodes: mappedNodes,
-      links: Array.isArray(parsed.links) ? parsed.links : [],
+      nodes: [...mappedNodes, ...hubs],
+      links: [...(Array.isArray(parsed.links) ? parsed.links : []), ...hubLinks],
     };
 
     cachedGraph = safe;
@@ -263,7 +336,7 @@ export async function GET() {
         "X-Graph-Source": "disk",
       },
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       {
         nodes: [],
@@ -274,4 +347,3 @@ export async function GET() {
     );
   }
 }
-

@@ -31,20 +31,26 @@ function item(
   label: string,
   level: StatusLevel,
   detail: string,
+  onClick: () => void,
 ) {
   return (
-    <div className="flex items-center gap-2 rounded-full border border-white/6 bg-white/[0.03] px-3 py-1.5 hover:bg-white/[0.06] transition-colors">
+    <button
+      type="button"
+      onClick={onClick}
+      className="flex items-center gap-2 rounded-full border border-white/6 bg-white/[0.03] px-3 py-1.5 hover:bg-white/[0.06] transition-colors focus:outline-none focus:ring-1 focus:ring-white/15"
+      title={`Show ${label} details`}
+    >
       <span className="text-white/50">{icon}</span>
       <span className="text-[10px] tracking-[0.12em] uppercase text-white/45 hidden sm:inline">
         {label}
       </span>
       <span className={["h-1.5 w-1.5 rounded-full shrink-0", dotClass(level)].join(" ")} />
       <span className="text-[10px] text-white/55 truncate max-w-[120px]">{detail}</span>
-    </div>
+    </button>
   );
 }
 
-export function BottomPulseStrip(props: { status: BrainPortalStatus | null }) {
+export function BottomPulseStrip(props: { status: BrainPortalStatus | null; onDetailSelect: (id: string) => void }) {
   const [pulsePhase, setPulsePhase] = useState(0);
   const git = props.status?.git;
   const graphify = props.status?.graphify;
@@ -71,13 +77,13 @@ export function BottomPulseStrip(props: { status: BrainPortalStatus | null }) {
         />
       </div>
       <div className="mx-auto flex max-w-[1600px] flex-wrap items-center gap-1.5 px-4 py-2">
-        {item(<Orbit size={12} />, "Graph", graphLevel, graphify?.matchesHead === true ? "synced" : graphify?.matchesHead === false ? "stale" : "—")}
-        {item(<GitBranch size={12} />, "Git", git ? (git.dirty ? "warn" : "ok") : "unknown", git ? (git.dirty ? `${git.changedFiles} dirty` : "clean") : "—")}
-        {item(<Sparkles size={12} />, "Ollama", props.status?.ollama.level ?? "unknown", props.status?.ollama.level === "ok" ? "ready" : props.status?.ollama.detail ?? "—")}
-        {item(<Database size={12} />, "OMEGA", props.status?.omega.level ?? "unknown", props.status?.omega.level === "ok" ? "active" : props.status?.omega.detail ?? "—")}
-        {item(<Workflow size={12} />, "Langflow", props.status?.langflow.level ?? "unknown", props.status?.langflow.level === "ok" ? "wired" : props.status?.langflow.detail ?? "—")}
-        {item(<Brain size={12} />, "RuFlo", props.status?.ruflo.level ?? "unknown", props.status?.ruflo.level === "ok" ? "wired" : props.status?.ruflo.detail ?? "—")}
-        {item(<Network size={12} />, "Codex", props.status?.codexHooks.level ?? "unknown", props.status?.codexHooks.level === "ok" ? "hooked" : props.status?.codexHooks.detail ?? "—")}
+        {item(<Orbit size={12} />, "Graph", graphLevel, graphify?.matchesHead === true ? "synced" : graphify?.matchesHead === false ? "stale" : "—", () => props.onDetailSelect("graph"))}
+        {item(<GitBranch size={12} />, "Git", git ? (git.dirty ? "warn" : "ok") : "unknown", git ? (git.dirty ? `${git.changedFiles} dirty` : "clean") : "—", () => props.onDetailSelect("git"))}
+        {item(<Sparkles size={12} />, "Ollama", props.status?.ollama.level ?? "unknown", props.status?.ollama.level === "ok" ? "ready" : props.status?.ollama.detail ?? "—", () => props.onDetailSelect("ollama"))}
+        {item(<Database size={12} />, "OMEGA", props.status?.omega.level ?? "unknown", props.status?.omega.level === "ok" ? "active" : props.status?.omega.detail ?? "—", () => props.onDetailSelect("omega"))}
+        {item(<Workflow size={12} />, "Langflow", props.status?.langflow.level ?? "unknown", props.status?.langflow.level === "ok" ? "wired" : props.status?.langflow.detail ?? "—", () => props.onDetailSelect("langflow"))}
+        {item(<Brain size={12} />, "RuFlo", props.status?.ruflo.level ?? "unknown", props.status?.ruflo.level === "ok" ? "wired" : props.status?.ruflo.detail ?? "—", () => props.onDetailSelect("ruflo"))}
+        {item(<Network size={12} />, "Codex", props.status?.codexHooks.level ?? "unknown", props.status?.codexHooks.level === "ok" ? "hooked" : props.status?.codexHooks.detail ?? "—", () => props.onDetailSelect("codex"))}
       </div>
     </div>
   );

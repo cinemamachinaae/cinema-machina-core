@@ -3,7 +3,7 @@ import path from "node:path";
 import { NextResponse } from "next/server";
 import { repoPath } from "@/lib/paths";
 import { safeExecFile } from "@/lib/safe-exec";
-import type { BrainPortalStatus, DocsQuality, GraphifyFreshness, OllamaStatus, ToolReadiness } from "@/lib/types";
+import type { BrainPortalStatus, DocsQuality, GeminiStatus, GraphifyFreshness, MediaLibraryStatus, OllamaStatus, ToolReadiness } from "@/lib/types";
 
 const OLLAMA_DEFAULT_MODEL = "qwen2.5-coder:7b";
 
@@ -39,14 +39,37 @@ async function dirExists(dirPath: string): Promise<boolean> {
   }
 }
 
+async function readSummary(relativePath: string, maxLines = 10): Promise<string[]> {
+  try {
+    const text = await fs.readFile(repoPath(relativePath), "utf-8");
+    return text
+      .split("\n")
+      .map((line) => line.trim())
+      .filter((line) => line.length > 0 && !line.startsWith("[["))
+      .slice(0, maxLines);
+  } catch {
+    return [];
+  }
+}
+
+async function fileMtimeIso(relativePath: string): Promise<string | null> {
+  try {
+    const stat = await fs.stat(repoPath(relativePath));
+    return stat.isFile() ? stat.mtime.toISOString() : null;
+  } catch {
+    return null;
+  }
+}
+
 async function getGitStatus(): Promise<BrainPortalStatus["git"]> {
   const root = repoPath();
 
-  const [headSha, branch, committedAt, porcelain] = await Promise.all([
+  const [headSha, branch, committedAt, porcelain, recent] = await Promise.all([
     safeExecFile("git", ["rev-parse", "HEAD"], { cwd: root, timeoutMs: 1500 }),
     safeExecFile("git", ["branch", "--show-current"], { cwd: root, timeoutMs: 1500 }),
     safeExecFile("git", ["show", "-s", "--format=%cI", "HEAD"], { cwd: root, timeoutMs: 1500 }),
     safeExecFile("git", ["status", "--porcelain=v1"], { cwd: root, timeoutMs: 2000 }),
+    safeExecFile("git", ["log", "--oneline", "-n", "5"], { cwd: root, timeoutMs: 1500 }),
   ]);
 
   const sha = (headSha.stdout || "").trim();
@@ -54,11 +77,35 @@ async function getGitStatus(): Promise<BrainPortalStatus["git"]> {
   const branchName = (branch.stdout || "").trim() || null;
   const committedAtIso = (committedAt.stdout || "").trim() || null;
   const changedLines = (porcelain.stdout || "").split("\n").filter((l) => l.trim().length > 0);
+  const dirtySummary = changedLines.reduce(
+    (summary, line) => {
+      const status = line.slice(0, 2);
+      const file = line.slice(3).trim();
+      if (status === "??") summary.untracked += 1;
+      else {
+        if (status[0] && status[0] !== " ") summary.staged += 1;
+        if (status[1] && status[1] !== " ") summary.unstaged += 1;
+      }
+      if (file && summary.preview.length < 8) summary.preview.push(file);
+      return summary;
+    },
+    { staged: 0, unstaged: 0, untracked: 0, preview: [] as string[] },
+  );
+  const recentCommits = (recent.stdout || "")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const [commitSha, ...subjectParts] = line.split(" ");
+      return { sha: commitSha, subject: subjectParts.join(" ") };
+    });
 
   return {
     head: { sha: sha || "unknown", shortSha, branch: branchName, committedAtIso },
     dirty: changedLines.length > 0,
     changedFiles: changedLines.length,
+    dirtySummary,
+    recentCommits,
   };
 }
 
@@ -121,6 +168,8 @@ async function getGraphifyFreshness(headSha: string): Promise<GraphifyFreshness>
     graphJsonPresent: graphBytes > 0,
     builtFromCommit,
     matchesHead,
+    reportSummary: await readSummary("graphify-out/GRAPH_REPORT.md", 8),
+    agentIndexSummary: await readSummary("graphify-out/AGENT_GRAPH_INDEX.md", 8),
   };
 }
 
@@ -291,7 +340,8 @@ async function getCodexHooksStatus(): Promise<ToolReadiness> {
     return {
       available: true,
       level: hasGraphifyHook ? "ok" : "warn",
-      detail: hasGraphifyHook ? "Configured and active" : "Hooks present, but Graphify missing",
+      detail: hasGraphifyHook ? "Configured and active at .codex/hooks.json" : "Hooks present, but Graphify missing",
+      hookPath: ".codex/hooks.json",
     };
   } catch {
     return { available: true, level: "warn", detail: "hooks.json unreadable" };
@@ -307,6 +357,8 @@ async function getAntigravityStatus(): Promise<ToolReadiness> {
       available: true,
       level: "ok",
       detail: "Antigravity .agents workspace and skills detected",
+      workspace: agentsDir ? ".agents" : null,
+      skillsLock: skillsLock > 0 ? "skills-lock.json" : null,
     };
   }
   return { available: false, level: "unknown", detail: "No Antigravity footprints detected" };
@@ -321,7 +373,7 @@ async function getOmegaStatus(): Promise<ToolReadiness> {
       detail: "OMEGA .omx memory layer detected",
     };
   }
-  return { available: false, level: "unknown", detail: "No repo-level OMEGA adapter configured" };
+  return { available: false, level: "unknown", detail: "Not configured / optional: no repo-level OMEGA adapter detected" };
 }
 
 async function getClaudeCodeStatus(): Promise<ToolReadiness> {
@@ -403,10 +455,95 @@ async function getRuFloStatus(): Promise<ToolReadiness> {
   }
 }
 
+async function getGeminiStatus(): Promise<GeminiStatus> {
+  try {
+    const keyPresent = Boolean(process.env.GEMINI_API_KEY);
+    const cliPresent = await which("gemini");
+    return {
+      status: keyPresent ? "configured" : "missing",
+      level: keyPresent ? "ok" : "unknown",
+      detail: keyPresent
+        ? `Configured: GEMINI_API_KEY is present; gemini CLI ${cliPresent ? "detected" : "not detected"}`
+        : "Missing: GEMINI_API_KEY not present. Gemini is optional for long-context audits.",
+      keyPresent,
+      cliPresent,
+    };
+  } catch {
+    return {
+      status: "error",
+      level: "error",
+      detail: "Gemini presence check failed without reading secrets",
+      keyPresent: false,
+      cliPresent: false,
+    };
+  }
+}
+
+async function getReportsStatus() {
+  const graphReportSummary = await readSummary("graphify-out/GRAPH_REPORT.md", 8);
+  const agentIndexSummary = await readSummary("graphify-out/AGENT_GRAPH_INDEX.md", 8);
+  const contextPackMtime = await fileMtimeIso("tools/brain-portal/tools/brain-ops/data/context/agent-context-pack.md");
+  const graphReportMtime = await fileMtimeIso("graphify-out/GRAPH_REPORT.md");
+
+  return {
+    graphReport: {
+      present: graphReportSummary.length > 0,
+      path: "graphify-out/GRAPH_REPORT.md",
+      summary: graphReportSummary,
+    },
+    agentIndex: {
+      present: agentIndexSummary.length > 0,
+      path: "graphify-out/AGENT_GRAPH_INDEX.md",
+      summary: agentIndexSummary,
+    },
+    brainCheck: {
+      present: (await fileSizeBytes(repoPath("scripts/cm-brain-check.sh"))) > 0,
+      command: "scripts/cm-brain-check.sh",
+      detail: "Run on demand for local Brain readiness; not executed inside /api/status.",
+    },
+    graphRefresh: {
+      present: (await fileSizeBytes(repoPath("scripts/cm-graph-refresh.sh"))) > 0,
+      command: "scripts/cm-graph-refresh.sh",
+      detail: graphReportMtime ? `Latest graph report mtime ${graphReportMtime}` : "Graph report timestamp unavailable",
+    },
+    agentContextRefresh: {
+      present: (await fileSizeBytes(repoPath("scripts/cm-agent-context-refresh.sh"))) > 0,
+      command: "scripts/cm-agent-context-refresh.sh",
+      detail: contextPackMtime ? `Latest context pack mtime ${contextPackMtime}` : "Context pack timestamp unavailable",
+    },
+  };
+}
+
+async function getMediaLibraryStatus(): Promise<MediaLibraryStatus> {
+  return {
+    plex: {
+      available: false,
+      level: "unknown",
+      status: "not_configured",
+      detail: "Placeholder: Plex adapter belongs to Cinema Machina Core playback monitoring, not Brain Portal orchestration.",
+    },
+    jellyfin: {
+      available: false,
+      level: "unknown",
+      status: "not_configured",
+      detail: "Placeholder: Jellyfin status exists in Core, but Brain Portal has no library adapter wired.",
+    },
+    movieLibrary: {
+      available: false,
+      level: "unknown",
+      status: "unknown",
+      detail: "Placeholder: no movie-library health feed is wired into the Brain Portal yet.",
+    },
+  };
+}
+
 export async function GET() {
   const gitPromise = getGitStatus();
   const docsPromise = getDocsQuality();
   const ollamaPromise = getOllamaStatus();
+  const geminiPromise = getGeminiStatus();
+  const reportsPromise = getReportsStatus();
+  const mediaLibraryPromise = getMediaLibraryStatus();
   const langflowPromise = getLangflowStatus();
   const rufloPromise = getRuFloStatus();
   const codexHooksPromise = getCodexHooksStatus();
@@ -419,9 +556,9 @@ export async function GET() {
   const graphify = await getGraphifyFreshness(git.head.sha);
 
   const [
-    docs, ollama, langflow, ruflo, codexHooks, antigravity, omega, claudeCode
+    docs, ollama, gemini, reports, mediaLibrary, langflow, ruflo, codexHooks, antigravity, omega, claudeCode
   ] = await Promise.all([
-    docsPromise, ollamaPromise, langflowPromise, rufloPromise, codexHooksPromise, antigravityPromise, omegaPromise, claudeCodePromise
+    docsPromise, ollamaPromise, geminiPromise, reportsPromise, mediaLibraryPromise, langflowPromise, rufloPromise, codexHooksPromise, antigravityPromise, omegaPromise, claudeCodePromise
   ]);
 
   const status: BrainPortalStatus & { antigravity: ToolReadiness, claudeCode: ToolReadiness } = {
@@ -429,13 +566,16 @@ export async function GET() {
     git,
     graphify,
     docs,
+    reports,
     ollama,
+    gemini,
     omega,
     langflow,
     ruflo,
     codexHooks,
     antigravity,
-    claudeCode
+    claudeCode,
+    mediaLibrary
   };
 
   return NextResponse.json(status, {

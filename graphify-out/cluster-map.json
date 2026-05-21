@@ -42,5 +42,35 @@
       "subclusters": ["docs", "runtime", "other"],
       "description": "Project configuration, package setup, architecture manuals, and environment defaults."
     }
+  ],
+  "businessClusters": [
+    { "id": 0, "name": "Cinema Machina AI Brain", "group": "brain", "stableColor": "#7CA9FF", "description": "Brain Portal, status telemetry, context packs, dashboard control plane." },
+    { "id": 1, "name": "Cinema Machina Core", "group": "core", "stableColor": "#66E3B4", "description": "Core local-first backend, scripts, APIs, and product runtime." },
+    { "id": 2, "name": "Cinema Machina Website", "group": "web", "stableColor": "#C69CFF", "description": "Public website, Vercel surfaces, and web presentation references." },
+    { "id": 3, "name": "AI Tools and Agents", "group": "agents", "stableColor": "#E6C26E", "description": "Generic agent tooling, model docs, workflows, and orchestration notes." },
+    { "id": 4, "name": "Codex Workspace", "group": "agents", "stableColor": "#9DBBFF", "description": "Codex hooks, prompts, skills, and repo workflow guidance." },
+    { "id": 5, "name": "Antigravity Workspace", "group": "agents", "stableColor": "#E07AA6", "description": "Antigravity .agents workspace, skills, and workflow artifacts." },
+    { "id": 6, "name": "Local AI / Qwen / Ollama", "group": "local-ai", "stableColor": "#46D7C8", "description": "Local Ollama runtime, Qwen model, and enrichment pipeline." },
+    { "id": 7, "name": "Langflow Orchestration", "group": "local-ai", "stableColor": "#8DEBFF", "description": "Langflow daemon, flow endpoint readiness, and orchestration adapter." },
+    { "id": 8, "name": "RuFlo Workflows", "group": "local-ai", "stableColor": "#FFB86B", "description": "RuFlo CLI, repo workflow validation, and .claude-flow configuration." },
+    { "id": 9, "name": "Graphify Knowledge Graph", "group": "graph", "stableColor": "#00E5FF", "description": "Graphify outputs, graph reports, cluster maps, and graph refresh automation." },
+    { "id": 10, "name": "GitHub / Vercel / Repos", "group": "repos", "stableColor": "#B7C4D9", "description": "Git state, GitHub remote workflows, Vercel references, and repo metadata." },
+    { "id": 11, "name": "Plex / Jellyfin / Movie Library", "group": "media", "stableColor": "#8FE388", "description": "Media server adapters, movie library health, and playback source context." },
+    { "id": 12, "name": "Home Cinema / Client Signal Chain", "group": "cinema", "stableColor": "#F2D394", "description": "Shield, playback client, audio passthrough, codecs, and client signal chain." },
+    { "id": 13, "name": "Docs / Config / Runtime", "group": "support", "stableColor": "#C9D2E3", "description": "Fallback documentation, configuration, package setup, and runtime support files." }
+  ],
+  "nodeSchema": [
+    "clusterId",
+    "clusterName",
+    "clusterGroup",
+    "clusterDescription",
+    "subcluster",
+    "cleanLabel",
+    "sourceKind",
+    "importance",
+    "actionableSummary",
+    "macroSectionId",
+    "macroSectionName",
+    "macroSectionLabel"
   ]
 }

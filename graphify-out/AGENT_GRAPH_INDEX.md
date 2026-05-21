@@ -46,6 +46,42 @@ Nodes returned by `/api/graphify/graph` include both Graphify's original extract
   - `runtime`
   - `other`
 
+## 2A. Business Cluster Schema
+
+The Brain Portal now adds a second, product-facing classification layer at API response time. Raw `graphify-out/graph.json` remains unchanged.
+
+Every node returned by `/api/graphify/graph` includes:
+
+- **`clusterId`**: Stable business cluster ID `0-13`.
+- **`clusterName`**: Human-readable business cluster name.
+- **`clusterGroup`**: Higher-level grouping such as `brain`, `agents`, `local-ai`, `media`, or `support`.
+- **`clusterDescription`**: Short explanation of why the node belongs to that business cluster.
+- **`cleanLabel`**: Display label suitable for the Orb and inspector.
+- **`sourceKind`**: `file`, `symbol`, `doc`, `config`, `runtime`, `virtual-hub`, or `unknown`.
+- **`importance`**: Normalized node importance used by the Orb.
+- **`actionableSummary`**: One-line next action for the selected node.
+
+Business clusters:
+
+| ID | Cluster |
+|---|---|
+| 0 | Cinema Machina AI Brain |
+| 1 | Cinema Machina Core |
+| 2 | Cinema Machina Website |
+| 3 | AI Tools and Agents |
+| 4 | Codex Workspace |
+| 5 | Antigravity Workspace |
+| 6 | Local AI / Qwen / Ollama |
+| 7 | Langflow Orchestration |
+| 8 | RuFlo Workflows |
+| 9 | Graphify Knowledge Graph |
+| 10 | GitHub / Vercel / Repos |
+| 11 | Plex / Jellyfin / Movie Library |
+| 12 | Home Cinema / Client Signal Chain |
+| 13 | Docs / Config / Runtime |
+
+The API may add up to 14 virtual hub nodes. Hub nodes have `sourceKind: "virtual-hub"`, `isClusterHub: true`, and `importance: 100`.
+
 ---
 
 ## 3. Recommended Entry Points for Investigation

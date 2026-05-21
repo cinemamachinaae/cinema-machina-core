@@ -8,10 +8,20 @@ export type BrainPortalNode = {
   graphifyCommunity?: number | string;
   macroSectionId?: number;
   macroSectionLabel?: string;
+  macroSectionName?: string;
+  clusterId: number;
+  clusterName: string;
+  clusterGroup: string;
+  clusterDescription: string;
   source?: string;
   source_file?: string;
   source_location?: string;
   val?: number;
+  cleanLabel: string;
+  sourceKind: "file" | "symbol" | "doc" | "config" | "runtime" | "virtual-hub" | "unknown" | string;
+  importance: number;
+  actionableSummary: string;
+  isClusterHub?: boolean;
   subcluster?: "routes" | "components" | "adapters" | "scripts" | "docs" | "generated-artifacts" | "runtime" | "other" | string;
 };
 
@@ -35,6 +45,16 @@ export type GitStatus = {
   };
   dirty: boolean;
   changedFiles: number;
+  dirtySummary?: {
+    staged: number;
+    unstaged: number;
+    untracked: number;
+    preview: string[];
+  };
+  recentCommits?: Array<{
+    sha: string;
+    subject: string;
+  }>;
 };
 
 export type GraphifyFreshness = {
@@ -42,6 +62,8 @@ export type GraphifyFreshness = {
   graphJsonPresent: boolean;
   builtFromCommit: string | null;
   matchesHead: boolean | null;
+  reportSummary?: string[];
+  agentIndexSummary?: string[];
 };
 
 export type DocsQuality = {
@@ -55,6 +77,37 @@ export type ToolReadiness = {
   detail: string;
   status?: string;
   [key: string]: unknown;
+};
+
+export type GeminiStatus = {
+  status: "configured" | "missing" | "error";
+  level: StatusLevel;
+  detail: string;
+  keyPresent: boolean;
+  cliPresent?: boolean;
+};
+
+export type BrainReportStatus = {
+  graphReport: { present: boolean; path: string; summary: string[] };
+  agentIndex: { present: boolean; path: string; summary: string[] };
+  brainCheck: { present: boolean; command: string; detail: string };
+  graphRefresh: { present: boolean; command: string; detail: string };
+  agentContextRefresh: { present: boolean; command: string; detail: string };
+};
+
+export type MediaLibraryStatus = {
+  plex: ToolReadiness;
+  jellyfin: ToolReadiness;
+  movieLibrary: ToolReadiness;
+};
+
+export type InspectorDetail = {
+  id: string;
+  title: string;
+  level: StatusLevel;
+  summary: string;
+  rows: Array<{ label: string; value: string }>;
+  actions?: string[];
 };
 
 export type OllamaStatus = {
@@ -71,13 +124,16 @@ export type BrainPortalStatus = {
   git: GitStatus;
   graphify: GraphifyFreshness;
   docs: DocsQuality;
+  reports?: BrainReportStatus;
   ollama: OllamaStatus;
+  gemini?: GeminiStatus;
   omega: ToolReadiness;
   langflow: ToolReadiness;
   ruflo: ToolReadiness;
   codexHooks: ToolReadiness;
   antigravity: ToolReadiness;
   claudeCode: ToolReadiness;
+  mediaLibrary?: MediaLibraryStatus;
 };
 
 export type OrbSummaries = {

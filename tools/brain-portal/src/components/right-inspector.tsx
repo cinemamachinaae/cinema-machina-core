@@ -3,7 +3,7 @@
 import { PinOff, ShieldAlert, Sparkles, Workflow } from "lucide-react";
 
 import { Panel } from "@/components/panel";
-import type { BrainPortalNode, BrainPortalStatus, OrbSummaries } from "@/lib/types";
+import type { BrainPortalNode, BrainPortalStatus, InspectorDetail, OrbSummaries } from "@/lib/types";
 
 function pillClass(level: "ok" | "warn" | "unknown" | "error") {
   switch (level) {
@@ -52,9 +52,11 @@ function getNodeKey(node: BrainPortalNode): string {
 export function RightInspector(props: {
   status: BrainPortalStatus | null;
   graphMeta: { nodes: number; links: number; communities: number } | null;
+  detail: InspectorDetail | null;
   node: BrainPortalNode | null;
   pinnedNode: BrainPortalNode | null;
   summaries: OrbSummaries | null;
+  onDetailSelect: (id: string) => void;
   onUnpin: () => void;
   glow?: "cyan" | "green" | "amber" | "rose" | "blue" | null;
 }) {
@@ -75,7 +77,45 @@ export function RightInspector(props: {
 
   return (
     <Panel title="Intelligence Inspector" className="space-y-3 max-h-[calc(100dvh-32px)] overflow-y-auto" glow={props.glow}>
-      {!props.node ? (
+      {props.detail ? (
+        <div className="space-y-3">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <div className="text-[14px] font-semibold text-white/95">{props.detail.title}</div>
+              <div className="mt-1">
+                <span className={["inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[10px]", pillClass(props.detail.level)].join(" ")}>
+                  {statusDot(props.detail.level)}
+                  {statusLabel(props.detail.level)}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="rounded-xl border border-white/8 bg-white/4 px-3 py-3 text-[11px] leading-relaxed text-white/65">
+            {props.detail.summary}
+          </div>
+          {props.detail.rows.length ? (
+            <div className="rounded-xl border border-white/8 bg-white/4 px-3 py-3">
+              <div className="text-[10px] tracking-[0.14em] uppercase text-white/45">Details</div>
+              <div className="mt-2 space-y-1.5">
+                {props.detail.rows.map((row) => (
+                  <div key={`${row.label}-${row.value}`} className="grid grid-cols-[96px_1fr] gap-2 text-[10px]">
+                    <span className="text-white/38">{row.label}</span>
+                    <span className="break-words font-mono text-white/68">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {props.detail.actions?.length ? (
+            <div className="rounded-xl border border-white/8 bg-white/4 px-3 py-3">
+              <div className="text-[10px] tracking-[0.14em] uppercase text-white/45">Suggested Action</div>
+              <ul className="mt-2 space-y-1.5 text-[10px] leading-relaxed text-white/55">
+                {props.detail.actions.map((action) => <li key={action}>• {action}</li>)}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+      ) : !props.node ? (
         <div className="space-y-3">
           <div className="text-[13px] font-semibold text-white/90">System Overview</div>
 
@@ -180,15 +220,15 @@ export function RightInspector(props: {
             </div>
             <div className="space-y-1.5">
               {[
-                { name: "Ollama / Qwen", status: props.status?.ollama },
-                { name: "Langflow", status: props.status?.langflow },
-                { name: "RuFlo", status: props.status?.ruflo },
-                { name: "Codex Hooks", status: props.status?.codexHooks },
-                { name: "Antigravity", status: props.status?.antigravity },
-                { name: "Claude Code", status: props.status?.claudeCode },
-                { name: "OMEGA Memory", status: props.status?.omega },
+                { name: "Ollama / Qwen", id: "ollama", status: props.status?.ollama },
+                { name: "Langflow", id: "langflow", status: props.status?.langflow },
+                { name: "RuFlo", id: "ruflo", status: props.status?.ruflo },
+                { name: "Codex Hooks", id: "codex", status: props.status?.codexHooks },
+                { name: "Antigravity", id: "antigravity", status: props.status?.antigravity },
+                { name: "Claude Code", id: "reports", status: props.status?.claudeCode },
+                { name: "OMEGA Memory", id: "omega", status: props.status?.omega },
               ].map((tool) => (
-                <div key={tool.name} className="flex flex-col py-1.5 px-2 rounded-lg hover:bg-white/4 transition-colors group">
+                <button key={tool.name} type="button" onClick={() => props.onDetailSelect(tool.id)} className="flex flex-col py-1.5 px-2 rounded-lg hover:bg-white/4 transition-colors group text-left">
                   <div className="flex items-center gap-2">
                     {statusDot(tool.status?.level)}
                     <span className="text-[11px] font-medium text-white/80 flex-1">{tool.name}</span>
@@ -210,7 +250,7 @@ export function RightInspector(props: {
                       {tool.status.detail}
                     </div>
                   )}
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -230,10 +270,11 @@ export function RightInspector(props: {
           <div className="flex items-start justify-between gap-3">
             <div>
               <div className="text-[14px] font-semibold text-white/95">
-                {props.node.label || props.node.id}
+                {props.node.cleanLabel || props.node.label || props.node.id}
               </div>
               <div className="mt-1 text-[11px] text-white/50 flex flex-wrap gap-1.5 items-center">
-                <span className="font-mono text-[10px] bg-white/5 rounded px-1.5 py-0.5">{props.node.type ?? "node"}</span>
+                <span className="font-mono text-[10px] bg-white/5 rounded px-1.5 py-0.5">{props.node.sourceKind ?? props.node.type ?? "node"}</span>
+                <span className="text-white/60">· {props.node.clusterName}</span>
                 {props.node.macroSectionLabel ? (
                   <span className="text-white/60">· {props.node.macroSectionLabel}</span>
                 ) : null}
@@ -262,7 +303,7 @@ export function RightInspector(props: {
             <div className="rounded-xl border border-white/8 bg-white/4 px-3 py-2">
               <div className="text-[9px] tracking-[0.14em] uppercase text-white/40">Importance</div>
               <div className="mt-1 text-[13px] text-white/85 font-semibold tabular-nums">
-                {props.node.val ?? "—"}
+                {props.node.importance ?? props.node.val ?? "—"}
               </div>
             </div>
             <div className="rounded-xl border border-white/8 bg-white/4 px-3 py-2">
@@ -270,6 +311,13 @@ export function RightInspector(props: {
               <div className="mt-1 text-[10px] text-white/70 break-words font-mono leading-relaxed">
                 {props.node.source || "—"}
               </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-white/8 bg-white/4 px-3 py-3">
+            <div className="text-[10px] tracking-[0.14em] uppercase text-white/45">Actionable Summary</div>
+            <div className="mt-2 text-[11px] text-white/65 leading-relaxed">
+              {props.node.actionableSummary || props.node.clusterDescription}
             </div>
           </div>
 
