@@ -1,16 +1,15 @@
-# Graph Report - cinema-machina-core  (2026-05-21)
+# Graph Report - .  (2026-05-21)
 
 ## Corpus Check
-- 163 files · ~64,968 words
-- Verdict: corpus is large enough that graph structure adds value.
+- cluster-only mode — file stats not available
 
 ## Summary
-- 9067 nodes · 17022 edges · 578 communities (470 shown, 108 thin omitted)
+- 9106 nodes · 17091 edges · 578 communities (472 shown, 106 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 453 edges (avg confidence: 0.73)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fe319dd6`
+- Built from commit: `138a4b11`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,6 +32,10 @@
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Community 16|Community 16]]
 - [[_COMMUNITY_Community 17|Community 17]]
+- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Community 19|Community 19]]
+- [[_COMMUNITY_Community 20|Community 20]]
+- [[_COMMUNITY_Community 21|Community 21]]
 - [[_COMMUNITY_Community 22|Community 22]]
 - [[_COMMUNITY_Community 23|Community 23]]
 - [[_COMMUNITY_Community 24|Community 24]]
@@ -145,6 +148,9 @@
 - [[_COMMUNITY_Community 131|Community 131]]
 - [[_COMMUNITY_Community 132|Community 132]]
 - [[_COMMUNITY_Community 133|Community 133]]
+- [[_COMMUNITY_Community 134|Community 134]]
+- [[_COMMUNITY_Community 135|Community 135]]
+- [[_COMMUNITY_Community 136|Community 136]]
 - [[_COMMUNITY_Community 137|Community 137]]
 - [[_COMMUNITY_Community 138|Community 138]]
 - [[_COMMUNITY_Community 139|Community 139]]
@@ -248,6 +254,13 @@
 - [[_COMMUNITY_Community 237|Community 237]]
 - [[_COMMUNITY_Community 238|Community 238]]
 - [[_COMMUNITY_Community 239|Community 239]]
+- [[_COMMUNITY_Community 240|Community 240]]
+- [[_COMMUNITY_Community 241|Community 241]]
+- [[_COMMUNITY_Community 242|Community 242]]
+- [[_COMMUNITY_Community 243|Community 243]]
+- [[_COMMUNITY_Community 244|Community 244]]
+- [[_COMMUNITY_Community 245|Community 245]]
+- [[_COMMUNITY_Community 246|Community 246]]
 - [[_COMMUNITY_Community 247|Community 247]]
 - [[_COMMUNITY_Community 248|Community 248]]
 - [[_COMMUNITY_Community 249|Community 249]]
@@ -278,6 +291,8 @@
 - [[_COMMUNITY_Community 274|Community 274]]
 - [[_COMMUNITY_Community 275|Community 275]]
 - [[_COMMUNITY_Community 276|Community 276]]
+- [[_COMMUNITY_Community 277|Community 277]]
+- [[_COMMUNITY_Community 278|Community 278]]
 - [[_COMMUNITY_Community 279|Community 279]]
 - [[_COMMUNITY_Community 280|Community 280]]
 - [[_COMMUNITY_Community 281|Community 281]]
@@ -419,7 +434,6 @@
 - [[_COMMUNITY_Community 417|Community 417]]
 - [[_COMMUNITY_Community 418|Community 418]]
 - [[_COMMUNITY_Community 419|Community 419]]
-- [[_COMMUNITY_Community 420|Community 420]]
 - [[_COMMUNITY_Community 421|Community 421]]
 - [[_COMMUNITY_Community 422|Community 422]]
 - [[_COMMUNITY_Community 423|Community 423]]
@@ -458,12 +472,14 @@
 - [[_COMMUNITY_Community 456|Community 456]]
 - [[_COMMUNITY_Community 457|Community 457]]
 - [[_COMMUNITY_Community 458|Community 458]]
+- [[_COMMUNITY_Community 459|Community 459]]
 - [[_COMMUNITY_Community 460|Community 460]]
 - [[_COMMUNITY_Community 461|Community 461]]
 - [[_COMMUNITY_Community 462|Community 462]]
 - [[_COMMUNITY_Community 463|Community 463]]
 - [[_COMMUNITY_Community 464|Community 464]]
 - [[_COMMUNITY_Community 465|Community 465]]
+- [[_COMMUNITY_Community 466|Community 466]]
 - [[_COMMUNITY_Community 467|Community 467]]
 - [[_COMMUNITY_Community 468|Community 468]]
 - [[_COMMUNITY_Community 469|Community 469]]
@@ -472,8 +488,6 @@
 - [[_COMMUNITY_Community 472|Community 472]]
 - [[_COMMUNITY_Community 473|Community 473]]
 - [[_COMMUNITY_Community 474|Community 474]]
-- [[_COMMUNITY_Community 475|Community 475]]
-- [[_COMMUNITY_Community 476|Community 476]]
 - [[_COMMUNITY_Community 477|Community 477]]
 - [[_COMMUNITY_Community 478|Community 478]]
 - [[_COMMUNITY_Community 479|Community 479]]
@@ -487,11 +501,9 @@
 - [[_COMMUNITY_Community 487|Community 487]]
 - [[_COMMUNITY_Community 488|Community 488]]
 - [[_COMMUNITY_Community 489|Community 489]]
-- [[_COMMUNITY_Community 490|Community 490]]
 - [[_COMMUNITY_Community 491|Community 491]]
 - [[_COMMUNITY_Community 492|Community 492]]
 - [[_COMMUNITY_Community 493|Community 493]]
-- [[_COMMUNITY_Community 494|Community 494]]
 - [[_COMMUNITY_Community 495|Community 495]]
 - [[_COMMUNITY_Community 496|Community 496]]
 - [[_COMMUNITY_Community 497|Community 497]]
@@ -504,25 +516,12 @@
 - [[_COMMUNITY_Community 504|Community 504]]
 - [[_COMMUNITY_Community 505|Community 505]]
 - [[_COMMUNITY_Community 506|Community 506]]
-- [[_COMMUNITY_Community 507|Community 507]]
-- [[_COMMUNITY_Community 508|Community 508]]
-- [[_COMMUNITY_Community 509|Community 509]]
-- [[_COMMUNITY_Community 510|Community 510]]
-- [[_COMMUNITY_Community 511|Community 511]]
-- [[_COMMUNITY_Community 512|Community 512]]
-- [[_COMMUNITY_Community 515|Community 515]]
-- [[_COMMUNITY_Community 516|Community 516]]
-- [[_COMMUNITY_Community 517|Community 517]]
-- [[_COMMUNITY_Community 566|Community 566]]
-- [[_COMMUNITY_Community 567|Community 567]]
-- [[_COMMUNITY_Community 568|Community 568]]
-- [[_COMMUNITY_Community 571|Community 571]]
-- [[_COMMUNITY_Community 572|Community 572]]
-- [[_COMMUNITY_Community 573|Community 573]]
-- [[_COMMUNITY_Community 574|Community 574]]
-- [[_COMMUNITY_Community 575|Community 575]]
-- [[_COMMUNITY_Community 576|Community 576]]
-- [[_COMMUNITY_Community 577|Community 577]]
+- [[_COMMUNITY_Community 519|Community 519]]
+- [[_COMMUNITY_Community 520|Community 520]]
+- [[_COMMUNITY_Community 522|Community 522]]
+- [[_COMMUNITY_Community 523|Community 523]]
+- [[_COMMUNITY_Community 527|Community 527]]
+- [[_COMMUNITY_Community 528|Community 528]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cd` - 128 edges
@@ -544,1631 +543,1639 @@
 - `Backend Requirements.txt` --references--> `Cinema Machina Core SKILLS.md`  [EXTRACTED]
   backend/requirements.txt → SKILLS.md
 - `GET()` --calls--> `repoPath()`  [EXTRACTED]
-  tools/brain-portal/src/app/api/graphify/graph/route.ts → tools/brain-portal/src/lib/paths.ts
-- `GET()` --calls--> `repoPath()`  [EXTRACTED]
   tools/brain-portal/src/app/orb/route.ts → tools/brain-portal/src/lib/paths.ts
+- `GET()` --calls--> `repoPath()`  [EXTRACTED]
+  tools/brain-portal/src/app/orb-assets/[...path]/route.ts → tools/brain-portal/src/lib/paths.ts
 
-## Communities (578 total, 108 thin omitted)
+## Communities (578 total, 106 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.01
-Nodes (229): _, a0, a1, a7, a8, aa, ae, ai (+221 more)
+Nodes (227): _, a0, a1, a7, a8, aa, ae, ai (+219 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.09
-Nodes (22): dependencies, next, react, react-dom, devDependencies, autoprefixer, eslint, eslint-config-next (+14 more)
+Cohesion: 0.02
+Nodes (12): h0(), h2, hl, hq, iN, iq, na, nb (+4 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.12
-Nodes (9): Fetch active Jellyfin playback sessions.          Returns:             A list of, Fetch active Plex playback sessions.          Makes a synchronous GET request to, Fetch active Plex playback sessions.          Makes a synchronous GET request to, parse_sessions(), Parse a Plex ``/status/sessions`` XML response into session objects.      Args:, Unit tests for parse_sessions() against fixture XML strings., HDR must never be inferred from Plex session XML., HDR must never be inferred from Plex session XML. (+1 more)
+Cohesion: 0.01
+Nodes (126): a0(), a1(), a2(), a3(), a4(), a6(), a7(), a8() (+118 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.11
-Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
-
-### Community 4 - "Community 4"
-Cohesion: 0.01
-Nodes (130): a, a0(), a1(), a2(), a3(), a4(), a5(), a6() (+122 more)
-
-### Community 5 - "Community 5"
-Cohesion: 0.06
-Nodes (26): Cinema Machina Core — API and Integrations, Rules, Cinema Machina Core — Decisions, Decision, Format, Status, Tradeoffs, Why (+18 more)
-
-### Community 6 - "Community 6"
-Cohesion: 0.05
-Nodes (43): 10 — Playback Chain Model, 11 — FFprobe Rules, 12 — Plex Rules, 13 — ADB Rules, 14 — Docker Rules, 15 — API Rules, 16 — Testing Rules, 17 — Logging Rules (+35 more)
-
-### Community 7 - "Community 7"
-Cohesion: 0.09
-Nodes (25): JellyfinClient, Interface to the Jellyfin server session API.      All public methods must:, Initialise the client using values from ``settings``., Fetch active Jellyfin playback sessions.          Returns:             A list of, Build a fully-unknown session state for safe fallback.          Returns:, AudioState, PlaybackDecision, PlaybackSource (+17 more)
-
-### Community 8 - "Community 8"
-Cohesion: 0.15
-Nodes (12): BaseSettings, get_default_env_file(), get_repo_root(), Application settings loaded from environment variables.  All credentials are opt, Runtime configuration for Cinema Machina Core.      Values are read from the env, Return the repository root from the location of this module., Return the repo-root .env path regardless of current working directory., Runtime configuration for Cinema Machina Core.      Values are read from the env (+4 more)
-
-### Community 9 - "Community 9"
-Cohesion: 0.4
-Nodes (4): extraPaths, pythonPath, venv, venvPath
-
-### Community 10 - "Community 10"
-Cohesion: 0.33
-Nodes (5): geistMono, geistSans, inter, metadata, RootLayout()
-
-### Community 11 - "Community 11"
-Cohesion: 0.05
-Nodes (46): apiStateLabel(), apiStateTone(), chainNodes, ChainSnapshot, Confidence, ConfidenceChip(), confidenceTone(), ConfiguredSources (+38 more)
-
-### Community 12 - "Community 12"
-Cohesion: 0.05
-Nodes (34): PlexClient, Interface to the Plex Media Server session API.      All public methods must:, Initialise the client using values from ``settings``., get_jellyfin_status(), get_plex_status(), _probe_http_endpoint(), Read-only integration status checks for Plex and Jellyfin., Return True if the endpoint responds within the timeout. (+26 more)
-
-### Community 13 - "Community 13"
-Cohesion: 0.09
-Nodes (19): health_check(), Return a typed backend health response., get_current_playback(), Playback API route — GET /playback/current.  This route delegates to the Plex an, Return all active playback sessions across configured sources.      Queries Plex, Return all active playback sessions across configured sources.      Queries Plex, get_overview(), System monitoring overview API routes. (+11 more)
-
-### Community 23 - "Community 23"
-Cohesion: 0.1
-Nodes (26): getAnalytics(), getPostAnalytics(), authLogin(), authLogout(), authStatus(), CREDENTIALS_DIR, CREDENTIALS_FILE, deleteCredentials() (+18 more)
-
-### Community 24 - "Community 24"
-Cohesion: 0.05
-Nodes (43): After:, Before:, code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (# Build a multi-post command with media), code:bash (postiz posts:create \), code:bash (postiz posts:create \) (+35 more)
-
-### Community 25 - "Community 25"
-Cohesion: 0.05
-Nodes (42): 1. Post with Comments and Media, 1. Product Launch Campaign, 2. Multi-Platform Campaign, 2. Tutorial Series, 3. Event Coverage, 3. Twitter Thread, Advanced JSON Examples, Automation Scripts (+34 more)
-
-### Community 26 - "Community 26"
-Cohesion: 0.06
-Nodes (34): AI Agent Usage, Basic Usage, 🔧 Build System Integration, 📋 Checklist, CLI Package Scripts, code:block1 (apps/cli/), code:json ({), code:json ({) (+26 more)
-
-### Community 27 - "Community 27"
-Cohesion: 0.06
-Nodes (35): 10 — Agent Workflow, 11 — Done Definition, 12 — First Milestone, 13 — Agent Commit / Push Policy, 1 — Required Reading, 2 — Product Definition, 3 — Core Rule, 4 — Protected Files (+27 more)
-
-### Community 28 - "Community 28"
-Cohesion: 0.06
-Nodes (33): author, bin, postiz, bugs, url, dependencies, node-fetch, @types/pg (+25 more)
-
-### Community 29 - "Community 29"
-Cohesion: 0.06
-Nodes (30): code:bash (postiz posts:create \), code:json ({), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \) (+22 more)
-
-### Community 30 - "Community 30"
-Cohesion: 0.07
-Nodes (29): 1. Simple Mode (Command Line), 2. Advanced Mode (JSON Files), ✅ Advanced Features, AI Agent Tips, API Structure Reference, code:bash (# Single post), code:bash (postiz posts:create --json complex-post.json), code:json ({) (+21 more)
-
-### Community 31 - "Community 31"
-Cohesion: 0.13
-Nodes (15): Analytics, code:bash (postiz posts:list), code:bash (postiz posts:delete <post-id>), code:bash (postiz posts:status <post-id> --status draft), code:bash (postiz analytics:platform <integration-id>), code:bash (postiz analytics:post <post-id>), code:bash (# 1. List available content from the provider), code:bash (postiz posts:missing <post-id>) (+7 more)
-
-### Community 32 - "Community 32"
-Cohesion: 0.1
-Nodes (19): compilerOptions, allowSyntheticDefaultImports, declaration, declarationMap, esModuleInterop, forceConsistentCasingInFileNames, lib, module (+11 more)
-
-### Community 33 - "Community 33"
-Cohesion: 0.11
-Nodes (19): 1. Simple Post, 2. Post with Multiple Images, 3. Post with Comments, Each Having Their Own Media, 4. Comments Can Contain Semicolons! 🎉, 5. Twitter Thread, 6. Mix: Some with Media, Some Without, 7. Multi-Platform with Same Content, 8. Scheduled Post with Follow-ups (+11 more)
-
-### Community 34 - "Community 34"
-Cohesion: 0.11
-Nodes (17): dependencies, node-fetch, pg, description, devDependencies, tsx, @types/node, @types/pg (+9 more)
-
-### Community 35 - "Community 35"
-Cohesion: 0.11
-Nodes (16): 1. Create an OAuth app in Postiz, 2. Set up Postgres, 3. Configure environment, 4. Run, code:block1 (CLI                        Auth Server                    Po), code:block2 (https://your-server-domain.com/device/callback), code:bash (export DATABASE_URL="postgresql://user:password@localhost:54), code:bash (# Install dependencies) (+8 more)
-
-### Community 36 - "Community 36"
-Cohesion: 0.11
-Nodes (18): Analytics, Authentication, code:bash (# List posts (defaults to last 30 days to next 30 days)), code:bash (# Get platform analytics (default: last 7 days)), code:bash (# 1. analytics:post returns {"missing": true}), code:bash (# List recent content from the provider for a post with miss), code:bash (# Upload file and get URL), code:bash (# Login via device flow (opens browser, no client ID/secret ) (+10 more)
-
-### Community 37 - "Community 37"
-Cohesion: 0.12
-Nodes (17): code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), Dev.to (`devto`), Discord (`discord`), Facebook (`facebook`), Hashnode (`hashnode`) (+9 more)
-
-### Community 38 - "Community 38"
-Cohesion: 0.12
-Nodes (16): code:bash (# Get Reddit integration ID), code:bash (LINKEDIN_ID=$(postiz integrations:list | jq -r '.[] | select), code:bash (# Upload multiple files), code:bash (# Upload every image first (Rule 2)), code:bash (# Create JSON file with platform-specific content), code:bash (#!/bin/bash), code:bash (#!/bin/bash), code:bash (#!/bin/bash) (+8 more)
-
-### Community 39 - "Community 39"
-Cohesion: 0.23
-Nodes (15): escapeHtml(), generateUserCode(), handleDeviceCode(), handleDeviceToken(), handleOAuthCallback(), handleVerifyPage(), handleVerifySubmit(), html() (+7 more)
-
-### Community 40 - "Community 40"
-Cohesion: 0.13
-Nodes (14): code:bash (# From the monorepo root), code:bash (# From the monorepo root), code:bash (# Add to ~/.bashrc or ~/.zshrc), code:bash (# 1. Build), code:bash (# From the monorepo root), code:bash (# Install globally), How to Run the Postiz CLI, Option 1: Direct Execution (Quick Test) ⚡ (+6 more)
-
-### Community 41 - "Community 41"
-Cohesion: 0.2
-Nodes (13): ⚠️ Authentication Required, code:bash (npm install -g postiz), code:bash (RESULT=$(postiz upload <file>)), code:bash (postiz auth:status), code:bash (# ⚠️ AUTHENTICATE FIRST - required before any other command), code:bash (# 1. Authenticate), Common Gotchas, Core Workflow (+5 more)
-
-### Community 42 - "Community 42"
-Cohesion: 0.13
-Nodes (15): code:json ({), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (# Upload every file first (Rule 2)), code:json ({), code:json ({), code:bash (RESULT=$(postiz upload image.jpg)), code:bash (postiz posts:create -c "Content" -m "img.jpg" -i "twitter-id), code:bash (postiz posts:create --json post.json) (+7 more)
-
-### Community 43 - "Community 43"
-Cohesion: 0.14
-Nodes (13): Basic Syntax, code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (#!/bin/bash), Delay Between Comments, Full Example: Product Launch, How `-c` and `-m` Pair Together (+5 more)
-
-### Community 44 - "Community 44"
-Cohesion: 0.15
-Nodes (12): author, email, name, url, description, homepage, keywords, license (+4 more)
-
-### Community 45 - "Community 45"
-Cohesion: 0.15
-Nodes (13): code:bash (postiz integrations:settings twitter-ghi789), code:bash (postiz integrations:settings linkedin-jkl012), code:bash (postiz integrations:settings tiktok-mno345), code:bash (postiz integrations:settings instagram-pqr678), code:bash (postiz integrations:settings reddit-abc123), code:bash (postiz integrations:settings youtube-def456), Examples by Platform, Instagram (+5 more)
-
-### Community 46 - "Community 46"
-Cohesion: 0.15
-Nodes (13): code:bash (# Get available flairs), code:bash (# Get playlists), code:bash (# Upload video FIRST (TikTok only accepts verified URLs!)), code:bash (# Get companies you can post to), code:bash (# Create thread), code:bash (# Upload image FIRST (Instagram requires verified URLs!)), Instagram, LinkedIn (+5 more)
-
-### Community 47 - "Community 47"
-Cohesion: 0.15
-Nodes (13): code:bash (postiz posts:create \), code:bash (# Upload video first (required!)), code:bash (# Upload video first (TikTok only accepts verified URLs!)), code:bash (postiz posts:create \), code:bash (# Personal post), code:bash (# Upload image first (Instagram requires verified URLs!)), Instagram, LinkedIn (+5 more)
-
-### Community 48 - "Community 48"
-Cohesion: 0.18
-Nodes (10): code:bash (postiz integrations:settings <integration-id>), code:json ({), code:bash (#!/bin/bash), Combined Workflow, Integration Settings Discovery, New Command: `integrations:settings`, Summary, Tips (+2 more)
-
-### Community 49 - "Community 49"
-Cohesion: 0.18
-Nodes (10): code:block1 (apps/cli/), Directory Structure, Environment Variables, Future Enhancements, Integration Points, Overview, Postiz CLI - Project Structure, Support (+2 more)
-
-### Community 50 - "Community 50"
-Cohesion: 0.18
-Nodes (10): 1. Graphify — default repo intelligence layer, 2. Direct source reads, 3. Langflow, 4. Browser Use, 5. Postiz, Codex Tool Routing Policy — Cinema Machina Core, Core rule, Expected behavior for Codex (+2 more)
-
-### Community 51 - "Community 51"
-Cohesion: 0.18
-Nodes (11): Basic Commands, code:bash (postiz integrations:list), code:bash (postiz upload ./path/to/image.png), code:bash (# Simple post), code:bash (# List all posts), code:bash (postiz posts:delete abc123xyz), Create a Post, Delete a Post (+3 more)
-
-### Community 52 - "Community 52"
-Cohesion: 0.12
-Nodes (16): API Endpoints, code:bash (npx skills add gitroomhq/postiz-agent), code:bash (npm install -g postiz), code:bash (# Authentication), Contributing, Documentation, Environment Variables, Error Handling (+8 more)
-
-### Community 53 - "Community 53"
-Cohesion: 0.18
-Nodes (11): code:bash (# 1. Upload the file), code:bash (# Upload images), code:bash (postiz upload ./images/photo.jpg), code:json ({), code:bash (postiz upload ./videos/promo.mp4), code:json ({), Upload a Video (MP4), Upload an Image (+3 more)
-
-### Community 54 - "Community 54"
-Cohesion: 0.2
-Nodes (9): compilerOptions, esModuleInterop, module, moduleResolution, outDir, skipLibCheck, strict, target (+1 more)
-
-### Community 55 - "Community 55"
-Cohesion: 0.2
-Nodes (10): 1. Check What's Connected, 2. Create Multi-Platform Post, 3. Schedule Multiple Posts, 4. Upload and Post Image, code:bash (# See all your connected social media accounts), code:json ([), code:bash (# Use the integration IDs from step 1), code:bash (# Morning post) (+2 more)
-
-### Community 56 - "Community 56"
-Cohesion: 0.2
-Nodes (10): Audio, code:bash (postiz upload photo.jpg), code:bash (postiz upload video.mp4), code:bash (postiz upload podcast.mp3), code:bash (postiz upload document.pdf), Documents, Images, Other Files (+2 more)
-
-### Community 57 - "Community 57"
-Cohesion: 0.22
-Nodes (8): metadata, description, version, name, owner, email, name, plugins
-
-### Community 58 - "Community 58"
-Cohesion: 0.22
-Nodes (8): code:bash (# From apps/cli directory), code:json ({), code:bash (# From monorepo root), code:bash (npm install -g postiz), Publishing the Postiz CLI to npm, Quick Publish (Current Name: "postiz"), Recommended Names, Using from Monorepo Root
-
-### Community 59 - "Community 59"
-Cohesion: 0.22
-Nodes (9): code:bash (export POSTIZ_API_KEY=your_key), code:bash (# Make the file executable), code:bash (pnpm run build:cli), code:bash (# Check if it's linked), "Command not found: postiz", Permission Denied, "POSTIZ_API_KEY is not set", Rebuild After Changes (+1 more)
-
-### Community 60 - "Community 60"
-Cohesion: 0.22
-Nodes (9): 1. Discovery, 2. Validation, 3. AI Agent Integration, 4. Form Generation, code:bash (# What settings does YouTube support?), code:bash (postiz integrations:settings twitter-789 | jq '.output.maxLe), code:bash (# Get settings schema), code:bash (# Inspect the settings schema for form generation) (+1 more)
-
-### Community 61 - "Community 61"
-Cohesion: 0.22
-Nodes (9): 1. List Your Integrations, 2. Get Settings for Specific Integration, 3. Use the Settings in Your Post, code:bash (postiz integrations:list), code:json ([), code:bash (postiz integrations:settings reddit-abc123), code:json ({), code:bash (postiz posts:create \) (+1 more)
-
-### Community 62 - "Community 62"
-Cohesion: 0.22
-Nodes (9): 1. Get LinkedIn Settings, 2. Get Companies, 3. Post as Company, code:bash (postiz integrations:settings linkedin-123), code:json ({), code:bash (postiz integrations:trigger linkedin-123 getCompanies), code:json ({), code:bash (postiz posts:create \) (+1 more)
-
-### Community 63 - "Community 63"
-Cohesion: 0.22
-Nodes (9): 1. Get Reddit Integration Settings, 2. Get Flairs for the Subreddit, 3. Create Post with Flair ID, code:bash (postiz integrations:settings reddit-abc123), code:json ({), code:bash (postiz integrations:trigger reddit-abc123 getFlairs -d '{"su), code:json ({), code:bash (postiz posts:create \) (+1 more)
-
-### Community 64 - "Community 64"
-Cohesion: 0.22
-Nodes (9): 1. Get YouTube Settings, 2. Get Playlists, 3. Post to Specific Playlist, code:json ({), code:bash (postiz integrations:trigger youtube-123 getPlaylists), code:json ({), code:bash (postiz posts:create \), code:bash (postiz integrations:settings youtube-123) (+1 more)
-
-### Community 65 - "Community 65"
-Cohesion: 0.22
-Nodes (9): code:json ({), code:bash (postiz posts:create --json reddit-post.json), code:json ({), code:bash (postiz posts:create --json youtube-video.json), code:json ({), Multi-Platform with Different Settings, Reddit Example, Using JSON Files for Complex Settings (+1 more)
-
-### Community 66 - "Community 66"
-Cohesion: 0.22
-Nodes (9): 1. Change Package Name, 2. Publish, 3. Users Install, 4. Users Use, code:json ({), code:bash (cd apps/cli), code:bash (npm install -g agent-postiz), code:bash (postiz --help  # ← Command name from "bin" field) (+1 more)
-
-### Community 67 - "Community 67"
-Cohesion: 0.22
-Nodes (9): code:bash (pnpm run build), code:bash (pnpm link --global), code:bash (npm publish --dry-run), code:bash (npm pack), Test Linking, Test Publishing (Dry Run), Test the Build, Test with `npm pack` (+1 more)
-
-### Community 68 - "Community 68"
-Cohesion: 0.22
-Nodes (9): API Errors, API Key Not Set, code:block20 (❌ Error: POSTIZ_API_KEY environment variable is required), code:bash (export POSTIZ_API_KEY=your_key), code:block22 (postiz: command not found), code:block23 (❌ API Error (401): Unauthorized), code:block24 (❌ API Error (404): Not Found), Command Not Found (+1 more)
-
-### Community 69 - "Community 69"
-Cohesion: 0.22
-Nodes (9): All Output is JSON, code:bash (postiz posts:create --json complex-post.json), code:json ({), code:bash (INTEGRATIONS=$(postiz integrations:list | jq -r '.')), code:bash (postiz posts:create \), Discovery Workflow, Features for AI Agents, JSON Mode (+1 more)
-
-### Community 70 - "Community 70"
-Cohesion: 0.22
-Nodes (9): Batch Scheduling, code:bash (#!/bin/bash), code:bash (#!/bin/bash), code:bash (#!/bin/bash), code:bash (#!/bin/bash), Common Workflows, Multi-Platform Campaign, Reddit Post with Flair (+1 more)
-
-### Community 71 - "Community 71"
-Cohesion: 0.22
-Nodes (9): code:block17 (❌ ENOENT: no such file or directory), code:block18 (❌ EACCES: permission denied), code:bash (chmod 644 your-file.mp4), code:block20 (❌ Upload failed (401): Unauthorized), code:bash (export POSTIZ_API_KEY=your_key), Error Messages, File Not Found, Invalid API Key (+1 more)
-
-### Community 72 - "Community 72"
-Cohesion: 0.25
-Nodes (7): AI Agent Workflow, code:bash (#!/bin/bash), code:bash (#!/bin/bash), Complete Example Script, Integration Tools Workflow, Summary, Tips
-
-### Community 73 - "Community 73"
-Cohesion: 0.25
-Nodes (7): code:bash (-p threads  # or any of the above), code:bash (postiz integrations:list), Finding Your Provider Type, Platforms Without Specific Settings, Provider-Specific Settings, See Also, Tips
-
-### Community 74 - "Community 74"
-Cohesion: 0.25
-Nodes (7): computedHash, skillPath, source, sourceType, skills, postiz, version
-
-### Community 75 - "Community 75"
-Cohesion: 0.25
-Nodes (8): 1. Make Changes, 2. Rebuild, 3. Test, 4. Watch Mode (Auto-rebuild), code:bash (pnpm run build:cli), code:bash (# If linked globally), code:bash (# From apps/cli directory), Development Workflow
-
-### Community 76 - "Community 76"
-Cohesion: 0.25
-Nodes (8): code:bash (# From monorepo root), code:bash (export POSTIZ_API_KEY=your_api_key_here), code:bash (node apps/cli/dist/index.js --help), code:bash (cd apps/cli), Quick Setup Guide, Step 1: Build the CLI, Step 2: Set Your API Key, Step 3: Choose Your Method
-
-### Community 77 - "Community 77"
-Cohesion: 0.25
-Nodes (8): code:bash (postiz integrations:list), code:bash (postiz integrations:settings <integration-id>), code:bash (postiz integrations:trigger <integration-id> <method-name> -), Step 1: List Integrations, Step 2: Get Integration Settings, Step 3: Trigger Tools (If Needed), Step 4: Create Post with Complete Settings, The Complete Workflow
-
-### Community 78 - "Community 78"
-Cohesion: 0.25
-Nodes (8): Authentication, code:bash (postiz auth:login), code:bash (# Check current auth status (verifies credentials are still ), code:bash (export POSTIZ_API_KEY=your_api_key_here), code:bash (export POSTIZ_API_URL=https://your-custom-api.com), Option 1: OAuth2 (Recommended), Option 2: API Key, Self-Hosting the Auth Server
-
-### Community 79 - "Community 79"
-Cohesion: 0.29
-Nodes (6): code:bash (postiz upload video.mp4), code:bash (# Set API key), How It Works, Summary, Supported File Types for Upload, Testing File Upload
-
-### Community 80 - "Community 80"
-Cohesion: 0.29
-Nodes (7): code:bash (postiz posts:create -c "Post" -m "img.jpg"), code:bash (postiz posts:create -i "twitter-123"), code:bash (# This is fine! Extra -m flags are ignored), Error Handling, Mismatched Count (OK!), Missing Integration, No Content
-
-### Community 81 - "Community 81"
-Cohesion: 0.29
-Nodes (7): code:bash (postiz integrations:trigger reddit-123 invalidMethod), code:bash (postiz integrations:trigger reddit-123 getFlairs), code:bash (postiz integrations:trigger invalid-id getFlairs), Error Handling, Integration Not Found, Missing Required Data, Tool Not Found
-
-### Community 82 - "Community 82"
-Cohesion: 0.29
-Nodes (7): Configuration Files, Example Files, `examples/basic-usage.sh`, File Descriptions, `package.json`, `tsconfig.json`, `tsup.config.ts`
-
-### Community 83 - "Community 83"
-Cohesion: 0.29
-Nodes (7): Source Files, `src/api.ts`, `src/commands/integrations.ts`, `src/commands/posts.ts`, `src/commands/upload.ts`, `src/config.ts`, `src/index.ts`
-
-### Community 84 - "Community 84"
-Cohesion: 0.29
-Nodes (7): code:json ({), code:json ({), code:bash (# ❌ Wrong), Common Errors, Invalid Settings for Platform, Missing __type, Wrong Provider Type
-
-### Community 85 - "Community 85"
-Cohesion: 0.29
-Nodes (7): code:bash (cd apps/cli), code:bash (cd apps/cli), code:bash (cd apps/cli), Major Release (1.0.0 → 2.0.0), Minor Release (1.0.0 → 1.1.0), Patch Release (1.0.0 → 1.0.1), Version Updates
-
-### Community 86 - "Community 86"
-Cohesion: 0.29
-Nodes (7): 1. Get Your API Key, 2. Set Environment Variable, 3. Verify Installation, code:bash (# Bash/Zsh), code:bash (# ~/.bashrc or ~/.zshrc), code:bash (postiz --help), Setup
-
-### Community 87 - "Community 87"
-Cohesion: 0.29
-Nodes (7): code:bash (# Navigate to the monorepo root), code:bash (# From the CLI directory), code:bash (# Once published), From npm (Coming Soon), From Source (Development), Global Installation (Development), Installation
-
-### Community 88 - "Community 88"
-Cohesion: 0.29
-Nodes (7): code:bash (# Get just the post IDs), code:bash (#!/bin/bash), code:bash (# Custom API endpoint (for self-hosted)), Environment Variables, Script Automation, Tips & Tricks, Using with jq for JSON Parsing
-
-### Community 89 - "Community 89"
-Cohesion: 0.29
-Nodes (7): Building, code:block42 (src/), code:bash (pnpm run dev       # Watch mode for development), code:bash (pnpm run build), Development, Project Structure, Scripts
-
-### Community 90 - "Community 90"
-Cohesion: 0.33
-Nodes (5): date, posts, shortLink, tags, type
-
-### Community 91 - "Community 91"
-Cohesion: 0.33
-Nodes (5): date, posts, shortLink, tags, type
-
-### Community 92 - "Community 92"
-Cohesion: 0.33
-Nodes (5): date, posts, shortLink, tags, type
-
-### Community 93 - "Community 93"
-Cohesion: 0.33
-Nodes (5): date, posts, shortLink, tags, type
-
-### Community 94 - "Community 94"
-Cohesion: 0.33
-Nodes (5): date, posts, shortLink, tags, type
-
-### Community 95 - "Community 95"
-Cohesion: 0.33
-Nodes (5): date, posts, shortLink, tags, type
-
-### Community 96 - "Community 96"
-Cohesion: 0.33
-Nodes (5): date, posts, shortLink, tags, type
-
-### Community 97 - "Community 97"
-Cohesion: 0.33
-Nodes (5): code:bash (# General help), Getting Help, Links, Next Steps, Postiz CLI - Quick Start Guide
-
-### Community 98 - "Community 98"
-Cohesion: 0.33
-Nodes (6): code:bash (export POSTIZ_API_KEY=your_key), code:bash (# For bash), Environment Variables, Optional, Required, Setting Environment Variables
-
-### Community 99 - "Community 99"
-Cohesion: 0.33
-Nodes (6): Common Tool Methods, LinkedIn, Pinterest, Reddit, Twitter/X, YouTube
-
-### Community 100 - "Community 100"
-Cohesion: 0.33
-Nodes (6): Build Process, code:bash (pnpm run dev), code:bash (pnpm run build), Development Build, Output, Production Build
-
-### Community 101 - "Community 101"
-Cohesion: 0.33
-Nodes (6): code:bash (postiz posts:create \), code:bash (postiz posts:create --json post-with-settings.json), code:json ({), How to Use Provider Settings, Method 1: Command Line Flags, Method 2: JSON File
-
-### Community 102 - "Community 102"
-Cohesion: 0.33
-Nodes (6): After Publishing, code:bash (# Login to npm (first time only)), code:bash (npm view postiz), code:bash (npm install -g postiz), Publish to npm, Publishing Checklist
-
-### Community 103 - "Community 103"
-Cohesion: 0.33
-Nodes (6): Before First Publish, code:bash (npm view postiz), code:json ("version": "1.0.0"), code:json ("files": [), code:bash (pnpm run build), code:bash (pnpm link --global)
-
-### Community 104 - "Community 104"
-Cohesion: 0.33
-Nodes (6): code:bash (# Convert video to MP4), code:bash (# ❌ Wrong: PNG file renamed to .jpg), File Size Limits, "MIME type mismatch", Troubleshooting, "Upload failed: Unsupported file type"
-
-### Community 105 - "Community 105"
-Cohesion: 0.33
-Nodes (6): Instagram, LinkedIn, Platform-Specific Notes, TikTok, Twitter/X, YouTube
-
-### Community 106 - "Community 106"
-Cohesion: 0.4
-Nodes (4): [1.0.0] - 2026-02-13, Added, Changelog, Features
-
-### Community 107 - "Community 107"
-Cohesion: 0.15
-Nodes (24): BaseModel, ChainSnapshotResponse, Unified playback chain snapshot for the dashboard., Read-only Nvidia Shield device state derived from ADB., ShieldDeviceState, PlaybackCurrentResponse, Response envelope for ``GET /playback/current``.      Attributes:         sessio, Response envelope for ``GET /playback/current``.      Attributes:         sessio (+16 more)
-
-### Community 108 - "Community 108"
-Cohesion: 0.4
-Nodes (5): code:bash (# Could only do simple comments without custom media), code:bash (postiz posts:create \), Comparison: Old vs New Syntax, ✅ New Way (Flexible), ❌ Old Way (Limited)
-
-### Community 109 - "Community 109"
-Cohesion: 0.4
-Nodes (5): code:bash (# Generate a thread command with multiple tweets), code:bash (# Single quotes prevent interpolation), Escape Special Characters, Generate Commands Programmatically, Tips for AI Agents
-
-### Community 110 - "Community 110"
-Cohesion: 0.4
-Nodes (5): code:bash (postiz --help), code:bash (export POSTIZ_API_KEY=your_key), Test Help Command, Test with Sample Command (requires API key), Testing the CLI
-
-### Community 111 - "Community 111"
-Cohesion: 0.4
-Nodes (5): code:bash (# From monorepo root), code:bash (# Global install), Install from npm, Production Deployment, Publish to npm
-
-### Community 112 - "Community 112"
-Cohesion: 0.4
-Nodes (5): After ✅, Before ❌, code:bash (# Had to guess what settings are available), code:bash (# Discover settings programmatically), Comparison: Before vs After
-
-### Community 113 - "Community 113"
-Cohesion: 0.4
-Nodes (5): API Key Not Set, code:bash (postiz integrations:settings invalid-id), code:bash (postiz integrations:settings reddit-123), Error Handling, Integration Not Found
-
-### Community 114 - "Community 114"
-Cohesion: 0.4
-Nodes (5): Calling Tools, code:json ({), code:bash (# No parameters), Tool Structure, Understanding Tools
-
-### Community 115 - "Community 115"
-Cohesion: 0.4
-Nodes (5): `CHANGELOG.md`, Documentation Files, `QUICK_START.md`, `README.md`, `SKILL.md`
-
-### Community 116 - "Community 116"
-Cohesion: 0.4
-Nodes (5): Command not found after install, Common Issues, "Missing required files", "Package name too similar to existing package", "You do not have permission to publish"
-
-### Community 117 - "Community 117"
-Cohesion: 0.4
-Nodes (5): After (✅ Fixed), Before (❌ Bug), code:bash (postiz upload video.mp4), code:bash (postiz upload video.mp4), What Changed (Fix)
-
-### Community 118 - "Community 118"
-Cohesion: 0.5
-Nodes (4): Automated Testing (Future), code:bash (# Test help), Manual Testing, Testing
-
-### Community 119 - "Community 119"
-Cohesion: 0.5
-Nodes (4): Available Commands, code:block4 (User Input), Command Flow, Commands Architecture
-
-### Community 120 - "Community 120"
-Cohesion: 0.5
-Nodes (4): code:bash (pnpm run publish-cli), Package Contents (via .npmignore), Publishing, To npm
-
-### Community 121 - "Community 121"
-Cohesion: 0.5
-Nodes (4): code:json ({), code:bash (npm install -g @yourorg/postiz), code:bash (postiz --help), Scoped Packages
-
-### Community 122 - "Community 122"
-Cohesion: 0.5
-Nodes (4): code:yaml (name: Publish CLI to npm), code:bash (git tag cli-v1.0.0), Continuous Publishing, Using GitHub Actions
-
-### Community 123 - "Community 123"
-Cohesion: 0.5
-Nodes (4): code:bash (cd apps/cli), code:bash (npm install -g postiz), code:bash (postiz --help), Summary
-
-### Community 124 - "Community 124"
-Cohesion: 0.5
-Nodes (4): code:json ("name": "postiz",), code:json ("name": "agent-postiz",), code:json ("name": "agent-postiz",), Package Name vs Command Name
-
-### Community 125 - "Community 125"
-Cohesion: 0.09
-Nodes (21): BottomPulseStrip(), dotClass(), item(), COMMUNITY_PALETTE, HeroOrbCanvas(), STABLE_SECTION_COLORS, LeftControlRail(), FRIENDLY_LABELS (+13 more)
-
-### Community 127 - "Community 127"
-Cohesion: 0.67
-Nodes (3): Use Command Line (`-c` and `-m`) When:, Use JSON (`--json`) When:, When to Use JSON vs Command Line
-
-### Community 128 - "Community 128"
-Cohesion: 0.67
-Nodes (3): API Endpoint, code:block21 (GET /public/v1/integration-settings/:id), code:typescript ({)
-
-### Community 129 - "Community 129"
-Cohesion: 0.67
-Nodes (3): code:bash (postiz integrations:settings threads-stu901), code:json ({), No Additional Settings Required
-
-### Community 130 - "Community 130"
-Cohesion: 0.67
-Nodes (3): Dependencies, Dev Dependencies, Runtime Dependencies (from root)
-
-### Community 131 - "Community 131"
-Cohesion: 0.67
-Nodes (3): code:bash (postiz posts:create \), code:bash (postiz posts:create \), Instagram (`instagram`)
-
-### Community 132 - "Community 132"
-Cohesion: 0.67
-Nodes (3): code:bash (postiz posts:create \), code:bash (postiz posts:create \), X / Twitter (`x`)
-
-### Community 133 - "Community 133"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 137 - "Community 137"
-Cohesion: 0.06
-Nodes (25): _AdbFailure, Read-only Nvidia Shield monitoring via ADB-over-network., Return the last captured raw debug outputs., Run one adb command safely and return its result., Parse the foreground package and activity from dumpsys output., Parse a compact media session summary., Parse the basic display mode from dumpsys output., Derive a human-friendly app name from the package name. (+17 more)
-
-### Community 138 - "Community 138"
-Cohesion: 0.11
-Nodes (19): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+11 more)
-
-### Community 139 - "Community 139"
-Cohesion: 0.2
-Nodes (31): ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard (+23 more)
-
-### Community 140 - "Community 140"
-Cohesion: 0.07
-Nodes (26): 1. Create the virtual environment, 2. Install dependencies, API Endpoints (Phase 2.1), API Reference, Cinema Machina Core, code:bash (uv venv .venv --python 3.11), code:bash (uv pip install -r backend/requirements.txt), code:bash (cd backend) (+18 more)
-
-### Community 141 - "Community 141"
-Cohesion: 0.08
-Nodes (41): Enum, OutputState, Playback chain snapshot models for the production dashboard foundation., Source media properties reported by upstream playback metadata., Downstream output state of the active chain., SourceMediaState, AudioDeviceKind, AudioDeviceState (+33 more)
-
-### Community 142 - "Community 142"
-Cohesion: 0.12
-Nodes (17): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, leader_thread_id, session_id (+9 more)
-
-### Community 143 - "Community 143"
-Cohesion: 0.14
-Nodes (13): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3966-08d3-73e0-bf03-052c296bc609|agent-turn-complete, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e396a-03f5-7752-af5b-796c20f337b9|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b38-7e95-7303-b3b3-cb9a21683c30|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b3a-4756-7970-abe0-3a18c81ec4b8|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b3a-73f5-7fa2-be0d-193b428a05fa|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b3a-e895-71a1-a390-3f3774306cb4|agent-turn-complete (+5 more)
-
-### Community 144 - "Community 144"
-Cohesion: 0.15
-Nodes (12): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3b63-5ae4-7341-824a-3aa92f8f89de|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b67-f05b-71b0-975b-0f8e91c35bab|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-4008-7022-80eb-1abce4ba76d3|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-741e-7df0-af2d-661599fcc739|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-e951-7ea3-97d4-aa2f7d511b91|agent-turn-complete, 019e3b47-ee24-7891-a647-dfa1b46ef78d|019e3b47-ee55-7532-87dc-62e85e831fb5|agent-turn-complete (+4 more)
-
-### Community 145 - "Community 145"
-Cohesion: 0.03
-Nodes (15): aa(), ad, ag, aj, ap, ax, h5(), of (+7 more)
-
-### Community 146 - "Community 146"
-Cohesion: 0.17
-Nodes (11): AI working guidance, Brand position, Business audience, Cinema Machina Core, Cinema Machina — Product and Brand Context, Core promise, Non-negotiables, Product stack relationship (+3 more)
-
-### Community 147 - "Community 147"
-Cohesion: 0.17
-Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, leader_thread_id, session_id (+4 more)
-
-### Community 148 - "Community 148"
-Cohesion: 0.11
-Nodes (19): leader_thread_id, session_id, threads, updated_at, first_seen_at, kind, last_seen_at, last_turn_id (+11 more)
-
-### Community 149 - "Community 149"
-Cohesion: 0.17
-Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
-
-### Community 150 - "Community 150"
-Cohesion: 0.17
-Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
-
-### Community 151 - "Community 151"
-Cohesion: 0.17
-Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
-
-### Community 152 - "Community 152"
-Cohesion: 0.17
-Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
-
-### Community 153 - "Community 153"
-Cohesion: 0.17
-Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
-
-### Community 154 - "Community 154"
-Cohesion: 0.17
-Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
-
-### Community 155 - "Community 155"
-Cohesion: 0.17
-Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
-
-### Community 156 - "Community 156"
-Cohesion: 0.07
-Nodes (26): dependencies, 3d-force-graph, lucide-react, next, react, react-dom, three, devDependencies (+18 more)
-
-### Community 157 - "Community 157"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 158 - "Community 158"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 159 - "Community 159"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 160 - "Community 160"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 161 - "Community 161"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 162 - "Community 162"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 163 - "Community 163"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 164 - "Community 164"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 165 - "Community 165"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 166 - "Community 166"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 167 - "Community 167"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 168 - "Community 168"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 169 - "Community 169"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 170 - "Community 170"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 171 - "Community 171"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 172 - "Community 172"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 173 - "Community 173"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 174 - "Community 174"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 175 - "Community 175"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 176 - "Community 176"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 177 - "Community 177"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 178 - "Community 178"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 179 - "Community 179"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 180 - "Community 180"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 181 - "Community 181"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 182 - "Community 182"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 183 - "Community 183"
-Cohesion: 0.2
-Nodes (9): AI / agent routing, Architecture shape, Backend, Cinema Machina Core — Architecture Overview, Core architecture principles, Current product direction, Frontend, High-value areas for future development (+1 more)
-
-### Community 184 - "Community 184"
-Cohesion: 0.22
-Nodes (8): Cinema Machina Brain Stack, Codex Memories, Graphify, Layers, Obsidian, OMEGA, Purpose, Working Rule
-
-### Community 185 - "Community 185"
-Cohesion: 0.1
-Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
-
-### Community 187 - "Community 187"
-Cohesion: 0.25
-Nodes (7): last_event_at, last_injection_ts, last_reason, pane_counts, recent_keys, session_counts, total_injections
-
-### Community 188 - "Community 188"
-Cohesion: 0.29
-Nodes (6): last_activity, session_input_tokens, session_output_tokens, session_total_tokens, session_turns, total_turns
-
-### Community 189 - "Community 189"
-Cohesion: 0.29
-Nodes (6): cwd, native_session_id, pid, platform, session_id, started_at
-
-### Community 190 - "Community 190"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 191 - "Community 191"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 192 - "Community 192"
-Cohesion: 0.15
-Nodes (11): 1. `BrainPortalShell` (Main Layout Container), A. `HeroOrbZone` (Center/Background), Architectural Recommendation, B. `LeftControlRail` (Left Sidebar - 300px width, Glassmorphic), C. `RightIntelligenceInspector` (Right Sidebar - 350px width, Glassmorphic), Cinema Machina Brain Portal - Design Specification & Implementation Blueprint, D. `BottomSystemPulseStrip` (Footer - 40px height, Fixed Bottom), E. `DashboardOverlayPanels` (Modal/Expandable Cards) (+3 more)
-
-### Community 193 - "Community 193"
-Cohesion: 0.03
-Nodes (8): ds, hd(), hg(), lq, lz, mi, pe, pg()
-
-### Community 194 - "Community 194"
-Cohesion: 0.21
-Nodes (12): computeDegrees(), ensureOllamaAvailable(), GRAPH_PATH, main(), MAX_COMMUNITIES, MAX_TOP_NODES, nowIso(), ollamaSummarize() (+4 more)
-
-### Community 195 - "Community 195"
-Cohesion: 0.33
-Nodes (5): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3b2f-a9e3-7d91-8207-afd6acac4e8e|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b43-7509-7f41-b1f5-91d516c5188e|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b44-b270-71e2-b6e6-735edccb95be|agent-turn-complete
-
-### Community 196 - "Community 196"
-Cohesion: 0.33
-Nodes (5): Codex, Langflow, Obsidian, RuFlo, Toolchain Routing
-
-### Community 197 - "Community 197"
-Cohesion: 0.33
-Nodes (3): CORS regression tests for the local dashboard integration., Local Next.js origins can read backend API responses in the browser., TestLocalDashboardCors
-
-### Community 198 - "Community 198"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 199 - "Community 199"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 200 - "Community 200"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 201 - "Community 201"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 202 - "Community 202"
-Cohesion: 0.4
-Nodes (4): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3053-6504-7c40-aa59-02cf37e74920|agent-turn-complete, 019e3053-8978-7a31-b9e4-4f1be3eb9d2d|019e3053-89a2-7163-8be2-37e0c06e26b1|agent-turn-complete
-
-### Community 203 - "Community 203"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 204 - "Community 204"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 205 - "Community 205"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 206 - "Community 206"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 207 - "Community 207"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 208 - "Community 208"
-Cohesion: 0.4
-Nodes (4): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e308f-8428-7ae1-8cba-cb0198b7c9e6|agent-turn-complete, 019e308d-5a61-7353-a928-2b9da1999fee|019e308d-5a90-7d20-9798-3d1e0b1884aa|agent-turn-complete
-
-### Community 209 - "Community 209"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 210 - "Community 210"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 211 - "Community 211"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 212 - "Community 212"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 213 - "Community 213"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 214 - "Community 214"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 215 - "Community 215"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 216 - "Community 216"
-Cohesion: 0.33
-Nodes (5): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3ca6-690c-7ff0-a3b9-380d6e888a89|agent-turn-complete, 019e3ca6-6477-7e33-a423-cf583f609166|019e3cad-9215-72f0-bf01-ec24b27a199b|agent-turn-complete, 019e3ca6-69c6-7810-98d3-a1ed05acd73b|019e3ca6-69f9-7050-9e86-46ff609404e9|agent-turn-complete
-
-### Community 217 - "Community 217"
-Cohesion: 0.04
-Nodes (6): h0(), h2, hq, iN, iq, ry
-
-### Community 218 - "Community 218"
-Cohesion: 0.03
-Nodes (50): {Body:n}, e0(), e1(), e2(), e4(), e5(), e9(), eA() (+42 more)
-
-### Community 219 - "Community 219"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e3043-a7e8-74e0-ad38-06bb4e868fb6|019e3043-a811-7f92-97a7-ff7f258bbb69|agent-turn-complete
-
-### Community 220 - "Community 220"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3048-8b3b-79b3-8e69-9becc9168dc7|agent-turn-complete
-
-### Community 221 - "Community 221"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e305c-f7e3-7aa0-bd03-573ea13d9bd4|agent-turn-complete
-
-### Community 222 - "Community 222"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3071-9df7-7c60-aabc-2d9efddc2c86|agent-turn-complete
-
-### Community 223 - "Community 223"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e307c-a135-77f3-9406-413320fb049b|019e307c-a161-7b50-8247-14745d4d0d07|agent-turn-complete
-
-### Community 224 - "Community 224"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3082-f6f0-7470-b254-eb9b39a9b898|agent-turn-complete
-
-### Community 225 - "Community 225"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e310b-8eb4-7bf0-acc8-7bd1870659fe|019e310b-8f05-7292-8fc9-db985275800c|agent-turn-complete
-
-### Community 226 - "Community 226"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e3213-1fc6-7be3-940e-4fbe88ead336|019e3213-1fef-71f1-bc85-4b25383617ad|agent-turn-complete
-
-### Community 227 - "Community 227"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e3750-a865-7b50-bb43-15167e319811|019e3750-a88f-7730-a834-994a1c39745d|agent-turn-complete
-
-### Community 228 - "Community 228"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3c58-2d54-7de2-bfc5-400c7cda80e1|agent-turn-complete
-
-### Community 229 - "Community 229"
 Cohesion: 0.01
 Nodes (5): h1, ih(), ii(), io(), iw()
 
-### Community 230 - "Community 230"
-Cohesion: 0.5
-Nodes (3): last_idle_nudged_by_team, last_nudged_by_team, progress_by_team
+### Community 4 - "Community 4"
+Cohesion: 0.03
+Nodes (10): ds, ex(), hd(), ht, lq, mi, oi, pb() (+2 more)
 
-### Community 250 - "Community 250"
-Cohesion: 0.14
-Nodes (12): 1. Features & Architectural Upgrades, 2. Verification Performed, 3. Launching Locally, Cinema Machina Brain Portal Blueprint Complete, Cinema Machina Brain Portal Implementation & Verification Walkthrough, code:bash (./tools/brain-portal/start-dev.sh), code:bash (source "$HOME/.config/cinema-machina/paths.sh"), Deliverables (+4 more)
+### Community 5 - "Community 5"
+Cohesion: 0.03
+Nodes (15): a, aa(), ad, ag, aj, ap, ax, o (+7 more)
 
-### Community 251 - "Community 251"
-Cohesion: 0.29
-Nodes (4): A, ak, aw, az()
+### Community 6 - "Community 6"
+Cohesion: 0.03
+Nodes (20): am, at, hp, hr, hs, n_, ni, ny (+12 more)
 
-### Community 252 - "Community 252"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+### Community 7 - "Community 7"
+Cohesion: 0.03
+Nodes (51): {Body:n}, e0(), e1(), e2(), e4(), e5(), e9(), eA() (+43 more)
 
-### Community 253 - "Community 253"
+### Community 8 - "Community 8"
 Cohesion: 0.04
-Nodes (3): i4, px, uZ
+Nodes (9): d1, d2, h, k, t8, tm, tp, u6 (+1 more)
 
-### Community 254 - "Community 254"
+### Community 9 - "Community 9"
 Cohesion: 0.04
-Nodes (6): ar, hl, ig, r4, ro, su
+Nodes (11): a5(), an, ar, n4(), n5, n8, nx, r4 (+3 more)
 
-### Community 255 - "Community 255"
+### Community 10 - "Community 10"
 Cohesion: 0.05
-Nodes (6): at, n_, r6(), rg, s2(), sd
+Nodes (5): c8, cI, g9, R(), up
 
-### Community 256 - "Community 256"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3cba-a75c-7923-b387-fe8f4a89ea3a|agent-turn-complete
+### Community 11 - "Community 11"
+Cohesion: 0.05
+Nodes (6): eu, I, iD, it, se, tf
 
-### Community 257 - "Community 257"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+### Community 12 - "Community 12"
+Cohesion: 0.03
+Nodes (15): ae, af, al, au, av, aw, ha, hh (+7 more)
 
-### Community 258 - "Community 258"
+### Community 13 - "Community 13"
+Cohesion: 0.05
+Nodes (65): aC(), aj(), am(), ar(), ce(), cn(), cr(), cx() (+57 more)
+
+### Community 14 - "Community 14"
+Cohesion: 0.04
+Nodes (31): cn, eO, eS(), ev(), i0, i1, i2(), i3() (+23 more)
+
+### Community 15 - "Community 15"
 Cohesion: 0.06
-Nodes (9): hi, hk, hn, il(), iu(), o1, o6, od (+1 more)
+Nodes (4): gi, gt, p2, p9
 
-### Community 259 - "Community 259"
-Cohesion: 0.06
-Nodes (8): d, d1, d2, iu, k, tf, u6, v
-
-### Community 261 - "Community 261"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 262 - "Community 262"
-Cohesion: 0.2
-Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
-
-### Community 264 - "Community 264"
-Cohesion: 0.22
-Nodes (8): Build, Cinema Machina Brain Portal, code:bash (cd tools/brain-portal), code:bash (cd tools/brain-portal), code:bash (cd tools/brain-portal), Notes, Ollama enrichment (optional), Run (local)
-
-### Community 265 - "Community 265"
-Cohesion: 0.05
-Nodes (73): aC(), aj(), al(), am(), ar(), ci(), cn(), cr() (+65 more)
-
-### Community 266 - "Community 266"
-Cohesion: 0.05
-Nodes (44): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, leader_thread_id, session_id (+36 more)
-
-### Community 267 - "Community 267"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 268 - "Community 268"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
-
-### Community 269 - "Community 269"
-Cohesion: 0.05
-Nodes (5): hh(), ht, oo(), up, uw
-
-### Community 270 - "Community 270"
-Cohesion: 0.04
-Nodes (3): cd, e2, ii
-
-### Community 271 - "Community 271"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3cc2-c204-7f50-b5d8-154e681c4c6f|agent-turn-complete
-
-### Community 272 - "Community 272"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3ce1-9b08-72a1-8a11-97be02a0de45|agent-turn-complete
-
-### Community 280 - "Community 280"
+### Community 16 - "Community 16"
 Cohesion: 0.06
 Nodes (61): _(), aF(), aI(), aS(), aV(), ec(), ee(), ef() (+53 more)
 
-### Community 281 - "Community 281"
-Cohesion: 0.11
-Nodes (25): ig(), le(), lo(), lt(), r0(), r2(), r4(), r6() (+17 more)
+### Community 17 - "Community 17"
+Cohesion: 0.04
+Nodes (3): cd, e2, uZ
 
-### Community 282 - "Community 282"
-Cohesion: 0.05
-Nodes (4): I, iD, it, r5
+### Community 18 - "Community 18"
+Cohesion: 0.04
+Nodes (20): c, ck, cq, cv, cz, d3(), d4(), d5() (+12 more)
 
-### Community 283 - "Community 283"
-Cohesion: 0.05
-Nodes (3): hs, sx, sy
-
-### Community 284 - "Community 284"
+### Community 20 - "Community 20"
 Cohesion: 0.06
-Nodes (7): b(), T(), u_, uc, ut, x(), y()
+Nodes (8): hi, hk, hn, il(), iu(), o6, oh, rp
 
-### Community 285 - "Community 285"
+### Community 21 - "Community 21"
+Cohesion: 0.04
+Nodes (7): d7(), d9(), ga, ge, ml, pi, uk
+
+### Community 22 - "Community 22"
+Cohesion: 0.04
+Nodes (19): af, eh, ei, ek, im(), l8, lr(), ls() (+11 more)
+
+### Community 23 - "Community 23"
+Cohesion: 0.04
+Nodes (7): h5(), i_(), ie(), iF(), nz, ss, sw()
+
+### Community 24 - "Community 24"
 Cohesion: 0.05
-Nodes (9): a9, ic(), na, om, or, os, ul, um (+1 more)
+Nodes (6): g, gn, hg(), iv(), py, ux
 
-### Community 286 - "Community 286"
-Cohesion: 0.07
-Nodes (4): gt, p2, p3, p9
+### Community 25 - "Community 25"
+Cohesion: 0.05
+Nodes (4): i8, ic(), oq, ou
 
-### Community 288 - "Community 288"
+### Community 26 - "Community 26"
+Cohesion: 0.04
+Nodes (3): hx, hz, nc
+
+### Community 27 - "Community 27"
 Cohesion: 0.09
 Nodes (28): _, a, b, c, {createFromFetch:c}, {createFromFetch:v,encodeReply:b}, d, E (+20 more)
 
-### Community 289 - "Community 289"
-Cohesion: 0.06
-Nodes (5): ah, hb, hy, iX, ow()
-
-### Community 291 - "Community 291"
+### Community 28 - "Community 28"
 Cohesion: 0.05
-Nodes (18): c, ck, cq, cv, d3(), d4(), d5(), d6() (+10 more)
+Nodes (46): apiStateLabel(), apiStateTone(), chainNodes, ChainSnapshot, Confidence, ConfidenceChip(), confidenceTone(), ConfiguredSources (+38 more)
 
-### Community 292 - "Community 292"
-Cohesion: 0.06
-Nodes (3): nb, nx, nz
+### Community 30 - "Community 30"
+Cohesion: 0.04
+Nodes (5): ig, im, rb, rf, sx
 
-### Community 293 - "Community 293"
-Cohesion: 0.02
-Nodes (17): ae, af, al, au, av, aw, ha, hh (+9 more)
-
-### Community 294 - "Community 294"
+### Community 31 - "Community 31"
 Cohesion: 0.07
 Nodes (7): n3, n6(), n7(), n9(), re(), rn(), rr()
 
-### Community 295 - "Community 295"
+### Community 32 - "Community 32"
 Cohesion: 0.08
 Nodes (24): _, a(), b, c, {createFromFetch:c}, {createFromFetch:g,encodeReply:b}, {createProxy:n}, d (+16 more)
 
-### Community 296 - "Community 296"
-Cohesion: 0.04
-Nodes (8): dk, dx, N(), ss, t8, tn, tp, z
+### Community 33 - "Community 33"
+Cohesion: 0.06
+Nodes (8): b(), J(), T(), u_, uc, ut, x(), y()
 
-### Community 297 - "Community 297"
+### Community 34 - "Community 34"
+Cohesion: 0.05
+Nodes (34): PlexClient, Interface to the Plex Media Server session API.      All public methods must:, Initialise the client using values from ``settings``., get_jellyfin_status(), get_plex_status(), _probe_http_endpoint(), Read-only integration status checks for Plex and Jellyfin., Return True if the endpoint responds within the timeout. (+26 more)
+
+### Community 35 - "Community 35"
 Cohesion: 0.07
 Nodes (25): _(), a, c, d(), E(), ea, ed, ee (+17 more)
 
-### Community 298 - "Community 298"
-Cohesion: 0.06
-Nodes (15): cn, eS(), ev(), i0, i1, i2(), i3(), ik() (+7 more)
+### Community 36 - "Community 36"
+Cohesion: 0.04
+Nodes (11): a9, au, ic(), l6, na, om, or, os (+3 more)
 
-### Community 299 - "Community 299"
+### Community 37 - "Community 37"
 Cohesion: 0.05
-Nodes (7): h3, he, hf, hg, hj(), hm, iy
+Nodes (5): hh(), lz, oo(), ub, uw
 
-### Community 300 - "Community 300"
-Cohesion: 0.04
-Nodes (6): dt, g9, gn, iv(), p1, py
+### Community 38 - "Community 38"
+Cohesion: 0.05
+Nodes (7): d, dk, N(), S(), ss, tn, z
 
-### Community 302 - "Community 302"
-Cohesion: 0.08
-Nodes (47): f, a4(), a5(), a7(), ag(), ai(), au(), ax() (+39 more)
+### Community 39 - "Community 39"
+Cohesion: 0.1
+Nodes (47): a4(), a5(), a6(), a7(), ai(), al(), au(), co() (+39 more)
 
-### Community 303 - "Community 303"
+### Community 40 - "Community 40"
+Cohesion: 0.1
+Nodes (26): getAnalytics(), getPostAnalytics(), authLogin(), authLogout(), authStatus(), CREDENTIALS_DIR, CREDENTIALS_FILE, deleteCredentials() (+18 more)
+
+### Community 42 - "Community 42"
+Cohesion: 0.06
+Nodes (5): ah, h3, hb, hy, iX
+
+### Community 43 - "Community 43"
 Cohesion: 0.07
-Nodes (23): a2, a4(), ab, e0, e4(), eO, ix, o0() (+15 more)
+Nodes (6): ia, iz(), ri, s4(), s5(), s9
 
-### Community 304 - "Community 304"
-Cohesion: 0.09
-Nodes (5): c7, gi, pb(), pp(), ux
+### Community 45 - "Community 45"
+Cohesion: 0.06
+Nodes (25): _AdbFailure, Read-only Nvidia Shield monitoring via ADB-over-network., Return the last captured raw debug outputs., Run one adb command safely and return its result., Parse the foreground package and activity from dumpsys output., Parse a compact media session summary., Parse the basic display mode from dumpsys output., Derive a human-friendly app name from the package name. (+17 more)
 
-### Community 306 - "Community 306"
-Cohesion: 0.21
-Nodes (19): ea(), eb(), ec(), ed(), ee(), ef(), eh(), ei() (+11 more)
+### Community 46 - "Community 46"
+Cohesion: 0.05
+Nodes (44): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, leader_thread_id, session_id (+36 more)
 
-### Community 307 - "Community 307"
-Cohesion: 0.04
-Nodes (8): ia, iz(), n8, ri, rx, s4(), s5(), s9
+### Community 47 - "Community 47"
+Cohesion: 0.05
+Nodes (43): 10 — Playback Chain Model, 11 — FFprobe Rules, 12 — Plex Rules, 13 — ADB Rules, 14 — Docker Rules, 15 — API Rules, 16 — Testing Rules, 17 — Logging Rules (+35 more)
 
-### Community 309 - "Community 309"
-Cohesion: 0.04
-Nodes (12): hc, i_(), i9, ie(), iF(), ij, ir(), is() (+4 more)
+### Community 48 - "Community 48"
+Cohesion: 0.08
+Nodes (41): Enum, OutputState, Playback chain snapshot models for the production dashboard foundation., Source media properties reported by upstream playback metadata., Downstream output state of the active chain., SourceMediaState, AudioDeviceKind, AudioDeviceState (+33 more)
 
-### Community 310 - "Community 310"
+### Community 49 - "Community 49"
 Cohesion: 0.05
 Nodes (44): experimental, adjustFontFallbacks, adjustFontFallbacksWithSizeAdjust, bundlePagesExternals, caseSensitiveRoutes, clientRouterFilter, clientRouterFilterRedirects, cpus (+36 more)
 
-### Community 311 - "Community 311"
-Cohesion: 0.03
-Nodes (15): ce, dd, dp, dy, ex(), i8, iy, op (+7 more)
+### Community 50 - "Community 50"
+Cohesion: 0.05
+Nodes (43): After:, Before:, code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (# Build a multi-post command with media), code:bash (postiz posts:create \), code:bash (postiz posts:create \) (+35 more)
 
-### Community 312 - "Community 312"
-Cohesion: 0.16
-Nodes (21): ap(), cu(), eg(), ep(), ew(), ib(), ic(), id() (+13 more)
+### Community 51 - "Community 51"
+Cohesion: 0.08
+Nodes (27): BottomPulseStrip(), dotClass(), item(), CLUSTER_CENTERS, COMMUNITY_PALETTE, HeroOrbCanvas(), STABLE_SECTION_COLORS, LeftControlRail() (+19 more)
 
-### Community 313 - "Community 313"
-Cohesion: 0.19
-Nodes (3): hb, hf, hm
+### Community 52 - "Community 52"
+Cohesion: 0.06
+Nodes (4): pf(), ph, pp(), ug
 
-### Community 315 - "Community 315"
+### Community 53 - "Community 53"
+Cohesion: 0.06
+Nodes (5): hf, hg, hj(), hm, iy
+
+### Community 54 - "Community 54"
+Cohesion: 0.05
+Nodes (42): 1. Post with Comments and Media, 1. Product Launch Campaign, 2. Multi-Platform Campaign, 2. Tutorial Series, 3. Event Coverage, 3. Twitter Thread, Advanced JSON Examples, Automation Scripts (+34 more)
+
+### Community 55 - "Community 55"
+Cohesion: 0.05
+Nodes (9): ce, dd, dp, dy, i8, ra, rc, tg (+1 more)
+
+### Community 56 - "Community 56"
+Cohesion: 0.05
+Nodes (4): E, et, L, tc
+
+### Community 57 - "Community 57"
+Cohesion: 0.09
+Nodes (41): ci(), ct(), cu(), e6(), ed(), em(), ep(), ew() (+33 more)
+
+### Community 58 - "Community 58"
 Cohesion: 0.06
 Nodes (39): dataRoute, experimentalBypassFor, initialHeaders, initialRevalidateSeconds, srcRoute, dataRoute, experimentalBypassFor, initialHeaders (+31 more)
 
-### Community 316 - "Community 316"
-Cohesion: 0.13
-Nodes (40): aa(), ao(), eb(), ik(), io(), ip(), ir(), l_() (+32 more)
+### Community 59 - "Community 59"
+Cohesion: 0.1
+Nodes (28): e3, e7, e9, ea(), eb(), ec(), ed(), ee() (+20 more)
 
-### Community 317 - "Community 317"
-Cohesion: 0.06
-Nodes (13): e3(), hr, l7, l9, la, lu, O, ob (+5 more)
+### Community 61 - "Community 61"
+Cohesion: 0.14
+Nodes (38): aa(), ag(), ao(), eb(), io(), ir(), l_(), l0() (+30 more)
 
-### Community 318 - "Community 318"
+### Community 62 - "Community 62"
 Cohesion: 0.09
-Nodes (7): d7(), d9(), ge, ml, pi, R(), ub
+Nodes (25): JellyfinClient, Interface to the Jellyfin server session API.      All public methods must:, Initialise the client using values from ``settings``., Fetch active Jellyfin playback sessions.          Returns:             A list of, Build a fully-unknown session state for safe fallback.          Returns:, AudioState, PlaybackDecision, PlaybackSource (+17 more)
 
-### Community 319 - "Community 319"
-Cohesion: 0.09
-Nodes (3): q, tm, tu
-
-### Community 320 - "Community 320"
-Cohesion: 0.06
-Nodes (35): canonicalBase, config, amp, analyticsId, assetPrefix, basePath, cacheMaxMemorySize, cleanDistDir (+27 more)
-
-### Community 321 - "Community 321"
+### Community 63 - "Community 63"
 Cohesion: 0.08
-Nodes (5): an, i6(), iF, ig, nt
+Nodes (8): nR, rc(), rd(), rf(), rh, rp(), ru(), rz()
 
-### Community 322 - "Community 322"
-Cohesion: 0.13
-Nodes (7): nc, ne, r0(), r1(), rl, sk, sy
+### Community 64 - "Community 64"
+Cohesion: 0.06
+Nodes (14): A, a2, a4(), a5, a6, aj(), ak, aw (+6 more)
 
-### Community 323 - "Community 323"
-Cohesion: 0.17
-Nodes (4): aq, eb(), em, u7
+### Community 65 - "Community 65"
+Cohesion: 0.07
+Nodes (12): ag, ah, ap(), ax, e4(), i6(), ij(), iq() (+4 more)
 
-### Community 324 - "Community 324"
+### Community 66 - "Community 66"
 Cohesion: 0.1
 Nodes (36): a6(), ak(), aw(), eb(), eh(), es(), ey(), lk() (+28 more)
 
-### Community 325 - "Community 325"
-Cohesion: 0.07
-Nodes (4): g4, gg, gv, mr
+### Community 67 - "Community 67"
+Cohesion: 0.06
+Nodes (35): 10 — Agent Workflow, 11 — Done Definition, 12 — First Milestone, 13 — Agent Commit / Push Policy, 1 — Required Reading, 2 — Product Definition, 3 — Core Rule, 4 — Protected Files (+27 more)
 
-### Community 326 - "Community 326"
+### Community 68 - "Community 68"
 Cohesion: 0.09
-Nodes (3): a, o, p()
+Nodes (4): c7, gd, pa, uv
 
-### Community 328 - "Community 328"
-Cohesion: 0.19
-Nodes (28): ae(), an(), h(), ia(), ie(), ih(), ii(), il() (+20 more)
+### Community 69 - "Community 69"
+Cohesion: 0.06
+Nodes (35): canonicalBase, config, amp, analyticsId, assetPrefix, basePath, cacheMaxMemorySize, cleanDistDir (+27 more)
 
-### Community 329 - "Community 329"
-Cohesion: 0.11
-Nodes (37): _(), a, b(), c, D(), e(), e3(), eb() (+29 more)
+### Community 70 - "Community 70"
+Cohesion: 0.06
+Nodes (34): AI Agent Usage, Basic Usage, 🔧 Build System Integration, 📋 Checklist, CLI Package Scripts, code:block1 (apps/cli/), code:json ({), code:json ({) (+26 more)
 
-### Community 330 - "Community 330"
+### Community 71 - "Community 71"
+Cohesion: 0.06
+Nodes (33): author, bin, postiz, bugs, url, dependencies, node-fetch, @types/pg (+25 more)
+
+### Community 72 - "Community 72"
+Cohesion: 0.06
+Nodes (26): Cinema Machina Core — API and Integrations, Rules, Cinema Machina Core — Decisions, Decision, Format, Status, Tradeoffs, Why (+18 more)
+
+### Community 73 - "Community 73"
 Cohesion: 0.08
 Nodes (12): ok(), r0(), r1(), r2(), r3(), r5(), rb, rj() (+4 more)
 
-### Community 331 - "Community 331"
-Cohesion: 0.14
-Nodes (27): A(), ab(), aC(), aD(), aH(), aQ(), aU(), ax() (+19 more)
-
-### Community 332 - "Community 332"
-Cohesion: 0.1
-Nodes (3): a3, h, ih
-
-### Community 333 - "Community 333"
+### Community 74 - "Community 74"
 Cohesion: 0.07
-Nodes (13): ag, ah, aj(), ap(), ax, ij(), iq(), mt (+5 more)
+Nodes (7): e0, e3(), hl, hr, hu, hx(), oc
 
-### Community 334 - "Community 334"
+### Community 75 - "Community 75"
+Cohesion: 0.08
+Nodes (4): an, iF, ig, nt
+
+### Community 76 - "Community 76"
 Cohesion: 0.14
 Nodes (32): a0(), a1(), a5(), a9(), aG(), aj(), aM(), az() (+24 more)
 
-### Community 335 - "Community 335"
-Cohesion: 0.07
-Nodes (8): nR, rc(), rd(), rf(), rh, rp(), ru(), rz()
+### Community 77 - "Community 77"
+Cohesion: 0.2
+Nodes (31): ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard, ordinary_no_progress_guard (+23 more)
 
-### Community 336 - "Community 336"
+### Community 78 - "Community 78"
+Cohesion: 0.09
+Nodes (3): a, o, p()
+
+### Community 79 - "Community 79"
+Cohesion: 0.13
+Nodes (3): g4, gv, mr
+
+### Community 81 - "Community 81"
+Cohesion: 0.16
+Nodes (31): ae(), an(), ap(), az(), ey(), h(), ia(), ie() (+23 more)
+
+### Community 82 - "Community 82"
+Cohesion: 0.06
+Nodes (30): code:bash (postiz posts:create \), code:json ({), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \) (+22 more)
+
+### Community 83 - "Community 83"
+Cohesion: 0.07
+Nodes (29): 1. Simple Mode (Command Line), 2. Advanced Mode (JSON Files), ✅ Advanced Features, AI Agent Tips, API Structure Reference, code:bash (# Single post), code:bash (postiz posts:create --json complex-post.json), code:json ({) (+21 more)
+
+### Community 84 - "Community 84"
+Cohesion: 0.16
+Nodes (20): _(), b(), c, D(), el, f(), g(), h() (+12 more)
+
+### Community 85 - "Community 85"
+Cohesion: 0.08
+Nodes (4): a3, ih, il, iu
+
+### Community 86 - "Community 86"
+Cohesion: 0.19
+Nodes (28): repoPath(), execFileAsync, ExecResult, safeExecFile(), dirExists(), fileMtimeIso(), fileSizeBytes(), GET() (+20 more)
+
+### Community 87 - "Community 87"
+Cohesion: 0.15
+Nodes (24): BaseModel, ChainSnapshotResponse, Unified playback chain snapshot for the dashboard., Read-only Nvidia Shield device state derived from ADB., ShieldDeviceState, PlaybackCurrentResponse, Response envelope for ``GET /playback/current``.      Attributes:         sessio, Response envelope for ``GET /playback/current``.      Attributes:         sessio (+16 more)
+
+### Community 88 - "Community 88"
+Cohesion: 0.12
+Nodes (28): i(), iE(), K(), l(), ne(), o(), oA(), ob() (+20 more)
+
+### Community 90 - "Community 90"
 Cohesion: 0.14
 Nodes (15): E, f(), g, k, N(), na, no(), nr (+7 more)
 
-### Community 337 - "Community 337"
-Cohesion: 0.13
+### Community 91 - "Community 91"
+Cohesion: 0.12
 Nodes (5): Q(), T, v, w, x
 
-### Community 339 - "Community 339"
-Cohesion: 0.17
-Nodes (9): _(), a(), c, d, l, m(), nn, p() (+1 more)
+### Community 92 - "Community 92"
+Cohesion: 0.1
+Nodes (5): eL(), ep, p, r8, uY
 
-### Community 340 - "Community 340"
+### Community 93 - "Community 93"
+Cohesion: 0.11
+Nodes (27): cb(), cf(), cg(), ch(), ck(), cm(), cp(), cS() (+19 more)
+
+### Community 94 - "Community 94"
+Cohesion: 0.13
+Nodes (6): ab, aq, eb(), em, u5, u7
+
+### Community 95 - "Community 95"
 Cohesion: 0.14
-Nodes (21): cb(), cf(), cg(), ch(), ck(), cm(), cp(), cS() (+13 more)
+Nodes (27): A(), ab(), aC(), aD(), aH(), aQ(), aU(), ax() (+19 more)
 
-### Community 341 - "Community 341"
+### Community 96 - "Community 96"
+Cohesion: 0.07
+Nodes (26): 1. Create the virtual environment, 2. Install dependencies, API Endpoints (Phase 2.1), API Reference, Cinema Machina Core, code:bash (uv venv .venv --python 3.11), code:bash (uv pip install -r backend/requirements.txt), code:bash (cd backend) (+18 more)
+
+### Community 97 - "Community 97"
+Cohesion: 0.12
+Nodes (9): Fetch active Jellyfin playback sessions.          Returns:             A list of, Fetch active Plex playback sessions.          Makes a synchronous GET request to, Fetch active Plex playback sessions.          Makes a synchronous GET request to, parse_sessions(), Parse a Plex ``/status/sessions`` XML response into session objects.      Args:, Unit tests for parse_sessions() against fixture XML strings., HDR must never be inferred from Plex session XML., HDR must never be inferred from Plex session XML. (+1 more)
+
+### Community 98 - "Community 98"
+Cohesion: 0.07
+Nodes (26): dependencies, 3d-force-graph, lucide-react, next, react, react-dom, three, devDependencies (+18 more)
+
+### Community 99 - "Community 99"
 Cohesion: 0.09
 Nodes (20): _, A, b, D, f, g, I, j() (+12 more)
 
-### Community 342 - "Community 342"
-Cohesion: 0.14
-Nodes (23): K(), o(), oA(), ob(), od(), oh(), ol(), op() (+15 more)
+### Community 100 - "Community 100"
+Cohesion: 0.11
+Nodes (3): dx, q, tu
 
-### Community 343 - "Community 343"
-Cohesion: 0.06
-Nodes (5): ac, cc, ia, io, is()
-
-### Community 346 - "Community 346"
+### Community 102 - "Community 102"
 Cohesion: 0.09
-Nodes (13): e3, e7, e9, eg(), h(), nd(), ne, nI() (+5 more)
+Nodes (12): e1, ej, ie(), iN(), ir, np, nu, nw (+4 more)
 
-### Community 347 - "Community 347"
-Cohesion: 0.09
-Nodes (3): im, rb, rf
+### Community 103 - "Community 103"
+Cohesion: 0.11
+Nodes (9): l7, l9, la, lu, O, ob, od, of (+1 more)
 
-### Community 348 - "Community 348"
-Cohesion: 0.23
-Nodes (5): a(), C, i(), o, u()
-
-### Community 350 - "Community 350"
-Cohesion: 0.23
-Nodes (23): repoPath(), execFileAsync, ExecResult, safeExecFile(), dirExists(), fileSizeBytes(), GET(), getAntigravityStatus() (+15 more)
-
-### Community 352 - "Community 352"
+### Community 104 - "Community 104"
 Cohesion: 0.17
-Nodes (3): E, et, uf
+Nodes (9): _(), a(), c, d, l, m(), nn, p() (+1 more)
 
-### Community 353 - "Community 353"
+### Community 107 - "Community 107"
+Cohesion: 0.15
+Nodes (7): a(), C, i(), n, o, r(), u()
+
+### Community 108 - "Community 108"
 Cohesion: 0.09
-Nodes (8): cz, ek, im(), st, ua, ue, uh, ur
+Nodes (19): health_check(), Return a typed backend health response., get_current_playback(), Playback API route — GET /playback/current.  This route delegates to the Plex an, Return all active playback sessions across configured sources.      Queries Plex, Return all active playback sessions across configured sources.      Queries Plex, get_overview(), System monitoring overview API routes. (+11 more)
 
-### Community 354 - "Community 354"
-Cohesion: 0.19
-Nodes (20): b(), eu(), lb(), lg(), lh(), lm(), lp(), lq() (+12 more)
-
-### Community 355 - "Community 355"
+### Community 109 - "Community 109"
 Cohesion: 0.12
 Nodes (16): _, E, f(), g(), h, i(), K, l() (+8 more)
 
-### Community 356 - "Community 356"
-Cohesion: 0.18
-Nodes (15): uj, lN(), na(), nl(), oC(), oD(), oE(), oF() (+7 more)
-
-### Community 357 - "Community 357"
+### Community 110 - "Community 110"
 Cohesion: 0.13
-Nodes (12): e1(), e2(), e5(), e8(), ej, eq, ev(), ew() (+4 more)
+Nodes (3): av, ef, r5
 
-### Community 358 - "Community 358"
-Cohesion: 0.11
-Nodes (12): clear(), delete(), i, J, n, o(), q, r (+4 more)
-
-### Community 359 - "Community 359"
-Cohesion: 0.12
-Nodes (9): e1, ej, ie(), iN(), ir, r7(), rf, rg (+1 more)
-
-### Community 360 - "Community 360"
-Cohesion: 0.05
-Nodes (6): ed, ef, eu, p, se, uY
-
-### Community 361 - "Community 361"
-Cohesion: 0.19
-Nodes (19): a1(), a2(), a3(), a6(), a9(), aB(), aH(), ak() (+11 more)
-
-### Community 364 - "Community 364"
-Cohesion: 0.16
-Nodes (4): il, np, nu, nw
-
-### Community 365 - "Community 365"
-Cohesion: 0.13
-Nodes (14): b, ea(), ec(), ed, ef(), eh, ei(), el() (+6 more)
-
-### Community 366 - "Community 366"
+### Community 111 - "Community 111"
 Cohesion: 0.16
 Nodes (23): aa(), ae(), aL(), an(), ao(), ar(), at(), ea() (+15 more)
 
-### Community 367 - "Community 367"
+### Community 112 - "Community 112"
+Cohesion: 0.09
+Nodes (22): dependencies, next, react, react-dom, devDependencies, autoprefixer, eslint, eslint-config-next (+14 more)
+
+### Community 113 - "Community 113"
 Cohesion: 0.11
-Nodes (18): basePath, caseSensitive, dataRoutes, dynamicRoutes, headers, pages404, redirects, rewrites (+10 more)
+Nodes (12): clear(), delete(), i, J, n, o(), q, r (+4 more)
 
-### Community 368 - "Community 368"
-Cohesion: 0.16
-Nodes (18): aS(), ca(), cl(), eh(), lG(), ln(), lZ(), ne() (+10 more)
+### Community 114 - "Community 114"
+Cohesion: 0.13
+Nodes (12): e1(), e2(), e5(), e8(), ej, eq, ev(), ew() (+4 more)
 
-### Community 369 - "Community 369"
-Cohesion: 0.11
-Nodes (17): images, contentDispositionType, contentSecurityPolicy, dangerouslyAllowSVG, deviceSizes, disableStaticImages, domains, formats (+9 more)
+### Community 115 - "Community 115"
+Cohesion: 0.12
+Nodes (3): cc, ia, is()
 
-### Community 371 - "Community 371"
+### Community 116 - "Community 116"
+Cohesion: 0.17
+Nodes (21): a1(), a2(), a3(), a9(), aB(), aH(), ak(), aQ() (+13 more)
+
+### Community 117 - "Community 117"
+Cohesion: 0.1
+Nodes (19): compilerOptions, allowSyntheticDefaultImports, declaration, declarationMap, esModuleInterop, forceConsistentCasingInFileNames, lib, module (+11 more)
+
+### Community 118 - "Community 118"
+Cohesion: 0.1
+Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
+
+### Community 121 - "Community 121"
+Cohesion: 0.12
+Nodes (3): o1, od, oj()
+
+### Community 122 - "Community 122"
+Cohesion: 0.19
+Nodes (20): b(), eu(), lb(), lg(), lh(), lm(), lp(), lq() (+12 more)
+
+### Community 123 - "Community 123"
+Cohesion: 0.13
+Nodes (14): b, ea(), ec(), ed, ef(), eh, ei(), el() (+6 more)
+
+### Community 125 - "Community 125"
 Cohesion: 0.11
 Nodes (11): cw, eg, i9(), iP(), l1, l2(), l3(), lj() (+3 more)
 
-### Community 372 - "Community 372"
-Cohesion: 0.22
-Nodes (14): at(), aw(), g(), lb(), lQ(), lV(), n7(), n9() (+6 more)
-
-### Community 373 - "Community 373"
-Cohesion: 0.12
-Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
-
-### Community 375 - "Community 375"
-Cohesion: 0.12
-Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
-
-### Community 376 - "Community 376"
-Cohesion: 0.12
-Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
-
-### Community 377 - "Community 377"
-Cohesion: 0.12
-Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
-
-### Community 378 - "Community 378"
-Cohesion: 0.12
-Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
-
-### Community 379 - "Community 379"
-Cohesion: 0.12
-Nodes (14): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+6 more)
-
-### Community 380 - "Community 380"
-Cohesion: 0.12
-Nodes (14): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+6 more)
-
-### Community 381 - "Community 381"
-Cohesion: 0.17
-Nodes (8): clear(), delete(), n, o, r, s(), set(), u
-
-### Community 382 - "Community 382"
-Cohesion: 0.04
-Nodes (11): an, hp, hr, n4(), n5, na, ni, nk (+3 more)
-
-### Community 383 - "Community 383"
-Cohesion: 0.17
-Nodes (7): e(), eb(), ib(), nb(), ob(), rb(), t()
-
-### Community 385 - "Community 385"
+### Community 126 - "Community 126"
 Cohesion: 0.13
-Nodes (15): images, contentDispositionType, contentSecurityPolicy, dangerouslyAllowSVG, deviceSizes, disableStaticImages, domains, formats (+7 more)
+Nodes (18): Active workstreams, Bugs / failures, Capsule 1, Capsule 1: 2026-05-19T06:46:27.228949+00:00, Cinema Machina Agent Context Pack, Corpus Check, Decisions, Files or modules (+10 more)
 
-### Community 386 - "Community 386"
+### Community 127 - "Community 127"
+Cohesion: 0.11
+Nodes (19): 1. Simple Post, 2. Post with Multiple Images, 3. Post with Comments, Each Having Their Own Media, 4. Comments Can Contain Semicolons! 🎉, 5. Twitter Thread, 6. Mix: Some with Media, Some Without, 7. Multi-Platform with Same Content, 8. Scheduled Post with Follow-ups (+11 more)
+
+### Community 128 - "Community 128"
+Cohesion: 0.11
+Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
+
+### Community 129 - "Community 129"
+Cohesion: 0.11
+Nodes (18): basePath, caseSensitive, dataRoutes, dynamicRoutes, headers, pages404, redirects, rewrites (+10 more)
+
+### Community 130 - "Community 130"
+Cohesion: 0.11
+Nodes (19): leader_thread_id, session_id, threads, updated_at, first_seen_at, kind, last_seen_at, last_turn_id (+11 more)
+
+### Community 131 - "Community 131"
+Cohesion: 0.11
+Nodes (19): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+11 more)
+
+### Community 132 - "Community 132"
 Cohesion: 0.18
-Nodes (12): e7(), e8(), eh(), ig(), nn(), oE(), of(), oq() (+4 more)
+Nodes (18): actionSummary(), buildClusterHubs(), BUSINESS_CLUSTERS, BusinessCluster, classifyBusinessCluster(), cluster(), CLUSTER_BY_ID, enrichNode() (+10 more)
 
-### Community 387 - "Community 387"
-Cohesion: 0.03
-Nodes (22): a5, a6, af, au, ay, eh, ei, l6 (+14 more)
+### Community 133 - "Community 133"
+Cohesion: 0.11
+Nodes (18): Analytics, Authentication, code:bash (# List posts (defaults to last 30 days to next 30 days)), code:bash (# Get platform analytics (default: last 7 days)), code:bash (# 1. analytics:post returns {"missing": true}), code:bash (# List recent content from the provider for a post with miss), code:bash (# Upload file and get URL), code:bash (# Login via device flow (opens browser, no client ID/secret ) (+10 more)
 
-### Community 390 - "Community 390"
-Cohesion: 0.27
-Nodes (11): applyInvalidatedModules(), createModuleHotObject(), createRequire(), hotApply(), hotCheck(), internalApply(), setStatus(), trackBlockingPromise() (+3 more)
+### Community 134 - "Community 134"
+Cohesion: 0.16
+Nodes (18): aS(), ca(), cl(), eh(), lG(), ln(), lZ(), ne() (+10 more)
 
-### Community 391 - "Community 391"
-Cohesion: 0.23
-Nodes (8): n(), n8(), nG(), nI(), nU(), nY(), nz(), oy()
+### Community 135 - "Community 135"
+Cohesion: 0.18
+Nodes (15): uj, lN(), na(), nl(), oC(), oD(), oE(), oF() (+7 more)
 
-### Community 393 - "Community 393"
-Cohesion: 0.19
-Nodes (4): a(), constructor(), has(), u
+### Community 136 - "Community 136"
+Cohesion: 0.11
+Nodes (17): images, contentDispositionType, contentSecurityPolicy, dangerouslyAllowSVG, deviceSizes, disableStaticImages, domains, formats (+9 more)
 
-### Community 394 - "Community 394"
-Cohesion: 0.15
-Nodes (12): Agent Read Order, Canonical Pattern, Cinema Machina AI Brain Workspace Standard, code:bash (source "$HOME/.config/cinema-machina/paths.sh"), code:bash (graphify query "how does the Brain Portal read Graphify data), code:bash (scripts/cm-graph-refresh.sh), code:bash (curl -I http://127.0.0.1:3000/), Future Project Adaptation (+4 more)
+### Community 137 - "Community 137"
+Cohesion: 0.11
+Nodes (17): dependencies, node-fetch, pg, description, devDependencies, tsx, @types/node, @types/pg (+9 more)
 
-### Community 397 - "Community 397"
-Cohesion: 0.17
-Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+### Community 138 - "Community 138"
+Cohesion: 0.11
+Nodes (16): 1. Create an OAuth app in Postiz, 2. Set up Postgres, 3. Configure environment, 4. Run, code:block1 (CLI                        Auth Server                    Po), code:block2 (https://your-server-domain.com/device/callback), code:bash (export DATABASE_URL="postgresql://user:password@localhost:54), code:bash (# Install dependencies) (+8 more)
 
-### Community 398 - "Community 398"
-Cohesion: 0.24
-Nodes (10): _parse_audio_state(), _parse_decision(), _parse_video_element(), _parse_video_state(), Plex session XML parser — Phase 2.1.  Parses the ``/status/sessions`` XML respon, Parse a single ``<Video>`` element into a ``SessionState``.      Args:         v, Derive the playback decision from a ``<Video>`` element.      Plex exposes the d, Extract video codec and resolution from a ``<Media>`` element.      Prefers ``<S (+2 more)
-
-### Community 400 - "Community 400"
-Cohesion: 0.24
-Nodes (5): a(), constructor(), get(), has(), i
-
-### Community 403 - "Community 403"
-Cohesion: 0.29
-Nodes (6): code:bash (LANGFLOW_BASE_URL=http://127.0.0.1:7860), code:bash (ruflo --version), Langflow, Langflow and RuFlo Wiring, RuFlo, Truth Rules
-
-### Community 404 - "Community 404"
-Cohesion: 0.36
-Nodes (4): D, E, k, l()
-
-### Community 405 - "Community 405"
+### Community 139 - "Community 139"
 Cohesion: 0.12
-Nodes (17): Active workstreams, Bugs / failures, Capsule 1, Capsule 1: 2026-05-19T06:46:27.228949+00:00, Cinema Machina Agent Context Pack, Corpus Check, Decisions, Files or modules (+9 more)
+Nodes (16): code:bash (# Get Reddit integration ID), code:bash (LINKEDIN_ID=$(postiz integrations:list | jq -r '.[] | select), code:bash (# Upload multiple files), code:bash (# Upload every image first (Rule 2)), code:bash (# Create JSON file with platform-specific content), code:bash (#!/bin/bash), code:bash (#!/bin/bash), code:bash (#!/bin/bash) (+8 more)
 
-### Community 406 - "Community 406"
-Cohesion: 0.2
-Nodes (9): ampDevFiles, ampFirstPages, devFiles, lowPriorityFiles, pages, /_app, /_error, polyfillFiles (+1 more)
-
-### Community 410 - "Community 410"
-Cohesion: 0.25
-Nodes (5): contentTypeFor(), GET(), getRepoRoot(), GET(), GET()
-
-### Community 411 - "Community 411"
-Cohesion: 0.22
-Nodes (8): /api/enrichment/summaries/route, /api/graphify/graph/route, /api/status/route, /favicon.ico/route, /_not-found/page, /orb-assets/[...path]/route, /orb/route, /page
-
-### Community 412 - "Community 412"
-Cohesion: 0.25
-Nodes (7): Antigravity, Cinema Machina Core — AI Toolchain Integrations, Claude Code, Codex, Langflow, OMEGA, RuFlo
-
-### Community 416 - "Community 416"
-Cohesion: 0.05
-Nodes (5): pa, pf(), ph, ug, uv
-
-### Community 417 - "Community 417"
-Cohesion: 0.28
-Nodes (3): b(), nl(), nu()
-
-### Community 418 - "Community 418"
-Cohesion: 0.25
-Nodes (8): code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -m "img1.jpg,img2.jpg" -s "), code:bash (postiz posts:create \), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create \), code:bash (postiz posts:create --json post.json), Creating Posts
-
-### Community 419 - "Community 419"
+### Community 140 - "Community 140"
 Cohesion: 0.2
 Nodes (16): api_auth_status(), check_health(), flow_is_cinema_machina(), integration_health(), iter_flow_items(), load_local_env(), Detects Langflow running locally and checks API endpoint., Send compact context to the configured Langflow run endpoint. (+8 more)
 
-### Community 420 - "Community 420"
+### Community 142 - "Community 142"
+Cohesion: 0.12
+Nodes (3): dt, u3, u4
+
+### Community 143 - "Community 143"
+Cohesion: 0.18
+Nodes (17): at(), aw(), g(), lb(), lQ(), lV(), n7(), n9() (+9 more)
+
+### Community 145 - "Community 145"
+Cohesion: 0.12
+Nodes (17): code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), Dev.to (`devto`), Discord (`discord`), Facebook (`facebook`), Hashnode (`hashnode`) (+9 more)
+
+### Community 146 - "Community 146"
+Cohesion: 0.12
+Nodes (16): API Endpoints, code:bash (npx skills add gitroomhq/postiz-agent), code:bash (npm install -g postiz), code:bash (# Authentication), Contributing, Documentation, Environment Variables, Error Handling (+8 more)
+
+### Community 147 - "Community 147"
+Cohesion: 0.12
+Nodes (17): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, leader_thread_id, session_id (+9 more)
+
+### Community 148 - "Community 148"
+Cohesion: 0.15
+Nodes (12): BaseSettings, get_default_env_file(), get_repo_root(), Application settings loaded from environment variables.  All credentials are opt, Runtime configuration for Cinema Machina Core.      Values are read from the env, Return the repository root from the location of this module., Return the repo-root .env path regardless of current working directory., Runtime configuration for Cinema Machina Core.      Values are read from the env (+4 more)
+
+### Community 149 - "Community 149"
+Cohesion: 0.12
+Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
+
+### Community 150 - "Community 150"
+Cohesion: 0.12
+Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
+
+### Community 151 - "Community 151"
+Cohesion: 0.12
+Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
+
+### Community 152 - "Community 152"
+Cohesion: 0.12
+Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
+
+### Community 153 - "Community 153"
+Cohesion: 0.12
+Nodes (15): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+7 more)
+
+### Community 154 - "Community 154"
+Cohesion: 0.23
+Nodes (15): escapeHtml(), generateUserCode(), handleDeviceCode(), handleDeviceToken(), handleOAuthCallback(), handleVerifyPage(), handleVerifySubmit(), html() (+7 more)
+
+### Community 155 - "Community 155"
+Cohesion: 0.17
+Nodes (8): clear(), delete(), n, o, r, s(), set(), u
+
+### Community 156 - "Community 156"
+Cohesion: 0.17
+Nodes (7): e(), eb(), ib(), nb(), ob(), rb(), t()
+
+### Community 157 - "Community 157"
+Cohesion: 0.12
+Nodes (14): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+6 more)
+
+### Community 158 - "Community 158"
+Cohesion: 0.12
+Nodes (14): Diff, FirstArg, LayoutProps, MaybeField, Negative, NonNegative, Numeric, OmitWithTag (+6 more)
+
+### Community 159 - "Community 159"
+Cohesion: 0.2
+Nodes (13): ⚠️ Authentication Required, code:bash (npm install -g postiz), code:bash (RESULT=$(postiz upload <file>)), code:bash (postiz auth:status), code:bash (# ⚠️ AUTHENTICATE FIRST - required before any other command), code:bash (# 1. Authenticate), Common Gotchas, Core Workflow (+5 more)
+
+### Community 160 - "Community 160"
+Cohesion: 0.13
+Nodes (15): code:json ({), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (# Upload every file first (Rule 2)), code:json ({), code:json ({), code:bash (RESULT=$(postiz upload image.jpg)), code:bash (postiz posts:create -c "Content" -m "img.jpg" -i "twitter-id), code:bash (postiz posts:create --json post.json) (+7 more)
+
+### Community 161 - "Community 161"
+Cohesion: 0.13
+Nodes (7): nc, ne, r0(), r1(), rl, sk, sy
+
+### Community 162 - "Community 162"
+Cohesion: 0.13
+Nodes (15): images, contentDispositionType, contentSecurityPolicy, dangerouslyAllowSVG, deviceSizes, disableStaticImages, domains, formats (+7 more)
+
+### Community 163 - "Community 163"
+Cohesion: 0.13
+Nodes (14): code:bash (# From the monorepo root), code:bash (# From the monorepo root), code:bash (# Add to ~/.bashrc or ~/.zshrc), code:bash (# 1. Build), code:bash (# From the monorepo root), code:bash (# Install globally), How to Run the Postiz CLI, Option 1: Direct Execution (Quick Test) ⚡ (+6 more)
+
+### Community 164 - "Community 164"
+Cohesion: 0.13
+Nodes (15): Analytics, code:bash (postiz posts:list), code:bash (postiz posts:delete <post-id>), code:bash (postiz posts:status <post-id> --status draft), code:bash (postiz analytics:platform <integration-id>), code:bash (postiz analytics:post <post-id>), code:bash (# 1. List available content from the provider), code:bash (postiz posts:missing <post-id>) (+7 more)
+
+### Community 165 - "Community 165"
+Cohesion: 0.14
+Nodes (13): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3966-08d3-73e0-bf03-052c296bc609|agent-turn-complete, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e396a-03f5-7752-af5b-796c20f337b9|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b38-7e95-7303-b3b3-cb9a21683c30|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b3a-4756-7970-abe0-3a18c81ec4b8|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b3a-73f5-7fa2-be0d-193b428a05fa|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b3a-e895-71a1-a390-3f3774306cb4|agent-turn-complete (+5 more)
+
+### Community 166 - "Community 166"
 Cohesion: 0.23
 Nodes (13): check_health(), config_path(), integration_health(), Expose truthful RuFlo readiness., Detects actual RuFlo executable and config availability., Entrypoint to consume generated context packs and hand off to Graphify., Detect actual RuFlo executable and repo config availability., Expose health/readiness status. (+5 more)
 
-### Community 422 - "Community 422"
-Cohesion: 0.38
-Nodes (7): nC(), nD(), nP(), nT(), nu(), nz(), rD()
+### Community 167 - "Community 167"
+Cohesion: 0.14
+Nodes (12): 1. Features & Architectural Upgrades, 2. Verification Performed, 3. Launching Locally, Cinema Machina Brain Portal Blueprint Complete, Cinema Machina Brain Portal Implementation & Verification Walkthrough, code:bash (./tools/brain-portal/start-dev.sh), code:bash (source "$HOME/.config/cinema-machina/paths.sh"), Deliverables (+4 more)
 
-### Community 424 - "Community 424"
-Cohesion: 0.29
-Nodes (5): d, i, l, o, r
+### Community 168 - "Community 168"
+Cohesion: 0.21
+Nodes (14): e(), e3(), e7(), e8(), eG(), eh(), ek(), eQ() (+6 more)
 
-### Community 425 - "Community 425"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e303f-e931-7871-afe7-f65d6f5392c8
+### Community 172 - "Community 172"
+Cohesion: 0.27
+Nodes (11): applyInvalidatedModules(), createModuleHotObject(), createRequire(), hotApply(), hotCheck(), internalApply(), setStatus(), trackBlockingPromise() (+3 more)
 
-### Community 427 - "Community 427"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e92e-75b2-ac1f-c68f9ff3a8cf
+### Community 173 - "Community 173"
+Cohesion: 0.14
+Nodes (13): Basic Syntax, code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (postiz posts:create \), code:bash (#!/bin/bash), Delay Between Comments, Full Example: Product Launch, How `-c` and `-m` Pair Together (+5 more)
 
-### Community 428 - "Community 428"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e939-7d83-b914-9d2df91b2b7a
+### Community 174 - "Community 174"
+Cohesion: 0.19
+Nodes (7): _, F, H, m, P, S, y
 
-### Community 430 - "Community 430"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b68-400a-76d3-8c5f-dccb20168f41
+### Community 175 - "Community 175"
+Cohesion: 0.21
+Nodes (12): computeDegrees(), ensureOllamaAvailable(), GRAPH_PATH, main(), MAX_COMMUNITIES, MAX_TOP_NODES, nowIso(), ollamaSummarize() (+4 more)
 
-### Community 431 - "Community 431"
-Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b68-40c9-7d50-8932-7b9d854bc637
+### Community 176 - "Community 176"
+Cohesion: 0.15
+Nodes (12): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3b63-5ae4-7341-824a-3aa92f8f89de|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b67-f05b-71b0-975b-0f8e91c35bab|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-4008-7022-80eb-1abce4ba76d3|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-741e-7df0-af2d-661599fcc739|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b68-e951-7ea3-97d4-aa2f7d511b91|agent-turn-complete, 019e3b47-ee24-7891-a647-dfa1b46ef78d|019e3b47-ee55-7532-87dc-62e85e831fb5|agent-turn-complete (+4 more)
 
-### Community 432 - "Community 432"
-Cohesion: 0.33
-Nodes (5): description, entrypoint, notes, tasks, workflow
+### Community 177 - "Community 177"
+Cohesion: 0.15
+Nodes (13): code:bash (postiz posts:create \), code:bash (# Upload video first (required!)), code:bash (# Upload video first (TikTok only accepts verified URLs!)), code:bash (postiz posts:create \), code:bash (# Personal post), code:bash (# Upload image first (Instagram requires verified URLs!)), Instagram, LinkedIn (+5 more)
 
-### Community 434 - "Community 434"
-Cohesion: 0.33
-Nodes (3): nb, nf, nm
+### Community 178 - "Community 178"
+Cohesion: 0.15
+Nodes (12): Agent Read Order, Canonical Pattern, Cinema Machina AI Brain Workspace Standard, code:bash (source "$HOME/.config/cinema-machina/paths.sh"), code:bash (graphify query "how does the Brain Portal read Graphify data), code:bash (scripts/cm-graph-refresh.sh), code:bash (curl -I http://127.0.0.1:3000/), Future Project Adaptation (+4 more)
 
-### Community 437 - "Community 437"
+### Community 179 - "Community 179"
+Cohesion: 0.15
+Nodes (11): 1. `BrainPortalShell` (Main Layout Container), A. `HeroOrbZone` (Center/Background), Architectural Recommendation, B. `LeftControlRail` (Left Sidebar - 300px width, Glassmorphic), C. `RightIntelligenceInspector` (Right Sidebar - 350px width, Glassmorphic), Cinema Machina Brain Portal - Design Specification & Implementation Blueprint, D. `BottomSystemPulseStrip` (Footer - 40px height, Fixed Bottom), E. `DashboardOverlayPanels` (Modal/Expandable Cards) (+3 more)
+
+### Community 180 - "Community 180"
+Cohesion: 0.21
+Nodes (9): a, n(), n8(), nG(), nI(), nU(), nY(), nz() (+1 more)
+
+### Community 182 - "Community 182"
+Cohesion: 0.17
+Nodes (4): le, ln, og, uf
+
+### Community 183 - "Community 183"
+Cohesion: 0.15
+Nodes (12): author, email, name, url, description, homepage, keywords, license (+4 more)
+
+### Community 184 - "Community 184"
+Cohesion: 0.19
+Nodes (4): a(), constructor(), has(), u
+
+### Community 185 - "Community 185"
+Cohesion: 0.15
+Nodes (13): code:bash (postiz integrations:settings twitter-ghi789), code:bash (postiz integrations:settings linkedin-jkl012), code:bash (postiz integrations:settings tiktok-mno345), code:bash (postiz integrations:settings instagram-pqr678), code:bash (postiz integrations:settings reddit-abc123), code:bash (postiz integrations:settings youtube-def456), Examples by Platform, Instagram (+5 more)
+
+### Community 186 - "Community 186"
+Cohesion: 0.15
+Nodes (13): code:bash (# Get available flairs), code:bash (# Get playlists), code:bash (# Upload video FIRST (TikTok only accepts verified URLs!)), code:bash (# Get companies you can post to), code:bash (# Create thread), code:bash (# Upload image FIRST (Instagram requires verified URLs!)), Instagram, LinkedIn (+5 more)
+
+### Community 187 - "Community 187"
+Cohesion: 0.17
+Nodes (11): AI working guidance, Brand position, Business audience, Cinema Machina Core, Cinema Machina — Product and Brand Context, Core promise, Non-negotiables, Product stack relationship (+3 more)
+
+### Community 191 - "Community 191"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 192 - "Community 192"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 193 - "Community 193"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, leader_thread_id, session_id (+4 more)
+
+### Community 194 - "Community 194"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 195 - "Community 195"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 196 - "Community 196"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 197 - "Community 197"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 198 - "Community 198"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 199 - "Community 199"
+Cohesion: 0.17
+Nodes (12): first_seen_at, kind, last_seen_at, last_turn_id, leader_thread_id, session_id, thread_id, threads (+4 more)
+
+### Community 200 - "Community 200"
+Cohesion: 0.18
+Nodes (10): 1. Graphify — default repo intelligence layer, 2. Direct source reads, 3. Langflow, 4. Browser Use, 5. Postiz, Codex Tool Routing Policy — Cinema Machina Core, Core rule, Expected behavior for Codex (+2 more)
+
+### Community 202 - "Community 202"
+Cohesion: 0.24
+Nodes (5): a(), constructor(), get(), has(), i
+
+### Community 204 - "Community 204"
 Cohesion: 0.18
 Nodes (10): Canonical Workspace, Cinema Machina Brain Portal — Agent Handoff Protocol, code:bash (source "$HOME/.config/cinema-machina/paths.sh"), code:bash (cd "$CM_PORTAL_HOME"), code:text (http://100.89.153.1:3000/), Context Artifacts, Handoff Workflow, Integration Footprints (+2 more)
 
-### Community 438 - "Community 438"
-Cohesion: 0.33
-Nodes (5): 1. UX Polish & Live Activity Cues, 2. Agent Handoff Protocol, 3. Truthful Adapters, 4. Stability, Cinema Machina Brain Portal — Final Stabilization Report
+### Community 205 - "Community 205"
+Cohesion: 0.24
+Nodes (10): _parse_audio_state(), _parse_decision(), _parse_video_element(), _parse_video_state(), Plex session XML parser — Phase 2.1.  Parses the ``/status/sessions`` XML respon, Parse a single ``<Video>`` element into a ``SessionState``.      Args:         v, Derive the playback decision from a ``<Video>`` element.      Plex exposes the d, Extract video codec and resolution from a ``<Media>`` element.      Prefers ``<S (+2 more)
 
-### Community 439 - "Community 439"
-Cohesion: 0.33
-Nodes (5): appDir, files, ignore, relativeAppDir, version
+### Community 206 - "Community 206"
+Cohesion: 0.18
+Nodes (10): code:bash (postiz integrations:settings <integration-id>), code:json ({), code:bash (#!/bin/bash), Combined Workflow, Integration Settings Discovery, New Command: `integrations:settings`, Summary, Tips (+2 more)
 
-### Community 440 - "Community 440"
-Cohesion: 0.4
-Nodes (3): c(), d, l()
+### Community 207 - "Community 207"
+Cohesion: 0.18
+Nodes (10): code:block1 (apps/cli/), Directory Structure, Environment Variables, Future Enhancements, Integration Points, Overview, Postiz CLI - Project Structure, Support (+2 more)
 
-### Community 441 - "Community 441"
-Cohesion: 0.4
-Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+### Community 208 - "Community 208"
+Cohesion: 0.18
+Nodes (11): Basic Commands, code:bash (postiz integrations:list), code:bash (postiz upload ./path/to/image.png), code:bash (# Simple post), code:bash (# List all posts), code:bash (postiz posts:delete abc123xyz), Create a Post, Delete a Post (+3 more)
 
-### Community 442 - "Community 442"
-Cohesion: 0.6
-Nodes (5): adapter_status(), check_integrations(), load_latest(), main(), render()
+### Community 209 - "Community 209"
+Cohesion: 0.18
+Nodes (11): code:bash (# 1. Upload the file), code:bash (# Upload images), code:bash (postiz upload ./images/photo.jpg), code:json ({), code:bash (postiz upload ./videos/promo.mp4), code:json ({), Upload a Video (MP4), Upload an Image (+3 more)
 
-### Community 447 - "Community 447"
-Cohesion: 0.38
-Nodes (6): OrbSummaries, GET(), getFileMtime(), PREMIUM_COMMUNITY_SUMMARIES, readSidecar(), SidecarEnvelope
+### Community 210 - "Community 210"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 448 - "Community 448"
-Cohesion: 0.4
-Nodes (4): exportTrailingSlash, hasExportPathMap, isNextImageImported, version
+### Community 211 - "Community 211"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 449 - "Community 449"
-Cohesion: 0.4
-Nodes (5): modularizeImports, transform, lodash, @mui/icons-material, transform
+### Community 212 - "Community 212"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 450 - "Community 450"
-Cohesion: 0.4
-Nodes (5): code:bash (# Get Reddit flairs), code:bash (postiz integrations:list), code:bash (postiz integrations:settings <integration-id>), code:bash (postiz integrations:trigger <integration-id> <method-name>), Discovery & Settings
+### Community 213 - "Community 213"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 451 - "Community 451"
-Cohesion: 0.4
-Nodes (4): /api/enrichment/summaries/route, /api/graphify/graph/route, /api/status/route, /page
+### Community 214 - "Community 214"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 452 - "Community 452"
-Cohesion: 0.4
-Nodes (4): functions, middleware, sortedMiddleware, version
+### Community 215 - "Community 215"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 453 - "Community 453"
-Cohesion: 0.4
-Nodes (4): app, appUsingSizeAdjust, pages, pagesUsingSizeAdjust
+### Community 216 - "Community 216"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 454 - "Community 454"
-Cohesion: 0.5
-Nodes (3): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3cdc-ed2e-7922-9c45-45ebb1da4361|agent-turn-complete
+### Community 217 - "Community 217"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 455 - "Community 455"
-Cohesion: 0.5
-Nodes (3): get_current_chain(), Playback chain snapshot API route., Return the current unified playback chain snapshot.
+### Community 218 - "Community 218"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 456 - "Community 456"
-Cohesion: 0.83
-Nodes (3): extract_json(), latest_raw(), main()
+### Community 219 - "Community 219"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 457 - "Community 457"
-Cohesion: 0.83
-Nodes (3): fetch_recent_screenpipe(), headers(), main()
+### Community 220 - "Community 220"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 464 - "Community 464"
-Cohesion: 0.5
-Nodes (3): description, name, steps
+### Community 221 - "Community 221"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 470 - "Community 470"
-Cohesion: 0.5
-Nodes (3): pages, /layout, /page
+### Community 222 - "Community 222"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 471 - "Community 471"
-Cohesion: 0.5
-Nodes (3): components/hero-orb-canvas.tsx -> 3d-force-graph, files, id
+### Community 223 - "Community 223"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 472 - "Community 472"
-Cohesion: 0.5
-Nodes (3): /_app, /_document, /_error
+### Community 224 - "Community 224"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 473 - "Community 473"
-Cohesion: 0.5
-Nodes (3): edge, encryptionKey, node
+### Community 225 - "Community 225"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 474 - "Community 474"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 226 - "Community 226"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 475 - "Community 475"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 227 - "Community 227"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 476 - "Community 476"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 228 - "Community 228"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 477 - "Community 477"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 229 - "Community 229"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 478 - "Community 478"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 230 - "Community 230"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 479 - "Community 479"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 231 - "Community 231"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 480 - "Community 480"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 232 - "Community 232"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 481 - "Community 481"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 233 - "Community 233"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 482 - "Community 482"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 234 - "Community 234"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
 
-### Community 483 - "Community 483"
-Cohesion: 0.5
-Nodes (3): c, m, r
+### Community 235 - "Community 235"
+Cohesion: 0.2
+Nodes (9): AI / agent routing, Architecture shape, Backend, Cinema Machina Core — Architecture Overview, Core architecture principles, Current product direction, Frontend, High-value areas for future development (+1 more)
 
-### Community 490 - "Community 490"
+### Community 236 - "Community 236"
+Cohesion: 0.22
+Nodes (8): ig(), oE(), of(), oq(), t1(), t5(), tp(), t0
+
+### Community 239 - "Community 239"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 240 - "Community 240"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 241 - "Community 241"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 242 - "Community 242"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 243 - "Community 243"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 244 - "Community 244"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 245 - "Community 245"
+Cohesion: 0.2
+Nodes (9): last_triage, created_at, destination, lane, prompt_signature, reason, turn_id, suppress_followup (+1 more)
+
+### Community 246 - "Community 246"
+Cohesion: 0.2
+Nodes (10): 1. Check What's Connected, 2. Create Multi-Platform Post, 3. Schedule Multiple Posts, 4. Upload and Post Image, code:bash (# See all your connected social media accounts), code:json ([), code:bash (# Use the integration IDs from step 1), code:bash (# Morning post) (+2 more)
+
+### Community 247 - "Community 247"
+Cohesion: 0.2
+Nodes (10): Audio, code:bash (postiz upload photo.jpg), code:bash (postiz upload video.mp4), code:bash (postiz upload podcast.mp3), code:bash (postiz upload document.pdf), Documents, Images, Other Files (+2 more)
+
+### Community 248 - "Community 248"
+Cohesion: 0.2
+Nodes (9): compilerOptions, esModuleInterop, module, moduleResolution, outDir, skipLibCheck, strict, target (+1 more)
+
+### Community 249 - "Community 249"
+Cohesion: 0.2
+Nodes (9): ampDevFiles, ampFirstPages, devFiles, lowPriorityFiles, pages, /_app, /_error, polyfillFiles (+1 more)
+
+### Community 250 - "Community 250"
+Cohesion: 0.36
+Nodes (4): D, E, k, l()
+
+### Community 251 - "Community 251"
 Cohesion: 0.22
 Nodes (8): 1. Directory Structure, 2. Core Architecture Rules, 3. Creating the 3D Orb Component, 4. Graph Mapping & Macro-Sections, 5. Bootstrapping Checklist, AI Brain Template — Bootstrapping Local-First Control Portals, code:txt (├── docs/), code:typescript (// 1. Luminous Radial Glow Canvas)
 
-### Community 494 - "Community 494"
-Cohesion: 0.43
-Nodes (5): F, H, m, P, S
+### Community 252 - "Community 252"
+Cohesion: 0.22
+Nodes (8): Cinema Machina Brain Stack, Codex Memories, Graphify, Layers, Obsidian, OMEGA, Purpose, Working Rule
 
-### Community 495 - "Community 495"
-Cohesion: 0.39
-Nodes (5): Panel(), getNodeKey(), pillClass(), RightInspector(), statusDot()
+### Community 253 - "Community 253"
+Cohesion: 0.22
+Nodes (8): Build, Cinema Machina Brain Portal, code:bash (cd tools/brain-portal), code:bash (cd tools/brain-portal), code:bash (cd tools/brain-portal), Notes, Ollama enrichment (optional), Run (local)
 
-### Community 500 - "Community 500"
-Cohesion: 0.67
-Nodes (3): devIndicators, buildActivity, buildActivityPosition
+### Community 255 - "Community 255"
+Cohesion: 0.22
+Nodes (8): metadata, description, version, name, owner, email, name, plugins
 
-### Community 501 - "Community 501"
-Cohesion: 0.67
-Nodes (3): onDemandEntries, maxInactiveAge, pagesBufferLength
+### Community 257 - "Community 257"
+Cohesion: 0.22
+Nodes (9): code:bash (export POSTIZ_API_KEY=your_key), code:bash (# Make the file executable), code:bash (pnpm run build:cli), code:bash (# Check if it's linked), "Command not found: postiz", Permission Denied, "POSTIZ_API_KEY is not set", Rebuild After Changes (+1 more)
 
-### Community 502 - "Community 502"
-Cohesion: 0.67
-Nodes (3): typescript, ignoreBuildErrors, tsconfigPath
+### Community 258 - "Community 258"
+Cohesion: 0.22
+Nodes (9): 1. Discovery, 2. Validation, 3. AI Agent Integration, 4. Form Generation, code:bash (# What settings does YouTube support?), code:bash (postiz integrations:settings twitter-789 | jq '.output.maxLe), code:bash (# Get settings schema), code:bash (# Inspect the settings schema for form generation) (+1 more)
 
-### Community 503 - "Community 503"
-Cohesion: 0.67
-Nodes (3): staleTimes, dynamic, static
+### Community 259 - "Community 259"
+Cohesion: 0.22
+Nodes (9): 1. List Your Integrations, 2. Get Settings for Specific Integration, 3. Use the Settings in Your Post, code:bash (postiz integrations:list), code:json ([), code:bash (postiz integrations:settings reddit-abc123), code:json ({), code:bash (postiz posts:create \) (+1 more)
 
-### Community 566 - "Community 566"
+### Community 260 - "Community 260"
+Cohesion: 0.22
+Nodes (9): 1. Get Reddit Integration Settings, 2. Get Flairs for the Subreddit, 3. Create Post with Flair ID, code:bash (postiz integrations:settings reddit-abc123), code:json ({), code:bash (postiz integrations:trigger reddit-abc123 getFlairs -d '{"su), code:json ({), code:bash (postiz posts:create \) (+1 more)
+
+### Community 261 - "Community 261"
+Cohesion: 0.22
+Nodes (9): 1. Get LinkedIn Settings, 2. Get Companies, 3. Post as Company, code:bash (postiz integrations:settings linkedin-123), code:json ({), code:bash (postiz integrations:trigger linkedin-123 getCompanies), code:json ({), code:bash (postiz posts:create \) (+1 more)
+
+### Community 262 - "Community 262"
+Cohesion: 0.22
+Nodes (9): 1. Get YouTube Settings, 2. Get Playlists, 3. Post to Specific Playlist, code:json ({), code:bash (postiz integrations:trigger youtube-123 getPlaylists), code:json ({), code:bash (postiz posts:create \), code:bash (postiz integrations:settings youtube-123) (+1 more)
+
+### Community 263 - "Community 263"
+Cohesion: 0.22
+Nodes (9): code:json ({), code:bash (postiz posts:create --json reddit-post.json), code:json ({), code:bash (postiz posts:create --json youtube-video.json), code:json ({), Multi-Platform with Different Settings, Reddit Example, Using JSON Files for Complex Settings (+1 more)
+
+### Community 264 - "Community 264"
+Cohesion: 0.22
+Nodes (8): code:bash (# From apps/cli directory), code:json ({), code:bash (# From monorepo root), code:bash (npm install -g postiz), Publishing the Postiz CLI to npm, Quick Publish (Current Name: "postiz"), Recommended Names, Using from Monorepo Root
+
+### Community 265 - "Community 265"
+Cohesion: 0.22
+Nodes (9): 1. Change Package Name, 2. Publish, 3. Users Install, 4. Users Use, code:json ({), code:bash (cd apps/cli), code:bash (npm install -g agent-postiz), code:bash (postiz --help  # ← Command name from "bin" field) (+1 more)
+
+### Community 266 - "Community 266"
+Cohesion: 0.22
+Nodes (9): code:bash (pnpm run build), code:bash (pnpm link --global), code:bash (npm publish --dry-run), code:bash (npm pack), Test Linking, Test Publishing (Dry Run), Test the Build, Test with `npm pack` (+1 more)
+
+### Community 267 - "Community 267"
+Cohesion: 0.22
+Nodes (9): API Errors, API Key Not Set, code:block20 (❌ Error: POSTIZ_API_KEY environment variable is required), code:bash (export POSTIZ_API_KEY=your_key), code:block22 (postiz: command not found), code:block23 (❌ API Error (401): Unauthorized), code:block24 (❌ API Error (404): Not Found), Command Not Found (+1 more)
+
+### Community 268 - "Community 268"
+Cohesion: 0.22
+Nodes (9): All Output is JSON, code:bash (postiz posts:create --json complex-post.json), code:json ({), code:bash (INTEGRATIONS=$(postiz integrations:list | jq -r '.')), code:bash (postiz posts:create \), Discovery Workflow, Features for AI Agents, JSON Mode (+1 more)
+
+### Community 269 - "Community 269"
+Cohesion: 0.22
+Nodes (9): Batch Scheduling, code:bash (#!/bin/bash), code:bash (#!/bin/bash), code:bash (#!/bin/bash), code:bash (#!/bin/bash), Common Workflows, Multi-Platform Campaign, Reddit Post with Flair (+1 more)
+
+### Community 270 - "Community 270"
+Cohesion: 0.22
+Nodes (9): code:block17 (❌ ENOENT: no such file or directory), code:block18 (❌ EACCES: permission denied), code:bash (chmod 644 your-file.mp4), code:block20 (❌ Upload failed (401): Unauthorized), code:bash (export POSTIZ_API_KEY=your_key), Error Messages, File Not Found, Invalid API Key (+1 more)
+
+### Community 271 - "Community 271"
+Cohesion: 0.22
+Nodes (8): /api/enrichment/summaries/route, /api/graphify/graph/route, /api/status/route, /favicon.ico/route, /_not-found/page, /orb-assets/[...path]/route, /orb/route, /page
+
+### Community 272 - "Community 272"
+Cohesion: 0.28
+Nodes (3): b(), nl(), nu()
+
+### Community 273 - "Community 273"
+Cohesion: 0.25
+Nodes (5): contentTypeFor(), GET(), getRepoRoot(), GET(), GET()
+
+### Community 274 - "Community 274"
+Cohesion: 0.25
+Nodes (7): Antigravity, Cinema Machina Core — AI Toolchain Integrations, Claude Code, Codex, Langflow, OMEGA, RuFlo
+
+### Community 278 - "Community 278"
+Cohesion: 0.25
+Nodes (7): computedHash, skillPath, source, sourceType, skills, postiz, version
+
+### Community 280 - "Community 280"
+Cohesion: 0.25
+Nodes (8): 1. Make Changes, 2. Rebuild, 3. Test, 4. Watch Mode (Auto-rebuild), code:bash (pnpm run build:cli), code:bash (# If linked globally), code:bash (# From apps/cli directory), Development Workflow
+
+### Community 281 - "Community 281"
+Cohesion: 0.25
+Nodes (8): code:bash (# From monorepo root), code:bash (export POSTIZ_API_KEY=your_api_key_here), code:bash (node apps/cli/dist/index.js --help), code:bash (cd apps/cli), Quick Setup Guide, Step 1: Build the CLI, Step 2: Set Your API Key, Step 3: Choose Your Method
+
+### Community 282 - "Community 282"
+Cohesion: 0.25
+Nodes (7): AI Agent Workflow, code:bash (#!/bin/bash), code:bash (#!/bin/bash), Complete Example Script, Integration Tools Workflow, Summary, Tips
+
+### Community 283 - "Community 283"
+Cohesion: 0.25
+Nodes (8): code:bash (postiz integrations:list), code:bash (postiz integrations:settings <integration-id>), code:bash (postiz integrations:trigger <integration-id> <method-name> -), Step 1: List Integrations, Step 2: Get Integration Settings, Step 3: Trigger Tools (If Needed), Step 4: Create Post with Complete Settings, The Complete Workflow
+
+### Community 284 - "Community 284"
+Cohesion: 0.25
+Nodes (7): code:bash (-p threads  # or any of the above), code:bash (postiz integrations:list), Finding Your Provider Type, Platforms Without Specific Settings, Provider-Specific Settings, See Also, Tips
+
+### Community 285 - "Community 285"
+Cohesion: 0.25
+Nodes (8): code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create -c "Content" -m "img1.jpg,img2.jpg" -s "), code:bash (postiz posts:create \), code:bash (postiz posts:create -c "Content" -s "2024-12-31T12:00:00Z" -), code:bash (postiz posts:create \), code:bash (postiz posts:create --json post.json), Creating Posts
+
+### Community 286 - "Community 286"
+Cohesion: 0.25
+Nodes (8): Authentication, code:bash (postiz auth:login), code:bash (# Check current auth status (verifies credentials are still ), code:bash (export POSTIZ_API_KEY=your_api_key_here), code:bash (export POSTIZ_API_URL=https://your-custom-api.com), Option 1: OAuth2 (Recommended), Option 2: API Key, Self-Hosting the Auth Server
+
+### Community 287 - "Community 287"
+Cohesion: 0.25
+Nodes (7): last_event_at, last_injection_ts, last_reason, pane_counts, recent_keys, session_counts, total_injections
+
+### Community 288 - "Community 288"
 Cohesion: 0.29
-Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b68-40c1-70f0-833e-3f9e5d7427d6
+Nodes (6): code:bash (LANGFLOW_BASE_URL=http://127.0.0.1:7860), code:bash (ruflo --version), Langflow, Langflow and RuFlo Wiring, RuFlo, Truth Rules
 
-### Community 567 - "Community 567"
+### Community 289 - "Community 289"
 Cohesion: 0.29
 Nodes (6): 1. Primary Objectives, 2. Model Configuration, 3. Operational Boundaries & Non-Goals, 4. Fallback & Error Isolation, Out of Scope / Non-Goals, Qwen Local Role & Operational Scope
 
-### Community 568 - "Community 568"
-Cohesion: 0.6
-Nodes (3): check_file(), fail(), pass()
+### Community 290 - "Community 290"
+Cohesion: 0.33
+Nodes (5): geistMono, geistSans, inter, metadata, RootLayout()
 
-### Community 572 - "Community 572"
+### Community 293 - "Community 293"
+Cohesion: 0.38
+Nodes (7): nC(), nD(), nP(), nT(), nu(), nz(), rD()
+
+### Community 294 - "Community 294"
+Cohesion: 0.29
+Nodes (7): code:bash (postiz posts:create -c "Post" -m "img.jpg"), code:bash (postiz posts:create -i "twitter-123"), code:bash (# This is fine! Extra -m flags are ignored), Error Handling, Mismatched Count (OK!), Missing Integration, No Content
+
+### Community 295 - "Community 295"
+Cohesion: 0.29
+Nodes (6): last_activity, session_input_tokens, session_output_tokens, session_total_tokens, session_turns, total_turns
+
+### Community 296 - "Community 296"
+Cohesion: 0.29
+Nodes (6): cwd, native_session_id, pid, platform, session_id, started_at
+
+### Community 298 - "Community 298"
+Cohesion: 0.29
+Nodes (7): code:bash (postiz integrations:trigger reddit-123 invalidMethod), code:bash (postiz integrations:trigger reddit-123 getFlairs), code:bash (postiz integrations:trigger invalid-id getFlairs), Error Handling, Integration Not Found, Missing Required Data, Tool Not Found
+
+### Community 299 - "Community 299"
+Cohesion: 0.29
+Nodes (7): Configuration Files, Example Files, `examples/basic-usage.sh`, File Descriptions, `package.json`, `tsconfig.json`, `tsup.config.ts`
+
+### Community 300 - "Community 300"
+Cohesion: 0.29
+Nodes (7): Source Files, `src/api.ts`, `src/commands/integrations.ts`, `src/commands/posts.ts`, `src/commands/upload.ts`, `src/config.ts`, `src/index.ts`
+
+### Community 301 - "Community 301"
+Cohesion: 0.29
+Nodes (7): code:json ({), code:json ({), code:bash (# ❌ Wrong), Common Errors, Invalid Settings for Platform, Missing __type, Wrong Provider Type
+
+### Community 302 - "Community 302"
+Cohesion: 0.29
+Nodes (7): code:bash (cd apps/cli), code:bash (cd apps/cli), code:bash (cd apps/cli), Major Release (1.0.0 → 2.0.0), Minor Release (1.0.0 → 1.1.0), Patch Release (1.0.0 → 1.0.1), Version Updates
+
+### Community 303 - "Community 303"
+Cohesion: 0.29
+Nodes (7): 1. Get Your API Key, 2. Set Environment Variable, 3. Verify Installation, code:bash (# Bash/Zsh), code:bash (# ~/.bashrc or ~/.zshrc), code:bash (postiz --help), Setup
+
+### Community 304 - "Community 304"
+Cohesion: 0.29
+Nodes (7): code:bash (# Navigate to the monorepo root), code:bash (# From the CLI directory), code:bash (# Once published), From npm (Coming Soon), From Source (Development), Global Installation (Development), Installation
+
+### Community 305 - "Community 305"
+Cohesion: 0.29
+Nodes (7): code:bash (# Get just the post IDs), code:bash (#!/bin/bash), code:bash (# Custom API endpoint (for self-hosted)), Environment Variables, Script Automation, Tips & Tricks, Using with jq for JSON Parsing
+
+### Community 306 - "Community 306"
+Cohesion: 0.29
+Nodes (7): Building, code:block42 (src/), code:bash (pnpm run dev       # Watch mode for development), code:bash (pnpm run build), Development, Project Structure, Scripts
+
+### Community 307 - "Community 307"
+Cohesion: 0.29
+Nodes (6): code:bash (postiz upload video.mp4), code:bash (# Set API key), How It Works, Summary, Supported File Types for Upload, Testing File Upload
+
+### Community 308 - "Community 308"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b68-400a-76d3-8c5f-dccb20168f41
+
+### Community 309 - "Community 309"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b68-40c9-7d50-8932-7b9d854bc637
+
+### Community 310 - "Community 310"
 Cohesion: 0.29
 Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e303f-e4e9-7bf3-ae68-2960b4238e4f
 
+### Community 311 - "Community 311"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e303f-e931-7871-afe7-f65d6f5392c8
+
+### Community 312 - "Community 312"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e89b-7732-9684-2b7e6f090e97
+
+### Community 313 - "Community 313"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b3a-e92e-75b2-ac1f-c68f9ff3a8cf
+
+### Community 314 - "Community 314"
+Cohesion: 0.29
+Nodes (7): first_seen_at, kind, last_seen_at, last_turn_id, thread_id, turn_count, 019e3b68-40c1-70f0-833e-3f9e5d7427d6
+
+### Community 315 - "Community 315"
+Cohesion: 0.29
+Nodes (5): d, i, l, o, r
+
+### Community 316 - "Community 316"
+Cohesion: 0.38
+Nodes (6): OrbSummaries, GET(), getFileMtime(), PREMIUM_COMMUNITY_SUMMARIES, readSidecar(), SidecarEnvelope
+
+### Community 317 - "Community 317"
+Cohesion: 0.33
+Nodes (5): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3ca6-690c-7ff0-a3b9-380d6e888a89|agent-turn-complete, 019e3ca6-6477-7e33-a423-cf583f609166|019e3cad-9215-72f0-bf01-ec24b27a199b|agent-turn-complete, 019e3ca6-69c6-7810-98d3-a1ed05acd73b|019e3ca6-69f9-7050-9e86-46ff609404e9|agent-turn-complete
+
+### Community 318 - "Community 318"
+Cohesion: 0.33
+Nodes (5): date, posts, shortLink, tags, type
+
+### Community 319 - "Community 319"
+Cohesion: 0.33
+Nodes (5): date, posts, shortLink, tags, type
+
+### Community 320 - "Community 320"
+Cohesion: 0.33
+Nodes (5): date, posts, shortLink, tags, type
+
+### Community 321 - "Community 321"
+Cohesion: 0.33
+Nodes (5): date, posts, shortLink, tags, type
+
+### Community 322 - "Community 322"
+Cohesion: 0.33
+Nodes (5): date, posts, shortLink, tags, type
+
+### Community 323 - "Community 323"
+Cohesion: 0.33
+Nodes (5): Agent Tooling, AI Brain Project Template, Recommended Portal Pattern, Replication Checklist, Required Foundation
+
+### Community 324 - "Community 324"
+Cohesion: 0.33
+Nodes (5): Best Uses, code:bash (scripts/cm-gemini-audit.sh), Commands, Gemini Workflow, Secret Rules
+
+### Community 325 - "Community 325"
+Cohesion: 0.33
+Nodes (5): Codex, Langflow, Obsidian, RuFlo, Toolchain Routing
+
+### Community 326 - "Community 326"
+Cohesion: 0.33
+Nodes (3): CORS regression tests for the local dashboard integration., Local Next.js origins can read backend API responses in the browser., TestLocalDashboardCors
+
+### Community 327 - "Community 327"
+Cohesion: 0.33
+Nodes (5): description, entrypoint, notes, tasks, workflow
+
+### Community 329 - "Community 329"
+Cohesion: 0.33
+Nodes (3): nb, nf, nm
+
+### Community 332 - "Community 332"
+Cohesion: 0.33
+Nodes (5): 1. UX Polish & Live Activity Cues, 2. Agent Handoff Protocol, 3. Truthful Adapters, 4. Stability, Cinema Machina Brain Portal — Final Stabilization Report
+
+### Community 333 - "Community 333"
+Cohesion: 0.33
+Nodes (5): date, posts, shortLink, tags, type
+
+### Community 334 - "Community 334"
+Cohesion: 0.33
+Nodes (5): date, posts, shortLink, tags, type
+
+### Community 335 - "Community 335"
+Cohesion: 0.33
+Nodes (5): appDir, files, ignore, relativeAppDir, version
+
+### Community 336 - "Community 336"
+Cohesion: 0.33
+Nodes (5): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3b2f-a9e3-7d91-8207-afd6acac4e8e|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b43-7509-7f41-b1f5-91d516c5188e|agent-turn-complete, 019e3b38-7e70-7641-b419-79aed0131eaf|019e3b44-b270-71e2-b6e6-735edccb95be|agent-turn-complete
+
+### Community 337 - "Community 337"
+Cohesion: 0.4
+Nodes (3): c(), d, l()
+
+### Community 338 - "Community 338"
+Cohesion: 0.33
+Nodes (6): code:bash (export POSTIZ_API_KEY=your_key), code:bash (# For bash), Environment Variables, Optional, Required, Setting Environment Variables
+
+### Community 339 - "Community 339"
+Cohesion: 0.33
+Nodes (6): Common Tool Methods, LinkedIn, Pinterest, Reddit, Twitter/X, YouTube
+
+### Community 340 - "Community 340"
+Cohesion: 0.33
+Nodes (6): Build Process, code:bash (pnpm run dev), code:bash (pnpm run build), Development Build, Output, Production Build
+
+### Community 341 - "Community 341"
+Cohesion: 0.33
+Nodes (6): code:bash (postiz posts:create \), code:bash (postiz posts:create --json post-with-settings.json), code:json ({), How to Use Provider Settings, Method 1: Command Line Flags, Method 2: JSON File
+
+### Community 342 - "Community 342"
+Cohesion: 0.33
+Nodes (6): After Publishing, code:bash (# Login to npm (first time only)), code:bash (npm view postiz), code:bash (npm install -g postiz), Publish to npm, Publishing Checklist
+
+### Community 343 - "Community 343"
+Cohesion: 0.33
+Nodes (6): Before First Publish, code:bash (npm view postiz), code:json ("version": "1.0.0"), code:json ("files": [), code:bash (pnpm run build), code:bash (pnpm link --global)
+
+### Community 344 - "Community 344"
+Cohesion: 0.33
+Nodes (5): code:bash (# General help), Getting Help, Links, Next Steps, Postiz CLI - Quick Start Guide
+
+### Community 345 - "Community 345"
+Cohesion: 0.33
+Nodes (6): Instagram, LinkedIn, Platform-Specific Notes, TikTok, Twitter/X, YouTube
+
+### Community 346 - "Community 346"
+Cohesion: 0.33
+Nodes (6): code:bash (# Convert video to MP4), code:bash (# ❌ Wrong: PNG file renamed to .jpg), File Size Limits, "MIME type mismatch", Troubleshooting, "Upload failed: Unsupported file type"
+
+### Community 347 - "Community 347"
+Cohesion: 0.6
+Nodes (5): adapter_status(), check_integrations(), load_latest(), main(), render()
+
+### Community 348 - "Community 348"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 349 - "Community 349"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 350 - "Community 350"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 351 - "Community 351"
+Cohesion: 0.4
+Nodes (4): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3053-6504-7c40-aa59-02cf37e74920|agent-turn-complete, 019e3053-8978-7a31-b9e4-4f1be3eb9d2d|019e3053-89a2-7163-8be2-37e0c06e26b1|agent-turn-complete
+
+### Community 352 - "Community 352"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 353 - "Community 353"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 354 - "Community 354"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 355 - "Community 355"
+Cohesion: 0.4
+Nodes (4): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e308f-8428-7ae1-8cba-cb0198b7c9e6|agent-turn-complete, 019e308d-5a61-7353-a928-2b9da1999fee|019e308d-5a90-7d20-9798-3d1e0b1884aa|agent-turn-complete
+
+### Community 356 - "Community 356"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 357 - "Community 357"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 358 - "Community 358"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 359 - "Community 359"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 360 - "Community 360"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 361 - "Community 361"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 364 - "Community 364"
+Cohesion: 0.4
+Nodes (4): extraPaths, pythonPath, venv, venvPath
+
+### Community 365 - "Community 365"
+Cohesion: 0.4
+Nodes (5): code:bash (# Could only do simple comments without custom media), code:bash (postiz posts:create \), Comparison: Old vs New Syntax, ✅ New Way (Flexible), ❌ Old Way (Limited)
+
+### Community 366 - "Community 366"
+Cohesion: 0.4
+Nodes (5): code:bash (# Generate a thread command with multiple tweets), code:bash (# Single quotes prevent interpolation), Escape Special Characters, Generate Commands Programmatically, Tips for AI Agents
+
+### Community 367 - "Community 367"
+Cohesion: 0.4
+Nodes (5): modularizeImports, transform, lodash, @mui/icons-material, transform
+
+### Community 368 - "Community 368"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 369 - "Community 369"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 370 - "Community 370"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 371 - "Community 371"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 372 - "Community 372"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 373 - "Community 373"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 374 - "Community 374"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 375 - "Community 375"
+Cohesion: 0.4
+Nodes (4): last_agent_output, last_progress_at, last_turn_at, turn_count
+
+### Community 377 - "Community 377"
+Cohesion: 0.4
+Nodes (4): [1.0.0] - 2026-02-13, Added, Changelog, Features
+
+### Community 378 - "Community 378"
+Cohesion: 0.4
+Nodes (5): code:bash (postiz --help), code:bash (export POSTIZ_API_KEY=your_key), Test Help Command, Test with Sample Command (requires API key), Testing the CLI
+
+### Community 379 - "Community 379"
+Cohesion: 0.4
+Nodes (5): code:bash (# From monorepo root), code:bash (# Global install), Install from npm, Production Deployment, Publish to npm
+
+### Community 380 - "Community 380"
+Cohesion: 0.4
+Nodes (5): After ✅, Before ❌, code:bash (# Had to guess what settings are available), code:bash (# Discover settings programmatically), Comparison: Before vs After
+
+### Community 381 - "Community 381"
+Cohesion: 0.4
+Nodes (5): API Key Not Set, code:bash (postiz integrations:settings invalid-id), code:bash (postiz integrations:settings reddit-123), Error Handling, Integration Not Found
+
+### Community 382 - "Community 382"
+Cohesion: 0.4
+Nodes (5): Calling Tools, code:json ({), code:bash (# No parameters), Tool Structure, Understanding Tools
+
+### Community 383 - "Community 383"
+Cohesion: 0.4
+Nodes (5): `CHANGELOG.md`, Documentation Files, `QUICK_START.md`, `README.md`, `SKILL.md`
+
+### Community 384 - "Community 384"
+Cohesion: 0.4
+Nodes (5): Command not found after install, Common Issues, "Missing required files", "Package name too similar to existing package", "You do not have permission to publish"
+
+### Community 385 - "Community 385"
+Cohesion: 0.4
+Nodes (5): code:bash (# Get Reddit flairs), code:bash (postiz integrations:list), code:bash (postiz integrations:settings <integration-id>), code:bash (postiz integrations:trigger <integration-id> <method-name>), Discovery & Settings
+
+### Community 386 - "Community 386"
+Cohesion: 0.4
+Nodes (5): After (✅ Fixed), Before (❌ Bug), code:bash (postiz upload video.mp4), code:bash (postiz upload video.mp4), What Changed (Fix)
+
+### Community 387 - "Community 387"
+Cohesion: 0.6
+Nodes (3): check_file(), fail(), pass()
+
+### Community 388 - "Community 388"
+Cohesion: 0.4
+Nodes (4): app, appUsingSizeAdjust, pages, pagesUsingSizeAdjust
+
+### Community 389 - "Community 389"
+Cohesion: 0.4
+Nodes (4): exportTrailingSlash, hasExportPathMap, isNextImageImported, version
+
+### Community 390 - "Community 390"
+Cohesion: 0.4
+Nodes (4): /api/enrichment/summaries/route, /api/graphify/graph/route, /api/status/route, /page
+
+### Community 391 - "Community 391"
+Cohesion: 0.4
+Nodes (4): functions, middleware, sortedMiddleware, version
+
+### Community 393 - "Community 393"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e3043-a7e8-74e0-ad38-06bb4e868fb6|019e3043-a811-7f92-97a7-ff7f258bbb69|agent-turn-complete
+
+### Community 394 - "Community 394"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3048-8b3b-79b3-8e69-9becc9168dc7|agent-turn-complete
+
+### Community 395 - "Community 395"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e305c-f7e3-7aa0-bd03-573ea13d9bd4|agent-turn-complete
+
+### Community 396 - "Community 396"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3071-9df7-7c60-aabc-2d9efddc2c86|agent-turn-complete
+
+### Community 397 - "Community 397"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e307c-a135-77f3-9406-413320fb049b|019e307c-a161-7b50-8247-14745d4d0d07|agent-turn-complete
+
+### Community 398 - "Community 398"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3082-f6f0-7470-b254-eb9b39a9b898|agent-turn-complete
+
+### Community 399 - "Community 399"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e310b-8eb4-7bf0-acc8-7bd1870659fe|019e310b-8f05-7292-8fc9-db985275800c|agent-turn-complete
+
+### Community 400 - "Community 400"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e3213-1fc6-7be3-940e-4fbe88ead336|019e3213-1fef-71f1-bc85-4b25383617ad|agent-turn-complete
+
+### Community 401 - "Community 401"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e3750-a865-7b50-bb43-15167e319811|019e3750-a88f-7730-a834-994a1c39745d|agent-turn-complete
+
+### Community 402 - "Community 402"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3cba-a75c-7923-b387-fe8f4a89ea3a|agent-turn-complete
+
+### Community 403 - "Community 403"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3cc2-c204-7f50-b5d8-154e681c4c6f|agent-turn-complete
+
+### Community 404 - "Community 404"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3ce1-9b08-72a1-8a11-97be02a0de45|agent-turn-complete
+
+### Community 405 - "Community 405"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e3ca6-6477-7e33-a423-cf583f609166|019e3cdc-ed2e-7922-9c45-45ebb1da4361|agent-turn-complete
+
+### Community 406 - "Community 406"
+Cohesion: 0.83
+Nodes (3): extract_json(), latest_raw(), main()
+
+### Community 407 - "Community 407"
+Cohesion: 0.83
+Nodes (3): fetch_recent_screenpipe(), headers(), main()
+
+### Community 421 - "Community 421"
+Cohesion: 0.5
+Nodes (3): get_current_chain(), Playback chain snapshot API route., Return the current unified playback chain snapshot.
+
+### Community 422 - "Community 422"
+Cohesion: 0.5
+Nodes (3): pages, /layout, /page
+
+### Community 423 - "Community 423"
+Cohesion: 0.5
+Nodes (3): components/hero-orb-canvas.tsx -> 3d-force-graph, files, id
+
+### Community 424 - "Community 424"
+Cohesion: 0.5
+Nodes (3): last_event_at, recent_turns, 019e303f-e44f-7eb1-b180-8ec8800c3a61|019e3c58-2d54-7de2-bfc5-400c7cda80e1|agent-turn-complete
+
+### Community 425 - "Community 425"
+Cohesion: 0.5
+Nodes (3): last_idle_nudged_by_team, last_nudged_by_team, progress_by_team
+
+### Community 426 - "Community 426"
+Cohesion: 0.5
+Nodes (4): Automated Testing (Future), code:bash (# Test help), Manual Testing, Testing
+
+### Community 427 - "Community 427"
+Cohesion: 0.5
+Nodes (4): Available Commands, code:block4 (User Input), Command Flow, Commands Architecture
+
+### Community 428 - "Community 428"
+Cohesion: 0.5
+Nodes (4): code:bash (pnpm run publish-cli), Package Contents (via .npmignore), Publishing, To npm
+
+### Community 429 - "Community 429"
+Cohesion: 0.5
+Nodes (4): code:bash (cd apps/cli), code:bash (npm install -g postiz), code:bash (postiz --help), Summary
+
+### Community 430 - "Community 430"
+Cohesion: 0.5
+Nodes (4): code:json ("name": "postiz",), code:json ("name": "agent-postiz",), code:json ("name": "agent-postiz",), Package Name vs Command Name
+
+### Community 431 - "Community 431"
+Cohesion: 0.5
+Nodes (4): code:json ({), code:bash (npm install -g @yourorg/postiz), code:bash (postiz --help), Scoped Packages
+
+### Community 432 - "Community 432"
+Cohesion: 0.5
+Nodes (4): code:yaml (name: Publish CLI to npm), code:bash (git tag cli-v1.0.0), Continuous Publishing, Using GitHub Actions
+
+### Community 433 - "Community 433"
+Cohesion: 0.5
+Nodes (3): /_app, /_document, /_error
+
+### Community 434 - "Community 434"
+Cohesion: 0.5
+Nodes (3): edge, encryptionKey, node
+
+### Community 435 - "Community 435"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 436 - "Community 436"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 437 - "Community 437"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 438 - "Community 438"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 439 - "Community 439"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 440 - "Community 440"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 441 - "Community 441"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 442 - "Community 442"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 443 - "Community 443"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 444 - "Community 444"
+Cohesion: 0.5
+Nodes (3): c, m, r
+
+### Community 445 - "Community 445"
+Cohesion: 0.5
+Nodes (3): description, name, steps
+
+### Community 458 - "Community 458"
+Cohesion: 0.67
+Nodes (3): Use Command Line (`-c` and `-m`) When:, Use JSON (`--json`) When:, When to Use JSON vs Command Line
+
+### Community 461 - "Community 461"
+Cohesion: 0.67
+Nodes (3): devIndicators, buildActivity, buildActivityPosition
+
+### Community 462 - "Community 462"
+Cohesion: 0.67
+Nodes (3): staleTimes, dynamic, static
+
+### Community 463 - "Community 463"
+Cohesion: 0.67
+Nodes (3): onDemandEntries, maxInactiveAge, pagesBufferLength
+
+### Community 464 - "Community 464"
+Cohesion: 0.67
+Nodes (3): typescript, ignoreBuildErrors, tsconfigPath
+
+### Community 470 - "Community 470"
+Cohesion: 0.67
+Nodes (3): API Endpoint, code:block21 (GET /public/v1/integration-settings/:id), code:typescript ({)
+
+### Community 471 - "Community 471"
+Cohesion: 0.67
+Nodes (3): code:bash (postiz integrations:settings threads-stu901), code:json ({), No Additional Settings Required
+
+### Community 472 - "Community 472"
+Cohesion: 0.67
+Nodes (3): Dependencies, Dev Dependencies, Runtime Dependencies (from root)
+
+### Community 473 - "Community 473"
+Cohesion: 0.67
+Nodes (3): code:bash (postiz posts:create \), code:bash (postiz posts:create \), Instagram (`instagram`)
+
+### Community 474 - "Community 474"
+Cohesion: 0.67
+Nodes (3): code:bash (postiz posts:create \), code:bash (postiz posts:create \), X / Twitter (`x`)
+
+### Community 487 - "Community 487"
+Cohesion: 0.67
+Nodes (3): h(), nd(), o
+
 ## Knowledge Gaps
-- **2448 isolated node(s):** `version`, `source`, `sourceType`, `skillPath`, `computedHash` (+2443 more)
+- **2457 isolated node(s):** `version`, `source`, `sourceType`, `skillPath`, `computedHash` (+2452 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **108 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **106 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `x()` connect `Community 284` to `Community 0`, `Community 360`, `Community 300`, `Community 302`, `Community 311`, `Community 318`?**
-  _High betweenness centrality (0.029) - this node is a cross-community bridge._
-- **Why does `c2()` connect `Community 573` to `Community 0`, `Community 253`, `Community 302`?**
-  _High betweenness centrality (0.028) - this node is a cross-community bridge._
-- **Why does `gw` connect `Community 327` to `Community 0`, `Community 253`, `Community 302`?**
-  _High betweenness centrality (0.028) - this node is a cross-community bridge._
+- **Why does `x()` connect `Community 33` to `Community 0`, `Community 39`, `Community 14`, `Community 21`, `Community 24`, `Community 92`?**
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+- **Why does `c2()` connect `Community 409` to `Community 0`, `Community 19`, `Community 39`?**
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+- **Why does `gw` connect `Community 414` to `Community 0`, `Community 19`, `Community 39`?**
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **What connects `version`, `source`, `sourceType` to the rest of the system?**
-  _2448 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _2457 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.01 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.09 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.02 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.01 - nodes in this community are weakly interconnected._
